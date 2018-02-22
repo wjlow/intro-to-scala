@@ -63,4 +63,65 @@ object ErrorHandling {
     * = Some(Person("", 20))
     */
   def mkPersonAndThenChangeName(oldName: String, age: Int, newName: String): Option[Person] = ???
+
+  /**
+    * Working with Option types
+    */
+
+  type JobId = Int
+
+  type HumanId = Int
+
+  case class Job(name: String, description: String)
+  
+  case class Human(name: String, optJobId: Option[JobId])
+
+  val jobsDatabase: Map[JobId, Job] = Map(
+    1 -> Job("Teacher", "Expert in their field"),
+    2 -> Job("Engineer", "Build things for people")
+  )
+  
+  val humansDatabase: Map[HumanId, Human] = Map(
+    1 -> Human("Sally", None),
+    2 -> Human("Bobby", Some(1))
+  )
+
+  /**
+    * scala> findHumanById(1)
+    * = Some(Human(Sally, None))
+    *
+    * scala> findHumanById(100)
+    * = None
+    */
+  def findHumanById(humanId: HumanId): Option[Human] = ???
+
+  /**
+    * scala> findJobById(1)
+    * = Some(Job("Teacher"))
+    * 
+    * scala> findJobById(100")
+    * = None
+    */
+  def findJobById(jobId: JobId): Option[Job] = ???
+
+  /**
+    * scala> findJobDescriptionGivenJobId(1)
+    * = Some("Expert in their field")
+    *
+    * scala> findJobDescriptionGivenJobId(100)
+    * = None
+    */
+  def findJobDescriptionGivenJobId(jobId: JobId): Option[String] = ???
+
+  /**
+    * scala> findJobDescriptionGivenJobIdOrElse(1)
+    * = "Expert in their field"
+    *
+    * scala> findJobDescriptionGivenJobIdOrElse(100)
+    * = "Job with id 100 does not exist"
+    */
+  def findJobDescriptionGivenJobIdOrElse(jobId: JobId): String = ???
+
+  def findJobByHumanId(humanId: HumanId): Option[Job] = ???
+
 }
