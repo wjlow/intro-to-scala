@@ -7,3 +7,4 @@
 3. Error handling - `Option` type, safe constructors, working with `Map`, `flatMap`
 4. Working with Java libraries - Using `Try`
 5. Better error handling - Using `Either`
+6. Implicits
