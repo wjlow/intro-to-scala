@@ -24,6 +24,7 @@ object Intro {
     * Parametric types
     *
     * How many ways can you implement this function?
+    * Note: Square brackets (Types at compile time), round brackets (Values at run time)
     */
   def foo[A](a: A): A = ???
 
