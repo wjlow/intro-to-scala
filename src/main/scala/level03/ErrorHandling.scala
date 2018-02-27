@@ -13,7 +13,7 @@ object ErrorHandling {
     * scala> mean(Nil)
     * = ???
     **/
-  def mean(nums: List[Int]): Double = ???
+  def mean(nums: List[Int]) = ???
 
   /**
     * Option data type
@@ -105,23 +105,54 @@ object ErrorHandling {
   def findJobById(jobId: JobId): Option[Job] = ???
 
   /**
-    * scala> findJobDescriptionGivenJobId(1)
+    * scala> findJobDescriptionGivenJobId1(1)
     * = Some("Expert in their field")
     *
-    * scala> findJobDescriptionGivenJobId(100)
+    * scala> findJobDescriptionGivenJobId1(100)
     * = None
+    *
+    * Hint: Use pattern matching
     */
-  def findJobDescriptionGivenJobId(jobId: JobId): Option[String] = ???
+  def findJobDescriptionGivenJobId1(jobId: JobId): Option[String] = ???
 
   /**
-    * scala> findJobDescriptionGivenJobIdOrElse(1)
+    * Same as above, but use .map instead
+    */
+  def findJobDescriptionGivenJobId2(jobId: JobId): Option[String] = ???
+
+  /**
+    * scala> findJobDescriptionGivenJobIdOrElse1(1)
     * = "Expert in their field"
     *
-    * scala> findJobDescriptionGivenJobIdOrElse(100)
+    * scala> findJobDescriptionGivenJobIdOrElse1(100)
     * = "Job with id 100 does not exist"
+    *
+    * Hint: Use pattern matching
     */
-  def findJobDescriptionGivenJobIdOrElse(jobId: JobId): String = ???
+  def findJobDescriptionGivenJobIdOrElse1(jobId: JobId): String = ???
 
+  /**
+    * Same as above, but use .map then .getOrElse
+    */
+  def findJobDescriptionGivenJobIdOrElse2(jobId: JobId): String = ???
+
+  /**
+    * scala> findJobIdByHumanId(1)
+    * = None
+    *
+    * scala> findJobIdByHumanId(2)
+    * = Some(1)
+    *
+    * Hint: Use .map
+    */
+  def findJobIdByHumanId(humanId: HumanId): Option[JobId] = ???
+
+  /**
+    * scala> findJobByHumanId(2)
+    * = Some(Job("Teacher", "Expert in their field"))
+    *
+    * Hint: Use findJobIdByHumanId
+    */
   def findJobByHumanId(humanId: HumanId): Option[Job] = ???
 
 }
