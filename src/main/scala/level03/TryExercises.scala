@@ -22,7 +22,16 @@ object TryExercises {
   /**
     * Same as above but use .map and .left.map
     */
-  def parseIntSafe2(str: String) = ???
+  def parseIntSafeEither(str: String) = ???
+
+  /**
+    * scala> parseBooleanSafeEither("true")
+    * = Right(true)
+    *
+    * scala> parseBooleanSafeEither("abc")
+    * = Left("abc cannot be converted to Boolean")
+    */
+  def parseBooleanSafeEither(str: String) = ???
 
   /**
     * Create an Employee data type with three parameters:
@@ -45,7 +54,7 @@ object TryExercises {
     * scala> mkEmployee("Bob,22,abc")
     * = Left(TryError("abc cannot be converted to Boolean"))
     *
-    * Hint: Use csv.split(",")
+    * Hint: Use csv.split(","), parseIntSafeEither and parseBooleanSafeEither
     */
   def mkEmployee(csv: String) = ???
 
