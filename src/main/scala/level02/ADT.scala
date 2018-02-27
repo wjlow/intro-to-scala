@@ -1,12 +1,9 @@
 package level02
 
+/**
+  * Level 2 introduces data structures and operations that work on them.
+  */
 object ADT {
-
-  /**
-    * Level 2 introduces data structures and operations that work on them.
-    *
-    * Concepts covered: algebraic data types, pattern matching, map, filter, fold
-    */
 
   /**
     * A simple data type
@@ -21,6 +18,8 @@ object ADT {
     * scala> val person = Person("Bob", 50)
     * scala> printPerson(person)
     * = "Bob is 50 years old"
+    *
+    * Hint: Use string interpolation
     **/
   def printPerson(person: Person): String = ???
 
@@ -37,6 +36,8 @@ object ADT {
     * A "sum type" represents more than one possible value.
     *
     * You can read the following as a `TrafficLight` is either `Red` or `Yellow` or `Green`.
+    *
+    * A sealed trait can only be extended in the same file that it is defined.
     */
   sealed trait TrafficLight
 
@@ -59,72 +60,9 @@ object ADT {
   def printTrafficLight(trafficLight: TrafficLight): String = ???
 
   /**
-    * A `List` in Scala is a linked list.
+    * Now introduce a new type of `TrafficLight` called `Flashing` that has an additional parameter, `frequency: Int`
     *
-    * sealed trait List[A]
-    * case class ::[A](head: A, tail: List[A]) extends List[A]
-    * case object Nil extends List[Nothing]
-    *
-    * You can create a List using the `::` constructor as such:
-    *
-    * scala> 1 :: 2 :: 3 :: Nil
-    * = List(1, 2, 3)
-    *
-    * Often times, the `List.apply` static method is more convenient:
-    *
-    * scala> List.apply(1, 2, 3)
-    *
-    * The `apply` method in any object is the default method, so you can leave it out when using it:
-    *
-    * scala> List(1, 2, 3)
+    * What happens when you try to compile now?
     */
-
-  def isEmptyList[A](xs: List[A]): Boolean = ???
-
-  def prependToList[A](x: A, xs: List[A]): List[A] = ???
-
-  def appendToList[A](x: A, xs: List[A]): List[A] = ???
-
-  /**
-    * Mapping a function over a List
-    *
-    * This is typically what you want if the initial List and the resulting List
-    * are of the same size.
-    */
-
-  /**
-    * scala> addNumToEach(10, List(1, 2, 3))
-    * = List(11, 12, 13)
-    **/
-  def addNumToEach(num: Int, nums: List[Int]): List[Int] = ???
-
-  /**
-    * Filter a List
-    *
-    * This is typically what you want if the size of the resulting List is <= that of the initial.
-    */
-  def filterEven(nums: List[Int]): List[Int] = ???
-
-  /**
-    * Folds
-    *
-    * A fold is an operation over a data structure to yield a summary value.
-    *
-    * Examples: sum, product, min, max
-    */
-
-  /**
-    * scala> product(List(2, 5, 3))
-    * = 30
-    * scala> product(Nil)
-    * = 1
-    */
-  def product(nums: List[Int]): Int = ???
-
-  /**
-    * scala> min(List(4, 6, 1))
-    * = 1
-    **/
-  def min(nums: List[Int]): Int = ???
 
 }
