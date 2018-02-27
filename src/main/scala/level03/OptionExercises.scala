@@ -2,7 +2,7 @@ package level03
 
 import level02.ADT.{Person, TrafficLight}
 
-object ErrorHandling {
+object OptionExercises {
 
   /**
     * scala> mean(List(1, 2, 10))
@@ -37,6 +37,17 @@ object ErrorHandling {
     * = None
     **/
   def mkTrafficLight(str: String): Option[TrafficLight] = ???
+
+  /**
+    * scala> mkTrafficLightThenPrint("red")
+    * = "Traffic light is red"
+    *
+    * scala> mkTrafficLightThenPrint("bob")
+    * = "Traffic light is invalid"
+    *
+    * Hint: Use `mkTrafficLight` and pattern matching
+    */
+  def mkTrafficLightThenPrint(str: String): String = ???
 
   /**
     * scala> mkPerson("Bob", 20)
