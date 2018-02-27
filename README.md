@@ -1,10 +1,26 @@
 # intro-to-scala
 
-## Course content (incomplete)
+Day 1 (Basics) 
+-----
+1. Syntax
+2. ADT
+3. Option
+4. Either
+5. Try
+6. Implicits (???)
+7. Example that uses all of the above
 
-1. Intro - syntax, functions, variables
-2. Algebraic data types - product types (`Person`), sum types (`List`), pattern matching, `map`, `filter`, `fold`
-3. Error handling - `Option` type, safe constructors, working with `Map`, `flatMap`
-4. Working with Java libraries - Using `Try`
-5. Better error handling - Using `Either`
-6. Implicits
+Syntactic
+---------
+
+1. for-comprehensions
+2. pattern matching
+3. String interpolation
+
+Day 2 (App) 
+-----
+
+1. Data access (Slick)
+2. Json - Circe
+3. Http4s
+4. Cats
