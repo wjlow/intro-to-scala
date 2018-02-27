@@ -72,7 +72,7 @@ object OptionExercises {
     *
     * scala> mkPersonAndThenChangeName("Bob", 20, "")
     * = Some(Person("", 20))
-    */
+    **/
   def mkPersonAndThenChangeName(oldName: String, age: Int, newName: String): Option[Person] = ???
 
   /**
@@ -84,14 +84,14 @@ object OptionExercises {
   type HumanId = Int
 
   case class Job(name: String, description: String)
-  
+
   case class Human(name: String, optJobId: Option[JobId])
 
   val jobsDatabase: Map[JobId, Job] = Map(
     1 -> Job("Teacher", "Expert in their field"),
     2 -> Job("Engineer", "Build things for people")
   )
-  
+
   val humansDatabase: Map[HumanId, Human] = Map(
     1 -> Human("Sally", None),
     2 -> Human("Bobby", Some(1))
@@ -103,16 +103,16 @@ object OptionExercises {
     *
     * scala> findHumanById(100)
     * = None
-    */
+    **/
   def findHumanById(humanId: HumanId): Option[Human] = ???
 
   /**
     * scala> findJobById(1)
     * = Some(Job("Teacher"))
-    * 
+    *
     * scala> findJobById(100")
     * = None
-    */
+    **/
   def findJobById(jobId: JobId): Option[Job] = ???
 
   /**
