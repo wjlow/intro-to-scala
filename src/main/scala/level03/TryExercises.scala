@@ -17,7 +17,7 @@ object TryExercises {
     *
     * Hint: Use pattern matching
     */
-  def parseIntSafe1(str: String) = ???
+  def parseIntSafe(str: String) = ???
 
   /**
     * Same as above but use .map and .left.map
