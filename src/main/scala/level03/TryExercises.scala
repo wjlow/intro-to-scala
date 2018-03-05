@@ -58,4 +58,12 @@ object TryExercises {
     */
   def mkEmployee(csv: String) = ???
 
+  /**
+    * @param filename Path to file containing employees data, e.g. "src/main/resources/employees.csv"
+    * @return List of Employees and errors if any
+    *
+    * Hint: Use `mkEmployee`
+    */
+  def fileToEmployees(filename: String) = ???
+
 }
