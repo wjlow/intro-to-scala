@@ -2,6 +2,9 @@ package level02
 
 import level02.ADT.Person
 
+/**
+  * Complete ADT.scala before this
+  */
 object ListExercises {
 
   /**
@@ -100,5 +103,13 @@ object ListExercises {
     * = Person("Sally", 21)
     */
   def youngestPerson(persons: List[Person]): Person = ???
+
+  /**
+    * Typically in a data processing job, you would only want to log every
+    * 100th or 1000th iteration so you do not clog up the logs.
+    *
+    * Hint: Use .zipWithIndex
+    */
+  def printEveryTenthPerson(persons: List[Person]): List[String] = ???
 
 }
