@@ -1,4 +1,4 @@
-package level03
+package day1.level03
 
 import scala.util.{Try, Success, Failure}
 

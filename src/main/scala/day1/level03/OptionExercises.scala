@@ -1,6 +1,6 @@
-package level03
+package day1.level03
 
-import level02.ADT.{Person, TrafficLight}
+import day1.level02.ADT.{Person, TrafficLight}
 
 object OptionExercises {
 
