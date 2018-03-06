@@ -5,7 +5,7 @@ import day2.level03.models._
 
 trait DataStore {
 
-  def getAllMovies(): IO[Either[String, List[Movie]]]
+  def listMovies(): IO[Either[String, List[Movie]]]
 
   def getReviews(movieId: MovieId): IO[Either[String, List[Review]]]
 
