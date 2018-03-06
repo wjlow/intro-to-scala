@@ -12,9 +12,9 @@ object models {
     * Copy Review and Movie from level02
     */
 
-  trait Review
+  case class Review(author: String, comment: String)
 
-  trait Movie
+  case class Movie(name: String, desc: String, reviews: List[ReviewId])
 
   /**
     * Create a Map of Movies and their Reviews so our app can read from these as the DataStore for this level.
@@ -27,9 +27,13 @@ object models {
 
   type ReviewId = Int
 
-  val reviewsMap: mutable.Map[ReviewId, Review] = ???
+  var latestReviewId = 0
 
-  val moviesMap: mutable.Map[MovieId, Movie] = ???
+  var latestMovieId = 0
+
+  val reviewsMap: mutable.Map[ReviewId, Review] = mutable.Map()
+
+  val moviesMap: mutable.Map[MovieId, Movie] = mutable.Map()
 
   /**
     * Create an ADT that represents all valid requests:
@@ -42,6 +46,8 @@ object models {
     */
 
   sealed trait AppRequest
+  case object ListMovies extends AppRequest
+  case class AddMovie(name: String, desc: String) extends AppRequest
 
   /**
     * Create an ADT that represents all possible responses
@@ -49,6 +55,8 @@ object models {
     * There should be one for each AppRequest. Do each of them have a possibility of failure?
     */
   sealed trait AppResponse
+  case class ListMoviesResp(result: List[Movie]) extends AppResponse
+  case class AddMovieResp(result: Movie) extends AppResponse
 
   /**
     * Write a function that converts an AppResponse to a Json
@@ -57,6 +65,12 @@ object models {
     *
     * Hint: Pattern match on `appResponse`
     */
-  def appResponseToJson(appResponse: AppResponse): Json = ???
+  def appResponseToJson(appResponse: AppResponse): Json = appResponse match {
+    case ListMoviesResp(movies) => movies.asJson
+    case AddMovieResp(movie) => movie.asJson
+  }
+
+  def errorToJson(str: String): Json =
+    Json.obj("msg" -> str.asJson)
 
 }

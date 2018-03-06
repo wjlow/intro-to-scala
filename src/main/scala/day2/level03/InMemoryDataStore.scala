@@ -8,12 +8,18 @@ import day2.level03.models._
   */
 object InMemoryDataStore extends DataStore {
 
-  override def listMovies(): IO[Either[String, List[Movie]]] = ???
+  override def listMovies(): IO[Either[String, List[Movie]]] = IO.pure(Right(moviesMap.values.toList))
 
   override def getReviews(movieId: MovieId): IO[Either[String, List[Review]]] = ???
 
-  override def addMovie(name: String, desc: String): IO[Either[String, Unit]] = ???
+  override def addMovie(name: String, desc: String): IO[Either[String, Movie]] =
+    IO {
+      val movie = Movie(name, desc, Nil)
+      latestMovieId += 1
+      moviesMap.put(latestMovieId, movie)
+      Right(movie)
+    }
 
-  override def addReview(movieId: MovieId, author: String, comment: String): IO[Either[String, Unit]] = ???
+  override def addReview(movieId: MovieId, author: String, comment: String): IO[Either[String, Review]] = ???
 
 }

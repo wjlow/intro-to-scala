@@ -34,10 +34,11 @@ object Main extends StreamApp[IO] {
     *
     * Start by creating a Controller that uses an implementation of the `InMemoryDataStore`
     */
-  val controller: Controller = ???
+  val controller: Controller = new Controller(InMemoryDataStore)
 
   val service: HttpService[IO] = HttpService[IO] {
-    case GET -> Root / "movies" => ???
+    case GET -> Root / "movies" => controller.handle(ListMovies)
+    case POST -> Root / "movies" => controller.handle(AddMovie("My movie", "Is good"))
   }
 
 }
