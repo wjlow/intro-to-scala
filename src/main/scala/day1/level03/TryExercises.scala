@@ -13,6 +13,16 @@ object TryExercises {
   def parseInt(str: String): Int = str.toInt
 
   /**
+    * This is a tiny type on `Int` to be used in `parseAge`
+    */
+  case class Age(value: Int)
+
+  /**
+    * What can go wrong if we implement this using `parseInt`?
+    */
+  def parseAge(str: String): Age = ???
+
+  /**
     * What's a safe return type?
     *
     * Hint: Use pattern matching

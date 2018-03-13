@@ -5,23 +5,21 @@ import day1.level02.ADT.{Person, TrafficLight}
 object OptionExercises {
 
   /**
-    * scala> mean(List(1, 2, 10))
-    * = 4.333333333333333
-    *
-    * What should the following return?
-    *
-    * scala> mean(Nil)
-    * = ???
-    **/
-  def mean(nums: List[Int]) = ???
-
-  /**
     * Option data type
     *
     * sealed trait Option[A]
     * case class Some[A](a: A) extends Option[A]
     * case object None extends Option[Nothing]
     */
+
+  /**
+    * scala> safeMean(List(1, 2, 10))
+    * = Some(4.333333333333333)
+    *
+    * scala> safeMean(Nil)
+    * = None
+    **/
+  def safeMean(nums: List[Int]): Option[Double] = ???
 
   /**
     * Safe constructors
@@ -62,18 +60,18 @@ object OptionExercises {
   def mkPerson(name: String, age: Int): Option[Person] = ???
 
   /**
-    * scala> mkPersonAndThenChangeName("Bob", 20, "John")
+    * scala> mkPersonThenChangeName("Bob", 20, "John")
     * = Some(Person("John", 20))
     *
-    * scala> mkPersonAndThenChangeName("Bob", -1, "John")
+    * scala> mkPersonThenChangeName("Bob", -1, "John")
     * = None
     *
     * For simplicity, let's allow changing to an empty name, like:
     *
-    * scala> mkPersonAndThenChangeName("Bob", 20, "")
+    * scala> mkPersonThenChangeName("Bob", 20, "")
     * = Some(Person("", 20))
     **/
-  def mkPersonAndThenChangeName(oldName: String, age: Int, newName: String): Option[Person] = ???
+  def mkPersonThenChangeName(oldName: String, age: Int, newName: String): Option[Person] = ???
 
   /**
     * Working with Option types
