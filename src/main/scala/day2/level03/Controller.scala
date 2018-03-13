@@ -26,6 +26,7 @@ class Controller(dataStore: DataStore) {
     appRequest match {
       case ListMovies => dataStore.listMovies().map(_.map(ListMoviesResp))
       case AddMovie(name, desc) => dataStore.addMovie(name, desc).map(_.map(AddMovieResp))
+      case AddReview(movieId, AddReviewPayload(author, comment)) => dataStore.addReview(movieId, author, comment).map(_.map(AddReviewResp))
     }
 
 }

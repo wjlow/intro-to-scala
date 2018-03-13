@@ -17,6 +17,7 @@ import io.circe.syntax._
 import io.circe._
 
 import scala.concurrent.ExecutionContext.Implicits.global
+import scala.util.Try
 
 object Main extends StreamApp[IO] {
 
@@ -39,6 +40,17 @@ object Main extends StreamApp[IO] {
   val service: HttpService[IO] = HttpService[IO] {
     case GET -> Root / "movies" => controller.handle(ListMovies)
     case POST -> Root / "movies" => controller.handle(AddMovie("My movie", "Is good"))
+    case req@POST -> Root / "movie" / movieId / "reviews" => addReview(req, movieId)
   }
 
+  private def addReview(req: Request[IO], movieId: String) = {
+    Try(movieId.toInt).toOption match {
+      case None => BadRequest("movieId cannot be converted to Int")
+      case Some(num) =>
+        for {
+          payload <- req.as[AddReviewPayload]
+          response <- controller.handle(AddReview(num, payload))
+        } yield response
+    }
+  }
 }

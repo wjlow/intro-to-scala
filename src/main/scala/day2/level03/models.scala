@@ -1,8 +1,15 @@
 package day2.level03
 
-import io.circe.Json
-import io.circe.syntax._
+import cats.effect.IO
+
+import io.circe._
 import io.circe.generic.auto._
+import io.circe.syntax._
+
+import org.http4s._
+import org.http4s.circe._
+import org.http4s.dsl.io._
+
 
 import scala.collection.mutable
 
@@ -46,8 +53,19 @@ object models {
     */
 
   sealed trait AppRequest
+
   case object ListMovies extends AppRequest
+
   case class AddMovie(name: String, desc: String) extends AppRequest
+
+  case class AddReview(movieId: MovieId, payload: AddReviewPayload) extends AppRequest
+
+  case class AddReviewPayload(author: String, comment: String)
+
+  /**
+    * How to convert an AddReviewPayload to a Json
+    */
+  implicit val addReviewPayloadDecoder: EntityDecoder[IO, AddReviewPayload] = jsonOf[IO, AddReviewPayload]
 
   /**
     * Create an ADT that represents all possible responses
@@ -55,8 +73,12 @@ object models {
     * There should be one for each AppRequest. Do each of them have a possibility of failure?
     */
   sealed trait AppResponse
+
   case class ListMoviesResp(result: List[Movie]) extends AppResponse
-  case class AddMovieResp(result: Movie) extends AppResponse
+
+  case class AddMovieResp(result: MovieId) extends AppResponse
+
+  case class AddReviewResp(result: ReviewId) extends AppResponse
 
   /**
     * Write a function that converts an AppResponse to a Json
@@ -67,7 +89,8 @@ object models {
     */
   def appResponseToJson(appResponse: AppResponse): Json = appResponse match {
     case ListMoviesResp(movies) => movies.asJson
-    case AddMovieResp(movie) => movie.asJson
+    case AddMovieResp(movieId) => Json.obj("movieId" -> movieId.asJson)
+    case AddReviewResp(reviewId) => Json.obj("reviewId" -> reviewId.asJson)
   }
 
   def errorToJson(str: String): Json =

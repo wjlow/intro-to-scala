@@ -9,8 +9,8 @@ trait DataStore {
 
   def getReviews(movieId: MovieId): IO[Either[String, List[Review]]]
 
-  def addMovie(name: String, desc: String): IO[Either[String, Movie]]
+  def addMovie(name: String, desc: String): IO[Either[String, MovieId]]
 
-  def addReview(movieId: MovieId, author: String, comment: String): IO[Either[String, Review]]
+  def addReview(movieId: MovieId, author: String, comment: String): IO[Either[String, ReviewId]]
 
 }
