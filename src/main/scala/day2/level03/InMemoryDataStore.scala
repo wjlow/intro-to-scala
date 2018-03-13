@@ -12,8 +12,8 @@ object InMemoryDataStore extends DataStore {
 
   override def getReviews(movieId: MovieId): IO[Either[String, List[Review]]] = ???
 
-  override def addMovie(name: String, desc: String): IO[Either[String, Unit]] = ???
+  override def addMovie(name: String, desc: String): IO[Either[String, MovieId]] = ???
 
-  override def addReview(movieId: MovieId, author: String, comment: String): IO[Either[String, Unit]] = ???
+  override def addReview(movieId: MovieId, author: String, comment: String): IO[Either[String, ReviewId]] = ???
 
 }
