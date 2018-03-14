@@ -21,16 +21,6 @@ import scala.util.Try
 
 object Main extends StreamApp[IO] {
 
-  /**
-    * Treat every HTTP entity as JSON and convert them to a typed model `A`
-    * This allows using `.as[MyModel]` on a `Request` to convert a JSON to a `MyModel`
-    * using the field names of `MyModel`.
-    *
-    * e.g. Provided `case class MyModel(key1: String, key2: String)`
-    * `{ "key1": "value1", "key2": "value2"}` becomes `MyModel("value1", value2")`
-   */
-  implicit def decoders[F[_]: Sync, A: Decoder]: EntityDecoder[F, A] = jsonOf[F, A]
-
   override def stream(args: List[String], requestShutdown: IO[Unit]): fs2.Stream[IO, ExitCode] =
     BlazeBuilder[IO]
       .bindHttp(8080, "localhost")

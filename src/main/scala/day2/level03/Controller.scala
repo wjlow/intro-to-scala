@@ -29,7 +29,4 @@ class Controller(dataStore: DataStore) {
       case AddReviewReq(movieId, ReviewToAdd(author, comment)) => toAppResponse(dataStore.addReview(movieId, author, comment), AddReviewResp)
     }
 
-  def toAppResponse[A, B](io: IO[Either[String, A]], f: A => B): IO[Either[String, B]] =
-    io.map(_.map(f))
-
 }
