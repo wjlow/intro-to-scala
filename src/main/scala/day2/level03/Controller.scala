@@ -23,10 +23,13 @@ class Controller(dataStore: DataStore) {
     */
   private[level03] def requestToResponse(appRequest: AppRequest): IO[Either[String, AppResponse]] =
     appRequest match {
-      case ListMoviesReq => dataStore.listMovies().map(_.map(ListMoviesResp))
-      case GetReviewsReq(movieId) => dataStore.getReviews(movieId).map(_.map(GetReviewsResp))
-      case AddMovieReq(name, desc) => dataStore.addMovie(name, desc).map(_.map(AddMovieResp))
-      case AddReviewReq(movieId, ReviewToAdd(author, comment)) => dataStore.addReview(movieId, author, comment).map(_.map(AddReviewResp))
+      case ListMoviesReq => toAppResponse(dataStore.listMovies(), ListMoviesResp)
+      case GetReviewsReq(movieId) => toAppResponse(dataStore.getReviews(movieId), GetReviewsResp)
+      case AddMovieReq(name, desc) => toAppResponse(dataStore.addMovie(name, desc), AddMovieResp)
+      case AddReviewReq(movieId, ReviewToAdd(author, comment)) => toAppResponse(dataStore.addReview(movieId, author, comment), AddReviewResp)
     }
+
+  def toAppResponse[A, B](io: IO[Either[String, A]], f: A => B): IO[Either[String, B]] =
+    io.map(_.map(f))
 
 }
