@@ -68,10 +68,6 @@ object models {
 
   case class ReviewToAdd(author: String, comment: String)
 
-  object ReviewToAdd {
-    implicit val decoder: EntityDecoder[IO, ReviewToAdd] = jsonOf[IO, ReviewToAdd]
-  }
-
   /**
     * Create an ADT that represents all possible responses
     *
