@@ -54,18 +54,23 @@ object models {
 
   sealed trait AppRequest
 
-  case object ListMovies extends AppRequest
+  case object ListMoviesReq extends AppRequest
 
-  case class AddMovie(name: String, desc: String) extends AppRequest
+  case class GetReviewsReq(movieId: MovieId) extends AppRequest
 
-  case class AddReview(movieId: MovieId, payload: AddReviewPayload) extends AppRequest
+  case class AddMovieReq(name: String, desc: String) extends AppRequest
 
-  case class AddReviewPayload(author: String, comment: String)
+  object AddMovieReq {
+    implicit val decoder: EntityDecoder[IO, AddMovieReq] = jsonOf[IO, AddMovieReq]
+  }
 
-  /**
-    * How to convert an AddReviewPayload to a Json
-    */
-  implicit val addReviewPayloadDecoder: EntityDecoder[IO, AddReviewPayload] = jsonOf[IO, AddReviewPayload]
+  case class AddReviewReq(movieId: MovieId, reviewToAdd: ReviewToAdd) extends AppRequest
+
+  case class ReviewToAdd(author: String, comment: String)
+
+  object ReviewToAdd {
+    implicit val decoder: EntityDecoder[IO, ReviewToAdd] = jsonOf[IO, ReviewToAdd]
+  }
 
   /**
     * Create an ADT that represents all possible responses
@@ -73,6 +78,8 @@ object models {
     * There should be one for each AppRequest. Do each of them have a possibility of failure?
     */
   sealed trait AppResponse
+
+  case class GetReviewsResp(result: List[Review]) extends AppResponse
 
   case class ListMoviesResp(result: List[Movie]) extends AppResponse
 
@@ -89,6 +96,7 @@ object models {
     */
   def appResponseToJson(appResponse: AppResponse): Json = appResponse match {
     case ListMoviesResp(movies) => movies.asJson
+    case GetReviewsResp(reviews) => reviews.asJson
     case AddMovieResp(movieId) => Json.obj("movieId" -> movieId.asJson)
     case AddReviewResp(reviewId) => Json.obj("reviewId" -> reviewId.asJson)
   }

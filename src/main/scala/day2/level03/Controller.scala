@@ -6,7 +6,6 @@ import cats.effect.IO
 
 import org.http4s._
 import org.http4s.dsl.io._
-import org.http4s.server.blaze._
 import org.http4s.circe._
 
 class Controller(dataStore: DataStore) {
@@ -24,9 +23,10 @@ class Controller(dataStore: DataStore) {
     */
   private[level03] def requestToResponse(appRequest: AppRequest): IO[Either[String, AppResponse]] =
     appRequest match {
-      case ListMovies => dataStore.listMovies().map(_.map(ListMoviesResp))
-      case AddMovie(name, desc) => dataStore.addMovie(name, desc).map(_.map(AddMovieResp))
-      case AddReview(movieId, AddReviewPayload(author, comment)) => dataStore.addReview(movieId, author, comment).map(_.map(AddReviewResp))
+      case ListMoviesReq => dataStore.listMovies().map(_.map(ListMoviesResp))
+      case GetReviewsReq(movieId) => dataStore.getReviews(movieId).map(_.map(GetReviewsResp))
+      case AddMovieReq(name, desc) => dataStore.addMovie(name, desc).map(_.map(AddMovieResp))
+      case AddReviewReq(movieId, ReviewToAdd(author, comment)) => dataStore.addReview(movieId, author, comment).map(_.map(AddReviewResp))
     }
 
 }
