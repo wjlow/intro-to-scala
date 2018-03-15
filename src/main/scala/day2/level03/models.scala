@@ -10,7 +10,6 @@ import org.http4s._
 import org.http4s.circe._
 import org.http4s.dsl.io._
 
-
 import scala.collection.mutable
 
 object models {
@@ -19,9 +18,9 @@ object models {
     * Copy Review and Movie from level02
     */
 
-  case class Review(author: String, comment: String)
+  trait Review
 
-  case class Movie(name: String, desc: String, reviews: List[ReviewId])
+  trait Movie
 
   /**
     * Create a Map of Movies and their Reviews so our app can read from these as the DataStore for this level.
@@ -34,6 +33,9 @@ object models {
 
   type ReviewId = Int
 
+  /**
+    * We are creating an in memory store here, with an Id counter that we will increment each time we add to the store.
+    */
   var latestReviewId = 0
 
   var latestMovieId = 0
@@ -54,34 +56,12 @@ object models {
 
   sealed trait AppRequest
 
-  case object ListMoviesReq extends AppRequest
-
-  case class GetReviewsReq(movieId: MovieId) extends AppRequest
-
-  case class AddMovieReq(name: String, desc: String) extends AppRequest
-
-  object AddMovieReq {
-    implicit val decoder: EntityDecoder[IO, AddMovieReq] = jsonOf[IO, AddMovieReq]
-  }
-
-  case class AddReviewReq(movieId: MovieId, reviewToAdd: ReviewToAdd) extends AppRequest
-
-  case class ReviewToAdd(author: String, comment: String)
-
   /**
     * Create an ADT that represents all possible responses
     *
     * There should be one for each AppRequest. Do each of them have a possibility of failure?
     */
   sealed trait AppResponse
-
-  case class GetReviewsResp(result: List[Review]) extends AppResponse
-
-  case class ListMoviesResp(result: List[Movie]) extends AppResponse
-
-  case class AddMovieResp(result: MovieId) extends AppResponse
-
-  case class AddReviewResp(result: ReviewId) extends AppResponse
 
   /**
     * Write a function that converts an AppResponse to a Json
@@ -90,14 +70,11 @@ object models {
     *
     * Hint: Pattern match on `appResponse`
     */
-  def appResponseToJson(appResponse: AppResponse): Json = appResponse match {
-    case ListMoviesResp(movies) => movies.asJson
-    case GetReviewsResp(reviews) => reviews.asJson
-    case AddMovieResp(movieId) => Json.obj("movieId" -> movieId.asJson)
-    case AddReviewResp(reviewId) => Json.obj("reviewId" -> reviewId.asJson)
-  }
+  def appResponseToJson(appResponse: AppResponse): Json = ???
 
-  def errorToJson(str: String): Json =
-    Json.obj("msg" -> str.asJson)
+  /**
+    * Create a data type that holds an error message. This is the main error type we will be using in the entire application.
+    */
+  trait AppError
 
 }

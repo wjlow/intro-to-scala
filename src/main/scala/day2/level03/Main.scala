@@ -38,40 +38,8 @@ object Main extends StreamApp[IO] {
   val controller: Controller = new Controller(InMemoryDataStore)
 
   val service: HttpService[IO] = HttpService[IO] {
-    case GET -> Root / "movies" => listMovies
-    case GET -> Root / "movie" / movieId / "reviews" => getReviews(movieId)
-    case req@POST -> Root / "movies" => addMovie(req)
-    case req@POST -> Root / "movie" / movieId / "reviews" => addReview(req, movieId)
+    case GET -> Root / "movies" => ???
   }
 
-  private def listMovies = {
-    val req = ListMoviesReq
-    controller.handle(req)
-  }
-
-  private def getReviews(movieId: String) =
-    Try(movieId.toInt).toOption match {
-      case None => BadRequest("movieId cannot be converted to Int")
-      case Some(num) =>
-        val req = GetReviewsReq(num)
-        controller.handle(req)
-    }
-
-  private def addMovie(req: Request[IO]) =
-    for {
-      req <- req.as[AddMovieReq]
-      response <- controller.handle(req)
-    } yield response
-
-  private def addReview(req: Request[IO], movieId: String) =
-    Try(movieId.toInt).toOption match {
-      case None => BadRequest("movieId cannot be converted to Int")
-      case Some(num) =>
-        for {
-          reviewToAdd <- req.as[ReviewToAdd]
-          req = AddReviewReq(num, reviewToAdd)
-          response <- controller.handle(req)
-        } yield response
-    }
 }
 

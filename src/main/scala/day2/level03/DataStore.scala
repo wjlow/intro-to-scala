@@ -3,6 +3,9 @@ package day2.level03
 import cats.effect.IO
 import day2.level03.models._
 
+/**
+  * This defines a DataStore where we can retrieve data.
+  */
 trait DataStore {
 
   def listMovies(): IO[Either[String, List[Movie]]]
