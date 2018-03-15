@@ -17,6 +17,7 @@ import io.circe.syntax._
 import io.circe._
 
 import scala.concurrent.ExecutionContext.Implicits.global
+import scala.util.Try
 
 object Main extends StreamApp[IO] {
 
@@ -34,10 +35,11 @@ object Main extends StreamApp[IO] {
     *
     * Start by creating a Controller that uses an implementation of the `InMemoryDataStore`
     */
-  val controller: Controller = ???
+  val controller: Controller = new Controller(InMemoryDataStore)
 
   val service: HttpService[IO] = HttpService[IO] {
     case GET -> Root / "movies" => ???
   }
 
 }
+

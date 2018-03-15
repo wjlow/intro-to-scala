@@ -1,8 +1,14 @@
 package day2.level03
 
-import io.circe.Json
-import io.circe.syntax._
+import cats.effect.IO
+
+import io.circe._
 import io.circe.generic.auto._
+import io.circe.syntax._
+
+import org.http4s._
+import org.http4s.circe._
+import org.http4s.dsl.io._
 
 import scala.collection.mutable
 
@@ -27,9 +33,16 @@ object models {
 
   type ReviewId = Int
 
-  val reviewsMap: mutable.Map[ReviewId, Review] = ???
+  /**
+    * We are creating an in memory store here, with an Id counter that we will increment each time we add to the store.
+    */
+  var latestReviewId = 0
 
-  val moviesMap: mutable.Map[MovieId, Movie] = ???
+  var latestMovieId = 0
+
+  val reviewsMap: mutable.Map[ReviewId, Review] = mutable.Map()
+
+  val moviesMap: mutable.Map[MovieId, Movie] = mutable.Map()
 
   /**
     * Create an ADT that represents all valid requests:
@@ -58,5 +71,10 @@ object models {
     * Hint: Pattern match on `appResponse`
     */
   def appResponseToJson(appResponse: AppResponse): Json = ???
+
+  /**
+    * Create a data type that holds an error message. This is the main error type we will be using in the entire application.
+    */
+  trait AppError
 
 }
