@@ -1,6 +1,6 @@
 package day1.level03
 
-import day1.level02.ADT.{Person, TrafficLight}
+import day1.level02.ADT._
 
 object OptionExercises {
 
@@ -70,6 +70,8 @@ object OptionExercises {
     *
     * scala> mkPersonThenChangeName("Bob", 20, "")
     * = Some(Person("", 20))
+    *
+    * Hint: Use `mkPerson` and `changeName`
     **/
   def mkPersonThenChangeName(oldName: String, age: Int, newName: String): Option[Person] = ???
 
