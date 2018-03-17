@@ -10,7 +10,7 @@ package fundamentals.level01
   * A function takes inputs and returns an output.
   * It should always return the same output given the same inputs.
   */
-object Intro {
+object IntroExercises {
 
   /**
     * This function called `add` takes two Ints and return an Int

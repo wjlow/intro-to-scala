@@ -1,9 +1,9 @@
 package fundamentals.level02
 
-import fundamentals.level02.ADT._
+import fundamentals.level02.TypesExercises._
 import org.scalatest.FunSpec
 
-class ADTTest extends FunSpec {
+class TypesExercisesTest extends FunSpec {
 
   describe("printPerson") {
 

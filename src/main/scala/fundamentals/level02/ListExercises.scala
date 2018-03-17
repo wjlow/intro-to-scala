@@ -1,6 +1,6 @@
 package fundamentals.level02
 
-import fundamentals.level02.ADT.Person
+import fundamentals.level02.TypesExercises.Person
 
 /**
   * Complete ADT.scala before this

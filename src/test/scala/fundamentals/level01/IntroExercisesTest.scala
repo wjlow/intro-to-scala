@@ -1,9 +1,9 @@
 package fundamentals.level01
 
-import fundamentals.level01.Intro._
+import fundamentals.level01.IntroExercises._
 import org.scalatest.FunSpec
 
-class Level01Test extends FunSpec {
+class IntroExercisesTest extends FunSpec {
 
   describe("add") {
 

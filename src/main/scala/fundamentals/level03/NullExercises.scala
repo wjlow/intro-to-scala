@@ -1,6 +1,6 @@
 package fundamentals.level03
 
-import fundamentals.level02.ADT.{Person, TrafficLight}
+import fundamentals.level02.TypesExercises.{Person, TrafficLight}
 
 object NullExercises {
 

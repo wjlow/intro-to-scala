@@ -1,4 +1,4 @@
-# Day 2
+# Applied Scala
 
 All exercises in this package are related to building a web app.
 

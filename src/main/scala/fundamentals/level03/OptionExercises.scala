@@ -1,13 +1,13 @@
 package fundamentals.level03
 
-import fundamentals.level02.ADT._
+import fundamentals.level02.TypesExercises._
 
 object OptionExercises {
 
   /**
     * Option data type
     *
-    * sealed trait Option[A]
+    * sealed trait Option[+A]
     * case class Some[A](a: A) extends Option[A]
     * case object None extends Option[Nothing]
     */
