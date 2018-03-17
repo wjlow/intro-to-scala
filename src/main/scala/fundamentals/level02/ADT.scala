@@ -1,4 +1,4 @@
-package day1.level02
+package fundamentals.level02
 
 /**
   * Level 2 introduces data structures and operations that work on them.

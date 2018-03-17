@@ -1,6 +1,6 @@
-package day1.level02
+package fundamentals.level02
 
-import day1.level02.ADT.Person
+import fundamentals.level02.ADT.Person
 
 /**
   * Complete ADT.scala before this

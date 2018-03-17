@@ -1,4 +1,4 @@
-package day2
+package applied
 
 import cats.effect.{IO, Sync}
 import io.circe.Decoder

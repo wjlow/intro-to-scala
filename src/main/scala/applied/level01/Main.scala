@@ -1,9 +1,6 @@
-package day2.level02
-
-import day2.level02.models.Movie
+package applied.level01
 
 import cats.effect._
-import io.circe._
 
 import fs2.StreamApp
 import fs2.StreamApp.ExitCode
@@ -23,12 +20,20 @@ object Main extends StreamApp[IO] {
       .serve
 
   /**
-    * Copy your routes from level01 and update them to return sample data from `models.scala` as Json.
-    * Don't worry about returning the right data for now, just get it to compile and return some Json.
+    * Create routes for your application with hard-coded responses
     *
-    * Make sure you set the following headers:
+    * GET  /movies
+    *   returns: All movies, OK 200
+    * GET  /movie/1/reviews
+    *   returns: All reviews for movie with id 1, OK 200
+    * POST /movies/
+    *   payload: { "name": "Batman Forever", "synopsis": "Superhero movie!" }
+    *   returns: Created 201
+    * POST /movie/1/reviews
+    *   payload: { "author": "Bob", "comment": "Great movie for the family." }
+    *   returns: Created 201
     *
-    * 1. `Content-Type: application/json`
+    * Don't worry if the word `service` is highlighted red in IntelliJ.
     */
   val service: HttpService[IO] = HttpService[IO] {
     case GET -> Root / "movies" => ???

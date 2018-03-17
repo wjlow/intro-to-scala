@@ -1,4 +1,4 @@
-package day2.level02
+package applied.level02
 
 object models {
 

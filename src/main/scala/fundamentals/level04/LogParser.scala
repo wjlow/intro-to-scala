@@ -1,4 +1,4 @@
-package day1.level04
+package fundamentals.level04
 
 /**
   * The exercises here are adapted from: http://www.cis.upenn.edu/~cis194/spring13/hw/02-ADTs.pdf

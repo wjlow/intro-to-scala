@@ -1,6 +1,6 @@
-package day2.level03
+package applied.level03
 
-import day2.level03.models._
+import applied.level03.models._
 
 import cats.effect._
 

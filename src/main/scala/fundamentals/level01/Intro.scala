@@ -1,4 +1,4 @@
-package day1.level01
+package fundamentals.level01
 
 
 /**

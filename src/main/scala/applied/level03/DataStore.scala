@@ -1,7 +1,7 @@
-package day2.level03
+package applied.level03
 
 import cats.effect.IO
-import day2.level03.models._
+import applied.level03.models._
 
 /**
   * This defines a DataStore where we can retrieve data.

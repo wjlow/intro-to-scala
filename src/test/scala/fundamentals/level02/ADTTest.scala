@@ -1,6 +1,6 @@
-package day1.level02
+package fundamentals.level02
 
-import day1.level02.ADT._
+import fundamentals.level02.ADT._
 import org.scalatest.FunSpec
 
 class ADTTest extends FunSpec {

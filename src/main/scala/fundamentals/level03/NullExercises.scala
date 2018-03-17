@@ -1,6 +1,6 @@
-package day1.level03
+package fundamentals.level03
 
-import day1.level02.ADT.{Person, TrafficLight}
+import fundamentals.level02.ADT.{Person, TrafficLight}
 
 object NullExercises {
 

@@ -1,6 +1,6 @@
-package day1.level01
+package fundamentals.level01
 
-import day1.level01.Intro._
+import fundamentals.level01.Intro._
 import org.scalatest.FunSpec
 
 class Level01Test extends FunSpec {

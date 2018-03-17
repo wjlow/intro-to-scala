@@ -1,4 +1,4 @@
-package day2.level03
+package applied.level03
 
 import cats.effect.IO
 
