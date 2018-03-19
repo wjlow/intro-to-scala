@@ -3,7 +3,7 @@ package fundamentals.level04
 /**
   * The exercises here are adapted from: http://www.cis.upenn.edu/~cis194/spring13/hw/02-ADTs.pdf
   */
-object LogParser {
+object LogParser extends App {
 
   /**
     * Let's try and build a program to understand some logs! Here is how a log file may look.
@@ -84,5 +84,14 @@ object LogParser {
     * Hint: Use `parseLogFile` and `showError`
     **/
   def showErrorsOverSeverity(logFile: String, severity: Int): List[String] = ???
+
+  /**
+    * Note that at no point have we printed anything out to the user.
+    * By pushing side-effects like printing to stdout to the very end of our program,
+    * we are able to unit test the majority of our program.
+    *
+    * Now, using `showErrorsOverSeverity`, let's print out the results to stdout.
+    */
+  def printErrorsOverSeverity(logFile: String, severity: Int): Unit = ???
 
 }
