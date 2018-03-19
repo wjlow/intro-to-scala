@@ -42,11 +42,11 @@ object IntroExercises {
   def timesTwoIfEven(x: Int): Int = ???
 
   /**
-    * scala> printNumber(100)
+    * scala> showNumber(100)
     * = "The number is 100"
     *
     * Hint: Use string interpolation, e.g. s"$x"
     */
-  def printNumber(x: Int): String = ???
+  def showNumber(x: Int): String = ???
 
 }

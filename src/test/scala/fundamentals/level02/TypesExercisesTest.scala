@@ -5,12 +5,12 @@ import org.scalatest.FunSpec
 
 class TypesExercisesTest extends FunSpec {
 
-  describe("printPerson") {
+  describe("showPerson") {
 
     it("should turn Bob into a String") {
       val person = Person("Bob", 50)
 
-      val str = printPerson(person)
+      val str = showPerson(person)
 
       assert(str === "Bob is 50 years old")
     }
@@ -30,10 +30,10 @@ class TypesExercisesTest extends FunSpec {
 
   }
 
-  describe("printTrafficLight") {
+  describe("showTrafficLight") {
 
-    it("should print Red") {
-      val str = printTrafficLight(Red)
+    it("should show Red") {
+      val str = showTrafficLight(Red)
 
       assert(str === "The traffic light is red")
     }

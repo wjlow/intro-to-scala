@@ -16,12 +16,12 @@ object TypesExercises {
 
   /**
     * scala> val person = Person("Bob", 50)
-    * scala> printPerson(person)
+    * scala> showPerson(person)
     * = "Bob is 50 years old"
     *
     * Hint: Use string interpolation
     **/
-  def printPerson(person: Person): String = ???
+  def showPerson(person: Person): String = ???
 
   /**
     * scala> val person = Person("Bob", 50)
@@ -48,16 +48,16 @@ object TypesExercises {
   case object Green extends TrafficLight
 
   /**
-    * scala> printTrafficLight(Red)
+    * scala> showTrafficLight(Red)
     * = "The traffic light is red"
     *
-    * scala> printTrafficLight(Yellow)
+    * scala> showTrafficLight(Yellow)
     * = "The traffic light is yellow"
     *
-    * scala> printTrafficLight(Green)
+    * scala> showTrafficLight(Green)
     * = "The traffic light is green"
     **/
-  def printTrafficLight(trafficLight: TrafficLight): String = ???
+  def showTrafficLight(trafficLight: TrafficLight): String = ???
 
   /**
     * Now introduce a new type of `TrafficLight` called `Flashing` that has an additional parameter, `frequency: Int`

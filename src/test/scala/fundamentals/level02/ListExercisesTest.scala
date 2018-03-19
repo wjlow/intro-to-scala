@@ -25,7 +25,7 @@ class ListExercisesTest extends FunSpec {
 
   // TODO: Write unit tests for `isEmptyList`
 
-  // TODO: Write unit tests for `printListSize`
+  // TODO: Write unit tests for `showListSize`
 
   // TODO: Write unit test for `addNumToEach`
 
@@ -37,6 +37,6 @@ class ListExercisesTest extends FunSpec {
 
   // TODO: Write unit test for `youngestPerson`
 
-  // TODO: Write unit test for `printEveryTenthPerson`
+  // TODO: Write unit test for `showEveryTenthPerson`
 
 }

@@ -37,15 +37,15 @@ object OptionExercises {
   def mkTrafficLight(str: String): Option[TrafficLight] = ???
 
   /**
-    * scala> mkTrafficLightThenPrint("red")
+    * scala> mkTrafficLightThenShow("red")
     * = "Traffic light is red"
     *
-    * scala> mkTrafficLightThenPrint("bob")
+    * scala> mkTrafficLightThenShow("bob")
     * = "Traffic light is invalid"
     *
     * Hint: Use `mkTrafficLight` and pattern matching
     */
-  def mkTrafficLightThenPrint(str: String): String = ???
+  def mkTrafficLightThenShow(str: String): String = ???
 
   /**
     * scala> mkPerson("Bob", 20)

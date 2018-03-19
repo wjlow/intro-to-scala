@@ -14,15 +14,15 @@ object NullExercises {
   def mkTrafficLightOrNull(str: String): TrafficLight = ???
 
   /**
-    * scala> mkTrafficLightOrNullThenPrint("red")
+    * scala> mkTrafficLightOrNullThenShow("red")
     * = "Traffic light is red"
     *
-    * scala> mkTrafficLightOrNullThenPrint("bob")
+    * scala> mkTrafficLightOrNullThenShow("bob")
     * = "Traffic light is invalid"
     *
     * Hint: Use `mkTrafficLightOrNull` and pattern matching
     */
-  def mkTrafficLightOrNullThenPrint(str: String): String = ???
+  def mkTrafficLightOrNullThenShow(str: String): String = ???
 
   /**
     * scala> mkPerson("Bob", 20)

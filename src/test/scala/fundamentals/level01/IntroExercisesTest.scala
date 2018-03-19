@@ -25,10 +25,10 @@ class IntroExercisesTest extends FunSpec {
 
   }
 
-  describe("printNumber") {
+  describe("showNumber") {
 
     it("should string interpolate") {
-      assert(printNumber(1) === "The number is 1")
+      assert(showNumber(1) === "The number is 1")
     }
 
   }

@@ -19,15 +19,15 @@ object EitherExercises {
   def mkTrafficLightEither(str: String): Either[AppError, TrafficLight] = ???
 
   /**
-    * scala> mkTrafficLightEitherThenPrint("red")
+    * scala> mkTrafficLightEitherThenShow("red")
     * = "Traffic light is red"
     *
-    * scala> mkTrafficLightEitherThenPrint("bob")
+    * scala> mkTrafficLightEitherThenShow("bob")
     * = "Traffic light is invalid: bob"
     *
     * Hint: Use `mkTrafficLightEither` and pattern matching
     */
-  def mkTrafficLightEitherThenPrint(str: String): String = ???
+  def mkTrafficLightEitherThenShow(str: String): String = ???
 
   /**
     * scala> mkPersonEither("Bob", 22)

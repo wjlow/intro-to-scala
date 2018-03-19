@@ -38,18 +38,18 @@ object ListExercises {
   def isEmptyList[A](xs: List[A]): Boolean = ???
 
   /**
-    * scala> printListSize(List(1, 2, 3))
+    * scala> showListSize(List(1, 2, 3))
     * = "This is a list of size 3"
     *
-    * scala> printListSize(List("ABC"))
+    * scala> showListSize(List("ABC"))
     * = "This is a list of size 1
     *
-    * scala> printListSize(Nil)
+    * scala> showListSize(Nil)
     * = "This is an empty list"
     *
     * Hint: Use pattern matching and string interpolation
     */
-  def printListSize[A](xs: List[A]): String = ???
+  def showListSize[A](xs: List[A]): String = ???
 
   /**
     * Mapping a function over a List
@@ -110,6 +110,6 @@ object ListExercises {
     *
     * Hint: Use .zipWithIndex
     */
-  def printEveryTenthPerson(persons: List[Person]): List[String] = ???
+  def showEveryTenthPerson(persons: List[Person]): List[String] = ???
 
 }
