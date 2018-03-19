@@ -28,6 +28,8 @@ object TypesExercises {
     * scala> changeName("Bobby", person)
     * = Person("Bobby", 50)
     *
+    * This function is immutable! Check out the corresponding test in `TypesExercisesTest` to understand why.
+    *
     * Hint: Use the .copy method
     */
   def changeName(newName: String, person: Person): Person = ???
