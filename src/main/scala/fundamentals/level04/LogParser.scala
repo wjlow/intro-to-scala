@@ -85,13 +85,4 @@ object LogParser extends App {
     **/
   def showErrorsOverSeverity(logFile: String, severity: Int): List[String] = ???
 
-  /**
-    * Note that at no point have we printed anything out to the user.
-    * By pushing side-effects like printing to stdout to the very end of our program,
-    * we are able to unit test the majority of our program.
-    *
-    * Now, using `showErrorsOverSeverity`, let's print out the results to stdout.
-    */
-  def printErrorsOverSeverity(logFile: String, severity: Int): Unit = ???
-
 }
