@@ -39,7 +39,7 @@ object TryExercises {
     * = Right(true)
     *
     * scala> parseBooleanSafeEither("abc")
-    * = Left("abc cannot be converted to Boolean")
+    * = Left(AppError("abc cannot be converted to Boolean"))
     */
   def parseBooleanSafeEither(str: String) = ???
 
