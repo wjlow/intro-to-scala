@@ -28,7 +28,8 @@ object TypesExercises {
     * scala> changeName("Bobby", person)
     * = Person("Bobby", 50)
     *
-    * This function is immutable! Check out the corresponding test in `TypesExercisesTest` to understand why.
+    * `person` is immutable! This function returns a new instance of `Person` with the `name` changed.
+    * Check out the corresponding test in `TypesExercisesTest` to understand why.
     *
     * Hint: Use the .copy method
     */
@@ -36,7 +37,14 @@ object TypesExercises {
 
   case class Wallet(amount: Double)
 
-  def purchase(wallet: Wallet, cost: Double): Wallet = ???
+  /**
+    * Here is another example of working with immutable values.
+    *
+    * scala> val wallet = Wallet(100)
+    * scala> purchase(80, wallet)
+    * = Wallet(20)
+    */
+  def purchase(cost: Double, wallet: Wallet): Wallet = ???
 
   /**
     * scala> showTrafficLightStr("red")
