@@ -34,6 +34,24 @@ object TypesExercises {
     */
   def changeName(newName: String, person: Person): Person = ???
 
+  case class Wallet(amount: Double)
+
+  def purchase(wallet: Wallet, cost: Double): Wallet = ???
+
+  /**
+    * scala> showTrafficLightStr("red")
+    * = "The traffic light is red"
+    *
+    * scala> showTrafficLightStr("yellow")
+    * = "The traffic light is yellow"
+    *
+    * scala> showTrafficLightStr("green")
+    * = "The traffic light is green"
+    *
+    * What if `trafficLight` is not "red", "yellow" or "green"?
+    **/
+  def showTrafficLightStr(trafficLight: String): String = ???
+
   /**
     * A "sum type" represents more than one possible value.
     *
@@ -58,6 +76,8 @@ object TypesExercises {
     *
     * scala> showTrafficLight(Green)
     * = "The traffic light is green"
+    *
+    * It is impossible to get an invalid TrafficLight as input
     **/
   def showTrafficLight(trafficLight: TrafficLight): String = ???
 
