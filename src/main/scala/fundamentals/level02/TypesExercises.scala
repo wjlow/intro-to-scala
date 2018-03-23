@@ -61,6 +61,15 @@ object TypesExercises {
   def showTrafficLightStr(trafficLight: String): String = ???
 
   /**
+    * We have a new traffic light called Flashing, with a frequency, e.g. "flashing 20"
+    *
+    * Use a test driven approach to implement this new functionality.
+    *
+    * scala> showTrafficLightStr("flashing 20")
+    * = "The traffic light is flashing with a frequency of 20"
+    */
+
+  /**
     * A "sum type" represents more than one possible value.
     *
     * You can read the following as a `TrafficLight` is either `Red` or `Yellow` or `Green`.

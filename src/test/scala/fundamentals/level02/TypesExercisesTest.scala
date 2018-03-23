@@ -30,6 +30,28 @@ class TypesExercisesTest extends FunSpec {
 
   }
 
+  describe("showTrafficLightStr") {
+
+    it("should show red") {
+      val str = showTrafficLightStr("red")
+
+      assert(str === "The traffic light is red")
+    }
+
+    it("should show yellow") {
+      val str = showTrafficLightStr("yellow")
+
+      assert(str === "The traffic light is yellow")
+    }
+
+    it("should show green") {
+      val str = showTrafficLightStr("green")
+
+      assert(str === "The traffic light is green")
+    }
+
+  }
+
   describe("showTrafficLight") {
 
     it("should show Red") {
