@@ -10,11 +10,17 @@ object ListExercises {
   /**
     * A `List` in Scala is a linked list.
     *
-    * sealed trait List[A]
+    * sealed trait List[+A]
     * case class ::[A](head: A, tail: List[A]) extends List[A]
     * case object Nil extends List[Nothing]
     *
     * You can create a List using the `::` constructor as such:
+    *
+    * scala> ::(1, ::(2, ::(3, Nil)))
+    * = List(1, 2, 3)
+    *
+    * scala> (1 :: (2 :: (3 :: Nil)))
+    * = List(1, 2, 3)
     *
     * scala> 1 :: 2 :: 3 :: Nil
     * = List(1, 2, 3)
