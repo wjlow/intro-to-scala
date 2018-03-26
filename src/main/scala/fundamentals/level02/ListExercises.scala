@@ -92,6 +92,8 @@ object ListExercises {
   /**
     * scala> product(List(2, 5, 3))
     * = 30
+    *
+    * https://en.wikipedia.org/wiki/Empty_product
     * scala> product(Nil)
     * = 1
     */
@@ -100,6 +102,9 @@ object ListExercises {
   /**
     * scala> min(List(4, 6, 1))
     * = 1
+    *
+    * scala> product(Nil)
+    * = Int.MinValue
     **/
   def min(nums: List[Int]): Int = ???
 
@@ -107,6 +112,9 @@ object ListExercises {
     * scala> val persons = List(Person("Bob", 22), Person("Sally", 21))
     * scala> youngestPerson(persons)
     * = Person("Sally", 21)
+    *
+    * scala> youngestPerson(Nil)
+    * = Person("Nobody", 0)
     */
   def youngestPerson(persons: List[Person]): Person = ???
 
@@ -116,7 +124,7 @@ object ListExercises {
     *
     * Hint: Use .zipWithIndex
     */
-  def showEveryTenthPerson(persons: List[Person]): List[String] = ???
+  def showEveryNthPerson(n: Int, persons: List[Person]): List[String] = ???
 
   /**
     * Given a list of `Person`s ordered by age in ascending order. Return all of those that are under 18.

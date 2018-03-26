@@ -35,6 +35,12 @@ object TypesExercises {
     */
   def changeName(newName: String, person: Person): Person = ???
 
+  /**
+    * Let's look at another data type.
+    *
+    * `Wallet` is a tiny type on `Double` to represent the amount of money someone has.
+    */
+
   case class Wallet(amount: Double)
 
   /**

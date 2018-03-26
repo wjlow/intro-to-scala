@@ -30,6 +30,19 @@ class TypesExercisesTest extends FunSpec {
 
   }
 
+  describe("purchase") {
+
+    it("should return a wallet with cost deducted") {
+      val wallet = Wallet(100)
+
+      val updatedWallet = purchase(25, wallet)
+
+      assert(updatedWallet === Wallet(75))
+      assert(wallet === Wallet(100)) // `wallet` hasn't been mutated
+    }
+
+  }
+
   describe("showTrafficLightStr") {
 
     it("should show red") {

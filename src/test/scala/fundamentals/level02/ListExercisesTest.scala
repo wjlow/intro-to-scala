@@ -1,6 +1,7 @@
 package fundamentals.level02
 
 import fundamentals.level02.ListExercises._
+import fundamentals.level02.TypesExercises.Person
 import org.scalatest.FunSpec
 
 class ListExercisesTest extends FunSpec {
@@ -23,20 +24,114 @@ class ListExercisesTest extends FunSpec {
 
   }
 
-  // TODO: Write unit tests for `isEmptyList`
+  describe("isEmptyList") {
 
-  // TODO: Write unit tests for `showListSize`
+    it("should return True for Nil") {
+      assert(isEmptyList(Nil) === true)
+    }
 
-  // TODO: Write unit test for `addNumToEach`
+    it("should return False for non-empty List") {
+      assert(isEmptyList(1 :: 2 :: Nil) === false)
+    }
 
-  // TODO: Write unit test for `filterEven`
+  }
 
-  // TODO: Write unit test for `product`
+  describe("showListSize") {
 
-  // TODO: Write unit test for `min`
+    it("should show size for Nil") {
+      assert(showListSize(Nil) === "This is an empty list")
+    }
 
-  // TODO: Write unit test for `youngestPerson`
+    it("should show size for non-empty List") {
+      assert(showListSize(1 :: 2 :: 3 :: Nil) === "This is a list of size 3")
+    }
 
-  // TODO: Write unit test for `showEveryTenthPerson`
+  }
+
+  describe("addNumToEach") {
+
+    it("should return Nil given Nil") {
+      assert(addNumToEach(5, Nil) === Nil)
+    }
+
+    it("should add 5 to each element of non-empty List") {
+      assert(addNumToEach(5, List(1, 2, 3)) === List(6, 7, 8))
+    }
+
+  }
+
+  describe("filterEven") {
+
+    it("should return even numbers") {
+      assert(filterEven(List(1, 2, 3, 4, 5, 6)) == List(2, 4, 6))
+    }
+
+  }
+
+  describe("product") {
+
+    it("should return 1 given Nil") {
+      assert(product(Nil) === 1)
+    }
+
+    it("should multiply all the elements of non-empty List") {
+      assert(product(List(2, 5, 3)) === 30)
+    }
+  }
+
+  describe("min") {
+
+    it("should return smallest Int given Nil") {
+      assert(min(Nil) === Int.MinValue)
+    }
+
+    it("should return smallest number in non-empty List") {
+      assert(min(List(4, 6, 1)) === 1)
+    }
+
+  }
+
+  describe("youngestPerson") {
+
+    it("should return a silly default person given Nil") {
+      assert(youngestPerson(Nil) === Person("Nobody", 0))
+    }
+
+    it("should return person with the smallest age given non-empty List") {
+      val bob = Person("Bob", 22)
+      val sally = Person("Sally", 21)
+      val persons = List(bob, sally)
+
+      assert(youngestPerson(persons) === sally)
+    }
+  }
+
+  describe("showEveryNthPerson") {
+
+    it("should return elements at index 1, 3 and 5") {
+      val p1 = Person("Person1", 21)
+      val p2 = Person("Person2", 21)
+      val p3 = Person("Person3", 21)
+      val p4 = Person("Person4", 21)
+      val p5 = Person("Person5", 21)
+      val p6 = Person("Person6", 21)
+      val p7 = Person("Person7", 21)
+      val persons = List(p1, p2, p3, p4, p5, p6, p7)
+
+      assert(showEveryNthPerson(2, persons) === List(p2, p4, p6))
+    }
+
+  }
+
+  describe("retrieveMinors") {
+
+    it("should return persons of age < 18") {
+      val minors = List(Person("Bob", 16), Person("Jimmy", 17))
+      val persons = Person("Sally", 18) :: minors
+
+      assert(retrieveMinors(persons) === minors)
+    }
+
+  }
 
 }
