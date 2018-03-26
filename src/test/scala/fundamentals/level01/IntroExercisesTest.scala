@@ -1,9 +1,10 @@
 package fundamentals.level01
 
 import fundamentals.level01.IntroExercises._
+import org.scalactic.TypeCheckedTripleEquals
 import org.scalatest.FunSpec
 
-class IntroExercisesTest extends FunSpec {
+class IntroExercisesTest extends FunSpec with TypeCheckedTripleEquals {
 
   describe("add") {
 

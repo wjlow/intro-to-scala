@@ -2,9 +2,10 @@ package fundamentals.level03
 
 import fundamentals.level02.TypesExercises.{Green, Red, Yellow}
 import fundamentals.level03.OptionExercises._
+import org.scalactic.TypeCheckedTripleEquals
 import org.scalatest.FunSpec
 
-class OptionExercisesTest extends FunSpec {
+class OptionExercisesTest extends FunSpec with TypeCheckedTripleEquals {
 
   describe("safeMean") {
 
@@ -13,7 +14,7 @@ class OptionExercisesTest extends FunSpec {
     }
 
     it("should return the mean of a non-empty List of numnbers") {
-      assert(safeMean(List(1, 2, 3)) === 2)
+      assert(safeMean(List(1, 2, 3)) === Some(2.0))
     }
 
   }

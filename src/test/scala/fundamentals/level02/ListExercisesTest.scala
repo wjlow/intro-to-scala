@@ -2,9 +2,10 @@ package fundamentals.level02
 
 import fundamentals.level02.ListExercises._
 import fundamentals.level02.TypesExercises.Person
+import org.scalactic.TypeCheckedTripleEquals
 import org.scalatest.FunSpec
 
-class ListExercisesTest extends FunSpec {
+class ListExercisesTest extends FunSpec with TypeCheckedTripleEquals {
 
   describe("prependToList") {
 
@@ -118,7 +119,7 @@ class ListExercisesTest extends FunSpec {
       val p7 = Person("Person7", 21)
       val persons = List(p1, p2, p3, p4, p5, p6, p7)
 
-      assert(showEveryNthPerson(2, persons) === List(p2, p4, p6))
+      assert(showEveryNthPerson(2, persons) === List("Person2 is 21 years old", "Person4 is 21 years old", "Person6 is 21 years old"))
     }
 
   }
