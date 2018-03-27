@@ -41,7 +41,7 @@ object OptionExercises {
     * = "Traffic light is red"
     *
     * scala> mkTrafficLightThenShow("bob")
-    * = "Traffic light is invalid"
+    * = "Traffic light `bob` is invalid"
     *
     * Hint: Use `mkTrafficLight` and pattern matching
     */
