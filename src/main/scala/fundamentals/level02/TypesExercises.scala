@@ -49,7 +49,7 @@ object TypesExercises {
     * scala> val wallet = Wallet(100)
     * scala> purchase(80, wallet)
     * = Wallet(20)
-    */
+    **/
   def purchase(cost: Double, wallet: Wallet): Wallet = ???
 
   /**
@@ -73,7 +73,7 @@ object TypesExercises {
     *
     * scala> showTrafficLightStr("flashing 20")
     * = "The traffic light is flashing with a frequency of 20"
-    */
+    **/
 
   /**
     * A "sum type" represents more than one possible value.
@@ -84,11 +84,15 @@ object TypesExercises {
     */
   sealed trait TrafficLight
 
-  case object Red extends TrafficLight
+  object TrafficLight {
 
-  case object Yellow extends TrafficLight
+    case object Red extends TrafficLight
 
-  case object Green extends TrafficLight
+    case object Yellow extends TrafficLight
+
+    case object Green extends TrafficLight
+
+  }
 
   /**
     * scala> showTrafficLight(Red)

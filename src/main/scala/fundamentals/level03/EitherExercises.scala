@@ -1,6 +1,7 @@
 package fundamentals.level03
 
 import fundamentals.level02.TypesExercises.{Person, TrafficLight}
+import fundamentals.level02.TypesExercises.TrafficLight._
 
 /**
   * Complete `OptionExercises.scala` before this
@@ -23,7 +24,7 @@ object EitherExercises {
     * = "Traffic light is red"
     *
     * scala> mkTrafficLightEitherThenShow("bob")
-    * = "Traffic light is invalid: bob"
+    * = "bob is not a valid traffic light"
     *
     * Hint: Use `mkTrafficLightEither` and pattern matching
     */
@@ -34,7 +35,7 @@ object EitherExercises {
     * = Right(Person("Bob", 22))
     *
     * scala> mkPersonEither("Bob", -1)
-    * = Left("Age cannot be less than zero: -1")
+    * = Left(AppError("Age cannot be less than zero: -1"))
     *
     * scala> mkPersonEither("", 22)
     * = Left(AppError("Name cannot be empty"))

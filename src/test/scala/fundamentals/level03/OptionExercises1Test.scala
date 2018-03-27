@@ -1,6 +1,7 @@
 package fundamentals.level03
 
-import fundamentals.level02.TypesExercises.{Green, Person, Red, Yellow}
+import fundamentals.level02.TypesExercises.Person
+import fundamentals.level02.TypesExercises.TrafficLight._
 import fundamentals.level03.OptionExercises1._
 import org.scalactic.TypeCheckedTripleEquals
 import org.scalatest.FunSpec
