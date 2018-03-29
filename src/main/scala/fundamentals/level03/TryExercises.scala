@@ -29,9 +29,6 @@ object TryExercises {
     */
   def parseIntSafe(str: String) = ???
 
-  /**
-    * Same as above but use .map and .left.map
-    */
   def parseIntSafeEither(str: String) = ???
 
   /**
@@ -50,6 +47,10 @@ object TryExercises {
     * 3. hasDirectReports: Boolean
     */
 
+  trait Employee
+
+  case class TryError(msg: String)
+
   /**
     * Create a CSV parser to safely create an Employee
     *
@@ -66,14 +67,14 @@ object TryExercises {
     *
     * Hint: Use csv.split(","), parseIntSafeEither and parseBooleanSafeEither
     */
-  def mkEmployee(csv: String) = ???
+  def mkEmployee(csv: String): Either[TryError, Employee] = ???
 
   /**
     * @param filename Path to file containing employees data, e.g. "src/main/resources/employees.csv"
-    * @return List of Employees and errors if any
+    * @return List of Employees and/or errors if any
     *
     * Hint: Use `mkEmployee`
     */
-  def fileToEmployees(filename: String) = ???
+  def fileToEmployees(filename: String): List[Either[TryError, Employee]] = ???
 
 }
