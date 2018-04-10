@@ -7,6 +7,11 @@ import fundamentals.level02.TypesExercises.Person
   */
 object Exceptions2EitherExercises {
 
+  sealed trait AppError
+  case class EmptyName(message: String) extends AppError
+  case class InvalidAgeValue(message: String) extends AppError
+  case class InvalidAgeRange(message: String) extends AppError
+
   //test data of names and age pairs
   private val personStringPairs =
     List(("Tokyo", "30"),
@@ -23,57 +28,57 @@ object Exceptions2EitherExercises {
     */
 
     /**
-      * Implement the function getName, so that it returns a Left if the name supplied
+      * Implement the function getName, so that it returns a Left with an EmptyName if the name supplied
       * is empty or a Right if the supplied name is not empty.
       *
       * scala> getName("Fred")
-      * = Left(provided name empty)
-      *
-      * scala> getName("")
       * = Right(Fred)
       *
+      * scala> getName("")
+      * = Left(EmptyName(provided name is empty))
+      *
       * scala> getName("   ")
-      * = Left(provided name empty)
+      * = Left(EmptyName(provided name is empty))
       */
-    def getName(providedName: String): Either[String, String] = ???
+    def getName(providedName: String): Either[AppError, String] = ???
 
     /**
-      * Implement the function getAge that returns a Left if the age provided can't
-      * be converted to an Int or the provided age is not between 1 and 120 and returns
-      * a Right if the age is valid
-      *
-      * scala> getAge("Fred")
-      * = Left(provided age is invalid: Fred)
+      * Implement the function getAge that returns a Left with an InvalidAgeValue if the age provided can't
+      * be converted to an Int or a Left with a InvalidAgeRange if the provided age is not between 1 and 120
+      * and returns a Right with an Int age if the age is valid.
       *
       * scala> getAge("20")
       * = Right(20)
       *
+      * scala> getAge("Fred")
+      * = Left(InvalidAgeValue(provided age is invalid: Fred))
+      *
       * scala> getAge("-1")
-      * = Left(provided age should be between 1-120: -1)
+      * = Left(InvalidAgeRange(provided age should be between 1-120: -1))
       *
       * Hint: use the toInt method to convert a String to an Int. Be warned that it can throw a NumberFormatException.
       */
-    def getAge(providedAge: String): Either[String, Int] = ???
+    def getAge(providedAge: String): Either[AppError, Int] = ???
 
     /**
       * Implement the function createPerson, so that it returns a Right with a Person
-      * or returns a Left if either the name of age is invalid.
+      * if the name and age are valid or returns a Left of AppError if either the name of age is invalid.
       *
       * scala> createPerson("Fred", "32")
       * = Right(Person(Fred,32))
       *
       * scala> createPerson("", "32")
-      * = Left(provided name is empty)
+      * = Left(EmptyName(provided name is empty))
       *
       * scala> createPerson("Fred", "ThirtyTwo")
-      * = Left(provided age is invalid: ThirtyTwo)
+      * = Left(InvalidAgeValue(provided age is invalid: ThirtyTwo))
       *
       * scala> createPerson("Fred", "150")
-      * = Left(provided age should be between 1-120: 150)
+      * = Left(InvalidAgeRange(provided age should be between 1-120: 150))
       *
       * Hint: Use a for-comprehension to sequence the Eithers from getName and getAge
       */
-    def createPerson(name: String, age: String): Either[String, Person] = ???
+    def createPerson(name: String, age: String): Either[AppError, Person] = ???
 
     /**
       * Implement the function createValidPeople that uses the personStringPairs List
