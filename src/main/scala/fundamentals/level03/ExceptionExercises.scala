@@ -99,7 +99,7 @@ object ExceptionExercises {
       * to create a List of Person instances. It should not throw any Exceptions.
       *
       * scala> createValidPeople
-      * = "List(Person("Tokyo", 30), Person("Berlin", 43))"
+      * = List(Person("Tokyo", 30), Person("Berlin", 43))
       *
       * Hint: use the output of validPairs and the createPerson function
       *
