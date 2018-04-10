@@ -7,9 +7,9 @@ import fundamentals.level02.TypesExercises.Person
   */
 object ExceptionExercises {
 
-  final class EmptyNameException(message: String) extends Exception(message)
-  final class InvalidAgeValueException(message: String) extends Exception(message)
-  final class InvalidAgeRangeException(message: String) extends Exception(message)
+  class EmptyNameException(message: String) extends Exception(message)
+  class InvalidAgeValueException(message: String) extends Exception(message)
+  class InvalidAgeRangeException(message: String) extends Exception(message)
 
   //test data of names and age pairs
   private val personStringPairs =
