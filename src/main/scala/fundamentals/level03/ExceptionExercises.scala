@@ -71,13 +71,13 @@ object ExceptionExercises {
       * scala> createPerson("Fred", "32")
       * = "Person(Fred, 32)"
       *
-      * scala> createPerson("", 32)
+      * scala> createPerson("", "32")
       * = EmptyNameException: provided name is empty"
       *
       * scala> createPerson("Fred", "ThirtyTwo")
       * = InvalidAgeValueException: provided age is invalid: ThirtyTwo"
       *
-      * scala> createPerson("Fred", 150)
+      * scala> createPerson("Fred", "150")
       * = InvalidAgeRangeException: provided age should be between 1-120: 150"
       */
     def createPerson(name: String, age: String): Person = ???
