@@ -107,7 +107,7 @@ object ExceptionExercises {
     def createValidPeople: List[Person] = ???
 
     /**
-      * Implement the function createValidPeople2 that only uses the map function on List
+      * Implement the function createValidPeople2 that only uses the collect function on List
       * to create a List of Person instances from personStringPairs. It should not throw any Exceptions.
       *
       * What issues due you run into (if any)?
