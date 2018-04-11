@@ -7,10 +7,10 @@ import fundamentals.level02.TypesExercises.Person
   */
 object Exceptions2EitherExercises {
 
-  sealed trait AppError
-  case class EmptyName(message: String) extends AppError
-  case class InvalidAgeValue(message: String) extends AppError
-  case class InvalidAgeRange(message: String) extends AppError
+    sealed trait AppError
+    case class EmptyName(message: String) extends AppError
+    case class InvalidAgeValue(message: String) extends AppError
+    case class InvalidAgeRange(message: String) extends AppError
 
   //test data of names and age pairs
   private val personStringPairs =
@@ -91,5 +91,19 @@ object Exceptions2EitherExercises {
       *
       */
     def createValidPeople: List[Person] = ???
+
+    /**
+      * Implement the function collectErrors that collects all the errors
+      * that occur while processing personStringPairs.
+      *
+      * scala> collectErrors
+      * = List(InvalidAgeValue(provided age is invalid: 5o),
+      *        InvalidAgeValue(provided age should be between 1-120: 200),
+      *        InvalidAgeValue(provided age should be between 1-120: 0),
+      *        EmptyName(provided name is empty))
+      *
+      * Hint: use the collect method on List
+      */
+    def collectErrors: List[AppError] = ???
 
 }

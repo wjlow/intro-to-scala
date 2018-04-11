@@ -68,6 +68,9 @@ object ExceptionExercises {
       * and returns a Person instance or throws an EmptyNameException, InvalidAgeValueException or
       * InvalidAgeRangeException when given invalid values.
       *
+      * Notice that createPerson is not declared to throw any Exceptions but the compiler does not complain.
+      * Why?
+      *
       * scala> createPerson("Fred", "32")
       * = "Person(Fred, 32)"
       *
@@ -113,5 +116,21 @@ object ExceptionExercises {
       * What issues due you run into (if any)?
       */
     def createValidPeople2: List[Person] = ???
+
+
+    /**
+      * Implement the function collectErrors that collects all the Exceptions
+      * that occur while processing personStringPairs.
+      *
+      * scala> collectErrors
+      * = List(InvalidAgeValueException: provided age is invalid: 5o,
+      *        InvalidAgeRangeException: provided age should be between 1-120: 200,
+      *        InvalidAgeRangeException: provided age should be between 1-120: 0,
+      *        EmptyNameException: provided name is empty)
+      *
+      * What issues due you run into (if any)?
+      *
+      */
+    def collectErrors: List[Exception] = ???
 
 }
