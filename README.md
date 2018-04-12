@@ -8,28 +8,28 @@ Two day Scala fundamentals course.
 
 * 9.30 - Start
 * 10 - Intro to FP/Scala
-* 10.30 - IntroExercises
+* 10.30 - [IntroExercises](src/main/scala/fundamentals/level01/IntroExercises.scala)
 * 11 - Break
 * 11.15 - Intro to ADTs
-* 11.30 - TypesExercises
+* 11.30 - [TypesExercises](src/main/scala/fundamentals/level02/TypesExercises.scala)
 * 12.15 - Lunch
-* 1:30 - ListExercises
+* 1:30 - [ListExercises](src/main/scala/fundamentals/level02/ListExercises.scala)
 * 3 - Break
-* 3.15 - NullExercises
-* 3.45 - ExceptionExercises
+* 3.15 - [NullExercises](src/main/scala/fundamentals/level03/NullExercises.scala)
+* 3.45 - [ExceptionExercises](src/main/scala/fundamentals/level03/ExceptionExercises.scala)
 * 4:15 - End
 
 ### Day 2
 
 * 9.30 - Intro to Error Handling
-* 10.15 - OptionExercises pt. 1 (Safe constructors)
+* 10.15 - [OptionExercises pt. 1 (Safe constructors)](src/main/scala/fundamentals/level03/OptionExercises1.scala)
 * 11.15 - Break
-* 11.30 - OptionExercises pt. 2
+* 11.30 - [OptionExercises pt. 2](src/main/scala/fundamentals/level03/OptionExercises2.scala)
 * 12.30 - Lunch
-* 1.30 - Exceptions2EitherExercises / EitherExercises (Optional)
+* 1.30 - [Exceptions2EitherExercises](src/main/scala/fundamentals/level03/Exceptions2EitherExercises.scala) / [EitherExercises (Optional)](src/main/scala/fundamentals/level03/EitherExercises.scala)
 * 2 - Break
-* 2.15 - TryExercises
-* 3.15 - LogParser
+* 2.15 - [TryExercises](src/main/scala/fundamentals/level03/TryExercises.scala)
+* 3.15 - [LogParser](src/main/scala/fundamentals/level04/LogParser.scala)
 * 4.15 - End
 
 ## Pre-requisites
