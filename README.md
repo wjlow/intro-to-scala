@@ -1,46 +1,59 @@
 # intro-to-scala
 
-Day 1 (Basics) 
------
-1. [Syntax](src/main/scala/day1/level01/Intro.scala)
-2. [ADT](src/main/scala/day1/level02/ADT.scala)
-3. [List](src/main/scala/day1/level02/ListExercises.scala)
-3. [Nulls and Exceptions](src/main/scala/day1/level03/NullExercises.scala)
-4. [Option](src/main/scala/day1/level03/OptionExercises.scala)
-5. [Either](src/main/scala/day1/level03/EitherExercises.scala)
-6. [Try](src/main/scala/day1/level03/TryExercises.scala)
-7. [LogParser](src/main/scala/day1/level04/LogParser.scala) to finish it all off!
+Two day Scala fundamentals course.
 
-Day 2 (App) 
------
+## Schedule
 
-1. Data access (Slick)
-2. Json - Circe
-3. Http4s
-4. Cats
+### Day 1
 
-Rules
------
-1. No throwing exceptions
-2. No using `null`
+* 9.30 - Start
+* 10 - Intro to FP/Scala
+* 10.30 - IntroExercises
+* 11 - Break
+* 11.15 - Intro to ADTs
+* 11.30 - TypesExercises
+* 12.15 - Lunch
+* 1:30 - ListExercises
+* 3 - Break
+* 3.15 - NullExercises
+* 3.45 - ExceptionExercises
+* 4:15 - End
 
-Pre-requisites
------
+### Day 2
 
-1. Install Java
+* 9.30 - Intro to Error Handling
+* 10.15 - OptionExercises pt. 1 (Safe constructors)
+* 11.15 - Break
+* 11.30 - OptionExercises pt. 2
+* 12.30 - Lunch
+* 1.30 - Exceptions2EitherExercises / EitherExercises (Optional)
+* 2 - Break
+* 2.15 - TryExercises
+* 3.15 - LogParser
+* 4.15 - End
+
+## Pre-requisites
+
+Install Java
 
 ```
 brew cask install java
 ```
 
-2. Install sbt
+Install sbt
 
 ```
 brew install sbt
 ```
 
-3. Compile program to resolve dependencies
+Compile program to resolve dependencies
 
 ```
 sbt compile
+```
+
+## How to run tests
+
+```
+sbt test
 ```
