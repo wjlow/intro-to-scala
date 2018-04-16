@@ -24,7 +24,7 @@ object LogParser {
     * - Warning
     * - Error with (severity: Int)
     */
-  sealed trait LogLevel
+  trait LogLevel
 
   /**
     * Now create an ADT for `LogMessage`, where `LogMessage` can be one of two possibilities:
@@ -33,7 +33,7 @@ object LogParser {
     */
   type Timestamp = Int
 
-  sealed trait LogMessage
+  trait LogMessage
 
   /**
     * Define a function to parse an individual log message.

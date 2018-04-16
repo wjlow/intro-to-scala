@@ -3,6 +3,7 @@ package fundamentals.level04
 import org.scalactic.TypeCheckedTripleEquals
 import org.scalatest.FunSpec
 import LogParser._
+import Types._
 
 class LogParserTest extends FunSpec with TypeCheckedTripleEquals {
 
@@ -10,50 +11,51 @@ class LogParserTest extends FunSpec with TypeCheckedTripleEquals {
 
     it("should return a KnownLog") {
       val knownLog = parseLog("I,147,mice in the air")
-      assert(knownLog === ???)
+      assert(knownLog === KnownLog(Info, 147, "mice in the air"))
     }
-    
+
     it("should return an UnknownLog") {
       val unknownLog = parseLog("X blblbaaaaa")
-      assert(unknownLog === ???)
+      assert(unknownLog === UnknownLog("X blblbaaaaa"))
     }
 
   }
-  
+
   describe("parseLogFile") {
-    
+
     it("should return a List of LogMessage") {
       val logMessages = parseLogFile("I,147,mice in the air\nX blblbaaaaa")
-      assert(logMessages === List(???, ???))
+      assert(logMessages ===
+        List(KnownLog(Info, 147, "mice in the air"), UnknownLog("X blblbaaaaa")))
     }
-    
+
     it("should return an empty List") {
       val logMessages = parseLogFile("")
       assert(logMessages === Nil)
     }
-    
+
   }
-  
+
   describe("getUnknowns") {
-    
+
     it("should return the unknowns only") {
-      val known = parseLog("I,147,mice in the air")
-      val unknown1 = parseLog("X blblbaaaaa")
-      val unknown2 = parseLog("W foo")
+      val known = KnownLog(Info, 147, "mice in the air")
+      val unknown1 = UnknownLog("X blblbaaaaa")
+      val unknown2 = UnknownLog("W foo")
 
       val unknownsOnly = getUnknowns(List(known, unknown1, unknown2))
 
       assert(unknownsOnly === List(unknown1, unknown2))
     }
-    
+
   }
 
   describe("findLatestError") {
 
     it("should return error with highest timestamp") {
-      val log1 = parseLog("E,1,100,one")
-      val log2 = parseLog("E,1,200,two")
-      val log3 = parseLog("E,1,300,three")
+      val log1 = KnownLog(Error(1), 100, "one")
+      val log2 = KnownLog(Error(1), 200, "two")
+      val log3 = KnownLog(Error(1), 300, "three")
 
       val latestError = findLatestError(List(log1, log2, log3))
 
@@ -61,9 +63,9 @@ class LogParserTest extends FunSpec with TypeCheckedTripleEquals {
     }
 
     it("should return None if no errors found") {
-      val log1 = parseLog("I,100,one")
-      val log2 = parseLog("I,200,two")
-      val log3 = parseLog("I,300,three")
+      val log1 = KnownLog(Info, 100, "one")
+      val log2 = KnownLog(Info, 200, "two")
+      val log3 = KnownLog(Info, 300, "three")
 
       val latestError = findLatestError(List(log1, log2, log3))
 
@@ -75,19 +77,19 @@ class LogParserTest extends FunSpec with TypeCheckedTripleEquals {
   describe("showLogMessage") {
 
     it("should return Info LogMessage in readable format") {
-      val info = parseLog("I,100,one")
+      val info = KnownLog(Info, 100, "one")
 
       assert(showLogMessage(info) === "Info (100) one")
     }
 
     it("should return Warning LogMessage in readable format") {
-      val warn = parseLog("W,100,caution!")
+      val warn = KnownLog(Warning, 100, "caution!")
 
       assert(showLogMessage(warn) === "Warning (100) caution!")
     }
 
     it("should return Error LogMessage in readable format") {
-      val error = parseLog("E,1,300,some message")
+      val error = KnownLog(Error(1), 300, "some message")
 
       assert(showLogMessage(error) === "Error 1 (300) some message")
     }
