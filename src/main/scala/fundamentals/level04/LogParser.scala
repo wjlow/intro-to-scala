@@ -16,6 +16,8 @@ object LogParser {
 
   /**
     * Let's define an ADT to represent all possible log messages.
+    *
+    * Hint: Add `sealed` in front of the `trait`s below to make sure you can only extend them from within this file.
     */
 
   /**
@@ -34,6 +36,10 @@ object LogParser {
   type Timestamp = Int
 
   trait LogMessage
+ 
+ /**
+   * Once you have defined your data types, remove `import Types._` from [LogParserTest.scala](src/test/scala/fundamentals/level04/LogParserTest.scala).
+   */
 
   /**
     * Define a function to parse an individual log message.
