@@ -3,14 +3,14 @@ package fundamentals.level04
 /**
   * The exercises here are adapted from: http://www.cis.upenn.edu/~cis194/spring13/hw/02-ADTs.pdf
   */
-object LogParser extends App {
+object LogParser {
 
   /**
     * Let's try and build a program to understand some logs! Here is how a log file may look.
     */
   val logFile: String =
     """|I,147,mice in the air
-       |W,could've been bad
+       |W,149,could've been bad
        |E,5,158,some strange error
        |E,2,148,istereadea""".stripMargin
 
@@ -24,7 +24,7 @@ object LogParser extends App {
     * - Warning
     * - Error with (severity: Int)
     */
-  sealed trait LogLevel
+  trait LogLevel
 
   /**
     * Now create an ADT for `LogMessage`, where `LogMessage` can be one of two possibilities:
@@ -33,7 +33,7 @@ object LogParser extends App {
     */
   type Timestamp = Int
 
-  sealed trait LogMessage
+  trait LogMessage
 
   /**
     * Define a function to parse an individual log message.
@@ -50,9 +50,12 @@ object LogParser extends App {
   def parseLog(str: String): LogMessage = ???
 
   /**
+    * scala> parseLogFile("I,147,mice in the air\nX blblbaaaaa")
+    * = List(KnownLog(Info, 147, "mice in the air"), UnknownLog("X blblbaaaaa"))
+    *
     * Hint: Use `parseLog`
     */
-  def parseLogFile(logFile: String): List[LogMessage] = ???
+  def parseLogFile(fileContent: String): List[LogMessage] = ???
 
   /**
     * Define a function that returns only logs that are unknown
@@ -70,10 +73,17 @@ object LogParser extends App {
   def findLatestError(logs: List[LogMessage]): Option[LogMessage] = ???
 
   /**
-    * scala> showError(KnownLog(Info, 147, "mice in the air"))
-    * = "mice in the air"
+    * Write a function to convert a `LogMessage` to a readable `String`.
+    *
+    * scala> showLogMessage(KnownLog(Info, 147, "mice in the air"))
+    * = "Info (147) mice in the air"
+    *
+    * scala> showLogMessage(KnownLog(Error(2), 147, "weird"))
+    * = "Error 2 (147) weird"
+    *
+    * Hint: Pattern match and use string interpolation
     **/
-  def showError(log: LogMessage): String = ???
+  def showLogMessage(log: LogMessage): String = ???
 
   /**
     * Use `showError` on error logs with severity greater than the given `severity`.
@@ -83,6 +93,6 @@ object LogParser extends App {
     *
     * Hint: Use `parseLogFile` and `showError`
     **/
-  def showErrorsOverSeverity(logFile: String, severity: Int): List[String] = ???
+  def showErrorsOverSeverity(fileContent: String, severity: Int): List[String] = ???
 
 }
