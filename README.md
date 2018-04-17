@@ -45,7 +45,7 @@ brew tap caskroom/versions
 brew cask install java8
 ```
 
-Install sbt
+Install sbt (minimum 0.13.16)
 
 ```
 brew install sbt
