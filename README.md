@@ -87,4 +87,11 @@ To run portable `sbt`:
 ./sbt '~testOnly fundamentals.level01.IntroExercisesTest'
 ```
 
+or 
+
+```
+./sbt '~testOnly *IntroExercisesTest'
+```
+
+
 The `~` watches for changes to your files and runs the command automatically. It's nice to use it to get really fast feedback as you are working on the exercises!
