@@ -100,7 +100,7 @@ object ListExercises {
     * scala> min(List(4, 6, 1))
     * = 1
     *
-    * scala> product(Nil)
+    * scala> min(Nil)
     * = Int.MinValue
     **/
   def min(nums: List[Int]): Int = ???
