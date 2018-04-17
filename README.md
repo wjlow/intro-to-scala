@@ -47,10 +47,24 @@ brew tap caskroom/versions
 brew cask install java8
 ```
 
-Install sbt (optional, we have included a portable version)
+Install sbt (recommended but optional, we have included a portable version)
+
+We recommend that you install `sbt` on your machine even though a portable runner is included. The actual version of `sbt` used is in your `project/build.properties` file and the global `sbt` is merely used for bootstrapping your project. You should not get conflicting `sbt` installations even if you have multiple Scala projects using different versions of `sbt`.
 
 ```
 brew install sbt
+```
+
+To run `sbt` installed globally:
+
+```
+sbt
+```
+
+To run portable `sbt`:
+
+```
+./sbt
 ```
 
 Compile program to resolve dependencies
