@@ -2,7 +2,7 @@
 
 Two day Scala fundamentals course.
 
-This course is meant to be run in person. There are comments in the exercises to try and point you to the right direction so you should be able to do this in your spare time if you desire. Unit tests are included to verify your solutions for each exercise. Run `sbt test`.
+This course is meant to be run in person. There are comments in the exercises to try and point you to the right direction so you should be able to do this in your spare time if you desire. Unit tests are included to verify your solutions for each exercise. Run `./sbt test`.
 
 We welcome pull requests and feedback!
 
@@ -45,7 +45,7 @@ brew tap caskroom/versions
 brew cask install java8
 ```
 
-Install sbt (minimum 0.13.16)
+Install sbt (optional, we have included a portable version)
 
 ```
 brew install sbt
@@ -54,12 +54,12 @@ brew install sbt
 Compile program to resolve dependencies
 
 ```
-sbt compile
+./sbt compile
 ```
 
 ## How to run tests
 
 ```
-sbt test
+./sbt test
 ```
 
