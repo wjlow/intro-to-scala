@@ -3,9 +3,6 @@ package fundamentals.level03
 import fundamentals.level02.TypesExercises.{Person, TrafficLight}
 import fundamentals.level02.TypesExercises.TrafficLight._
 
-/**
-  * Complete `OptionExercises.scala` before this
-  */
 object EitherExercises {
 
   case class AppError(msg: String)

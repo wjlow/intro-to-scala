@@ -3,7 +3,9 @@ package fundamentals.level03
 import fundamentals.level02.TypesExercises.Person
 
 /**
-  * Complete OptionExcercises1 and OptionExcercises2  before this.
+  * These exercises are intended to show the difficulty of working with exceptions.
+  *
+  * We will work through the alternative after this.
   */
 object ExceptionExercises {
 

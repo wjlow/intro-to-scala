@@ -2,6 +2,11 @@ package fundamentals.level03
 
 import fundamentals.level02.TypesExercises.{Person, TrafficLight}
 
+/**
+  * These exercises are intended to show the problems that come with programming with `null`s.
+  *
+  * After these exercises, we will learn the alternative to using `null`s.
+  */
 object NullExercises {
 
   /**

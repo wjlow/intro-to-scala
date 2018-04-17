@@ -2,9 +2,6 @@ package fundamentals.level03
 
 import scala.util.{Try, Success, Failure}
 
-/**
-  * Complete `OptionExercises.scala` and `EitherExercises.scala` before this
-  */
 object TryExercises {
 
   /**
