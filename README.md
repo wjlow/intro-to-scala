@@ -38,10 +38,11 @@ We welcome pull requests and feedback!
 
 ## Pre-requisites
 
-Install Java
+Install Java 8
 
 ```
-brew cask install java
+brew tap caskroom/versions
+brew cask install java8
 ```
 
 Install sbt
