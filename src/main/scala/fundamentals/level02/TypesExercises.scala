@@ -67,12 +67,17 @@ object TypesExercises {
   def showTrafficLightStr(trafficLight: String): String = ???
 
   /**
-    * We have a new traffic light called Flashing, with a frequency, e.g. "flashing 20"
+    * We have a new traffic light called Flashing, with a frequency, e.g. "flashing 20", "flashing 100"
+    *
+    * Extend `showTrafficLightStr` that you have just implemented above to support this new functionality.
     *
     * Use a test driven approach to implement this new functionality.
     *
     * scala> showTrafficLightStr("flashing 20")
     * = "The traffic light is flashing with a frequency of 20"
+    *
+    * scala> showTrafficLightStr("flashing 100")
+    * = "The traffic light is flashing with a frequency of 100"
     **/
 
   /**

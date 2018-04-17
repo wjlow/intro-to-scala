@@ -65,6 +65,8 @@ class TypesExercisesTest extends FunSpec with TypeCheckedTripleEquals {
       assert(str === "The traffic light is green")
     }
 
+    // TODO: Write unit test for "flashing 20"
+
   }
 
   describe("showTrafficLight") {
