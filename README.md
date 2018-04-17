@@ -2,7 +2,9 @@
 
 Two day Scala fundamentals course.
 
-This course is meant to be run in person. There are comments in the exercises to try and point you to the right direction so you should be able to do this in your spare time if you desire. Unit tests are included to verify your solutions for each exercise. Run `./sbt test`.
+This course is meant to be run in person. There are comments in the exercises to try and point you to the right direction so you should be able to do this in your spare time if you desire. Unit tests are included to verify your solutions for each exercise. 
+
+Use `./sbt test` to run the tests. The first time you run the tests, they will all fail. This is a good thing! As you complete each exercise correctly, the tests will pass.
 
 We welcome pull requests and feedback!
 
@@ -59,7 +61,16 @@ Compile program to resolve dependencies
 
 ## How to run tests
 
+### To run all tests
+
 ```
 ./sbt test
 ```
 
+### Running a single test file
+
+```
+./sbt '~testOnly fundamentals.level01.IntroExercisesTest'
+```
+
+The `~` watches for changes to your files and runs the command automatically. It's nice to use it to get really fast feedback as you are working on the exercises!
