@@ -14,7 +14,7 @@ class OptionExercises2Test extends FunSpec with TypeCheckedTripleEquals {
 
     it("should return Human with humanId") {
       assert(findHumanById(1) === Some(Human("Sally", None)))
-      assert(findHumanById(2) === Some(Human("Jenny", None)))
+      assert(findHumanById(2) === Some(Human("Jenny", Some(1))))
     }
 
   }
