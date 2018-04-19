@@ -106,7 +106,10 @@ object ListExercises {
   def min(nums: List[Int]): Int = ???
 
   /**
-    * scala> val persons = List(Person("Bob", 22), Person("Sally", 21))
+    * Return the person in the List that is the youngest. If there are more than one person with the youngest age,
+    * return the first one.
+    *
+    * scala> val persons = List(Person("Bob", 22), Person("Sally", 21), Person("Jimmy", 21))
     * scala> youngestPerson(persons)
     * = Person("Sally", 21)
     *
