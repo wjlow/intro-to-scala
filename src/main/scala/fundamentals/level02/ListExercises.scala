@@ -45,7 +45,7 @@ object ListExercises {
     * = "This is a list of size 3"
     *
     * scala> showListSize(List("ABC"))
-    * = "This is a list of size 1
+    * = "This is a list of size 1"
     *
     * scala> showListSize(Nil)
     * = "This is an empty list"
@@ -71,6 +71,9 @@ object ListExercises {
     * Filter a List
     *
     * This is typically what you want if the size of the resulting List is <= that of the initial.
+    *
+    * scala> filterEven(List(1, 2, 3, 4))
+    * = List(2, 4)
     *
     * Hint: Use .filter
     */
@@ -118,6 +121,10 @@ object ListExercises {
   /**
     * Typically in a data processing job, you would only want to log every
     * 100th or 1000th iteration so you do not clog up the logs.
+    *
+    * scala> val persons = List(Person("Person1", 21), Person("Person2", 21), Person("Person3", 21), Person("Person4", 21))
+    * scala> showEveryNthPerson(2, persons)
+    * = List("Person2 is 21 years old", "Person4 is 21 years old")
     *
     * Hint: Use .zipWithIndex
     */

@@ -128,7 +128,7 @@ class ListExercisesTest extends FunSpec with TypeCheckedTripleEquals {
 
     it("should return persons of age < 18") {
       val minors = List(Person("Bob", 16), Person("Jimmy", 17))
-      val persons = Person("Sally", 18) :: minors
+      val persons = minors :+ Person("Sally", 18)
 
       assert(retrieveMinors(persons) === minors)
     }
