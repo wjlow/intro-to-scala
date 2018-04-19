@@ -40,11 +40,11 @@ class Exceptions2EitherExercisesTest extends FunSpec with TypeCheckedTripleEqual
   describe("createPerson") {
 
     it("should return Person if supplied a valid name and age") {
-      assert(createPerson("Fred", "32") === Right(Person("Fred", 20)))
+      assert(createPerson("Fred", "32") === Right(Person("Fred", 32)))
     }
 
     it("should return an EmptyName if the name supplied is empty") {
-      assert(createPerson("", "32") === Left(EmptyName("provided age is invalid: Fred")))
+      assert(createPerson("", "32") === Left(EmptyName("provided name is empty")))
     }
 
     it("should return an InvalidAgeValue if the age supplied is not an Int") {
