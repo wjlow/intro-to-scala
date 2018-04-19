@@ -83,6 +83,8 @@ object OptionExercises2 {
     * = Some(1)
     *
     * Hint: Use .map
+    *
+    * What's the type that you get after using .map? What's different between that and what the function return type is?
     */
   def findJobIdByHumanId(humanId: HumanId): Option[JobId] = ???
 
