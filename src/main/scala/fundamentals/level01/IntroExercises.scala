@@ -55,6 +55,8 @@ object IntroExercises {
     * = 8
     * scala> timesTwoIfEven(3)
     * = 3
+    *
+    * Important: Every `if` must have an `else`! Otherwise your function is not total.
     */
   def timesTwoIfEven(x: Int): Int = ???
 
