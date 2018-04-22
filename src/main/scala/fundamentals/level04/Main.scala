@@ -1,6 +1,7 @@
 package fundamentals.level04
 
 import scala.io.Source
+import LogParser._
 
 object Main {
 
@@ -12,7 +13,7 @@ object Main {
         // Read from file
         val fileContent: String = Source.fromFile(filepath).getLines().mkString("\n")
 
-        // Call `printErrorsOverSeverity`
+        // Call `showErrorsOverSeverity`
         ???
 
       case _ => println("""sbt "runMain fundamentals.level04.Main src/main/resources/logfile.csv"""")

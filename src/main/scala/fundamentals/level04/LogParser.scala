@@ -104,4 +104,8 @@ object LogParser {
     **/
   def showErrorsOverSeverity(fileContent: String, severity: Int): List[String] = ???
 
+  /**
+    * Now head over to `Main.scala` in the same package to complete the rest of the program.
+    */
+
 }
