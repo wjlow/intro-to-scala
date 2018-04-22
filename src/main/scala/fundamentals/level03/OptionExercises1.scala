@@ -1,6 +1,7 @@
 package fundamentals.level03
 
 import fundamentals.level02.TypesExercises._
+import TrafficLight._
 
 object OptionExercises1 {
 
@@ -51,8 +52,12 @@ object OptionExercises1 {
     * scala> mkPerson("Bob", 20)
     * = Some(Person("Bob", 20))
     *
+    * If `name` is blank:
+    *
     * scala> mkPerson("", 20)
     * = None
+    *
+    * If `age` < 0:
     *
     * scala> mkPerson("Bob", -1)
     * = None

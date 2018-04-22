@@ -15,7 +15,7 @@ class OptionExercises1Test extends FunSpec with TypeCheckedTripleEquals {
     }
 
     it("should return the mean of a non-empty List of numbers") {
-      assert(safeMean(List(1, 2, 3)) === Some(2.0))
+      assert(safeMean(List(1, 2, 3, 4)) === Some(2.5))
     }
 
   }
