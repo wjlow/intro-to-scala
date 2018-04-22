@@ -26,16 +26,30 @@ object TryExercises {
     */
   def parseIntSafe(str: String) = ???
 
-  def parseIntSafeEither(str: String) = ???
+  /**
+    * Let's introduce a custom error type for the rest of these exercises.
+    */
+  case class TryError(msg: String)
+
+  /**
+    * Let's write another version of `parseIntSafe` that retains some error information.
+    *
+    * scala> parseIntSafeEither("123")
+    * = Right(123)
+    *
+    * scala> parseIntSafeEither("bob")
+    * = Left(TryError("bob cannot be converted to Int"))
+    */
+  def parseIntSafeEither(str: String): Either[TryError, Int] = ???
 
   /**
     * scala> parseBooleanSafeEither("true")
     * = Right(true)
     *
     * scala> parseBooleanSafeEither("abc")
-    * = Left(AppError("abc cannot be converted to Boolean"))
+    * = Left(TryError("abc cannot be converted to Boolean"))
     */
-  def parseBooleanSafeEither(str: String) = ???
+  def parseBooleanSafeEither(str: String): Either[TryError, Boolean] = ???
 
   /**
     * Create an Employee data type with three parameters:
@@ -46,7 +60,9 @@ object TryExercises {
 
   trait Employee
 
-  case class TryError(msg: String)
+  /**
+    * Now remove `import TryTestTypes._` from `TryExercisesTest.scala`
+    */
 
   /**
     * Create a CSV parser to safely create an Employee
