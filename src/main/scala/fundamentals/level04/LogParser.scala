@@ -87,6 +87,9 @@ object LogParser {
     * scala> showLogMessage(KnownLog(Error(2), 147, "weird"))
     * = "Error 2 (147) weird"
     *
+    * scala> showLogMessage(UnknownLog("message"))
+    * = "Unknown log: message"
+    *
     * Hint: Pattern match and use string interpolation
     **/
   def showLogMessage(log: LogMessage): String = ???

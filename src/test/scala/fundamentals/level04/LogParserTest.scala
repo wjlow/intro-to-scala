@@ -93,6 +93,12 @@ class LogParserTest extends FunSpec with TypeCheckedTripleEquals {
 
       assert(showLogMessage(error) === "Error 1 (300) some message")
     }
+    
+    it("should return UnknownLog in readable format") {
+      val error = UnknownLog("message")
+
+      assert(showLogMessage(error) === "Unknown log: message")
+    }
 
   }
 
