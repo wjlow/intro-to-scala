@@ -1,6 +1,7 @@
 package fundamentals.level03
 
 import fundamentals.level02.TypesExercises.{Person, TrafficLight}
+import TrafficLight._
 
 /**
   * These exercises are intended to show the problems that come with programming with `null`s.
@@ -30,13 +31,17 @@ object NullExercises {
   def mkTrafficLightOrNullThenShow(str: String): String = ???
 
   /**
-    * scala> mkPerson("Bob", 20)
+    * scala> mkPersonOrNull("Bob", 20)
     * = Person("Bob", 20)
     *
-    * scala> mkPerson("", 20)
+    * If `name` is blank:
+    *
+    * scala> mkPersonOrNull("", 20)
     * = null
     *
-    * scala> mkPerson("Bob", -1)
+    * If `age` < 0:
+    *
+    * scala> mkPersonOrNull("Bob", -1)
     * = null
     **/
   def mkPersonOrNull(name: String, age: Int): Person = ???
@@ -52,6 +57,8 @@ object NullExercises {
     *
     * scala> mkPersonOrNullThenChangeName("Bob", 20, "")
     * = Person("", 20)
+    *
+    * Hint: Use `mkPersonOrNull` and `changeName`
     **/
   def mkPersonOrNullThenChangeName(oldName: String, age: Int, newName: String): Person = ???
 
