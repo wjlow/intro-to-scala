@@ -95,12 +95,12 @@ object LogParser {
   def showLogMessage(log: LogMessage): String = ???
 
   /**
-    * Use `showError` on error logs with severity greater than the given `severity`.
+    * Use `showLogMessage` on error logs with severity greater than the given `severity`.
     *
     * scala> showErrorsOverSeverity(logFile, 2)
     * = List(KnownLog(Error(5), 158, "some strange error"))
     *
-    * Hint: Use `parseLogFile` and `showError`
+    * Hint: Use `parseLogFile` and `showLogMessage`
     **/
   def showErrorsOverSeverity(fileContent: String, severity: Int): List[String] = ???
 
