@@ -36,6 +36,16 @@ object ListExercises {
   def appendToList[A](x: A, xs: List[A]): List[A] = ???
 
   /**
+    * `List` has an `.isEmpty` method that you can call to know whether an instance is empty or not.
+    *
+    * For this exercise, let's build a version of `isEmpty` called `isEmptyList` without using `.isEmpty` (that would be cheating!).
+    *
+    * scala> isEmptyList(Nil)
+    * = true
+    *
+    * scala> isEmptyList(List(1, 2, 3))
+    * = false
+    *
     * Hint: Use pattern matching
     */
   def isEmptyList[A](xs: List[A]): Boolean = ???
