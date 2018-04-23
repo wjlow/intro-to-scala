@@ -40,6 +40,13 @@ We welcome pull requests and feedback!
 
 ## Pre-requisites
 
+**Fork or clone this repository**
+
+```
+git clone https://github.com/wjlow/intro-to-scala.git
+cd intro-to-scala/
+```
+
 **Install Java 8 (do not install Java 9 or Java 10)**
 
 ```
@@ -71,7 +78,7 @@ To run the `sbt` shell from the portable installation use:
 ./sbt
 ```
 
-**Compile program to resolve dependencies**
+**Compile program to resolve dependencies before the course**
 
 Launch the SBT shell.
 
