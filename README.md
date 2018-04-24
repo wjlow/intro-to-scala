@@ -1,6 +1,6 @@
 # intro-to-scala
 
-Two day Scala fundamentals course.
+This is a two day course. You are expected to know how to program in at least one programming language (Java, Ruby, JavaScript, etc.). The course teaches the fundamentals of using Scala as a functional programming language.  
 
 This course is meant to be run in person. There are comments in the exercises to try and point you in the right direction so you should be able to do this in your spare time if you desire. Unit tests are included to verify your solutions for each exercise.
 
@@ -77,6 +77,8 @@ To run the `sbt` shell from the portable installation use:
 ```
 ./sbt
 ```
+
+## Compilation
 
 **Compile program to resolve dependencies before the course**
 
@@ -170,7 +172,7 @@ exit
 
 7. Compile project with Command+F9
 
-8. You can run individual tests by right-clicking and then selecting _Run ...ExercisesTest_
+8. You can run individual tests by right-clicking and then selecting _Run ...ExercisesTest_ ([or just use SBT](#how-to-run-tests))
 
 Tips:
 
@@ -190,9 +192,9 @@ Tips:
 
 2. Open the SBT shell in a terminal window.
 
-3. Compiling - See SBT instructions on how to compile code.
+3. Compiling - [See SBT instructions on how to compile code](#compilation).
 
-4. Running Tests - See SBT instructions on how to run tests.
+4. Running Tests - [See SBT instructions on how to run tests](#how-to-run-tests).
 
 5. Looking up Scala API - You can also search through the [Scala APIs](https://www.scala-lang.org/api/current/) to find any necessary methods.
 
