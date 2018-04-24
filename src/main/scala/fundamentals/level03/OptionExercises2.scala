@@ -82,7 +82,7 @@ object OptionExercises2 {
     * scala> findJobIdByHumanId(2)
     * = Some(1)
     *
-    * Hint: Use .map
+    * Hint: Try .map, .flatten
     *
     * What's the type that you get after using .map? What's different between that and what the function return type is?
     */
