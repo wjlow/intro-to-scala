@@ -22,7 +22,22 @@ object TryExercises {
   /**
     * What's a safe return type?
     *
-    * Hint: Use pattern matching
+    * Expressions that throw exceptions can be surrounded by `Try`:
+    *
+    * ```
+    * Try(mayThrowException())
+    * ```
+    *
+    * You can pattern match of `Try` using its two constructors `Success` and `Failure`:
+    *
+    * ```
+    * Try(mayThrowException()) match {
+    *   case Success(a) => // do something with `a`
+    *   case Failure(exception) => // do something with `exception`
+    * }
+    * ```
+    *
+    * Hint: Use `Try` and pattern matching to solve this. `Try` also has a method `.toOption` that may help.
     */
   def parseIntSafe(str: String) = ???
 

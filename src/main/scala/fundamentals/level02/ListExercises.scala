@@ -46,7 +46,14 @@ object ListExercises {
     * scala> isEmptyList(List(1, 2, 3))
     * = false
     *
-    * Hint: Use pattern matching
+    * Hint: Use pattern matching. You can pattern match on `List` using its two constructors `::` and `Nil` as such:
+    *
+    * ```
+    * list match {
+    *   case head :: tail => // do something for non-empty list
+    *   case Nil => // do something for empty list
+    * }
+    * ```
     */
   def isEmptyList[A](xs: List[A]): Boolean = ???
 
