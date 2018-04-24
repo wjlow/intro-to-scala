@@ -150,7 +150,9 @@ exit
 
 ## IDE setup
 
-### IntelliJ IDEA 
+### IntelliJ IDEA
+
+![intellij](intellij.png)
 
 1. [Download IntelliJ (free Community edition is fine)](https://www.jetbrains.com/idea/download/#section=mac)
 
@@ -165,3 +167,15 @@ exit
 6. Wait for IntelliJ to download dependencies (this might take a while)
 
 7. Compile project with Command+F9
+
+### Text Editor (Vim/Sublime/Atom/Emacs)
+
+![text editor](sublime.png)
+
+1. Open the current directory in an editor of your choice.
+2. Open the SBT shell in a terminal window.
+3. Compiling - See SBT instructions on how to compile code.
+4. Running Tests - See SBT instructions on how to run tests.
+5. Looking up Scala API - You can also search through the [Scala APIs](https://www.scala-lang.org/api/current/) to find any necessary methods.
+
+ ![scala api browser](scala-api.png)
