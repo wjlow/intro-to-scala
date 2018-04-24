@@ -7,12 +7,24 @@ import org.scalatest.FunSpec
 
 class TypesExercisesTest extends FunSpec with TypeCheckedTripleEquals {
 
-  describe("showPerson") {
+  describe("showPerson1") {
 
     it("should turn Bob into a String") {
       val person = Person("Bob", 50)
 
-      val str = showPerson(person)
+      val str = showPerson1(person)
+
+      assert(str === "Bob is 50 years old")
+    }
+
+  }
+
+  describe("showPerson2") {
+
+    it("should turn Bob into a String") {
+      val person = Person("Bob", 50)
+
+      val str = showPerson2(person)
 
       assert(str === "Bob is 50 years old")
     }

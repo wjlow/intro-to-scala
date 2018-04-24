@@ -16,12 +16,21 @@ object TypesExercises {
 
   /**
     * scala> val person = Person("Bob", 50)
-    * scala> showPerson(person)
+    * scala> showPerson1(person)
     * = "Bob is 50 years old"
     *
-    * Hint: Use string interpolation
+    * This uses a technique called pattern matching. You will see more of this later.
     **/
-  def showPerson(person: Person): String = ???
+  def showPerson1(person: Person): String =
+    person match {
+      case Person(name, age) => s"${???} is ${???} years old"
+    }
+
+  /**
+    * Same as `showPerson1`, but using string interpolation only.
+    */
+  def showPerson2(person: Person): String =
+    s"${???} is ${???} years old"
 
   /**
     * scala> val person = Person("Bob", 50)
