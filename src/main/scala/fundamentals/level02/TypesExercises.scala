@@ -53,6 +53,15 @@ object TypesExercises {
   case class Wallet(amount: Double)
 
   /**
+    * scala> val wallet = Wallet(20.5)
+    * scala> showWallet(wallet)
+    * = "The wallet amount is 20.5"
+    *
+    * You can solve this like how you solved `showPerson1` or `showPerson2`.
+    */
+  def showWallet(wallet: Wallet): String = ???
+
+  /**
     * Here is another example of working with immutable values.
     *
     * scala> val wallet = Wallet(100)
