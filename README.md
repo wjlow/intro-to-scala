@@ -148,11 +148,13 @@ exit
 
 [SBT 1.x documentation](https://www.scala-sbt.org/1.x/docs/index.html)
 
-## IDE setup
+## IDE setup (please set this up before the course)
 
-### IntelliJ IDEA
+<details><summary>IntelliJ IDEA</summary>
 
 ![intellij](intellij.png)
+
+<p>
 
 1. [Download IntelliJ (free Community edition is fine)](https://www.jetbrains.com/idea/download/#section=mac)
 
@@ -168,14 +170,32 @@ exit
 
 7. Compile project with Command+F9
 
-### Text Editor (Vim/Sublime/Atom/Emacs)
+8. You can run individual tests by right-clicking and then selecting _Run ...ExercisesTest_
+
+Tips:
+
+* Use Command+P inside the argument of a function to see what type the argument needs to be.
+
+* Use Control+Shift+P to find out the type of a highlighted expression. 
+
+</p></details>
+
+<details><summary>Text Editor (Vim/Sublime/Atom/Emacs)</summary>
 
 ![text editor](sublime.png)
 
+<p>
+
 1. Open the current directory in an editor of your choice.
+
 2. Open the SBT shell in a terminal window.
+
 3. Compiling - See SBT instructions on how to compile code.
+
 4. Running Tests - See SBT instructions on how to run tests.
+
 5. Looking up Scala API - You can also search through the [Scala APIs](https://www.scala-lang.org/api/current/) to find any necessary methods.
 
- ![scala api browser](scala-api.png)
+![scala api browser](scala-api.png)
+ 
+</p></details>
