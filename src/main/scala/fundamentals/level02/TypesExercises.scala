@@ -110,6 +110,8 @@ object TypesExercises {
     * = "The traffic light is green"
     *
     * It is impossible to get an invalid TrafficLight as input
+    *
+    * Hint: Use pattern matching
     **/
   def showTrafficLight(trafficLight: TrafficLight): String = ???
 
