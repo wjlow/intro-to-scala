@@ -156,7 +156,7 @@ exit
 
 2. Install and open IntelliJ
 
-3. Install Scala plugin: _Configure -> Plugins -> Browse Repositories -> Scala_
+3. If running IntelliJ for the very first time, it might ask you what plugin you want to install. Select _Scala_, otherwise install manually: _Configure -> Plugins -> Browse Repositories -> Scala_
 
 4. Restart IntelliJ to activate the plugin
 
