@@ -147,3 +147,21 @@ exit
 ```
 
 [SBT 1.x documentation](https://www.scala-sbt.org/1.x/docs/index.html)
+
+## IDE setup
+
+### IntelliJ IDEA 
+
+1. [Download IntelliJ (free Community edition is fine)](https://www.jetbrains.com/idea/download/#section=mac)
+
+2. Install and open IntelliJ
+
+3. If running IntelliJ for the very first time, it might ask you what plugin you want to install. Select _Scala_, otherwise install manually: _Configure -> Plugins -> Browse Repositories -> Scala_
+
+4. Restart IntelliJ to activate the plugin
+
+5. Open IntelliJ and open this project: _Open -> Select directory where project is in_
+
+6. Wait for IntelliJ to download dependencies (this might take a while)
+
+7. Compile project with Command+F9
