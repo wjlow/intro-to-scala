@@ -9,28 +9,28 @@ import fundamentals.level03.OptionExercises2.{HumanId, Job, JobId, findHumanById
 object OptionExercises3 {
 
   /**
-    * scala> findJobIdByHumanId(1)
+    * scala> findJobIdByHumanIdUsingFor(1)
     * = None
     *
-    * scala> findJobIdByHumanId(2)
+    * scala> findJobIdByHumanIdUsingFor(2)
     * = Some(1)
     */
-  def findJobIdByHumanId(humanId: HumanId): Option[JobId] =
+  def findJobIdByHumanIdUsingFor(humanId: HumanId): Option[JobId] =
     for {
-      human <- ??? // Option[Human]
-      jobId <- ??? // Option[JobId]
+      human <- ??? // Find a function of type HumanId => Option[Human]
+      jobId <- ??? // Find a function of type Human => Option[JobId]
     } yield jobId
 
   /**
-    * scala> findJobByHumanId(2)
+    * scala> findJobByHumanIdUsingFor(2)
     * = Some(Job("Teacher", "Expert in their field"))
     *
-    * Hint: Use findJobIdByHumanId
+    * Hint: Use findJobIdByHumanIdUsingFor
     */
-  def findJobByHumanId(humanId: HumanId): Option[Job] =
+  def findJobByHumanIdUsingFor(humanId: HumanId): Option[Job] =
     for {
-      jobId <- ??? // Option[JobId]
-      job <- ???   // Option[Job]
+      jobId <- ??? // Find a function of type HumanId => Option[JobId]
+      job <- ???   // Find a function of type JobId => Option[Job]
     } yield job
 
 }
