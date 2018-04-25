@@ -56,6 +56,22 @@ object OptionExercises2 {
 
   /**
     * Same as above, but use .map instead
+    *
+    * If you see a `case None => None` in a pattern matching block,
+    * you can always refactor it:
+    *
+    * ```
+    * optSomething match {
+    *   case Some(a) => Some(s"Got some $a")
+    *   case None => None
+    * }
+    * ```
+    *
+    * becomes
+    *
+    * ```
+    * optSomething.map(a => s"Got some $a")
+    * ```
     */
   def findJobDescriptionGivenJobId2(jobId: JobId): Option[String] = ???
 
