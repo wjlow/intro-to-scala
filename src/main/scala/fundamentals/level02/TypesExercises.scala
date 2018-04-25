@@ -16,12 +16,21 @@ object TypesExercises {
 
   /**
     * scala> val person = Person("Bob", 50)
-    * scala> showPerson(person)
+    * scala> showPerson1(person)
     * = "Bob is 50 years old"
     *
-    * Hint: Use string interpolation
+    * This uses a technique called pattern matching. You will see more of this later.
     **/
-  def showPerson(person: Person): String = ???
+  def showPerson1(person: Person): String =
+    person match {
+      case Person(name, age) => s"${???} is ${???} years old"
+    }
+
+  /**
+    * Same as `showPerson1`, but using string interpolation only.
+    */
+  def showPerson2(person: Person): String =
+    s"${???} is ${???} years old"
 
   /**
     * scala> val person = Person("Bob", 50)
@@ -42,6 +51,15 @@ object TypesExercises {
     */
 
   case class Wallet(amount: Double)
+
+  /**
+    * scala> val wallet = Wallet(20.5)
+    * scala> showWallet(wallet)
+    * = "The wallet amount is 20.5"
+    *
+    * You can solve this like how you solved `showPerson1` or `showPerson2`.
+    */
+  def showWallet(wallet: Wallet): String = ???
 
   /**
     * Here is another example of working with immutable values.

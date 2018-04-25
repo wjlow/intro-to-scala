@@ -44,7 +44,16 @@ object OptionExercises1 {
     * scala> mkTrafficLightThenShow("bob")
     * = "Traffic light `bob` is invalid"
     *
-    * Hint: Use `mkTrafficLight` and pattern matching
+    * Hint: Use `mkTrafficLight` and pattern matching.
+    *
+    * You can pattern match on `Option` using its two constructors `Some` and `None`:
+    *
+    * ```
+    * optSomething match {
+    *   case Some(a) => // do something with `a`
+    *   case None => // do something else
+    * }
+    * ```
     */
   def mkTrafficLightThenShow(str: String): String = ???
 
@@ -61,6 +70,8 @@ object OptionExercises1 {
     *
     * scala> mkPerson("Bob", -1)
     * = None
+    *
+    * Hint: Don't forget every if needs an else!
     **/
   def mkPerson(name: String, age: Int): Option[Person] = ???
 
