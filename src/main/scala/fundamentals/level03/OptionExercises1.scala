@@ -71,15 +71,9 @@ object OptionExercises1 {
     * scala> mkPerson("Bob", -1)
     * = None
     *
-    * You can solve this with standard if-statements, but let's try solve this using pattern matching.
-    * We create a pair `(name, age)` and pattern match on the values.
+    * Hint: Don't forget every if needs an else!
     **/
-  def mkPerson(name: String, age: Int): Option[Person] =
-    (name, age) match {
-      case (n, a) if n.isEmpty => ???
-      case (n, a) if a < 0 => ???
-      case (n, a) => ???
-    }
+  def mkPerson(name: String, age: Int): Option[Person] = ???
 
   /**
     * scala> mkPersonThenChangeName("Bob", 20, "John")
