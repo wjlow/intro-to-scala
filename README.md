@@ -1,4 +1,4 @@
-# intro-to-scala
+# Intro to Scala Fundamentals
 
 This is a two day course. You are expected to know how to program in at least one programming language (Java, Ruby, JavaScript, etc.). The course teaches the fundamentals of using Scala as a functional programming language.  
 
@@ -40,21 +40,21 @@ We welcome pull requests and feedback!
 
 ## Pre-requisites
 
-**Fork or clone this repository**
+**1. Fork or clone this repository**
 
 ```
 git clone https://github.com/wjlow/intro-to-scala.git
 cd intro-to-scala/
 ```
 
-**Install Java 8 (do not install Java 9 or Java 10)**
+**2. Install Java 8 (do not install Java 9 or Java 10)**
 
 ```
 brew tap caskroom/versions
 brew cask install java8
 ```
 
-**Install sbt 1.x (recommended but optional, we have included a portable version)**
+**3. Install sbt 1.x (recommended but optional, we have included a portable version)**
 
 We recommend that you install `sbt` on your machine even though a portable runner is included.
 
@@ -78,9 +78,11 @@ To run the `sbt` shell from the portable installation use:
 ./sbt
 ```
 
-## Compilation
+**[4. Compile program to resolve dependencies before the course](#compilation)**
 
-**Compile program to resolve dependencies before the course**
+**[5. IDE setup](#ide-setup)**
+
+## Compilation
 
 Launch the SBT shell.
 
@@ -150,7 +152,7 @@ exit
 
 [SBT 1.x documentation](https://www.scala-sbt.org/1.x/docs/index.html)
 
-## IDE setup (please set this up before the course)
+## IDE setup
 
 <details><summary>IntelliJ IDEA</summary>
 
