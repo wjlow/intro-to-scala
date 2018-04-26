@@ -4,14 +4,18 @@ import fundamentals.level02.TypesExercises.Person
 import fundamentals.level03.ExceptionExercises.personStringPairs
 
 /**
-  * Complete ExceptionExcercises before this.
+  * These exercises show the alternative to throwing exceptions using the `Either` data type.
+  * We will treat errors as values that our functions return.
   */
 object Exceptions2EitherExercises {
 
   //ADT for representing errors as values
   sealed trait AppError
+
   case class EmptyName(message: String) extends AppError
+
   case class InvalidAgeValue(message: String) extends AppError
+
   case class InvalidAgeRange(message: String) extends AppError
 
   /**
@@ -28,6 +32,10 @@ object Exceptions2EitherExercises {
     * as values. This means that Eithers are which are referentially transparent. Eithers
     * use a Left value to denote an error and a Right value to denote a success
     * (what is Right is correct, what is not Right is wrong).
+    *
+    * sealed trait Either[+E, +A]
+    * case class Right[A](value: A) extends Either[?, A]
+    * case class Left[E](error: E) extends Either[E, ?]
     */
 
   /**
@@ -35,14 +43,14 @@ object Exceptions2EitherExercises {
     * is empty or a Right if the supplied name is not empty.
     *
     * scala> getName("Fred")
-    * = Right(Fred)
+    * = Right("Fred")
     *
     * scala> getName("")
     * = Left(EmptyName(provided name is empty))
     *
     * scala> getName("   ")
     * = Left(EmptyName(provided name is empty))
-    */
+    **/
   def getName(providedName: String): Either[AppError, String] = ???
 
   /**
@@ -101,9 +109,9 @@ object Exceptions2EitherExercises {
     *
     * scala> collectErrors
     * = List(InvalidAgeValue(provided age is invalid: 5o),
-    *        InvalidAgeRange(provided age should be between 1-120: 200),
-    *        InvalidAgeRange(provided age should be between 1-120: 0),
-    *        EmptyName(provided name is empty))
+    * InvalidAgeRange(provided age should be between 1-120: 200),
+    * InvalidAgeRange(provided age should be between 1-120: 0),
+    * EmptyName(provided name is empty))
     *
     * Hint: use the collect method on List
     */

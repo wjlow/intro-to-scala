@@ -3,6 +3,9 @@ package fundamentals.level03
 import fundamentals.level02.TypesExercises.{Person, TrafficLight}
 import fundamentals.level02.TypesExercises.TrafficLight._
 
+/**
+  * These exercises are optional and mirror the safe constructor exercises from `OptionExercises1.scala`
+  */
 object EitherExercises {
 
   case class AppError(msg: String)

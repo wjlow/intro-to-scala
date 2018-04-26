@@ -1,10 +1,10 @@
 package fundamentals.level03
 
+/**
+  * These exercises simulate the "real-world" problem of retrieving records from a data store. You will learn to use `Option`s to represent
+  * values that may or may not exist in the data store and also techniques to work with the `Option` type.
+  */
 object OptionExercises2 {
-
-  /**
-    * Working with Option types
-    */
 
   type JobId = Int
 
