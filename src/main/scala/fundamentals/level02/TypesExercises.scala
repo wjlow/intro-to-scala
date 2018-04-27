@@ -1,7 +1,7 @@
 package fundamentals.level02
 
 /**
-  * These exercises introduce data types and also algebraic data types. ADTs are a huge part of typed functional programming.
+  * These exercises introduce data types and also algebraic data types (ADTs). ADTs are a huge part of typed functional programming.
   * You will also be introduced to a very useful technique for working with ADTs, i.e. pattern matching.
   */
 object TypesExercises {
