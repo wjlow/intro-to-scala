@@ -3,6 +3,11 @@ package fundamentals.level03
 import fundamentals.level02.TypesExercises._
 import TrafficLight._
 
+/**
+  * Here we introduce a new ADT - `Option` - for dealing with values that may not exist.
+  *
+  * We will also cover safe constructors, which in conjunction with ADTs, allow us to prevent invalid states from being represented.
+  */
 object OptionExercises1 {
 
   /**

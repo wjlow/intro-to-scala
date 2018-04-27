@@ -3,6 +3,14 @@ package fundamentals.level04
 import scala.io.Source
 import LogParser._
 
+/**
+  * The `main` method does the following:
+  *
+  * 1. Read `filepath` from CLI args
+  * 2. Read the content in `filepath`
+  * 3. Call `showErrorsOverSeverity` from `LogParser.scala`
+  * 4. Print the errors out to STDOUT
+  */
 object Main {
 
   def main(args: Array[String]): Unit = {
@@ -13,7 +21,7 @@ object Main {
         // Read from file
         val fileContent: String = Source.fromFile(filepath).getLines().mkString("\n")
 
-        // Call `showErrorsOverSeverity`
+        // Implement `printErrorsOverSeverity` and then call it from here
         ???
 
       case _ => println("""sbt "runMain fundamentals.level04.Main src/main/resources/logfile.csv"""")

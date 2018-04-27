@@ -2,6 +2,16 @@ package fundamentals.level03
 
 import scala.util.{Try, Success, Failure}
 
+/**
+  * These exercises use the `Try` ADT for working with code that throw exceptions (e.g. Java AWS library).
+  *
+  * `Try` is very similar to `Either`. Instead of having a `Right` and a `Left`, it has a `Success` and a `Failure`.
+  * A value of `Try[A]` is one of `Success(a: A)` or `Failure(exception: Exception)`.
+  *
+  * You can think of `Try[A]` ~ `Either[Throwable, A]`
+  *
+  * `Try` comes with a constructor that can be used to wrap any expression that may throw an exception. We will see more of this later.
+  */
 object TryExercises {
 
   /**

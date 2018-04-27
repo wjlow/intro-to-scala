@@ -1,7 +1,8 @@
 package fundamentals.level02
 
 /**
-  * Level 2 introduces data structures and operations that work on them.
+  * These exercises introduce data types and also algebraic data types (ADTs). ADTs are a huge part of typed functional programming.
+  * You will also be introduced to a very useful technique for working with ADTs, i.e. pattern matching.
   */
 object TypesExercises {
 

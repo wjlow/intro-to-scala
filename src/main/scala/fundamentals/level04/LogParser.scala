@@ -2,11 +2,18 @@ package fundamentals.level04
 
 /**
   * The exercises here are adapted from: http://www.cis.upenn.edu/~cis194/spring13/hw/02-ADTs.pdf
+  *
+  * Let's finish off this course by building a CLI program!
+  * We will build a program to parse a log file (containing Info, Warn and Error messagea) and print out errors over a severity level.
+  *
+  * Finish each exercise and we will head over to `Main.scala` to hook it all up with the CLI.
   */
 object LogParser {
 
   /**
-    * Let's try and build a program to understand some logs! Here is how a log file may look.
+    * Here is how a log file may look.
+    *
+    * The `|` at the start of each line can be ignored. This is how Scala represents a multi-line String.
     */
   val logFile: String =
     """|I,147,mice in the air
