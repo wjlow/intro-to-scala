@@ -27,7 +27,7 @@ object OptionExercises2 {
 
   /**
     * scala> findHumanById(1)
-    * = Some(Human(Sally, None))
+    * = Some(Human("Sally", None))
     *
     * scala> findHumanById(100)
     * = None
@@ -38,7 +38,7 @@ object OptionExercises2 {
     * scala> findJobById(1)
     * = Some(Job("Teacher", "Expert in their field"))
     *
-    * scala> findJobById(100")
+    * scala> findJobById(100)
     * = None
     **/
   def findJobById(jobId: JobId): Option[Job] = ???
