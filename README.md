@@ -1,6 +1,6 @@
 # Intro to Scala Fundamentals
 
-This is a two day course. You are expected to know how to program in at least one programming language (Java, Ruby, JavaScript, etc.). The course teaches the fundamentals of using Scala as a functional programming language.  
+This is a two day course. You are expected to know how to program in at least one programming language (Java, Ruby, JavaScript, etc.). The course teaches the fundamentals of using Scala as a functional programming language.
 
 This course is meant to be run in person. There are comments in the exercises to try and point you in the right direction so you should be able to do this in your spare time if you desire. Unit tests are included to verify your solutions for each exercise.
 
@@ -144,6 +144,24 @@ The `~` watches for changes to your files and runs the command automatically. It
 
 To stop watching changes through `~`, use the __enter__ key to return to the SBT shell prompt.
 
+## Jumping into a Scala REPL
+
+To launch into a Scala REPL with all production code use:
+
+```
+console
+```
+
+To launch into a Scala REPL with all production and test code use:
+
+```
+test:console
+```
+
+Type `:q` to exit from the REPL and return to SBT.
+
+## Exiting SBT
+
 To exit the SBT shell use:
 
 ```
@@ -180,7 +198,7 @@ Tips:
 
 * Use Command+P inside the argument of a function to see what type the argument needs to be.
 
-* Use Control+Shift+P to find out the type of a highlighted expression. 
+* Use Control+Shift+P to find out the type of a highlighted expression.
 
 </p></details>
 
@@ -198,8 +216,10 @@ Tips:
 
 4. Running Tests - [See SBT instructions on how to run tests](#how-to-run-tests).
 
-5. Looking up Scala API - You can also search through the [Scala APIs](https://www.scala-lang.org/api/current/) to find any necessary methods.
+5. Looking up Scala API - You can also search through the [Scala APIs](https://www.scala-lang.org/api/current/) to find any necessary methods or use a documentation browser like [Dash](https://kapeli.com/dash).
+
+6. To explore the Scala API or any of the exercises use the Scala REPL [See SBT instructions on how to jump into the REPL](jumping-into-a-scala-repl).
 
 ![scala api browser](scala-api.png)
- 
+
 </p></details>
