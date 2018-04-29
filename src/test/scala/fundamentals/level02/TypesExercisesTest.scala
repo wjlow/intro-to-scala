@@ -44,6 +44,18 @@ class TypesExercisesTest extends FunSpec with TypeCheckedTripleEquals {
 
   }
 
+  describe("showWallet") {
+
+    it("should show the wallet amount as a String") {
+      val wallet = Wallet(23.4)
+
+      val str = showWallet(wallet)
+
+      assert(str === "The wallet amount is 23.4")
+    }
+
+  }
+
   describe("purchase") {
 
     it("should return a wallet with cost deducted") {
