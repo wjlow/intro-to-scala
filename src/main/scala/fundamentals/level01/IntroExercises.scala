@@ -13,15 +13,18 @@ package fundamentals.level01
 object IntroExercises {
 
   /**
-    * This function called `add` takes two Ints and return an Int
+    * This function called `add` takes two Ints and return an Int.
     * You must specify the types of the inputs but the output return type is optional
+    * and can be inferred by the compiler.
     * scala> add(1, 2)
     * = 3
     **/
   def add(x: Int, y: Int): Int = ???
 
   /**
-    * Currying
+    * Currying is the process of transforming a function that takes multiple arguments into
+    * a function that takes just a single argument and returns another function if any
+    * arguments are still needed.
     *
     * What if we want to define a function `add5` that adds 5 to any `Int`?
     *
