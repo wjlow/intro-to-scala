@@ -3,7 +3,7 @@ package fundamentals.level02
 import fundamentals.level02.TypesExercises.Person
 
 /**
-  * You will learn how to work with the `List` data structure in Scala in a declarative manner.
+  * These exercises will teach you how to work with the `List` data structure in Scala in a declarative manner.
   * At the end of these exercises, you should have a good intuition on when to use `map`, `filter` or `fold`.
   */
 object ListExercises {
@@ -35,8 +35,18 @@ object ListExercises {
     * scala> List(1, 2, 3)
     */
 
+  /**
+    * scala> prependToList(1, List(2, 3, 4))
+    * = List(1,2,3,4)
+    */
   def prependToList[A](x: A, xs: List[A]): List[A] = ???
 
+  /**
+    * scala> appendToList(1, List(2, 3, 4))
+    * = List(2,3,4,1)
+    *
+    * Hint: Use the :+ operator
+    */
   def appendToList[A](x: A, xs: List[A]): List[A] = ???
 
   /**
