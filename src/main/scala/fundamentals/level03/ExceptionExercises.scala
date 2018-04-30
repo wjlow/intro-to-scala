@@ -40,10 +40,10 @@ object ExceptionExercises {
     * = "Fred"
     *
     * scala> getName("")
-    * = EmptyNameException: provided name is empty"
+    * = EmptyNameException: provided name is empty
     *
     * scala> getName("   ")
-    * = EmptyNameException: provided name is empty"
+    * = EmptyNameException: provided name is empty
     *
     * Hint: use the trim method on String to remove empty spaces
     */
@@ -62,7 +62,7 @@ object ExceptionExercises {
     * = 20
     *
     * scala> getAge("-1")
-    * = InvalidAgeRangeException: provided age should be between 1-120: -1"
+    * = InvalidAgeRangeException: provided age should be between 1-120: -1
     *
     * Hint: use the toInt method to convert a String to an Int.
     */
@@ -86,13 +86,13 @@ object ExceptionExercises {
     * = "Person(Fred, 32)"
     *
     * scala> createPerson("", "32")
-    * = EmptyNameException: provided name is empty"
+    * = EmptyNameException: provided name is empty
     *
     * scala> createPerson("Fred", "ThirtyTwo")
-    * = InvalidAgeValueException: provided age is invalid: ThirtyTwo"
+    * = InvalidAgeValueException: provided age is invalid: ThirtyTwo
     *
     * scala> createPerson("Fred", "150")
-    * = InvalidAgeRangeException: provided age should be between 1-120: 150"
+    * = InvalidAgeRangeException: provided age should be between 1-120: 150
     */
   def createPerson(name: String, age: String): Person = ???
 
@@ -101,7 +101,7 @@ object ExceptionExercises {
     * and only returns valid pairs for name and age. It should not throw any Exceptions.
     *
     * scala> validPairs
-    * = "List(("Tokyo", "30"), ("Berlin", "43"))"
+    * = "List(("Tokyo", "30"), ("Berlin", "43"))
     *
     * Hint: use filter on List using the getName and getAge functions
     *
@@ -127,7 +127,7 @@ object ExceptionExercises {
     * scala> createValidPeople2
     * = List(Person("Tokyo", 30), Person("Berlin", 43))
     *
-    * What issues due you run into (if any)?
+    * What issues do you run into (if any)?
     */
   def createValidPeople2: List[Person] = ???
 
@@ -141,7 +141,7 @@ object ExceptionExercises {
     *        InvalidAgeRangeException: provided age should be between 1-120: 0,
     *        EmptyNameException: provided name is empty)
     *
-    * What issues due you run into (if any)?
+    * What issues do you run into (if any)?
     *
     */
   def collectErrors: List[Exception] = ???
