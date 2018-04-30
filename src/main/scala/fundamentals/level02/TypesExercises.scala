@@ -29,6 +29,8 @@ object TypesExercises {
 
   /**
     * Same as `showPerson1`, but using string interpolation only.
+    *
+    * Hint: Navigate the Person class' fields using the "." operator
     */
   def showPerson2(person: Person): String =
     s"${???} is ${???} years old"

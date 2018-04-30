@@ -89,8 +89,13 @@ class TypesExercisesTest extends FunSpec with TypeCheckedTripleEquals {
       assert(str === "The traffic light is green")
     }
 
-    // TODO: Write unit test for "flashing 20"
+    it("should support flashing") {
+      ???
+    }
 
+    it("should return a default on other inputs") {
+      ???
+    }
   }
 
   describe("showTrafficLight") {
@@ -101,7 +106,17 @@ class TypesExercisesTest extends FunSpec with TypeCheckedTripleEquals {
       assert(str === "The traffic light is red")
     }
 
-    // TODO: Write unit tests for Yellow and Green
+    it("should show Yellow") {
+      ???
+    }
+
+    it("should show Green") {
+      ???
+    }
+
+    it("should support Flashing") {
+      ???
+    }
 
   }
 
