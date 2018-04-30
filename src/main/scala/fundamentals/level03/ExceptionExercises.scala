@@ -124,6 +124,9 @@ object ExceptionExercises {
     * Implement the function createValidPeople2 that only uses the collect function on List
     * to create a List of Person instances from personStringPairs. It should not throw any Exceptions.
     *
+    * scala> createValidPeople2
+    * = List(Person("Tokyo", 30), Person("Berlin", 43))
+    *
     * What issues due you run into (if any)?
     */
   def createValidPeople2: List[Person] = ???
