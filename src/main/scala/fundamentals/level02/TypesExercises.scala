@@ -109,7 +109,7 @@ object TypesExercises {
     * scala> showTrafficLightStr("flashing 100")
     * = "The traffic light is flashing with a frequency of 100"
     *
-    * Hint: Use flashing regex and pattern matching or 
+    * Hint: Use flashing regex and pattern matching or
     * use `.split(" ")` and pattern-match on `Array("flashing", frequency)`
     **/
 
