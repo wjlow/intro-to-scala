@@ -2,7 +2,7 @@ package fundamentals.level03
 
 import fundamentals.level02.TypesExercises.Person
 import fundamentals.level03.ExceptionExercises._
-import org.scalactic.TypeCheckedTripleEquals
+import org.scalactic.{TypeCheckedTripleEquals, Equivalence}
 import org.scalatest.FunSpec
 
 class ExceptionExercisesTest extends FunSpec with TypeCheckedTripleEquals {
@@ -93,21 +93,37 @@ class ExceptionExercisesTest extends FunSpec with TypeCheckedTripleEquals {
 
   describe("createValidPeople") {
 
-    it("should return a List Person instances") {
+    it("should return a List of Person instances") {
       assert(createValidPeople === List(Person("Tokyo", 30), Person("Berlin", 43)))
     }
   }
 
   describe("createValidPeople2") {
 
-    it("should return a List Person instances") {
+    it("should return a List of Person instances") {
       assert(createValidPeople2 === List(Person("Tokyo", 30), Person("Berlin", 43)))
     }
   }
 
   describe("collectErrors") {
 
-    it("should return a List Exceptions thrown while processing inputs") {
+    // structural equality for our custom Exceptions
+    implicit val exceptionEq: Equivalence[Exception] = new Equivalence[Exception] {
+      def areEquivalent(e1: Exception, e2: Exception): Boolean = (e1, e2) match {
+        case (p: InvalidAgeValueException, q: InvalidAgeValueException) => p.getMessage === q.getMessage
+        case (p: InvalidAgeRangeException, q: InvalidAgeRangeException) => p.getMessage === q.getMessage
+        case (p: EmptyNameException, q: EmptyNameException) => p.getMessage === q.getMessage
+        case _ => e1 == e2
+      }
+    }
+
+    // structural equality for Lists, so that our assertion doesn't compare object identity
+    implicit def listEq[T : Equivalence]: Equivalence[List[T]] = new Equivalence[List[T]] {
+      def areEquivalent(xs: List[T], ys: List[T]): Boolean =
+        (xs.length === ys.length) && (xs zip ys forall (p => p._1 === p._2))
+    }
+
+    it("should return a List of Exceptions thrown while processing inputs") {
       assert(collectErrors === List(new InvalidAgeValueException("provided age is invalid: 5o"),
                                     new InvalidAgeRangeException("provided age should be between 1-120: 200"),
                                     new InvalidAgeRangeException("provided age should be between 1-120: 0"),
