@@ -135,15 +135,10 @@ object ListExercises {
     * https://en.wikipedia.org/wiki/Empty_product
     * scala> product(Nil)
     * = 1
-<<<<<<< HEAD
-    **/
-  def product(nums: List[Int]): Int = nums.foldLeft(1)(_ * _)
-=======
     *
     * Hint: Use pattern matching and .foldLeft
-    */
-  def product(nums: List[Int]): Int = ???
->>>>>>> Add hint on using foldLeft for folding exercises
+    **/
+  def product(nums: List[Int]): Int = nums.foldLeft(1)(_ * _)
 
   /**
     * scala> min(List(4, 6, 1))
