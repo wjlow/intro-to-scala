@@ -136,6 +136,8 @@ object TypesExercises {
     *
     * Hint: Use pattern matching
     **/
+  import TrafficLight._
+  
   def showTrafficLight(trafficLight: TrafficLight): String = ???
 
   /**
