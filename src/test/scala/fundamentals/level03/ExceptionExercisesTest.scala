@@ -56,7 +56,7 @@ class ExceptionExercisesTest extends FunSpec with TypeCheckedTripleEquals {
   describe("createPerson") {
 
     it("should return Person if supplied a valid name and age") {
-      assert(createPerson("Fred", "32") === Person("Fred", 20))
+      assert(createPerson("Fred", "32") === Person("Fred", 32))
     }
 
     it("should throw an EmptyNameException if the name supplied is empty") {
@@ -64,11 +64,11 @@ class ExceptionExercisesTest extends FunSpec with TypeCheckedTripleEquals {
         createPerson("", "32")
       }
 
-      assert(caught.getMessage === "provided age is invalid: Fred")
+      assert(caught.getMessage === "provided name is empty")
     }
 
     it("should throw an InvalidAgeValueException if the age supplied is not an Int") {
-      val caught = intercept[InvalidAgeRangeException] {
+      val caught = intercept[InvalidAgeValueException] {
         createPerson("Fred", "ThirtyTwo")
       }
 
