@@ -40,18 +40,17 @@ object ExceptionExercises {
     * = "Fred"
     *
     * scala> getName("")
-    * = EmptyNameException: provided name is empty"
+    * = EmptyNameException: provided name is empty
     *
     * scala> getName("   ")
-    * = EmptyNameException: provided name is empty"
+    * = EmptyNameException: provided name is empty
     *
     * Hint: use the trim method on String to remove empty spaces
     */
   def getName(providedName: String) : String = ???
 
   /**
-    * Implement the function getAge, so that it either accepts the supplied age
-    * and returns it as an Int.
+    * Implement the function getAge, so that it accepts the supplied age and returns it as an Int.
     * If the age can't be converted to an Int, throw an InvalidAgeValueException
     * If the provided age is not between 1 and 120 throw an InvalidAgeRangeException.
     *
@@ -62,7 +61,7 @@ object ExceptionExercises {
     * = 20
     *
     * scala> getAge("-1")
-    * = InvalidAgeRangeException: provided age should be between 1-120: -1"
+    * = InvalidAgeRangeException: provided age should be between 1-120: -1
     *
     * Hint: use the toInt method to convert a String to an Int. Be warned that it can throw a NumberFormatException.
     */
@@ -77,16 +76,16 @@ object ExceptionExercises {
     * What does this imply?
     *
     * scala> createPerson("Fred", "32")
-    * = "Person(Fred, 32)"
+    * = Person("Fred", 32)
     *
     * scala> createPerson("", "32")
-    * = EmptyNameException: provided name is empty"
+    * = EmptyNameException: provided name is empty
     *
     * scala> createPerson("Fred", "ThirtyTwo")
-    * = InvalidAgeValueException: provided age is invalid: ThirtyTwo"
+    * = InvalidAgeValueException: provided age is invalid: ThirtyTwo
     *
     * scala> createPerson("Fred", "150")
-    * = InvalidAgeRangeException: provided age should be between 1-120: 150"
+    * = InvalidAgeRangeException: provided age should be between 1-120: 150
     */
   def createPerson(name: String, age: String): Person = ???
 
@@ -95,7 +94,7 @@ object ExceptionExercises {
     * and only returns valid pairs for name and age. It should not throw any Exceptions.
     *
     * scala> validPairs
-    * = "List(("Tokyo", "30"), ("Berlin", "43"))"
+    * = List(("Tokyo", "30"), ("Berlin", "43"))
     *
     * Hint: use filter on List using the getName and getAge functions
     *
@@ -118,7 +117,7 @@ object ExceptionExercises {
     * Implement the function createValidPeople2 that only uses the collect function on List
     * to create a List of Person instances from personStringPairs. It should not throw any Exceptions.
     *
-    * What issues due you run into (if any)?
+    * What issues do you run into (if any)?
     */
   def createValidPeople2: List[Person] = ???
 
@@ -132,7 +131,7 @@ object ExceptionExercises {
     *        InvalidAgeRangeException: provided age should be between 1-120: 0,
     *        EmptyNameException: provided name is empty)
     *
-    * What issues due you run into (if any)?
+    * What issues do you run into (if any)?
     *
     */
   def collectErrors: List[Exception] = ???
