@@ -92,8 +92,8 @@ object TypesExercises {
       case "yellow" => "The traffic light is yellow"
       case str => str.split(" ") match {
         case Array("flashing", freq) => s"The traffic light is flashing with a frequency of $freq"
+        case _ => s"The traffic light is $trafficLight"
       }
-      case _ => s"The traffic light is $trafficLight"
     }
 
   /**
@@ -129,6 +129,8 @@ object TypesExercises {
 
     case object Green extends TrafficLight
 
+    case class Flashing(freq: Int) extends TrafficLight
+
   }
 
   /**
@@ -145,7 +147,16 @@ object TypesExercises {
     *
     * Hint: Use pattern matching
     **/
-  def showTrafficLight(trafficLight: TrafficLight): String = ???
+
+  import TrafficLight._
+
+  def showTrafficLight(trafficLight: TrafficLight): String =
+    trafficLight match {
+      case Red => "The traffic light is red"
+      case Yellow => "The traffic light is yellow"
+      case Green => "The traffic light is green"
+      case Flashing(x) => s"The traffic light is flashing $x"
+    }
 
   /**
     * Now introduce a new type of `TrafficLight` called `Flashing` that has an additional parameter, `frequency: Int`
