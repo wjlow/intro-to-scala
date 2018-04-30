@@ -71,17 +71,20 @@ class OptionExercises1Test extends FunSpec with TypeCheckedTripleEquals {
   describe("mkPersonThenChangeName") {
 
     it("should return Person with name set to newName") {
-      assert(mkPersonThenChangeName("Old Name", 20, "New Name") === Some(Person("New Name", 20)))
+      assert(mkPersonThenChangeName("Bob", 20, "John") === Some(Person("John", 20)))
     }
 
     it("should return None if oldName is blank") {
       assert(mkPersonThenChangeName("", 20, "New Name") === None)
     }
 
-    it("should return None if age < 0") {
-      assert(mkPersonThenChangeName("Old Name", -1, "New Name") === None)
+    it("should return Person with blank newName") {
+      assert(mkPersonThenChangeName("Bob", 20, "") === None)
     }
 
+    it("should return None if age < 0") {
+      assert(mkPersonThenChangeName("Bob", -1, "John") === None)
+    }
   }
 
 }

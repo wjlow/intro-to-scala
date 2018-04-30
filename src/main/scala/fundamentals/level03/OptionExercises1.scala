@@ -87,12 +87,10 @@ object OptionExercises1 {
     * scala> mkPersonThenChangeName("Bob", -1, "John")
     * = None
     *
-    * For simplicity, let's allow changing to an empty name, like:
-    *
     * scala> mkPersonThenChangeName("Bob", 20, "")
-    * = Some(Person("", 20))
+    * = None
     *
-    * Hint: Use `mkPerson` and `changeName`
+    * Hint: Use `mkPerson` and pattern matching
     **/
   def mkPersonThenChangeName(oldName: String, age: Int, newName: String): Option[Person] = ???
 
