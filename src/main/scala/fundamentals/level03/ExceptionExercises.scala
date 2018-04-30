@@ -3,9 +3,9 @@ package fundamentals.level03
 import fundamentals.level02.TypesExercises.Person
 
 /**
-  * These exercises are intended to show the difficulty of working with exceptions.
+  * These exercises are intended to show the difficulty of working with Exceptions.
   *
-  * We will work through the alternative after this.
+  * We will work through a better alternative to Exceptions after this.
   */
 object ExceptionExercises {
 
@@ -15,7 +15,7 @@ object ExceptionExercises {
   class InvalidAgeRangeException(message: String) extends Exception(message)
 
   //test data of names and age pairs
-  private val personStringPairs =
+  val personStringPairs =
     List(("Tokyo", "30"),
          ("Moscow", "5o"),
          ("The Professor", "200"),
@@ -64,9 +64,15 @@ object ExceptionExercises {
     * scala> getAge("-1")
     * = InvalidAgeRangeException: provided age should be between 1-120: -1"
     *
-    * Hint: use the toInt method to convert a String to an Int. Be warned that it can throw a NumberFormatException.
+    * Hint: use the toInt method to convert a String to an Int.
     */
-  def getAge(providedAge: String) : Int = ???
+  def getAge(providedAge: String) : Int =
+      try {
+        ???
+      } catch {
+        case _: NumberFormatException => ???
+      }
+
 
   /**
     * Implement the function createPerson, so that it either accepts a name and age
@@ -91,7 +97,7 @@ object ExceptionExercises {
   def createPerson(name: String, age: String): Person = ???
 
   /**
-    * Implement the function validPairs, that it uses the personStringPairs List
+    * Implement the function validPairs, that uses the personStringPairs List
     * and only returns valid pairs for name and age. It should not throw any Exceptions.
     *
     * scala> validPairs

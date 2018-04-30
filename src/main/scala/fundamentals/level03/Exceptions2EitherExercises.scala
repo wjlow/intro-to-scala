@@ -4,7 +4,7 @@ import fundamentals.level02.TypesExercises.Person
 import fundamentals.level03.ExceptionExercises.personStringPairs
 
 /**
-  * These exercises show the alternative to throwing exceptions using the `Either` data type.
+  * These exercises show the alternative to throwing Exceptions using the `Either` data type.
   * We will treat errors as values that our functions return.
   */
 object Exceptions2EitherExercises {
@@ -20,16 +20,23 @@ object Exceptions2EitherExercises {
 
   /**
     * In the ExceptionExcercises exercise we used Exceptions to handle validation and
-    * flow control. We also came across some issues when using this type of solution
-    * with Scala. Some other reasons why not to use Exceptions to model errors we can
+    * flow control. This is considered bad design as Exceptions are only for exceptional
+    * situations!
+    *
+    * We also came across some issues when using this type of solution
+    * with Scala.
+    *
+    * A summary of reasons why not to use Exceptions to model errors we can
     * recover from are:
-    * 1. Creating a stacktrace for an Exception is expensive
+    * 1. Creating a Stacktrace for an Exception is expensive
     * 2. Throwing Exceptions violates Referential Transparency
     * 3. Exceptions can't be composed (combined together)
     * 4. Nested try/catch blocks may lead to madness
+    * 5. Scala doesn't warn us about the Exceptions a method may throw
+    * 6. It's hard to treat Exceptions as values
     *
     * We now look at how to handle validations with Eithers which return success and errors
-    * as values. This means that Eithers are which are referentially transparent. Eithers
+    * as values. This means that Eithers are referentially transparent. Eithers
     * use a Left value to denote an error and a Right value to denote a success
     * (what is Right is correct, what is not Right is wrong).
     *
@@ -67,9 +74,14 @@ object Exceptions2EitherExercises {
     * scala> getAge("-1")
     * = Left(InvalidAgeRange(provided age should be between 1-120: -1))
     *
-    * Hint: use the toInt method to convert a String to an Int. Be warned that it can throw a NumberFormatException.
+    * Hint: use the toInt method to convert a String to an Int.
     */
-  def getAge(providedAge: String): Either[AppError, Int] = ???
+  def getAge(providedAge: String): Either[AppError, Int] =
+    try {
+      ???
+    } catch {
+      case _: NumberFormatException => ???
+    }
 
   /**
     * Implement the function createPerson, so that it returns a Right with a Person
