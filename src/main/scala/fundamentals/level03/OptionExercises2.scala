@@ -31,6 +31,8 @@ object OptionExercises2 {
     *
     * scala> findHumanById(100)
     * = None
+    *
+    * Hint: use get method on Map
     **/
   def findHumanById(humanId: HumanId): Option[Human] = ???
 

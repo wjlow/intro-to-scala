@@ -99,7 +99,11 @@ object TypesExercises {
     *
     * scala> showTrafficLightStr("flashing 100")
     * = "The traffic light is flashing with a frequency of 100"
+    *
+    * Hint: Use flashing regex and pattern matching
     **/
+
+  val flashing = """^flashing\s(\d+)$""".r
 
   /**
     * A "sum type" represents more than one possible value.
