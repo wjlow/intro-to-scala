@@ -6,7 +6,9 @@ import fundamentals.level03.OptionExercises2.{HumanId, Job, JobId, findHumanById
   * These exercises mirror the ones from `OptionExercises2.scala`,
   * they are for the purpose of teaching for-comprehension, which is very useful for working with `Option`.
   *
-  * For-comprehension also extends to other data types like `List`, `Either` and `Try`. We will cover this later!
+  * Please complete ForComprehension before proceeding.
+  *
+  *
   */
 object OptionExercises3 {
 
