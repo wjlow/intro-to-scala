@@ -5,7 +5,7 @@ import fundamentals.level03.TryExercises._
 import org.scalactic.TypeCheckedTripleEquals
 import org.scalatest.FunSpec
 
-import scala.util.Success
+import scala.util.{Failure, Success}
 
 /**
   * The assertions in this file are intentionally left blank for you to fill in.
@@ -36,6 +36,23 @@ class TryExercisesTest extends FunSpec with TypeCheckedTripleEquals {
 
     it("should return false") {
       assert(parseBooleanSafe("false") === Success(false))
+    }
+
+  }
+
+  describe("tryToEither") {
+
+    it("should return Right given Success") {
+      assert(tryToEither(Success("abc")) === Right("abc"))
+    }
+
+    it("should return Left given Failure") {
+
+      case class CustomException(msg: String) extends Throwable {
+        override def getMessage: String = msg
+      }
+
+      assert(tryToEither(Failure(CustomException("msg"))) === Left(TryError("msg")))
     }
 
   }
