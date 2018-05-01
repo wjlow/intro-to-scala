@@ -1,7 +1,5 @@
 package fundamentals.level03
 
-import fundamentals.level02.TypesExercises.Person
-import fundamentals.level02.TypesExercises.TrafficLight._
 import fundamentals.level03.NullExercises._
 import org.scalactic.TypeCheckedTripleEquals
 import org.scalatest.FunSpec
@@ -26,9 +24,6 @@ class NullExercisesTest extends FunSpec with TypeCheckedTripleEquals {
       assert(mkTrafficLightOrNull("green") === Green)
     }
 
-     it("should return Flashing") {
-      ???
-    }
   }
 
   describe("mkTrafficLightOrNullThenShow") {
@@ -47,10 +42,6 @@ class NullExercisesTest extends FunSpec with TypeCheckedTripleEquals {
 
     it("should show invalid traffic light") {
       assert(mkTrafficLightOrNullThenShow("bob") === "Traffic light is invalid")
-    }
-
-    it("should show Flashing traffic light") {
-      ???
     }
 
   }
