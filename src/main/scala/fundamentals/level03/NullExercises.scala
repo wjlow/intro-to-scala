@@ -25,7 +25,6 @@ object NullExercises {
       case Array("red") => Red
       case Array("yellow") => Yellow
       case Array("green") => Green
-      case Array("flashing", freq) => Flashing()
       case _ => null
     }
 
@@ -43,6 +42,7 @@ object NullExercises {
       case Red => "Traffic light is red"
       case Yellow => "Traffic light is yellow"
       case Green => "Traffic light is green"
+      case null => "Traffic light is invalid"
     }
 
   /**
@@ -59,7 +59,10 @@ object NullExercises {
     * scala> mkPersonOrNull("Bob", -1)
     * = null
     **/
-  def mkPersonOrNull(name: String, age: Int): Person = ???
+  def mkPersonOrNull(name: String, age: Int): Person =
+    if (name.isEmpty) null
+    else if (age < 0) null
+    else Person(name, age)
 
   /**
     * scala> mkPersonOrNullThenChangeName("Bob", 20, "John")
@@ -75,7 +78,11 @@ object NullExercises {
     *
     * Hint: Use `mkPersonOrNull` and `changeName` (already implemented below)
     **/
-  def mkPersonOrNullThenChangeName(oldName: String, age: Int, newName: String): Person = ???
+  def mkPersonOrNullThenChangeName(oldName: String, age: Int, newName: String): Person =
+    mkPersonOrNull(oldName, age) match {
+      case null => null
+      case person => mkPersonOrNull(newName, person.age)
+    }
 
   def changeName(newName: String, person: Person): Person = person.copy(name = newName)
 
