@@ -1,6 +1,6 @@
 package fundamentals.level02
 
-import fundamentals.level02.TypesExercises.Person
+import fundamentals.level02.TypesExercises.{Person, showPerson1, showPerson2}
 
 /**
   * These exercises will teach you how to work with the `List` data structure in Scala in a declarative manner.
@@ -168,7 +168,7 @@ object ListExercises {
     * scala> showEveryNthPerson(2, persons)
     * = List("Person2 is 21 years old", "Person4 is 21 years old")
     *
-    * Hint: Use .zipWithIndex
+    * Hint: Use .zipWithIndex and showPerson1/2
     */
   def showEveryNthPerson(n: Int, persons: List[Person]): List[String] = ???
 
