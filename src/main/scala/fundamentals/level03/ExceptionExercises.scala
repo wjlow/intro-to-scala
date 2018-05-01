@@ -1,7 +1,5 @@
 package fundamentals.level03
 
-import fundamentals.level02.TypesExercises.Person
-
 /**
   * These exercises are intended to show the difficulty of working with Exceptions.
   *

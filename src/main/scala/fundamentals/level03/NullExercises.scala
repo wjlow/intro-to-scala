@@ -1,14 +1,17 @@
 package fundamentals.level03
 
-import fundamentals.level02.TypesExercises.{Person, TrafficLight}
-import TrafficLight._
-
 /**
   * These exercises are intended to show the problems that come with programming with `null`s.
   *
   * After these exercises, we will learn the alternative to using `null`s.
   */
 object NullExercises {
+
+  /**
+    * From here on, we will work with a `TrafficLight` type that is defined in `package.scala`
+    *
+    * For simplicity, this type does not have a `Flashing` light.
+    */
 
   /**
     * scala> mkTrafficLightOrNull("red")
@@ -56,9 +59,11 @@ object NullExercises {
     * scala> mkPersonOrNullThenChangeName("Bob", 20, "")
     * = null
     *
-    * Hint: Use `mkPersonOrNull` and `changeName`
+    * Hint: Use `mkPersonOrNull` and `changeName` (already implemented below)
     **/
   def mkPersonOrNullThenChangeName(oldName: String, age: Int, newName: String): Person = ???
+
+  def changeName(newName: String, person: Person): Person = person.copy(name = newName)
 
   /**
     * Does the following function return a `null`?

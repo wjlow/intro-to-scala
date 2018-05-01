@@ -1,8 +1,5 @@
 package fundamentals.level03
 
-import fundamentals.level02.TypesExercises._
-import TrafficLight._
-
 /**
   * Here we introduce a new ADT - `Option` - for dealing with values that may not exist.
   *
