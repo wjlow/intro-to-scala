@@ -35,6 +35,8 @@ object Main {
     * we are able to unit test the majority of our program.
     *
     * Now, using `showErrorsOverSeverity`, let's print out the results to stdout.
+    *
+    * Hint: Use println to write to stdout
     */
   private def printErrorsOverSeverity(logFile: String, severity: Int): Unit = ???
 
