@@ -53,10 +53,8 @@ object NullExercises {
     * scala> mkPersonOrNullThenChangeName("Bob", -1, "John")
     * = null
     *
-    * For simplicity, let's allow changing to an empty name, like:
-    *
     * scala> mkPersonOrNullThenChangeName("Bob", 20, "")
-    * = Person("", 20)
+    * = null
     *
     * Hint: Use `mkPersonOrNull` and `changeName`
     **/
