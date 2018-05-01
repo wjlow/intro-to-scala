@@ -110,7 +110,7 @@ object Exceptions2EitherExercises {
     * scala> createValidPeople
     * = List(Person("Tokyo", 30), Person(" Berlin", 43))
     *
-    * Hint: use the collect method on List
+    * Hint: Use `map`, `createPerson` and `collect`
     *
     */
   def createValidPeople: List[Person] = ???
@@ -125,7 +125,7 @@ object Exceptions2EitherExercises {
     * InvalidAgeRange(provided age should be between 1-120: 0),
     * EmptyName(provided name is empty))
     *
-    * Hint: use the collect method on List
+    * Hint: Use `map`, `createPerson` and `collect`
     */
   def collectErrors: List[AppError] = ???
 }
