@@ -93,6 +93,8 @@ object ExceptionExercises {
     *
     * scala> createPerson("Fred", "150")
     * = InvalidAgeRangeException: provided age should be between 1-120: 150
+    *
+    * Hint: Use `getName` and `getAge` from above.
     */
   def createPerson(name: String, age: String): Person = ???
 
