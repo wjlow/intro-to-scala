@@ -20,16 +20,6 @@ object TryExercises {
   def parseInt(str: String): Int = str.toInt
 
   /**
-    * This is a tiny type on `Int` to be used in `parseAge`
-    */
-  case class Age(value: Int)
-
-  /**
-    * What can go wrong if we implement this using `parseInt`?
-    */
-  def parseAge(str: String): Age = ???
-
-  /**
     * What's a safe return type?
     *
     * Expressions that throw exceptions can be surrounded by `Try`:
@@ -42,51 +32,60 @@ object TryExercises {
     *
     * ```
     * Try(mayThrowException()) match {
-    *   case Success(a) => // do something with `a`
-    *   case Failure(exception) => // do something with `exception`
+    * case Success(a) => // do something with `a`
+    * case Failure(exception) => // do something with `exception`
     * }
     * ```
     *
-    * Hint: Use `Try` and pattern matching to solve this. `Try` also has a method `.toOption` that may help.
+    * scala> parseIntSafe("1")
+    * = Success(1)
+    *
+    * scala> parseIntSafe("abc")
+    * = Failure(java.lang.NumberFormatException: For input string: "abc")
+    *
+    * Hint: Use `Try` and `parseInt`
     */
-  def parseIntSafe(str: String) = ???
+  def parseIntSafe(str: String): Try[Int] = ???
 
   /**
-    * Let's introduce a custom error type for the rest of these exercises.
+    * scala> parseBooleanSafe("true")
+    * = Right(true)
+    *
+    * scala> parseBooleanSafe("abc")
+    * = Left(TryError("abc cannot be converted to Boolean"))
+    **/
+  def parseBooleanSafe(str: String): Try[Boolean] = ???
+
+  /**
+    * Remember that `Try[A]` ~ `Either[Throwable, A]`
+    *
+    * Let's write a function that converts a `Try[A]` to `Either[TryError, A]`, where `TryError` is our custom error type.
+    *
+    * Hint: You can convert a `Throwable` to a `String` using `.getMessage`
     */
   case class TryError(msg: String)
 
-  /**
-    * Let's write another version of `parseIntSafe` that retains some error information.
-    *
-    * scala> parseIntSafeEither("123")
-    * = Right(123)
-    *
-    * scala> parseIntSafeEither("bob")
-    * = Left(TryError("bob cannot be converted to Int"))
-    */
-  def parseIntSafeEither(str: String): Either[TryError, Int] = ???
+  def tryToEither[A](tryA: Try[A]): Either[TryError, A] =
+    tryA match {
+      case Success(a) => ???
+      case Failure(throwable) => ???
+    }
 
-  /**
-    * scala> parseBooleanSafeEither("true")
-    * = Right(true)
-    *
-    * scala> parseBooleanSafeEither("abc")
-    * = Left(TryError("abc cannot be converted to Boolean"))
-    */
-  def parseBooleanSafeEither(str: String): Either[TryError, Boolean] = ???
 
   /**
     * Create an Employee data type with three parameters:
     * 1. name: String
     * 2. age: Int
     * 3. hasDirectReports: Boolean
+    *
+    * Don't forget to seal it so it cannot get extended in another file!
     */
 
   trait Employee
 
   /**
-    * Now remove `import TryTestTypes._` from `TryExercisesTest.scala`
+    * 1. Now remove `import TryTestTypes._` from `TryExercisesTest.scala`
+    * 2. Comment out the contents of `TryTestTypes`
     */
 
   /**
@@ -103,9 +102,13 @@ object TryExercises {
     * scala> mkEmployee("Bob,22,abc")
     * = Left(TryError("abc cannot be converted to Boolean"))
     *
-    * Hint: Use csv.split(","), parseIntSafeEither and parseBooleanSafeEither
+    * Hint: Use `parseIntSafe`, `parseBooleanSafe`, for-comprehension, `tryToEither`
     */
-  def mkEmployee(csv: String): Either[TryError, Employee] = ???
+  def mkEmployee(csv: String): Either[TryError, Employee] =
+    csv.split(",") match {
+      case Array(nameStr, ageStr, hasDirectReportsStr) => ???
+      case _ => Left(TryError("CSV has wrong number of fields. Expected 3."))
+    }
 
   /**
     * @param filename Path to file containing employees data, e.g. "src/main/resources/employees.csv"
@@ -113,6 +116,9 @@ object TryExercises {
     *
     * Hint: Use `mkEmployee`
     */
-  def fileToEmployees(filename: String): List[Either[TryError, Employee]] = ???
+  def fileToEmployees(filename: String): List[Either[TryError, Employee]] = {
+    val lines: List[String] = io.Source.fromFile(filename).getLines().toList
+    ???
+  }
 
 }

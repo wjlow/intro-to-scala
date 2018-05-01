@@ -5,6 +5,8 @@ import fundamentals.level03.TryExercises._
 import org.scalactic.TypeCheckedTripleEquals
 import org.scalatest.FunSpec
 
+import scala.util.{Failure, Success}
+
 /**
   * The assertions in this file are intentionally left blank for you to fill in.
   */
@@ -12,40 +14,45 @@ class TryExercisesTest extends FunSpec with TypeCheckedTripleEquals {
 
   describe("parseIntSafe") {
 
-    it("should return None given not an Int") {
-      assert(parseIntSafe("bob") == None)
-    }
-
-    it("should return Int") {
-      assert(parseIntSafe("123") == Some(123))
-    }
-
-  }
-
-  describe("parseIntSafeEither") {
-
     it("should return TryError given not an Int") {
-      assert(parseIntSafeEither("bob") === Left(TryError("bob cannot be converted to Int")))
+      assert(parseIntSafe("abc").isFailure === true)
     }
 
     it("should return Int") {
-      assert(parseIntSafeEither("123") == Right(123))
+      assert(parseIntSafe("123") === Success(123))
     }
 
   }
 
-  describe("parseBooleanSafeEither") {
+  describe("parseBooleanSafe") {
 
     it("should return error message given not a Boolean") {
-      assert(parseBooleanSafeEither("bob") === Left(TryError("bob cannot be converted to Boolean")))
+      assert(parseBooleanSafe("abc").isFailure === true)
     }
 
     it("should return true") {
-      assert(parseBooleanSafeEither("true") === Right(true))
+      assert(parseBooleanSafe("true") === Success(true))
     }
 
     it("should return false") {
-      assert(parseBooleanSafeEither("false") === Right(false))
+      assert(parseBooleanSafe("false") === Success(false))
+    }
+
+  }
+
+  describe("tryToEither") {
+
+    it("should return Right given Success") {
+      assert(tryToEither(Success("abc")) === Right("abc"))
+    }
+
+    it("should return Left given Failure") {
+
+      case class CustomException(msg: String) extends Throwable {
+        override def getMessage: String = msg
+      }
+
+      assert(tryToEither(Failure(CustomException("msg"))) === Left(TryError("msg")))
     }
 
   }
@@ -57,11 +64,15 @@ class TryExercisesTest extends FunSpec with TypeCheckedTripleEquals {
     }
 
     it("should return error message if age is not a number") {
-      assert(mkEmployee("Bob,abc,true") === Left(TryError("abc cannot be converted to Int")))
+      assert(mkEmployee("Bob,abc,true").isLeft === true)
     }
 
     it("should return error message if hasDirectReports is not a Boolean") {
-      assert(mkEmployee("Bob,22,abc") == Left(TryError("abc cannot be converted to Boolean")))
+      assert(mkEmployee("Bob,22,abc").isLeft === true)
+    }
+
+    it("should return error message if csv does not have 3 fields") {
+      assert(mkEmployee("a,b,c,d").isLeft === true)
     }
 
   }
