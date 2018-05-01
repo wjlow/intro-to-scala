@@ -15,28 +15,29 @@ We welcome pull requests and feedback!
 * 9.30 - Start
 * 10 - Intro to FP/Scala (__presentation__)
 * 10.30 - [IntroExercises](src/main/scala/fundamentals/level01/IntroExercises.scala)
-* 11 - Break
+* 11 - 15 min break
 * 11.15 - Intro to ADTs (__presentation__)
-* 11.30 - [TypesExercises](src/main/scala/fundamentals/level02/TypesExercises.scala)
-* 12.15 - Lunch
-* 1:30 - [ListExercises](src/main/scala/fundamentals/level02/ListExercises.scala)
-* 3 - Break
-* 3.15 - [NullExercises](src/main/scala/fundamentals/level03/NullExercises.scala) (skip if familiar with downside of nulls)
-* 3.45 - [OptionExercises pt. 1 (Safe constructors)](src/main/scala/fundamentals/level03/OptionExercises1.scala)
-* 4:45 - End
+* 11.45 - [TypesExercises](src/main/scala/fundamentals/level02/TypesExercises.scala)
+* 12.45 - Lunch
+* 1:45 - [ListExercises](src/main/scala/fundamentals/level02/ListExercises.scala)
+* 3 - 30 min break
+* 3.30 - [NullExercises](src/main/scala/fundamentals/level03/NullExercises.scala) (skip if familiar with downside of nulls)
+* 4 - [OptionExercises pt. 1 (Safe constructors)](src/main/scala/fundamentals/level03/OptionExercises1.scala)
+* 5 - End
 
 ### Day 2
 
 * 9.30 - Intro to Error Handling (__presentation__)
-* 10.15 - [OptionExercises pt. 2](src/main/scala/fundamentals/level03/OptionExercises2.scala)
-* 11.15 - Break
-* 11.30 - [ExceptionExercises](src/main/scala/fundamentals/level03/ExceptionExercises.scala) (skip if familiar with downside of exceptions)
-* 12.30 - Lunch
-* 1.30 - [Exceptions2EitherExercises](src/main/scala/fundamentals/level03/Exceptions2EitherExercises.scala) / [EitherExercises (Optional)](src/main/scala/fundamentals/level03/EitherExercises.scala)
-* 2 - Break
-* 2.15 - [TryExercises](src/main/scala/fundamentals/level03/TryExercises.scala)
-* 3.15 - [LogParser](src/main/scala/fundamentals/level04/LogParser.scala)
-* 4.15 - End
+* 10 - [OptionExercises pt. 2](src/main/scala/fundamentals/level03/OptionExercises2.scala)
+* 11 - 15 min break
+* 11.15 - [OptionExercises pt. 3](src/main/scala/fundamentals/level03/OptionExercises3.scala)
+* 12.00 - [ExceptionExercises](src/main/scala/fundamentals/level03/ExceptionExercises.scala) (skip if familiar with downside of exceptions)
+* 12.45 - Lunch
+* 1.45 - [Exceptions2EitherExercises](src/main/scala/fundamentals/level03/Exceptions2EitherExercises.scala) / [EitherExercises (Optional)](src/main/scala/fundamentals/level03/EitherExercises.scala)
+* 3 - 30 min break
+* 3.30 - [TryExercises](src/main/scala/fundamentals/level03/TryExercises.scala)
+* 4 - [LogParser](src/main/scala/fundamentals/level04/LogParser.scala)
+* 5 - End
 
 ## Pre-requisites
 
