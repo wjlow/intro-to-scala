@@ -77,8 +77,6 @@ object TryExercises {
     * 1. name: String
     * 2. age: Int
     * 3. hasDirectReports: Boolean
-    *
-    * Don't forget to seal it so it cannot get extended in another file!
     */
 
   trait Employee
