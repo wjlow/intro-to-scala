@@ -182,9 +182,9 @@ object ListExercises {
     *
     * Hint: Use .zipWithIndex and showPerson1/2
     */
-  def showEveryNthPerson(n: Int, persons: List[Person]): List[String] = persons.zipWithIndex.map {
-    case (person, )
-  }
+  def showEveryNthPerson(n: Int, persons: List[Person]): List[String] = persons.zipWithIndex.filter {
+    case (person, index) => index % 2 == 0
+  }.map{ case (person, _) => TypesExercises.showPerson1(person)}
 
   /**
     * Given a list of `Person`s ordered by age in ascending order. Return all of those that are under 18.
