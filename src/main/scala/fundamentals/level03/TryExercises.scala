@@ -20,16 +20,6 @@ object TryExercises {
   def parseInt(str: String): Int = str.toInt
 
   /**
-    * This is a tiny type on `Int` to be used in `parseAge`
-    */
-  case class Age(value: Int)
-
-  /**
-    * What can go wrong if we implement this using `parseInt`?
-    */
-  def parseAge(str: String): Age = ???
-
-  /**
     * What's a safe return type?
     *
     * Expressions that throw exceptions can be surrounded by `Try`:
@@ -42,14 +32,14 @@ object TryExercises {
     *
     * ```
     * Try(mayThrowException()) match {
-    *   case Success(a) => // do something with `a`
-    *   case Failure(exception) => // do something with `exception`
+    * case Success(a) => // do something with `a`
+    * case Failure(exception) => // do something with `exception`
     * }
     * ```
     *
     * Hint: Use `Try` and pattern matching to solve this. `Try` also has a method `.toOption` that may help.
     */
-  def parseIntSafe(str: String) = ???
+  def parseIntSafe(str: String): Option[Int] = ???
 
   /**
     * Let's introduce a custom error type for the rest of these exercises.
@@ -64,7 +54,7 @@ object TryExercises {
     *
     * scala> parseIntSafeEither("bob")
     * = Left(TryError("bob cannot be converted to Int"))
-    */
+    **/
   def parseIntSafeEither(str: String): Either[TryError, Int] = ???
 
   /**
@@ -73,7 +63,7 @@ object TryExercises {
     *
     * scala> parseBooleanSafeEither("abc")
     * = Left(TryError("abc cannot be converted to Boolean"))
-    */
+    **/
   def parseBooleanSafeEither(str: String): Either[TryError, Boolean] = ???
 
   /**
@@ -103,9 +93,13 @@ object TryExercises {
     * scala> mkEmployee("Bob,22,abc")
     * = Left(TryError("abc cannot be converted to Boolean"))
     *
-    * Hint: Use csv.split(","), parseIntSafeEither and parseBooleanSafeEither
+    * Hint: Use parseIntSafeEither, parseBooleanSafeEither and for-comprehension
     */
-  def mkEmployee(csv: String): Either[TryError, Employee] = ???
+  def mkEmployee(csv: String): Either[TryError, Employee] =
+    csv.split(",") match {
+      case Array(nameStr, ageStr, hasDirectReportsStr) => ???
+      case _ => Left(TryError("CSV has wrong number of fields. Expected 3."))
+    }
 
   /**
     * @param filename Path to file containing employees data, e.g. "src/main/resources/employees.csv"
@@ -113,6 +107,9 @@ object TryExercises {
     *
     * Hint: Use `mkEmployee`
     */
-  def fileToEmployees(filename: String): List[Either[TryError, Employee]] = ???
+  def fileToEmployees(filename: String): List[Either[TryError, Employee]] = {
+    val lines: List[String] = io.Source.fromFile(filename).getLines().toList
+    ???
+  }
 
 }

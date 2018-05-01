@@ -13,11 +13,11 @@ class TryExercisesTest extends FunSpec with TypeCheckedTripleEquals {
   describe("parseIntSafe") {
 
     it("should return None given not an Int") {
-      assert(parseIntSafe("bob") == None)
+      assert(parseIntSafe("bob") === None)
     }
 
     it("should return Int") {
-      assert(parseIntSafe("123") == Some(123))
+      assert(parseIntSafe("123") === Some(123))
     }
 
   }
@@ -62,6 +62,10 @@ class TryExercisesTest extends FunSpec with TypeCheckedTripleEquals {
 
     it("should return error message if hasDirectReports is not a Boolean") {
       assert(mkEmployee("Bob,22,abc") == Left(TryError("abc cannot be converted to Boolean")))
+    }
+
+    it("should return error message if csv does not have 3 fields") {
+      assert(mkEmployee("a,b,c,d") == Left(TryError("CSV has wrong number of fields. Expected 3.")))
     }
 
   }
