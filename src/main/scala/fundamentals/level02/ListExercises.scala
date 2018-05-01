@@ -121,6 +121,8 @@ object ListExercises {
     *
     * A fold is an operation over a data structure to yield a summary value.
     *
+    * The next 3 exercises are to practise folding.
+    *
     * Examples: sum, product, min, max
     *
     * Hint: Use .foldLeft
@@ -133,8 +135,15 @@ object ListExercises {
     * https://en.wikipedia.org/wiki/Empty_product
     * scala> product(Nil)
     * = 1
+<<<<<<< HEAD
     **/
   def product(nums: List[Int]): Int = nums.foldLeft(1)(_ * _)
+=======
+    *
+    * Hint: Use pattern matching and .foldLeft
+    */
+  def product(nums: List[Int]): Int = ???
+>>>>>>> Add hint on using foldLeft for folding exercises
 
   /**
     * scala> min(List(4, 6, 1))
@@ -142,6 +151,8 @@ object ListExercises {
     *
     * scala> min(Nil)
     * = Int.MinValue
+    *
+    * Hint: Use pattern matching and .foldLeft
     **/
   def min(nums: List[Int]): Int = nums match {
     case Nil => Int.MinValue
@@ -158,6 +169,8 @@ object ListExercises {
     *
     * scala> youngestPerson(Nil)
     * = Person("Nobody", 0)
+    *
+    * Hint: Use pattern matching and .foldLeft
     **/
   def youngestPerson(persons: List[Person]): Person = persons match {
     case Nil => Person("Nobody", 0)
