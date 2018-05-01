@@ -37,34 +37,40 @@ object TryExercises {
     * }
     * ```
     *
-    * Hint: Use `Try` and pattern matching to solve this. `Try` also has a method `.toOption` that may help.
+    * scala> parseIntSafe("1")
+    * = Success(1)
+    *
+    * scala> parseIntSafe("abc")
+    * = Failure(java.lang.NumberFormatException: For input string: "abc")
+    *
+    * Hint: Use `Try` and `parseInt`
     */
-  def parseIntSafe(str: String): Option[Int] = ???
+  def parseIntSafe(str: String): Try[Int] = ???
 
   /**
-    * Let's introduce a custom error type for the rest of these exercises.
+    * scala> parseBooleanSafe("true")
+    * = Right(true)
+    *
+    * scala> parseBooleanSafe("abc")
+    * = Left(TryError("abc cannot be converted to Boolean"))
+    **/
+  def parseBooleanSafe(str: String): Try[Boolean] = ???
+
+  /**
+    * Remember that `Try[A]` ~ `Either[Throwable, A]`
+    *
+    * Let's write a function that converts a `Try[A]` to `Either[TryError, A]`, where `TryError` is our custom error type.
+    *
+    * Hint: You can convert a `Throwable` to a `String` using `.getMessage`
     */
   case class TryError(msg: String)
 
-  /**
-    * Let's write another version of `parseIntSafe` that retains some error information.
-    *
-    * scala> parseIntSafeEither("123")
-    * = Right(123)
-    *
-    * scala> parseIntSafeEither("bob")
-    * = Left(TryError("bob cannot be converted to Int"))
-    **/
-  def parseIntSafeEither(str: String): Either[TryError, Int] = ???
+  def tryToEither[A](tryA: Try[A]): Either[TryError, A] =
+    tryA match {
+      case Success(a) => ???
+      case Failure(throwable) => ???
+    }
 
-  /**
-    * scala> parseBooleanSafeEither("true")
-    * = Right(true)
-    *
-    * scala> parseBooleanSafeEither("abc")
-    * = Left(TryError("abc cannot be converted to Boolean"))
-    **/
-  def parseBooleanSafeEither(str: String): Either[TryError, Boolean] = ???
 
   /**
     * Create an Employee data type with three parameters:
@@ -93,7 +99,7 @@ object TryExercises {
     * scala> mkEmployee("Bob,22,abc")
     * = Left(TryError("abc cannot be converted to Boolean"))
     *
-    * Hint: Use parseIntSafeEither, parseBooleanSafeEither and for-comprehension
+    * Hint: Use `parseIntSafe`, `parseBooleanSafe`, for-comprehension, `tryToEither`
     */
   def mkEmployee(csv: String): Either[TryError, Employee] =
     csv.split(",") match {
