@@ -17,7 +17,14 @@ object NullExercises {
     * scala> mkTrafficLightOrNull("bob")
     * = null
     **/
-  def mkTrafficLightOrNull(str: String): TrafficLight = ???
+  def mkTrafficLightOrNull(str: String): TrafficLight =
+    str.split(" ") match {
+      case Array("red") => Red
+      case Array("yellow") => Yellow
+      case Array("green") => Green
+      case Array("flashing", freq) => Flashing()
+      case _ => null
+    }
 
   /**
     * scala> mkTrafficLightOrNullThenShow("red")
@@ -28,7 +35,12 @@ object NullExercises {
     *
     * Hint: Use `mkTrafficLightOrNull` and pattern matching
     */
-  def mkTrafficLightOrNullThenShow(str: String): String = ???
+  def mkTrafficLightOrNullThenShow(str: String): String =
+    mkTrafficLightOrNull(str) match {
+      case Red => "Traffic light is red"
+      case Yellow => "Traffic light is yellow"
+      case Green => "Traffic light is green"
+    }
 
   /**
     * scala> mkPersonOrNull("Bob", 20)
