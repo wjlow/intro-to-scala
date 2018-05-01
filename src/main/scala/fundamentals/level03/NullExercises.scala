@@ -1,14 +1,17 @@
 package fundamentals.level03
 
-import fundamentals.level02.TypesExercises.{Person, TrafficLight}
-import TrafficLight._
-
 /**
   * These exercises are intended to show the problems that come with programming with `null`s.
   *
   * After these exercises, we will learn the alternative to using `null`s.
   */
 object NullExercises {
+
+  /**
+    * From here on, we will work with a `TrafficLight` type that is defined in `package.scala`
+    *
+    * For simplicity, this type does not have a `Flashing` light.
+    */
 
   /**
     * scala> mkTrafficLightOrNull("red")

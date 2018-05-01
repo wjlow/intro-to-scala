@@ -1,6 +1,5 @@
 package fundamentals.level03
 
-import fundamentals.level02.TypesExercises.Person
 import fundamentals.level03.ExceptionExercises.personStringPairs
 
 /**
