@@ -19,7 +19,7 @@ object Exceptions2EitherExercises {
   case class InvalidAgeRange(message: String) extends AppError
 
   /**
-    * In the ExceptionExcercises exercise we used Exceptions to handle validation and
+    * In the ExceptionExercises exercise we used Exceptions to handle validation and
     * flow control. This is considered bad design as Exceptions are only for exceptional
     * situations!
     *
@@ -50,7 +50,7 @@ object Exceptions2EitherExercises {
     * is empty or a Right if the supplied name is not empty.
     *
     * scala> getName("Fred")
-    * = Right("Fred")
+    * = Right(Fred)
     *
     * scala> getName("")
     * = Left(EmptyName(provided name is empty))
@@ -85,7 +85,7 @@ object Exceptions2EitherExercises {
 
   /**
     * Implement the function createPerson, so that it returns a Right with a Person
-    * if the name and age are valid or returns a Left of AppError if either the name of age is invalid.
+    * if the name and age are valid or returns a Left of AppError if either the name or age is invalid.
     *
     * scala> createPerson("Fred", "32")
     * = Right(Person(Fred,32))
@@ -108,7 +108,7 @@ object Exceptions2EitherExercises {
     * to create a List of Person instances.
     *
     * scala> createValidPeople
-    * = List(Person("Tokyo", 30), Person(" Berlin", 43))
+    * = List(Person(Tokyo, 30), Person(Berlin, 43))
     *
     * Hint: Use `map`, `createPerson` and `collect`
     *
