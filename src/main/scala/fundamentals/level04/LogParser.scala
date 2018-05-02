@@ -45,7 +45,9 @@ object LogParser {
   trait LogMessage
 
  /**
-   * Once you have defined your data types, remove `import Types._` from [LogParserTest.scala](src/test/scala/fundamentals/level04/LogParserTest.scala).
+   * - Once you have defined your data types:
+   * 1. Remove `import Types._` from [LogParserTest.scala](src/test/scala/fundamentals/level04/LogParserTest.scala)
+   * 2. Comment out the contents of src/test/scala/fundamentals/level04/Types.scala
    */
 
   /**
@@ -80,13 +82,6 @@ object LogParser {
   def getUnknowns(logs: List[LogMessage]): List[LogMessage] = ???
 
   /**
-    * Define a function that returns the error log with the most recent (highest) timestamp.
-    *
-    * What if we cannot find any error logs in the input?
-    */
-  def findLatestError(logs: List[LogMessage]): Option[LogMessage] = ???
-
-  /**
     * Write a function to convert a `LogMessage` to a readable `String`.
     *
     * scala> showLogMessage(KnownLog(Info, 147, "mice in the air"))
@@ -116,4 +111,11 @@ object LogParser {
     * Now head over to `Main.scala` in the same package to complete the rest of the program.
     */
 
+  /**
+    * **BONUS CHALLENGE** Define a function that returns the error log with the most recent (highest) timestamp.
+    *
+    * What if we cannot find any error logs in the input?
+    * What if we get an empty line from the fileContent?
+    **/
+  def findLatestError(logs: List[LogMessage]): Option[LogMessage] = ???
 }
