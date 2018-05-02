@@ -19,6 +19,7 @@ object ExceptionExercises {
          ("The Professor", "200"),
          ("Berlin", "43"),
          ("Arturo Roman", "0"),
+         ("", "1000"), // <- Two errors should be dealt with
          ("", "30"))
 
 /**
