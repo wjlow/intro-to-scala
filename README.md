@@ -12,76 +12,87 @@ We welcome pull requests and feedback!
 
 ### Day 1
 
-* 9.30 - Start
-* 10 - Intro to FP/Scala (__presentation__)
-* 10.30 - [IntroExercises](src/main/scala/fundamentals/level01/IntroExercises.scala)
-* 11 - 15 min break
-* 11.15 - Intro to ADTs (__presentation__)
-* 11.45 - [TypesExercises](src/main/scala/fundamentals/level02/TypesExercises.scala)
-* 12.45 - Lunch
-* 1:45 - [ListExercises](src/main/scala/fundamentals/level02/ListExercises.scala)
-* 3 - 30 min break
-* 3.30 - [NullExercises](src/main/scala/fundamentals/level03/NullExercises.scala) (skip if familiar with downside of nulls)
-* 4 - [OptionExercises pt. 1 (Safe constructors)](src/main/scala/fundamentals/level03/OptionExercises1.scala)
-* 5 - End
+| Time | Topic/Exercise |
+| :---: | :---: |
+| 09.30 | Start |
+| 10.00 | Intro to FP/Scala (__presentation__) |
+| 10.30 | [IntroExercises](src/main/scala/fundamentals/level01/IntroExercises.scala) |
+| 11.00 | 15 min break |
+| 11.15 | Intro to ADTs (__presentation__) |
+| 11.45 | [TypesExercises](src/main/scala/fundamentals/level02/TypesExercises.scala) |
+| 12.45 | Lunch |
+| 13.45 | [ListExercises](src/main/scala/fundamentals/level02/ListExercises.scala) |
+| 15.00 | 30 min break |
+| 15.30 | [NullExercises](src/main/scala/fundamentals/level03/NullExercises.scala) (skip if familiar with downside of nulls) |
+| 16.00 | [OptionExercises pt. 1 (Safe constructors)](src/main/scala/fundamentals/level03/OptionExercises1.scala) |
+| 17.00 | End |
 
 ### Day 2
 
-* 9.30 - Intro to Error Handling (__presentation__)
-* 10 - [OptionExercises pt. 2](src/main/scala/fundamentals/level03/OptionExercises2.scala)
-* 11 - 15 min break
-* 11.15 - [OptionExercises pt. 3](src/main/scala/fundamentals/level03/OptionExercises3.scala)
-* 12.00 - [ExceptionExercises](src/main/scala/fundamentals/level03/ExceptionExercises.scala) (skip if familiar with downside of exceptions)
-* 12.45 - Lunch
-* 1.45 - [Exceptions2EitherExercises](src/main/scala/fundamentals/level03/Exceptions2EitherExercises.scala) / [EitherExercises (Optional)](src/main/scala/fundamentals/level03/EitherExercises.scala)
-* 3 - 30 min break
-* 3.30 - [TryExercises](src/main/scala/fundamentals/level03/TryExercises.scala)
-* 4 - [LogParser](src/main/scala/fundamentals/level04/LogParser.scala)
-* 5 - End
+| Time | Topic/Exercise |
+| :---: | :---: |
+| 09.30 | Intro to Error Handling (__presentation__) |
+| 10.00 | [OptionExercises pt. 2](src/main/scala/fundamentals/level03/OptionExercises2.scala) |
+| 11.00 | 15 min break |
+| 11.15 | [OptionExercises pt. 3](src/main/scala/fundamentals/level03/OptionExercises3.scala) |
+| 12.00 | [ExceptionExercises](src/main/scala/fundamentals/level03/ExceptionExercises.scala) (skip if familiar with downside of exceptions) |
+| 12.45 | Lunch |
+| 13.45 | [Exceptions2EitherExercises](src/main/scala/fundamentals/level03/Exceptions2EitherExercises.scala) |
+| 15.00 | 30 min break |
+| 15.30 | [TryExercises](src/main/scala/fundamentals/level03/TryExercises.scala) |
+| 16.00 | [LogParser](src/main/scala/fundamentals/level04/LogParser.scala) |
+| 17.00 | End |
 
 ## Pre-requisites
 
-**1. Fork or clone this repository**
+#### 1. Fork or clone this repository
 
 ```
-git clone https://github.com/wjlow/intro-to-scala.git
-cd intro-to-scala/
+$ git clone https://github.com/wjlow/intro-to-scala.git
+$ cd intro-to-scala/
 ```
 
-**2. Install Java 8 (do not install Java 9 or Java 10)**
+#### 2. Install Java 8 (do not install Java 9 or Java 10)
+
+##### macOS (using [Homebrew](https://brew.sh))
 
 ```
-brew tap caskroom/versions
-brew cask install java8
+$ brew tap caskroom/versions
+$ brew cask install java8
 ```
 
-**3. Install sbt 1.x (recommended but optional, we have included a portable version)**
+#### 3. Install sbt 1.x (recommended but optional, we have included a portable version)
 
 We recommend that you install `sbt` on your machine even though a portable runner is included.
 
 > The actual version of `sbt` used is in your `project/build.properties` file and the global `sbt` is merely used for bootstrapping your project. You should not get conflicting `sbt` installations even if you have multiple Scala projects using different versions of `sbt`.
 
+##### macOS (using [Homebrew](https://brew.sh))
+
 ```
-brew install sbt@1
+$ brew install sbt@1
 ```
+
+##### Linux
+**[Installing sbt on Linux](https://www.scala-sbt.org/1.0/docs/Installing-sbt-on-Linux.html)**
 
 __Tip__: Launching SBT might take some time, so we recommend using SBT's interactive shell to run commands, instead of lauching SBT for each command.
 
 To run the `sbt` shell from the global installation use:
 
 ```
-sbt
+$ sbt
 ```
 
 To run the `sbt` shell from the portable installation use:
 
 ```
-./sbt
+$ ./sbt
 ```
 
-**[4. Compile program to resolve dependencies before the course](#compilation)**
+#### [4. Compile program to resolve dependencies before the course](#compilation)
 
-**[5. IDE setup](#ide-setup)**
+#### [5. IDE setup](#ide-setup)
 
 ## Compilation
 
@@ -90,13 +101,13 @@ Launch the SBT shell.
 To only compile production code use:
 
 ```
-~compile
+sbt> ~compile
 ```
 
 To compile production and test code use:
 
 ```
-~test:compile
+sbt> ~test:compile
 ```
 
 ## How to run tests
@@ -106,7 +117,7 @@ To compile production and test code use:
 To run all tests use:
 
 ```
-test
+sbt> test
 ```
 
 The first time you run all the tests you will get a lot of errors! These tests will be fixed by you during the duration of the course.
@@ -115,48 +126,46 @@ The first time you run all the tests you will get a lot of errors! These tests w
 
 In the meantime, run only a single test case at a time to keep things manageable.
 
-To run a single test use:
+To run a single test, use:
 
 ```
-~testOnly package.path.of.test.TestName
+sbt> ~testOnly package.path.of.test.TestName
 ```
 
-
-For example to run only the _fundamentals.level01.IntroExercisesTest_ test case use:
-
-```
-~testOnly fundamentals.level01.IntroExercisesTest
-```
-
-To run by test case name only use:
+For example, to run only the _fundamentals.level01.IntroExercisesTest_ test case, use:
 
 ```
-~testOnly *TestName
+sbt> ~testOnly fundamentals.level01.IntroExercisesTest
 ```
 
-For example to run the _fundamentals.level01.IntroExercisesTest_ test case use:
+To run by test case name only, use:
 
 ```
-~testOnly *IntroExercisesTest
+sbt> ~testOnly *TestName
 ```
 
+For example, to run the _fundamentals.level01.IntroExercisesTest_ test case, use:
+
+```
+sbt> ~testOnly *IntroExercisesTest
+```
 
 The `~` watches for changes to your files and runs the command automatically. It's nice to use it to get really fast feedback as you are working on the exercises!
 
-To stop watching changes through `~`, use the __enter__ key to return to the SBT shell prompt.
+To stop watching changes through `~`, press <kbd>Enter</kbd> to return to the SBT shell prompt.
 
 ## Jumping into a Scala REPL
 
 To launch into a Scala REPL with all production code use:
 
 ```
-console
+sbt> console
 ```
 
 To launch into a Scala REPL with all production and test code use:
 
 ```
-test:console
+sbt> test:console
 ```
 
 Type `:q` to exit from the REPL and return to SBT.
@@ -166,10 +175,8 @@ Type `:q` to exit from the REPL and return to SBT.
 To exit the SBT shell use:
 
 ```
-exit
+sbt> exit
 ```
-
-[SBT 1.x documentation](https://www.scala-sbt.org/1.x/docs/index.html)
 
 ## IDE setup
 
@@ -191,15 +198,15 @@ exit
 
 6. Wait for IntelliJ to download dependencies (this might take a while)
 
-7. Compile project with Command+F9
+7. Compile project with <kbd>Cmd</kbd> + <kbd>F9</kbd>
 
 8. You can run individual tests by right-clicking and then selecting _Run ...ExercisesTest_ ([or just use SBT](#how-to-run-tests))
 
 Tips:
 
-* Use Command+P inside the argument of a function to see what type the argument needs to be.
+* Use <kbd>Cmd</kbd> + <kbd>P</kbd> inside the argument of a function to see what type the argument needs to be.
 
-* Use Control+Shift+P to find out the type of a highlighted expression.
+* Use <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>P</kbd> to find out the type of a highlighted expression.
 
 </p></details>
 
@@ -219,8 +226,13 @@ Tips:
 
 5. Looking up Scala API - You can also search through the [Scala APIs](https://www.scala-lang.org/api/current/) to find any necessary methods or use a documentation browser like [Dash](https://kapeli.com/dash).
 
-6. To explore the Scala API or any of the exercises use the Scala REPL [See SBT instructions on how to jump into the REPL](jumping-into-a-scala-repl).
+6. To explore the Scala API or any of the exercises use the Scala REPL - [See SBT instructions on how to jump into the REPL](#jumping-into-a-scala-repl).
 
 ![scala api browser](scala-api.png)
 
 </p></details>
+
+## Further documentation
+
+- [Scala API](https://www.scala-lang.org/api/current/)
+- [SBT 1.x](https://www.scala-sbt.org/1.x/docs/index.html)
