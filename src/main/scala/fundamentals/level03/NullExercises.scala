@@ -59,11 +59,9 @@ object NullExercises {
     * scala> mkPersonOrNullThenChangeName("Bob", 20, "")
     * = null
     *
-    * Hint: Use `mkPersonOrNull` and `changeName` (already implemented below)
+    * Hint: Use `mkPersonOrNull` and pattern matching
     **/
   def mkPersonOrNullThenChangeName(oldName: String, age: Int, newName: String): Person = ???
-
-  def changeName(newName: String, person: Person): Person = person.copy(name = newName)
 
   /**
     * Does the following function return a `null`?
