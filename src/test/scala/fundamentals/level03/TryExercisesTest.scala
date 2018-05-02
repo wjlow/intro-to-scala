@@ -40,6 +40,17 @@ class TryExercisesTest extends FunSpec with TypeCheckedTripleEquals {
 
   }
 
+  describe("increment") {
+
+    it("should increment the given number") {
+      assert(increment("5") === Success(6))
+    }
+
+    it("should return error message given not a number") {
+      assert(increment("NaN").isFailure === true)
+    }
+  }
+
   describe("tryToEither") {
 
     it("should return Right given Success") {

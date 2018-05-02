@@ -58,6 +58,19 @@ object TryExercises {
     **/
   def parseBooleanSafe(str: String): Try[Boolean] = ???
 
+
+  /**
+    * scala> increment("10")
+    * = Right(11)
+    *
+    * scala> increment("NaN")
+    * = Left(TryError("NaN is not a valid number"))
+    *
+    * Hint: Solve it without using pattern matching
+    */
+
+  def increment(str: String): Try[Int] = ???
+
   /**
     * Remember that `Try[A]` ~ `Either[Throwable, A]`
     *
