@@ -86,6 +86,16 @@ object ListExercises {
   def showListSize[A](xs: List[A]): String = ???
 
   /**
+    * scala> val people = List(Person("Bob", 20), Person("Sally", 25))
+    * scala> sortByAgeDescending(people)
+    * = List(Person("Sally", 25), Person("Bob", 20))
+    *
+    * Hint: `sortBy` takes a function from `Person` to the field that you want to sort by.
+    */
+  def sortByAgeDescending(unsortedPeople: List[Person]): List[Person] =
+    unsortedPeople.sortBy(???)
+
+  /**
     * Mapping a function over a List
     *
     * This is typically what you want if the initial List and the resulting List
