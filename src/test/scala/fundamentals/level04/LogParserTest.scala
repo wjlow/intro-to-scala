@@ -50,30 +50,6 @@ class LogParserTest extends FunSpec with TypeCheckedTripleEquals {
 
   }
 
-  describe("findLatestError") {
-
-    it("should return error with highest timestamp") {
-      val log1 = KnownLog(Error(1), 100, "one")
-      val log2 = KnownLog(Error(1), 200, "two")
-      val log3 = KnownLog(Error(1), 300, "three")
-
-      val latestError = findLatestError(List(log1, log2, log3))
-
-      assert(latestError === Some(log3))
-    }
-
-    it("should return None if no errors found") {
-      val log1 = KnownLog(Info, 100, "one")
-      val log2 = KnownLog(Info, 200, "two")
-      val log3 = KnownLog(Info, 300, "three")
-
-      val latestError = findLatestError(List(log1, log2, log3))
-
-      assert(latestError === None)
-    }
-
-  }
-
   describe("showLogMessage") {
 
     it("should return Info LogMessage in readable format") {
