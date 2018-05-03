@@ -101,13 +101,13 @@ Launch the SBT shell.
 To only compile production code use:
 
 ```
-sbt> ~compile
+sbt> compile
 ```
 
 To compile production and test code use:
 
 ```
-sbt> ~test:compile
+sbt> test:compile
 ```
 
 ## How to run tests
@@ -150,7 +150,7 @@ For example, to run the _fundamentals.level01.IntroExercisesTest_ test case, use
 sbt> ~testOnly *IntroExercisesTest
 ```
 
-The `~` watches for changes to your files and runs the command automatically. It's nice to use it to get really fast feedback as you are working on the exercises!
+The `~` watches for changes to your files and runs the command automatically. It's nice to use it to get really fast feedback as you are working on the exercises! 
 
 To stop watching changes through `~`, press <kbd>Enter</kbd> to return to the SBT shell prompt.
 
@@ -180,7 +180,7 @@ sbt> exit
 
 ## IDE setup
 
-<details><summary>IntelliJ IDEA</summary>
+<details><summary>IntelliJ IDEA (recommended)</summary>
 
 ![intellij](intellij.png)
 
