@@ -23,7 +23,7 @@ We welcome pull requests and feedback!
 | 12.45 | Lunch |
 | 13.45 | [ListExercises](src/main/scala/fundamentals/level02/ListExercises.scala) |
 | 15.00 | 30 min break |
-| 15.30 | [NullExercises](src/main/scala/fundamentals/level03/NullExercises.scala) (skip if familiar with downside of nulls) |
+| 15.30 | [NullExercises](src/main/scala/fundamentals/level03/NullExercises.scala) |
 | 16.00 | [OptionExercises pt. 1 (Safe constructors)](src/main/scala/fundamentals/level03/OptionExercises1.scala) |
 | 17.00 | End |
 
@@ -35,7 +35,7 @@ We welcome pull requests and feedback!
 | 10.00 | [OptionExercises pt. 2](src/main/scala/fundamentals/level03/OptionExercises2.scala) |
 | 11.00 | 15 min break |
 | 11.15 | [OptionExercises pt. 3](src/main/scala/fundamentals/level03/OptionExercises3.scala) |
-| 12.00 | [ExceptionExercises](src/main/scala/fundamentals/level03/ExceptionExercises.scala) (skip if familiar with downside of exceptions) |
+| 12.00 | [ExceptionExercises](src/main/scala/fundamentals/level03/ExceptionExercises.scala) |
 | 12.45 | Lunch |
 | 13.45 | [Exceptions2EitherExercises](src/main/scala/fundamentals/level03/Exceptions2EitherExercises.scala) |
 | 15.00 | 30 min break |
