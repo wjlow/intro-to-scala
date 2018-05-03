@@ -49,14 +49,27 @@ object TryExercises {
 
   /**
     * scala> parseBooleanSafe("true")
-    * = Right(true)
+    * = Success(true)
     *
     * scala> parseBooleanSafe("abc")
-    * = Left(TryError("abc cannot be converted to Boolean"))
+    * = Failure(TryError("abc cannot be converted to Boolean"))
     *
     * Hint: Use .toBoolean to convert a String to a Boolean
     **/
   def parseBooleanSafe(str: String): Try[Boolean] = ???
+
+
+  /**
+    * scala> increment("10")
+    * = Success(11)
+    *
+    * scala> increment("NaN")
+    * = Failure(java.lang.NumberFormatException: For input string: "NaN")
+    *
+    * Hint: Solve it without using pattern matching
+    */
+
+  def increment(str: String): Try[Int] = ???
 
   /**
     * Remember that `Try[A]` ~ `Either[Throwable, A]`
