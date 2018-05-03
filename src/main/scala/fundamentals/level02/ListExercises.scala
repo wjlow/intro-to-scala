@@ -1,6 +1,6 @@
 package fundamentals.level02
 
-import fundamentals.level02.TypesExercises.{Person, showPerson1, showPerson2}
+import fundamentals.level02.TypesExercises.{Person, showPerson1}
 
 /**
   * These exercises will teach you how to work with the `List` data structure in Scala in a declarative manner.
@@ -38,6 +38,8 @@ object ListExercises {
   /**
     * scala> prependToList(1, List(2, 3, 4))
     * = List(1,2,3,4)
+    *
+    * Hint: Refer the construction of list
     */
   def prependToList[A](x: A, xs: List[A]): List[A] = ???
 
@@ -81,22 +83,9 @@ object ListExercises {
     * scala> showListSize(Nil)
     * = "This is an empty list"
     *
-    * Hint: Use pattern matching and string interpolation
+    * Hint: Use pattern matching, string interpolation and length
     */
   def showListSize[A](xs: List[A]): String = ???
-
-  /**
-    * scala> val people = List(Person("Tokyo", 30), Person("Berlin", 43), Person("Moscow", 50), Person("The Professor", 80))
-    * scala> sortByAgeDescending(people)
-    * = List(Person("The Professor", 80), Person("Moscow", 50), Person("Berlin", 43), Person("Tokyo", 30))
-    *
-    * Hint: Use `sortBy` method on `List`.
-    * `sortBy` takes a function from `Person` to the field that you want to sort by.
-    * The field must have some sort of `Ordering` defined.
-    * All common types, e.g. `Int`, `Long`, `Float`, `Double`, `String` have an `Ordering` defined.
-    */
-  def sortByAgeDescending(unsortedPeople: List[Person]): List[Person] =
-    ???
 
   /**
     * Mapping a function over a List
@@ -119,7 +108,7 @@ object ListExercises {
     * scala> filterEven(List(1, 2, 3, 4))
     * = List(2, 4)
     *
-    * Hint: Use .filter
+    * Hint: Use .filter and '%' for mod operator
     */
   def filterEven(nums: List[Int]): List[Int] = ???
 
@@ -181,7 +170,7 @@ object ListExercises {
     * scala> showEveryNthPerson(2, persons)
     * = List("Person2 is 21 years old", "Person4 is 21 years old")
     *
-    * Hint: Use .zipWithIndex and showPerson1/2
+    * Hint: Use .zipWithIndex, filter and showPerson1
     */
   def showEveryNthPerson(n: Int, persons: List[Person]): List[String] = ???
 

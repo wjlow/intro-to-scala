@@ -49,16 +49,6 @@ class ListExercisesTest extends FunSpec with TypeCheckedTripleEquals {
 
   }
 
-  describe("sortByAgeDescending") {
-
-    it("should return list in order") {
-      val people = List(Person("Tokyo", 30), Person("Berlin", 43), Person("Moscow", 50), Person("The Professor", 80))
-      val sorted = sortByAgeDescending(people)
-      assert(sorted === List(Person("The Professor", 80), Person("Moscow", 50), Person("Berlin", 43), Person("Tokyo", 30)))
-    }
-
-  }
-
   describe("addNumToEach") {
 
     it("should return Nil given Nil") {
