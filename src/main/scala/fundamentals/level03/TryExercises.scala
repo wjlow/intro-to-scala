@@ -64,7 +64,7 @@ object TryExercises {
     * = Success(11)
     *
     * scala> increment("NaN")
-    * = Failure(TryError("NaN is not a valid number"))
+    * = Failure(java.lang.NumberFormatException: For input string: "NaN")
     *
     * Hint: Solve it without using pattern matching
     */
