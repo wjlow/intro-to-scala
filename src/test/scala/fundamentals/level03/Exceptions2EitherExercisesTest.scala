@@ -12,11 +12,11 @@ class Exceptions2EitherExercisesTest extends FunSpec with TypeCheckedTripleEqual
       assert(getName("Fred") === Right("Fred"))
     }
 
-    it("should return an EmptyNameException if the name supplied is empty") {
+    it("should return an EmptyName if the name supplied is empty") {
       assert(getName("") === Left(EmptyName("provided name is empty")))
     }
 
-    it("should return an EmptyNameException if the name supplied contains only spaces") {
+    it("should return an EmptyName if the name supplied contains only spaces") {
       assert(getName("          ") === Left(EmptyName("provided name is empty")))
     }
   }
@@ -65,10 +65,10 @@ class Exceptions2EitherExercisesTest extends FunSpec with TypeCheckedTripleEqual
   describe("collectErrors") {
 
     it("should return a List of errors returned while processing inputs") {
-      assert(collectErrors === List(new InvalidAgeValue("provided age is invalid: 5o"),
-                                    new InvalidAgeRange("provided age should be between 1-120: 200"),
-                                    new InvalidAgeRange("provided age should be between 1-120: 0"),
-                                    new EmptyName("provided name is empty")))
+      assert(collectErrors === List(InvalidAgeValue("provided age is invalid: 5o"),
+                                    InvalidAgeRange("provided age should be between 1-120: 200"),
+                                    InvalidAgeRange("provided age should be between 1-120: 0"),
+                                    EmptyName("provided name is empty")))
     }
   }
 }

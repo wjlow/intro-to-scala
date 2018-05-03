@@ -6,7 +6,7 @@ import scala.util.Try
   * The exercises here are adapted from: http://www.cis.upenn.edu/~cis194/spring13/hw/02-ADTs.pdf
   *
   * Let's finish off this course by building a CLI program!
-  * We will build a program to parse a log file (containing Info, Warn and Error messagea) and print out errors over a severity level.
+  * We will build a program to parse a log file (containing Info, Warn and Error messages) and print out errors over a severity level.
   *
   * Finish each exercise and we will head over to `Main.scala` to hook it all up with the CLI.
   */
@@ -95,6 +95,7 @@ object LogParser {
     * = List(KnownLog(Info, 147, "mice in the air"), UnknownLog("X blblbaaaaa"))
     *
     * Hint: Use `parseLog`
+    * Hint: Convert an Array to a List with .toList
     */
   def parseLogFile(fileContent: String): List[LogMessage] =
     fileContent.split("\n").filter(_.nonEmpty).toList.map(parseLog)

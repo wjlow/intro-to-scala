@@ -53,6 +53,8 @@ object TryExercises {
     *
     * scala> parseBooleanSafe("abc")
     * = Left(TryError("abc cannot be converted to Boolean"))
+    *
+    * Hint: Use .toBoolean to convert a String to a Boolean
     **/
   def parseBooleanSafe(str: String): Try[Boolean] = Try(str.toBoolean)
 

@@ -72,6 +72,10 @@ class NullExercisesTest extends FunSpec with TypeCheckedTripleEquals {
       assert(mkPersonOrNullThenChangeName("", 20, "New Name") === null)
     }
 
+    it("should return null if newName is blank") {
+      assert(mkPersonOrNullThenChangeName("Bob", 20, "") === null)
+    }
+
     it("should return null if age < 0") {
       assert(mkPersonOrNullThenChangeName("Old Name", -1, "New Name") === null)
     }
