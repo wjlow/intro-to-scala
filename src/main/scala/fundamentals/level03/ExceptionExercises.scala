@@ -44,7 +44,7 @@ object ExceptionExercises {
     * scala> getName("   ")
     * = EmptyNameException: provided name is empty
     *
-    * Hint: use the trim method on String to remove empty spaces
+    * Hint: use the trim and isEmpty methods on String
     */
   def getName(providedName: String) : String = ???
 
@@ -78,7 +78,7 @@ object ExceptionExercises {
     * and returns a Person instance or throws an EmptyNameException, InvalidAgeValueException or
     * InvalidAgeRangeException when given invalid values.
     *
-    * Notice that createPerson is not declared to throw any Exceptions but the compiler does not complain.
+    * Notice that createPerson is not declared to throw any Exceptions, although it does.
     * What does this imply?
     *
     * scala> createPerson("Fred", "32")
@@ -110,27 +110,19 @@ object ExceptionExercises {
   def validPairs: List[(String, String)] = ???
 
   /**
-    * Implement the function createValidPeople that uses the validPairs function
-    * to create a List of Person instances. It should not throw any Exceptions.
+    * Implement the function createValidPeople that only uses the collect function on List
+    * to create a List of Person instances from personStringPairs. It should not throw any Exceptions.
     *
     * scala> createValidPeople
     * = List(Person("Tokyo", 30), Person("Berlin", 43))
     *
-    * Hint: use the output of validPairs and the createPerson function
-    *
-    */
-  def createValidPeople: List[Person] = ???
-
-  /**
-    * Implement the function createValidPeople2 that only uses the collect function on List
-    * to create a List of Person instances from personStringPairs. It should not throw any Exceptions.
-    *
-    * scala> createValidPeople2
-    * = List(Person("Tokyo", 30), Person("Berlin", 43))
-    *
     * What issues do you run into (if any)?
     */
-  def createValidPeople2: List[Person] = ???
+  def createValidPeople: List[Person] = {
+    personStringPairs.collect {
+      case (name, age) => ???
+    }
+  }
 
   /**
     * Implement the function collectErrors that collects all the Exceptions
@@ -145,5 +137,9 @@ object ExceptionExercises {
     * What issues do you run into (if any)?
     *
     */
-  def collectErrors: List[Exception] = ???
+  def collectErrors: List[Exception] = {
+    personStringPairs.collect {
+      case (name, age) => ???
+    }
+  }
 }
