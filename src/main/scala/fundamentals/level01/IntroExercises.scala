@@ -53,6 +53,14 @@ object IntroExercises {
     */
   def bar(a: Int): Int = ???
 
+  def other[A](items: List[A]): Int = ???
+
+  def another[A](items: List[A]): Boolean = ???
+
+  /**
+    * Parametricity: Types are documentation!!!
+    */
+
   /**
     * scala> timesTwoIfEven(4)
     * = 8
