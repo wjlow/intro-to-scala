@@ -17,6 +17,12 @@ object NullExercises {
     * scala> mkTrafficLightOrNull("red")
     * = Red
     *
+    * scala> mkTrafficLightOrNull("green")
+    * = Green
+    *
+    * scala> mkTrafficLightOrNull("yellow")
+    * = Yellow
+    *
     * scala> mkTrafficLightOrNull("bob")
     * = null
     **/
@@ -25,6 +31,12 @@ object NullExercises {
   /**
     * scala> mkTrafficLightOrNullThenShow("red")
     * = "Traffic light is red"
+    *
+    * scala> mkTrafficLightOrNullThenShow("green")
+    * = "Traffic light is green"
+    *
+    * scala> mkTrafficLightOrNullThenShow("yellow")
+    * = "Traffic light is yellow"
     *
     * scala> mkTrafficLightOrNullThenShow("bob")
     * = "Traffic light is invalid"
