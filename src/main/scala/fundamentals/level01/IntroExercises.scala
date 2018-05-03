@@ -22,25 +22,6 @@ object IntroExercises {
   def add(x: Int, y: Int): Int = ???
 
   /**
-    * Currying is the process of transforming a function that takes multiple arguments into
-    * a function that takes just a single argument and returns another function if any
-    * arguments are still needed.
-    *
-    * What if we want to define a function `add5` that adds 5 to any `Int`?
-    *
-    * scala> add5(10)
-    * = 15
-    *
-    * scala> add5(7)
-    * = 12
-    *
-    * Hint: Use curriedAdd
-    */
-  def curriedAdd(x: Int)(y: Int): Int = ???
-
-  def add5(y: Int): Int = ???
-
-  /**
     * Parametric types
     *
     * How many ways can you implement this function?
