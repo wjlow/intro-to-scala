@@ -196,13 +196,17 @@ sbt> exit
 
 5. Open IntelliJ and open this project: _Open -> Select directory where project is in_
 
-6. Wait for IntelliJ to download dependencies (this might take a while)
+6. IntelliJ will detect this as an SBT project. Select `Import SBT Project` when prompted
 
-7. Compile project with <kbd>Cmd</kbd> + <kbd>F9</kbd>
+7. In the pop-up, choose _SDK -> JDK -> Java 1.8_ (this step might be confusing, feel free to reach out)
 
-8. You can run individual tests by right-clicking and then selecting _Run ...ExercisesTest_ ([or just use SBT](#how-to-run-tests))
+8. Wait for IntelliJ to refresh the project and download dependencies (this might take a while)
+
+9. Compile project with <kbd>Cmd</kbd> + <kbd>F9</kbd>. If you get no errors, IntelliJ setup is all done!
 
 Tips:
+
+* You can run individual tests by right-clicking and then selecting _Run ...ExercisesTest_ ([or just use SBT](#how-to-run-tests))
 
 * Use <kbd>Cmd</kbd> + <kbd>P</kbd> inside the argument of a function to see what type the argument needs to be.
 
