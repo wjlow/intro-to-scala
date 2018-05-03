@@ -97,13 +97,6 @@ class ExceptionExercisesTest extends FunSpec with TypeCheckedTripleEquals {
     }
   }
 
-  describe("createValidPeople2") {
-
-    it("should return a List Person instances") {
-      assert(createValidPeople2 === List(Person("Tokyo", 30), Person("Berlin", 43)))
-    }
-  }
-
   describe("collectErrors") {
 
     def exceptionEq(e1: Exception, e2: Exception): Boolean =
