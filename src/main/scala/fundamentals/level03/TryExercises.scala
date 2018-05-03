@@ -49,10 +49,10 @@ object TryExercises {
 
   /**
     * scala> parseBooleanSafe("true")
-    * = Right(true)
+    * = Success(true)
     *
     * scala> parseBooleanSafe("abc")
-    * = Left(TryError("abc cannot be converted to Boolean"))
+    * = Failure(TryError("abc cannot be converted to Boolean"))
     *
     * Hint: Use .toBoolean to convert a String to a Boolean
     **/
@@ -61,10 +61,10 @@ object TryExercises {
 
   /**
     * scala> increment("10")
-    * = Right(11)
+    * = Success(11)
     *
     * scala> increment("NaN")
-    * = Left(TryError("NaN is not a valid number"))
+    * = Failure(TryError("NaN is not a valid number"))
     *
     * Hint: Solve it without using pattern matching
     */
