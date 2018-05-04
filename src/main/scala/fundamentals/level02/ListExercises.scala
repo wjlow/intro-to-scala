@@ -170,7 +170,22 @@ object ListExercises {
     * scala> showEveryNthPerson(2, persons)
     * = List("Person2 is 21 years old", "Person4 is 21 years old")
     *
-    * Hint: Use .zipWithIndex, filter and showPerson1
+    * Hint: Use `zipWithIndex`, `filter` and `showPerson1`.
+    * `zipWithIndex` will give you a `List` of tuples.
+    * You can deconstruct them by pattern matching inside filter, e.g.
+    *
+    * ```
+    * List(("abc", 1), ("def", 2)).filter {
+    *   case (str, num) => // do something with `str` and `num`
+    * }
+    * ```
+    *
+    * Otherwise, you'll need to use `._1` and `._2` methods to access the fields in the tuple, e.g.
+    *
+    * ```
+    * List(("abc", 1), ("def", 2)).filter(pair => // do something with `pair._1` and `pair._2`)
+    * ```
+    *
     */
   def showEveryNthPerson(n: Int, persons: List[Person]): List[String] = ???
 
