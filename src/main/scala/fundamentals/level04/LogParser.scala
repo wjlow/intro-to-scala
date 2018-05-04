@@ -56,11 +56,11 @@ object LogParser {
 
   case class UnknownLog(message: String) extends LogMessage
 
-  /**
-    * Once you have defined your data types:
-    * 1. Remove `import Types._` from [LogParserTest.scala](src/test/scala/fundamentals/level04/LogParserTest.scala).
-    * 2. Comment out the contents of `Types.scala`
-    */
+ /**
+   * - Once you have defined your data types:
+   * 1. Remove `import Types._` from [LogParserTest.scala](src/test/scala/fundamentals/level04/LogParserTest.scala)
+   * 2. Comment out the contents of src/test/scala/fundamentals/level04/Types.scala
+   */
 
   /**
     * Define a function to parse an individual log message.
@@ -111,16 +111,6 @@ object LogParser {
       case _: UnknownLog => true
       case _ => false
     }
-
-  /**
-    * Define a function that returns the error log with the most recent (highest) timestamp.
-    *
-    * What if we cannot find any error logs in the input?
-    */
-  def findLatestError(logs: List[LogMessage]): Option[LogMessage] =
-    logs.collect {
-      case k@KnownLog(Error(_), _, _) => k
-    }.sortBy(log => -log.timestamp).headOption
 
   /**
     * Write a function to convert a `LogMessage` to a readable `String`.

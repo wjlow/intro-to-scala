@@ -17,11 +17,12 @@ object ExceptionExercises {
   //test data of names and age pairs
   val personStringPairs =
     List(("Tokyo", "30"),
-      ("Moscow", "5o"),
-      ("The Professor", "200"),
-      ("Berlin", "43"),
-      ("Arturo Roman", "0"),
-      ("", "30"))
+         ("Moscow", "5o"),
+         ("The Professor", "200"),
+         ("Berlin", "43"),
+         ("Arturo Roman", "0"),
+         ("", "1000"), // <- Two errors should be dealt with
+         ("", "30"))
 
   /**
     * Handling validation using Exceptions will come naturally if you are coming
@@ -45,7 +46,7 @@ object ExceptionExercises {
     * scala> getName("   ")
     * = EmptyNameException: provided name is empty
     *
-    * Hint: use the trim method on String to remove empty spaces
+    * Hint: use the trim and isEmpty methods on String
     */
   def getName(providedName: String): String =
     if (providedName.trim.isEmpty) throw new EmptyNameException("provided name is empty")
@@ -83,7 +84,7 @@ object ExceptionExercises {
     * and returns a Person instance or throws an EmptyNameException, InvalidAgeValueException or
     * InvalidAgeRangeException when given invalid values.
     *
-    * Notice that createPerson is not declared to throw any Exceptions but the compiler does not complain.
+    * Notice that createPerson is not declared to throw any Exceptions, although it does.
     * What does this imply?
     *
     * scala> createPerson("Fred", "32")
@@ -129,31 +130,17 @@ object ExceptionExercises {
     }
 
   /**
-    * Implement the function createValidPeople that uses the validPairs function
-    * to create a List of Person instances. It should not throw any Exceptions.
+    * Implement the function createValidPeople that only uses the collect function on List
+    * to create a List of Person instances from personStringPairs. It should not throw any Exceptions.
     *
     * scala> createValidPeople
     * = List(Person("Tokyo", 30), Person("Berlin", 43))
     *
-    * Hint: use the output of validPairs and the createPerson function
-    *
-    */
-  def createValidPeople: List[Person] = validPairs.map { case (name, age) => createPerson(name, age) }
-
-  /**
-    * Implement the function createValidPeople2 that only uses the collect function on List
-    * to create a List of Person instances from personStringPairs. It should not throw any Exceptions.
-    *
-    * scala> createValidPeople2
-    * = List(Person("Tokyo", 30), Person("Berlin", 43))
-    *
     * What issues do you run into (if any)?
     */
-  def createValidPeople2: List[Person] = personStringPairs.collect {
-    case (name, age) => try {
-      createPerson(name, age)
-    } catch {
-      case _: Exception => ???
+  def createValidPeople: List[Person] = {
+    personStringPairs.collect {
+      case (name, age) => createPerson(name, age)
     }
   }
 
@@ -170,5 +157,9 @@ object ExceptionExercises {
     * What issues do you run into (if any)?
     *
     */
-  def collectErrors: List[Exception] = ???
+  def collectErrors: List[Exception] = {
+    personStringPairs.collect {
+      case (name, age) => ???
+    }
+  }
 }

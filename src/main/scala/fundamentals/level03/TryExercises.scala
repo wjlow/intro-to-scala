@@ -49,14 +49,27 @@ object TryExercises {
 
   /**
     * scala> parseBooleanSafe("true")
-    * = Right(true)
+    * = Success(true)
     *
     * scala> parseBooleanSafe("abc")
-    * = Left(TryError("abc cannot be converted to Boolean"))
+    * = Failure(java.lang.IllegalArgumentException: For input string: "abc")
     *
     * Hint: Use .toBoolean to convert a String to a Boolean
     **/
   def parseBooleanSafe(str: String): Try[Boolean] = Try(str.toBoolean)
+
+
+  /**
+    * scala> increment("10")
+    * = Success(11)
+    *
+    * scala> increment("NaN")
+    * = Failure(java.lang.NumberFormatException: For input string: "NaN")
+    *
+    * Hint: Solve it without using pattern matching
+    */
+
+  def increment(str: String): Try[Int] = ???
 
   /**
     * Remember that `Try[A]` ~ `Either[Throwable, A]`
@@ -73,7 +86,6 @@ object TryExercises {
       case Failure(throwable) => Left(TryError(throwable.getMessage))
     }
 
-
   /**
     * Create an Employee data type with three parameters:
     * 1. name: String
@@ -84,23 +96,20 @@ object TryExercises {
   case class Employee(name: String, age: Int, hasDirectReports: Boolean)
 
   /**
-    * 1. Now remove `import TryTestTypes._` from `TryExercisesTest.scala`
-    * 2. Comment out the contents of `TryTestTypes`
+    * Now remove `import TryTestTypes._` from `TryExercisesTest.scala`
     */
 
   /**
     * Create a CSV parser to safely create an Employee
     *
-    * Start by filling out the return type
-    *
     * scala> mkEmployee("Bob,22,true")
     * = Right(Employee("Bob", 22, true))
     *
     * scala> mkEmployee("Bob,abc,true")
-    * = Left(TryError("abc cannot be converted to Int"))
+    * = Left(TryError(For input string: "abc"))
     *
     * scala> mkEmployee("Bob,22,abc")
-    * = Left(TryError("abc cannot be converted to Boolean"))
+    * = Left(TryError(For input string: "abc"))
     *
     * Hint: Use `parseIntSafe`, `parseBooleanSafe`, for-comprehension, `tryToEither`
     */

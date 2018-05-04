@@ -14,22 +14,6 @@ class IntroExercisesTest extends FunSpec with TypeCheckedTripleEquals {
 
   }
 
-  describe("curriedAdd") {
-
-    it("1 + 2 is 3") {
-      assert(curriedAdd(1)(2) === 3)
-    }
-
-  }
-
-  describe("add5") {
-
-    it("given 10 returns 15") {
-      assert(add5(10) === 15)
-    }
-
-  }
-
   describe("timesTwoIfEven") {
 
     it("given 2 returns 4") {

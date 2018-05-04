@@ -84,6 +84,9 @@ object TypesExercises {
     * = "The traffic light is green"
     *
     * What if `trafficLight` is not "red", "yellow" or "green"?
+    *
+    * Go to `TypesExercisesTest.scala` and implement the test for this scenario: "should return a default on other inputs"
+    *
     **/
   def showTrafficLightStr(trafficLight: String): String =
     trafficLight match {
@@ -97,23 +100,16 @@ object TypesExercises {
     }
 
   /**
-    * We have a new traffic light called Flashing, with a frequency, e.g. "flashing 20", "flashing 100"
+    * We have a new traffic light called Flashing.
     *
     * Extend `showTrafficLightStr` that you have just implemented above to support this new functionality.
     *
-    * Use a test driven approach to implement this new functionality.
+    * Use a test driven approach to implement this new functionality: "showTrafficLightStr should show Flashing"
     *
-    * scala> showTrafficLightStr("flashing 20")
-    * = "The traffic light is flashing with a frequency of 20"
+    * scala> showTrafficLightStr("flashing")
+    * = "The traffic light is flashing"
     *
-    * scala> showTrafficLightStr("flashing 100")
-    * = "The traffic light is flashing with a frequency of 100"
-    *
-    * Hint: Use flashing regex and pattern matching or
-    * use `.split(" ")` and pattern-match on `Array("flashing", frequency)`
     **/
-
-  val flashing = """^flashing\s(\d+)$""".r
 
   /**
     * A "sum type" represents more than one possible value.
@@ -132,7 +128,7 @@ object TypesExercises {
 
     case object Green extends TrafficLight
 
-    case class Flashing(freq: Int) extends TrafficLight
+    case object Flashing extends TrafficLight
 
   }
 
@@ -158,13 +154,15 @@ object TypesExercises {
       case Red => "The traffic light is red"
       case Yellow => "The traffic light is yellow"
       case Green => "The traffic light is green"
-      case Flashing(x) => s"The traffic light is flashing $x"
+      case Flashing => s"The traffic light is flashing"
     }
 
   /**
-    * Now introduce a new type of `TrafficLight` called `Flashing` that has an additional parameter, `frequency: Int`
+    * Now introduce a new type of `TrafficLight` called `Flashing`.
     *
     * What happens when you try to compile now?
+    *
+    * Don't forget to fill in the unit test for this new scenario: "showTrafficLight should show Flashing"
     */
 
   /**

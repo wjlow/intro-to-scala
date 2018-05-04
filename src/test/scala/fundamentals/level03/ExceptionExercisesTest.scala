@@ -97,24 +97,25 @@ class ExceptionExercisesTest extends FunSpec with TypeCheckedTripleEquals {
     }
   }
 
-  describe("createValidPeople2") {
-
-    it("should return a List Person instances") {
-      assert(createValidPeople2 === List(Person("Tokyo", 30), Person("Berlin", 43)))
-    }
-  }
-
   describe("collectErrors") {
 
+    def exceptionEq(e1: Exception, e2: Exception): Boolean =
+      e1.getClass == e2.getClass && e1.getMessage == e2.getMessage
+
+    val expectedErrors = List(
+      new InvalidAgeValueException("provided age is invalid: 5o"),
+      new InvalidAgeRangeException("provided age should be between 1-120: 200"),
+      new InvalidAgeRangeException("provided age should be between 1-120: 0"),
+      new EmptyNameException("provided name is empty"),
+      new InvalidAgeRangeException("provided age should be between 1-120: 1000"),
+      new EmptyNameException("provided name is empty")
+    )
+
+    it("should return all errors") {
+      collectErrors.size === 6
+    }
+
     it("should return a List Exceptions thrown while processing inputs") {
-
-      def exceptionEq(e1: Exception, e2: Exception): Boolean =
-        e1.getClass == e2.getClass && e1.getMessage == e2.getMessage
-
-      val expectedErrors = List(new InvalidAgeValueException("provided age is invalid: 5o"),
-                                    new InvalidAgeRangeException("provided age should be between 1-120: 200"),
-                                    new InvalidAgeRangeException("provided age should be between 1-120: 0"),
-                                    new EmptyNameException("provided name is empty"))
       collectErrors.zip(expectedErrors).foreach {
         case (e1, e2) => assert(exceptionEq(e1, e2), s"$e1 != $e2")
       }

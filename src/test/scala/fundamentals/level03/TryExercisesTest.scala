@@ -6,18 +6,15 @@ import org.scalatest.FunSpec
 
 import scala.util.{Failure, Success}
 
-/**
-  * The assertions in this file are intentionally left blank for you to fill in.
-  */
 class TryExercisesTest extends FunSpec with TypeCheckedTripleEquals {
 
   describe("parseIntSafe") {
 
-    it("should return TryError given not an Int") {
+    it("should return Failure given not an Int") {
       assert(parseIntSafe("abc").isFailure === true)
     }
 
-    it("should return Int") {
+    it("should return Success given an Int") {
       assert(parseIntSafe("123") === Success(123))
     }
 
@@ -25,18 +22,29 @@ class TryExercisesTest extends FunSpec with TypeCheckedTripleEquals {
 
   describe("parseBooleanSafe") {
 
-    it("should return error message given not a Boolean") {
+    it("should return Failure given not a Boolean") {
       assert(parseBooleanSafe("abc").isFailure === true)
     }
 
-    it("should return true") {
+    it("should return Success given true") {
       assert(parseBooleanSafe("true") === Success(true))
     }
 
-    it("should return false") {
+    it("should return Success given false") {
       assert(parseBooleanSafe("false") === Success(false))
     }
 
+  }
+
+  describe("increment") {
+
+    it("should increment the given number") {
+      assert(increment("5") === Success(6))
+    }
+
+    it("should return Failure given not a number") {
+      assert(increment("NaN").isFailure === true)
+    }
   }
 
   describe("tryToEither") {
@@ -58,20 +66,20 @@ class TryExercisesTest extends FunSpec with TypeCheckedTripleEquals {
 
   describe("mkEmployee") {
 
-    it("should return valid Employee") {
+    it("should return valid Employee in a Right") {
       assert(mkEmployee("Bob,22,true") == Right(Employee("Bob", 22, true)))
     }
 
-    it("should return error message if age is not a number") {
-      assert(mkEmployee("Bob,abc,true").isLeft === true)
+    it("should return Left if age is not a number") {
+      assert(mkEmployee("Bob,abc,true") === Left(TryError("""For input string: "abc"""")))
     }
 
-    it("should return error message if hasDirectReports is not a Boolean") {
-      assert(mkEmployee("Bob,22,abc").isLeft === true)
+    it("should return Left if hasDirectReports is not a Boolean") {
+      assert(mkEmployee("Bob,22,abc") === Left(TryError("""For input string: "abc"""")))
     }
 
-    it("should return error message if csv does not have 3 fields") {
-      assert(mkEmployee("a,b,c,d").isLeft === true)
+    it("should return Left if csv does not have 3 fields") {
+      assert(mkEmployee("a,b,c,d") === Left(TryError("CSV has wrong number of fields. Expected 3.")))
     }
 
   }
@@ -80,12 +88,13 @@ class TryExercisesTest extends FunSpec with TypeCheckedTripleEquals {
 
     it("should return first error if any") {
       val errorOrEmployees = fileToEmployees("src/main/resources/employees.csv")
-      errorOrEmployees == List(
+
+      assert(errorOrEmployees == List(
         Right(Employee("ophelia", 25, false)),
         Right(Employee("romeo", 30, false)),
         Right(Employee("juliet", 29, true)),
-        Left(TryError("xx cannot be converted to Int")),
-        Left(TryError("yes cannot be converted to Boolean")))
+        Left(TryError("""For input string: "xx"""")),
+        Left(TryError("""For input string: "yes""""))))
     }
 
   }

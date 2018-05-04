@@ -37,6 +37,12 @@ object OptionExercises1 {
     * scala> mkTrafficLight("red")
     * = Some(Red)
     *
+    * scala> mkTrafficLight("green")
+    * = Some(Green)
+    *
+    * scala> mkTrafficLight("yellow")
+    * = Some(Yellow)
+    *
     * scala> mkTrafficLight("bob")
     * = None
     **/
@@ -50,6 +56,12 @@ object OptionExercises1 {
   /**
     * scala> mkTrafficLightThenShow("red")
     * = "Traffic light is red"
+    *
+    * scala> mkTrafficLightThenShow("green")
+    * = "Traffic light is green"
+    *
+    * scala> mkTrafficLightThenShow("yellow")
+    * = "Traffic light is yellow"
     *
     * scala> mkTrafficLightThenShow("bob")
     * = "Traffic light `bob` is invalid"
