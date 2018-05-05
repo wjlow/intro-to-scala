@@ -40,8 +40,8 @@ object Exceptions2EitherExercises {
     * (what is Right is correct, what is not Right is wrong).
     *
     * sealed trait Either[+E, +A]
-    * case class Right[A](value: A) extends Either[?, A]
-    * case class Left[E](error: E) extends Either[E, ?]
+    * case class Right[A](value: A) extends Either[Nothing, A]
+    * case class Left[E](error: E) extends Either[E, Nothing]
     */
 
   /**
