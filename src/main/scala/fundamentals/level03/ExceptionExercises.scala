@@ -107,7 +107,14 @@ object ExceptionExercises {
     */
   def validPairs: List[(String, String)] =
     personStringPairs.filter {
-      case (name, age) => ???
+      case (name, age) =>
+        try {
+          ???
+        } catch {
+          case _: EmptyNameException       => ???
+          case _: InvalidAgeValueException => ???
+          case _: InvalidAgeRangeException => ???
+        }
     }
 
   /**
