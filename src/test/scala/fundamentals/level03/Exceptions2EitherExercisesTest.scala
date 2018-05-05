@@ -16,9 +16,6 @@ class Exceptions2EitherExercisesTest extends FunSpec with TypeCheckedTripleEqual
       assert(getName("") === Left(EmptyName("provided name is empty")))
     }
 
-    it("should return an EmptyName if the name supplied contains only spaces") {
-      assert(getName("          ") === Left(EmptyName("provided name is empty")))
-    }
   }
 
   describe("getAge") {
