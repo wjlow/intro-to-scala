@@ -181,6 +181,20 @@ To launch into a Scala REPL with all production code use:
 sbt> console
 ```
 
+Once in the console, you can import your production code as such:
+
+```
+import package.objectname._
+```
+
+For example, to use functions defined in _fundamentals.level01.IntroExercises_:
+
+```
+scala> import fundamentals.level01.IntroExercises._
+scala> add(1, 2)
+res0: Int = 3
+```
+
 To launch into a Scala REPL with all production and test code use:
 
 ```
