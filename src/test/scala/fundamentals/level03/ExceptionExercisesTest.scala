@@ -50,6 +50,14 @@ class ExceptionExercisesTest extends FunSpec with TypeCheckedTripleEquals {
 
       assert(caught.getMessage === "provided age should be between 1-120: -1")
     }
+
+    it("should accept an age of one") {
+      assert(getAge("1")   == 1)
+    }
+
+    it("should accept an age of a hundred and twenty") {
+      assert(getAge("120")   == 120)
+    }
   }
 
   describe("createPerson") {
