@@ -4,26 +4,6 @@ For Comprehension is a powerful technique for working with values in "containers
 
 Here are some examples of for comprehension usages. Run them in a REPL and see what they output. You can start up a REPL with `sbt console`.
 
-## List
-
-```
-val result1 = 
-  for {
-    l1 <- (1 to 5).toList
-    l2 <- (10 to 12).toList
-    } yield l1 + l2
-
-println(result1)
-
-val result2 = 
-  for {
-    l1 <- (1 to 5).toList
-    l2 <- Nil : (List[Int])
-    } yield l1 + l2
-
-println(result2)
-```
-
 ## Option
 
 ```
