@@ -14,6 +14,9 @@ object NullExercises {
     */
 
   /**
+    * Let's start by converting `String`s from our nasty real world into our own `TrafficLight` ADT.
+    * If given an unrecognised value, return `null`.
+    *
     * scala> mkTrafficLightOrNull("red")
     * = Red
     *
@@ -26,9 +29,17 @@ object NullExercises {
     * scala> mkTrafficLightOrNull("bob")
     * = null
     **/
-  def mkTrafficLightOrNull(str: String): TrafficLight = ???
+  def mkTrafficLightOrNull(str: String): TrafficLight =
+    str match {
+      case "red" => ???
+      case "yellow" => ???
+      case "green" => ???
+      case _ => ???
+    }
 
   /**
+    * Write a function that calls `mkTrafficLightOrNull` and then turn each `TrafficLight` into a readable `String`.
+    *
     * scala> mkTrafficLightOrNullThenShow("red")
     * = "Traffic light is red"
     *
@@ -46,6 +57,9 @@ object NullExercises {
   def mkTrafficLightOrNullThenShow(str: String): String = ???
 
   /**
+    * Write a function that converts values from the real world into a `Person`.
+    * If the `name` and `age` are invalid (as described below), return `null`.
+    *
     * scala> mkPersonOrNull("Bob", 20)
     * = Person("Bob", 20)
     *
@@ -78,7 +92,7 @@ object NullExercises {
   def changeName(newName: String, person: Person): Person = person.copy(name = newName)
 
   /**
-    * Does the following function return a `null`?
+    * Thought exercise: Does the following function return a `null`?
     */
   def mean(nums: List[Int]): Double = ???
 
