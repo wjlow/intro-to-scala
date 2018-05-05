@@ -105,7 +105,10 @@ object ExceptionExercises {
     *
     * Hint: use filter on List using the getName and getAge functions
     */
-  def validPairs: List[(String, String)] = ???
+  def validPairs: List[(String, String)] =
+    personStringPairs.filter {
+      case (name, age) => ???
+    }
 
   /**
     * Implement the function createValidPeople that only uses the collect function on List
