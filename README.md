@@ -38,7 +38,7 @@ We welcome pull requests and feedback!
 | 12.00 | [ExceptionExercises](src/main/scala/fundamentals/level03/ExceptionExercises.scala) | Sanj |
 | 12.45 | Lunch (not provided) | |
 | 13.45 | [Exceptions2EitherExercises](src/main/scala/fundamentals/level03/Exceptions2EitherExercises.scala) | Sanj |
-| 15.00 | 30 min break | | 
+| 15.00 | 30 min break | |
 | 15.30 | [TryExercises](src/main/scala/fundamentals/level03/TryExercises.scala) | Ashok |
 | 16.00 | [LogParser](src/main/scala/fundamentals/level04/LogParser.scala) | Stili |
 | 17.00 | End | |
@@ -150,9 +150,28 @@ For example, to run the _fundamentals.level01.IntroExercisesTest_ test case, use
 sbt> ~testOnly *IntroExercisesTest
 ```
 
-The `~` watches for changes to your files and runs the command automatically. It's nice to use it to get really fast feedback as you are working on the exercises! 
+The `~` watches for changes to your files and runs the command automatically. It's nice to use it to get really fast feedback as you are working on the exercises!
 
 To stop watching changes through `~`, press <kbd>Enter</kbd> to return to the SBT shell prompt.
+
+<details><summary>Reducing StackTraces Shown by Failed Tests</summary>
+
+<p>
+<p>
+The first time you run a test case you will be greeted by a long list of StackTraces:
+
+![default scalatest reporter](scalatest-reporter.png)
+
+If you want to see a simplified view use the *SimpleReporter* with:
+
+```
+testOnly *TestName -- -C fundamentals.SimpleReporter
+```
+
+![simple scalatest reporter](scalatest-simple-reporter.png)
+
+</p></p>
+</details>
 
 ## Jumping into a Scala REPL
 
