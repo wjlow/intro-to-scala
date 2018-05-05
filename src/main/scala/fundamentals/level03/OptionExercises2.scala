@@ -59,7 +59,7 @@ object OptionExercises2 {
     * scala> findJobDescriptionGivenJobId1(100)
     * = None
     *
-    * Hint: Use pattern matching
+    * Hint: Use `findJobById` and then pattern match
     */
   def findJobDescriptionGivenJobId1(jobId: JobId): Option[String] = ???
 
@@ -91,12 +91,12 @@ object OptionExercises2 {
     * scala> findJobDescriptionGivenJobIdOrElse1(100)
     * = "Job with id 100 does not exist"
     *
-    * Hint: Use pattern matching
+    * Hint: Use `findJobDescriptionGivenJobId1` then pattern match
     */
   def findJobDescriptionGivenJobIdOrElse1(jobId: JobId): String = ???
 
   /**
-    * Same as above, but use `map` then `getOrElse`
+    * Same as above, but use `findJobDescriptionGivenJobId1` then `getOrElse`
     */
   def findJobDescriptionGivenJobIdOrElse2(jobId: JobId): String = ???
 
@@ -107,7 +107,7 @@ object OptionExercises2 {
     * scala> findJobIdByHumanId(2)
     * = Some(1)
     *
-    * Hint: Try `map`, `flatten`
+    * Hint: Use `findHumanById` and try `map`, `flatten`
     *
     * What's the type that you get after using `map`? What's different between that and the function's return type?
     */
@@ -117,7 +117,7 @@ object OptionExercises2 {
     * scala> findJobByHumanId(2)
     * = Some(Job("Teacher", "Expert in their field"))
     *
-    * Hint: Use `findJobIdByHumanId`
+    * Hint: Use `findJobIdByHumanId` and `findJobById`
     */
   def findJobByHumanId(humanId: HumanId): Option[Job] = ???
 
