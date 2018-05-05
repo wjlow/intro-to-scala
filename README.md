@@ -1,5 +1,7 @@
 # Intro to Scala Fundamentals
 
+[![Build Status](https://travis-ci.org/wjlow/intro-to-scala.svg?branch=master)](https://travis-ci.org/wjlow/intro-to-scala)
+
 This is a two day course. You are expected to know how to program in at least one programming language (Java, Ruby, JavaScript, etc.). The course teaches the fundamentals of using Scala as a functional programming language.
 
 This course is meant to be run in person. There are comments in the exercises to try and point you in the right direction so you should be able to do this in your spare time if you desire. Unit tests are included to verify your solutions for each exercise.
