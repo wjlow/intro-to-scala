@@ -37,7 +37,7 @@ object OptionExercises2 {
     * scala> findHumanById(100)
     * = None
     *
-    * Hint: use get method on Map
+    * Hint: Use `get` method on `humansDatabase` Map
     **/
   def findHumanById(humanId: HumanId): Option[Human] = ???
 
@@ -47,6 +47,8 @@ object OptionExercises2 {
     *
     * scala> findJobById(100)
     * = None
+    *
+    * Hint: Use `get` method on `jobsDatabase` Map
     **/
   def findJobById(jobId: JobId): Option[Job] = ???
 
@@ -94,7 +96,7 @@ object OptionExercises2 {
   def findJobDescriptionGivenJobIdOrElse1(jobId: JobId): String = ???
 
   /**
-    * Same as above, but use .map then .getOrElse
+    * Same as above, but use `map` then `getOrElse`
     */
   def findJobDescriptionGivenJobIdOrElse2(jobId: JobId): String = ???
 
@@ -105,9 +107,9 @@ object OptionExercises2 {
     * scala> findJobIdByHumanId(2)
     * = Some(1)
     *
-    * Hint: Try .map, .flatten
+    * Hint: Try `map`, `flatten`
     *
-    * What's the type that you get after using .map? What's different between that and the function's return type?
+    * What's the type that you get after using `map`? What's different between that and the function's return type?
     */
   def findJobIdByHumanId(humanId: HumanId): Option[JobId] = ???
 
@@ -115,7 +117,7 @@ object OptionExercises2 {
     * scala> findJobByHumanId(2)
     * = Some(Job("Teacher", "Expert in their field"))
     *
-    * Hint: Use findJobIdByHumanId
+    * Hint: Use `findJobIdByHumanId`
     */
   def findJobByHumanId(humanId: HumanId): Option[Job] = ???
 
