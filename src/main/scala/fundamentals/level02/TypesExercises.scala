@@ -12,8 +12,22 @@ object TypesExercises {
     * Here is an example of a `Person` type, which is a wrapper on `String` and `Int`.
     *
     * This is a "product type", i.e. a `Person` is a "product" of `String` and `Int`.
+    *
     */
   case class Person(name: String, age: Int)
+
+  /**
+    * case classes instances are immutable!
+    *
+    * scala> val person = Person(name = "John Kane", age = 35)
+    *
+    * scala> person.age = 25
+    * <console>:18: error: reassignment to val
+    * person.age = 25
+    *
+    * Notice as well how there is no need for using the `new` clause
+    */
+  val person = Person(name = "John Kane", age = 35)
 
   /**
     * scala> val person = Person("Bob", 50)
@@ -108,6 +122,8 @@ object TypesExercises {
     * You can read the following as a `TrafficLight` is either `Red` or `Yellow` or `Green`.
     *
     * A sealed trait can only be extended in the same file that it is defined.
+    *
+    * This technique helps you make invalid states/values irrepresentable in your programs
     */
   sealed trait TrafficLight
 
