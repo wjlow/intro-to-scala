@@ -6,6 +6,11 @@ package fundamentals.level03
   */
 object OptionExercises2 {
 
+  /**
+    * The keyword `type` creates a type alias.
+    * This means we have created an alias for the type `Int` called `JobId`.
+    * It serves as a light-weight way to give your types more meaning and have better documentation in code.
+    */
   type JobId = Int
 
   type HumanId = Int
@@ -102,7 +107,7 @@ object OptionExercises2 {
     *
     * Hint: Try .map, .flatten
     *
-    * What's the type that you get after using .map? What's different between that and what the function return type is?
+    * What's the type that you get after using .map? What's different between that and the function's return type?
     */
   def findJobIdByHumanId(humanId: HumanId): Option[JobId] = ???
 
