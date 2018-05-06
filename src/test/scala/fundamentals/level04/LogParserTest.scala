@@ -3,7 +3,6 @@ package fundamentals.level04
 import org.scalactic.TypeCheckedTripleEquals
 import org.scalatest.FunSpec
 import LogParser._
-import Types._
 
 class LogParserTest extends FunSpec with TypeCheckedTripleEquals {
 

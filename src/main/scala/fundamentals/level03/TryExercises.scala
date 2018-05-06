@@ -45,7 +45,7 @@ object TryExercises {
     *
     * Hint: Use `Try` and `parseInt`
     */
-  def parseIntSafe(str: String): Try[Int] = ???
+  def parseIntSafe(str: String): Try[Int] = Try(str.toInt)
 
   /**
     * scala> parseBooleanSafe("true")
@@ -56,7 +56,7 @@ object TryExercises {
     *
     * Hint: Use .toBoolean to convert a String to a Boolean
     **/
-  def parseBooleanSafe(str: String): Try[Boolean] = ???
+  def parseBooleanSafe(str: String): Try[Boolean] = Try(str.toBoolean)
 
 
   /**
@@ -82,8 +82,8 @@ object TryExercises {
 
   def tryToEither[A](tryA: Try[A]): Either[TryError, A] =
     tryA match {
-      case Success(a) => ???
-      case Failure(throwable) => ???
+      case Success(a) => Right(a)
+      case Failure(throwable) => Left(TryError(throwable.getMessage))
     }
 
   /**
@@ -93,7 +93,7 @@ object TryExercises {
     * 3. hasDirectReports: Boolean
     */
 
-  trait Employee
+  case class Employee(name: String, age: Int, hasDirectReports: Boolean)
 
   /**
     * Now remove `import TryTestTypes._` from `TryExercisesTest.scala`
@@ -115,7 +115,15 @@ object TryExercises {
     */
   def mkEmployee(csv: String): Either[TryError, Employee] =
     csv.split(",") match {
-      case Array(nameStr, ageStr, hasDirectReportsStr) => ???
+      case Array(nameStr, ageStr, hasDirectReportsStr) =>
+
+        val failureOrEmployee: Try[Employee] = for {
+          age <- parseIntSafe(ageStr)
+          hasDirectReports <- parseBooleanSafe(hasDirectReportsStr)
+        } yield Employee(nameStr, age, hasDirectReports)
+
+        tryToEither(failureOrEmployee)
+
       case _ => Left(TryError("CSV has wrong number of fields. Expected 3."))
     }
 
@@ -127,7 +135,7 @@ object TryExercises {
     */
   def fileToEmployees(filename: String): List[Either[TryError, Employee]] = {
     val lines: List[String] = io.Source.fromFile(filename).getLines().toList
-    ???
+    lines.map(mkEmployee)
   }
 
 }
