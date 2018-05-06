@@ -17,11 +17,11 @@ object ExceptionExercises {
   //test data of names and age pairs
   val personStringPairs =
     List(("Tokyo", "30"),
-         ("Moscow", "5o"),
-         ("The Professor", "200"),
-         ("Berlin", "43"),
-         ("Arturo Roman", "0"),
-         ("", "30"))
+      ("Moscow", "5o"),
+      ("The Professor", "200"),
+      ("Berlin", "43"),
+      ("Arturo Roman", "0"),
+      ("", "30"))
 
   /**
     * Handling validation using Exceptions will come naturally if you are coming
@@ -113,15 +113,14 @@ object ExceptionExercises {
     * What issues do you run into (if any)?
     */
   def createValidPeople: List[Person] = {
-    personStringPairs.collect {
+    personStringPairs.map {
       case (name, age) =>
         try {
           createPerson(name, age)
         } catch {
-          case _: EmptyNameException       => ???
-          //handle in any other exception here
+          case _: Exception => null
         }
-    }
+    }.filterNot(_ == null) // Unfortunately you can't just use `collect` to solve this because of Exceptions!
   }
 
   /**
@@ -138,7 +137,13 @@ object ExceptionExercises {
     */
   def collectErrors: List[Exception] = {
     personStringPairs.collect {
-      case (name, age) => ???
-    }
+      case (name, age) =>
+        try {
+          createPerson(name, age)
+          null
+        } catch {
+          case e: Exception => e
+        }
+    }.filterNot(_ == null)
   }
 }
