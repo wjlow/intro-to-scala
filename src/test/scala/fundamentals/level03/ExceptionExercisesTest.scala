@@ -20,13 +20,6 @@ class ExceptionExercisesTest extends FunSpec with TypeCheckedTripleEquals {
       assert(caught.getMessage === "provided name is empty")
     }
 
-    it("should throw an EmptyNameException if the name supplied contains only spaces") {
-      val caught = intercept[EmptyNameException] {
-        getName("          ")
-      }
-
-      assert(caught.getMessage === "provided name is empty")
-    }
   }
 
   describe("getAge") {
@@ -88,13 +81,6 @@ class ExceptionExercisesTest extends FunSpec with TypeCheckedTripleEquals {
       }
 
       assert(caught.getMessage === "provided age should be between 1-120: 150")
-    }
-  }
-
-  describe("validPairs") {
-
-    it("should return a List of valid name and age pairs") {
-      assert(validPairs === List(("Tokyo", "30"), ("Berlin", "43")))
     }
   }
 

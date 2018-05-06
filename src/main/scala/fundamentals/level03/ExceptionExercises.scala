@@ -42,10 +42,7 @@ object ExceptionExercises {
     * scala> getName("")
     * = EmptyNameException: provided name is empty
     *
-    * scala> getName("   ")
-    * = EmptyNameException: provided name is empty
-    *
-    * Hint: use the trim and isEmpty methods on String
+    * Hint: use the isEmpty method on String
     */
   def getName(providedName: String): String =
     if (providedName.trim.isEmpty) throw new EmptyNameException("provided name is empty")
@@ -107,29 +104,6 @@ object ExceptionExercises {
   }
 
   /**
-    * Implement the function validPairs, that uses the personStringPairs List
-    * and only returns valid pairs for name and age. It should not throw any Exceptions.
-    *
-    * scala> validPairs
-    * = "List(("Tokyo", "30"), ("Berlin", "43"))
-    *
-    * Hint: use filter on List using the getName and getAge functions
-    */
-  def validPairs: List[(String, String)] =
-    personStringPairs.filter {
-      case (name, age) =>
-        try {
-          val n = getName(name)
-          val a = getAge(age)
-          true
-        } catch {
-          case _: EmptyNameException       => false
-          case _: InvalidAgeValueException => false
-          case _: InvalidAgeRangeException => false
-        }
-    }
-
-  /**
     * Implement the function createValidPeople that only uses the collect function on List
     * to create a List of Person instances from personStringPairs. It should not throw any Exceptions.
     *
@@ -140,7 +114,13 @@ object ExceptionExercises {
     */
   def createValidPeople: List[Person] = {
     personStringPairs.collect {
-      case (name, age) => createPerson(name, age)
+      case (name, age) =>
+        try {
+          createPerson(name, age)
+        } catch {
+          case _: EmptyNameException       => ???
+          //handle in any other exception here
+        }
     }
   }
 

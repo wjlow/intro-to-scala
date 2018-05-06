@@ -96,6 +96,7 @@ object LogParser {
     *
     * Hint: Use `parseLog`
     * Hint: Convert an Array to a List with .toList
+    * What if we get an empty line from the fileContent?
     */
   def parseLogFile(fileContent: String): List[LogMessage] =
     fileContent.split("\n").filter(_.nonEmpty).toList.map(parseLog)
