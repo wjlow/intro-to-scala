@@ -21,7 +21,6 @@ object ExceptionExercises {
          ("The Professor", "200"),
          ("Berlin", "43"),
          ("Arturo Roman", "0"),
-         ("", "1000"), // <- Two errors should be dealt with
          ("", "30"))
 
   /**
@@ -115,7 +114,6 @@ object ExceptionExercises {
     * = "List(("Tokyo", "30"), ("Berlin", "43"))
     *
     * Hint: use filter on List using the getName and getAge functions
-    *
     */
   def validPairs: List[(String, String)] =
     personStringPairs.filter {
@@ -125,7 +123,9 @@ object ExceptionExercises {
           val a = getAge(age)
           true
         } catch {
-          case _: Exception => false
+          case _: EmptyNameException       => false
+          case _: InvalidAgeValueException => false
+          case _: InvalidAgeRangeException => false
         }
     }
 
@@ -155,7 +155,6 @@ object ExceptionExercises {
     * EmptyNameException: provided name is empty)
     *
     * What issues do you run into (if any)?
-    *
     */
   def collectErrors: List[Exception] = {
     personStringPairs.collect {

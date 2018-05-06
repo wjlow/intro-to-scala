@@ -50,6 +50,14 @@ class ExceptionExercisesTest extends FunSpec with TypeCheckedTripleEquals {
 
       assert(caught.getMessage === "provided age should be between 1-120: -1")
     }
+
+    it("should accept an age of one") {
+      assert(getAge("1")   == 1)
+    }
+
+    it("should accept an age of a hundred and twenty") {
+      assert(getAge("120")   == 120)
+    }
   }
 
   describe("createPerson") {
@@ -106,16 +114,11 @@ class ExceptionExercisesTest extends FunSpec with TypeCheckedTripleEquals {
       new InvalidAgeValueException("provided age is invalid: 5o"),
       new InvalidAgeRangeException("provided age should be between 1-120: 200"),
       new InvalidAgeRangeException("provided age should be between 1-120: 0"),
-      new EmptyNameException("provided name is empty"),
-      new InvalidAgeRangeException("provided age should be between 1-120: 1000"),
       new EmptyNameException("provided name is empty")
     )
 
-    it("should return all errors") {
-      collectErrors.size === 6
-    }
-
     it("should return a List Exceptions thrown while processing inputs") {
+      assert(collectErrors.size === expectedErrors.size)
       collectErrors.zip(expectedErrors).foreach {
         case (e1, e2) => assert(exceptionEq(e1, e2), s"$e1 != $e2")
       }

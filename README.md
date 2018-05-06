@@ -1,5 +1,7 @@
 # Intro to Scala Fundamentals
 
+[![Build Status](https://travis-ci.org/wjlow/intro-to-scala.svg?branch=master)](https://travis-ci.org/wjlow/intro-to-scala)
+
 This is a two day course. You are expected to know how to program in at least one programming language (Java, Ruby, JavaScript, etc.). The course teaches the fundamentals of using Scala as a functional programming language.
 
 This course is meant to be run in person. There are comments in the exercises to try and point you in the right direction so you should be able to do this in your spare time if you desire. Unit tests are included to verify your solutions for each exercise.
@@ -38,7 +40,7 @@ We welcome pull requests and feedback!
 | 12.00 | [ExceptionExercises](src/main/scala/fundamentals/level03/ExceptionExercises.scala) | Sanj |
 | 12.45 | Lunch (not provided) | |
 | 13.45 | [Exceptions2EitherExercises](src/main/scala/fundamentals/level03/Exceptions2EitherExercises.scala) | Sanj |
-| 15.00 | 30 min break | | 
+| 15.00 | 30 min break | |
 | 15.30 | [TryExercises](src/main/scala/fundamentals/level03/TryExercises.scala) | Ashok |
 | 16.00 | [LogParser](src/main/scala/fundamentals/level04/LogParser.scala) | Stili |
 | 17.00 | End | |
@@ -150,9 +152,28 @@ For example, to run the _fundamentals.level01.IntroExercisesTest_ test case, use
 sbt> ~testOnly *IntroExercisesTest
 ```
 
-The `~` watches for changes to your files and runs the command automatically. It's nice to use it to get really fast feedback as you are working on the exercises! 
+The `~` watches for changes to your files and runs the command automatically. It's nice to use it to get really fast feedback as you are working on the exercises!
 
 To stop watching changes through `~`, press <kbd>Enter</kbd> to return to the SBT shell prompt.
+
+<details><summary>Reducing StackTraces Shown by Failed Tests</summary>
+
+<p>
+<p>
+The first time you run a test case you will be greeted by a long list of StackTraces:
+
+![default scalatest reporter](scalatest-reporter.png)
+
+If you want to see a simplified view use the *SimpleReporter* with:
+
+```
+testOnly *TestName -- -C fundamentals.SimpleReporter
+```
+
+![simple scalatest reporter](scalatest-simple-reporter.png)
+
+</p></p>
+</details>
 
 ## Jumping into a Scala REPL
 
@@ -160,6 +181,20 @@ To launch into a Scala REPL with all production code use:
 
 ```
 sbt> console
+```
+
+Once in the console, you can import your production code as such:
+
+```
+import package.objectname._
+```
+
+For example, to use functions defined in _fundamentals.level01.IntroExercises_:
+
+```
+scala> import fundamentals.level01.IntroExercises._
+scala> add(1, 2)
+res0: Int = 3
 ```
 
 To launch into a Scala REPL with all production and test code use:

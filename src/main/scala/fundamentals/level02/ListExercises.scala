@@ -204,14 +204,4 @@ object ListExercises {
       .filter { case (_, index) => index % 2 != 0 }
       .map { case (person, _) => showPerson1(person) }
 
-  /**
-    * Given a list of `Person`s ordered by age in ascending order. Return all of those that are under 18.
-    *
-    * scala> val persons = List(Person("Bob", 16), Person("Jimmy", 17), Person("Sally", 18))
-    * = List(Person("Bob", 16), Person("Jimmy", 17))
-    *
-    * Hint: Use .takeWhile
-    */
-  def retrieveMinors(orderedPersons: List[Person]): List[Person] = orderedPersons.takeWhile(_.age < 18)
-
 }
