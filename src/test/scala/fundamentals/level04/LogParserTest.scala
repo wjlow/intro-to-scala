@@ -80,13 +80,14 @@ class LogParserTest extends FunSpec with TypeCheckedTripleEquals {
 
   describe("showErrorsOverSeverity") {
 
-    it("should all errors over a given severity level in a readable format") {
+    it("should show all errors over a given severity level in a readable format") {
       val logFile =
         """|I,147,mice in the air
            |W,149,could've been bad
            |E,5,158,some strange error
            |E,6,170,another error
-           |E,2,148,istereadea""".stripMargin
+           |E,2,148,istereadea
+           |E,4,199,frabjous""".stripMargin
 
       val errorsOverLevel4 = showErrorsOverSeverity(logFile, 4)
 
