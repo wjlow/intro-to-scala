@@ -5,12 +5,18 @@ package fundamentals.level01
   * Level 1 focuses on basic Scala, including syntax and especially programming with functions.
   * We will go through a few exercises to familiarise ourselves with writing Scala.
   *
-  * What's a function?
-  *
-  * A function takes inputs and returns an output.
-  * It should always return the same output given the same inputs.
+  * An object:
+  * - An object is a class that has exactly one instance (a singleton). It is also a value.
   */
 object IntroExercises {
+
+  /**
+    * What's a function?
+    *
+    * A function takes inputs and returns an output.
+    * Question: should a function always return the same output given the same inputs?
+    *
+    */
 
   /**
     * This function called `add` takes two Ints and return an Int.
