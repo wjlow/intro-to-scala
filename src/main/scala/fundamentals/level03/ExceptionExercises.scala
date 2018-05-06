@@ -128,13 +128,7 @@ object ExceptionExercises {
     */
   def collectErrors: List[Exception] = {
     personStringPairs.collect {
-      case (name, age) =>
-        try {
-          ???
-        } catch {
-          case _: EmptyNameException       => ???
-          //handle in any other exception here
-        }
+      case (name, age) => ???
     }
   }
 }
