@@ -30,10 +30,10 @@ object NullExercises {
     * = null
     **/
   def mkTrafficLightOrNull(str: String): TrafficLight =
-    str.split(" ") match {
-      case Array("red") => Red
-      case Array("yellow") => Yellow
-      case Array("green") => Green
+    str.trim() match {
+      case "red" => Red
+      case "yellow" => Yellow
+      case "green" => Green
       case _ => null
     }
 
