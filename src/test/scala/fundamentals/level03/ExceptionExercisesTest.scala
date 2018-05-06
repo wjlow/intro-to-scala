@@ -84,13 +84,6 @@ class ExceptionExercisesTest extends FunSpec with TypeCheckedTripleEquals {
     }
   }
 
-  describe("validPairs") {
-
-    it("should return a List of valid name and age pairs") {
-      assert(validPairs === List(("Tokyo", "30"), ("Berlin", "43")))
-    }
-  }
-
   describe("createValidPeople") {
 
     it("should return a List of Person instances") {

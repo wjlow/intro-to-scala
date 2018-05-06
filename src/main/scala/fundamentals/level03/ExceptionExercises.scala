@@ -94,27 +94,6 @@ object ExceptionExercises {
   def createPerson(name: String, age: String): Person = ???
 
   /**
-    * Implement the function validPairs, that uses the personStringPairs List
-    * and only returns valid pairs for name and age. It should not throw any Exceptions.
-    *
-    * scala> validPairs
-    * = "List(("Tokyo", "30"), ("Berlin", "43"))
-    *
-    * Hint: use filter on List using the getName and getAge functions
-    */
-  def validPairs: List[(String, String)] =
-    personStringPairs.filter {
-      case (name, age) =>
-        try {
-          ???
-        } catch {
-          case _: EmptyNameException       => ???
-          case _: InvalidAgeValueException => ???
-          case _: InvalidAgeRangeException => ???
-        }
-    }
-
-  /**
     * Implement the function createValidPeople that only uses the collect function on List
     * to create a List of Person instances from personStringPairs. It should not throw any Exceptions.
     *
@@ -125,7 +104,13 @@ object ExceptionExercises {
     */
   def createValidPeople: List[Person] = {
     personStringPairs.collect {
-      case (name, age) => ???
+      case (name, age) =>
+        try {
+          ???
+        } catch {
+          case _: EmptyNameException       => ???
+          //handle in any other exception here
+        }
     }
   }
 
@@ -143,7 +128,13 @@ object ExceptionExercises {
     */
   def collectErrors: List[Exception] = {
     personStringPairs.collect {
-      case (name, age) => ???
+      case (name, age) =>
+        try {
+          ???
+        } catch {
+          case _: EmptyNameException       => ???
+          //handle in any other exception here
+        }
     }
   }
 }
