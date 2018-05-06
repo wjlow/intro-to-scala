@@ -17,7 +17,7 @@ object TypesExercises {
   case class Person(name: String, age: Int)
 
   /**
-    * case classes instances are immutable!
+    * case class instances are immutable!
     *
     * scala> val person = Person(name = "John Kane", age = 35)
     *
