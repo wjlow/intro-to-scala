@@ -40,10 +40,7 @@ object ExceptionExercises {
     * scala> getName("")
     * = EmptyNameException: provided name is empty
     *
-    * scala> getName("   ")
-    * = EmptyNameException: provided name is empty
-    *
-    * Hint: use the trim and isEmpty methods on String
+    * Hint: use the isEmpty method on String
     */
   def getName(providedName: String) : String = ???
 

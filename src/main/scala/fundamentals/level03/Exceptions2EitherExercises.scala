@@ -53,9 +53,6 @@ object Exceptions2EitherExercises {
     *
     * scala> getName("")
     * = Left(EmptyName(provided name is empty))
-    *
-    * scala> getName("   ")
-    * = Left(EmptyName(provided name is empty))
     **/
   def getName(providedName: String): Either[AppError, String] = ???
 
