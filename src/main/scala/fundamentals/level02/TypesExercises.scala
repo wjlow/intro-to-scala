@@ -164,16 +164,4 @@ object TypesExercises {
     * Don't forget to fill in the unit test for this new scenario: "showTrafficLight should show Flashing"
     */
 
-  /**
-    * Bonus: How would you create an ADT that represents the commands from our Toy Robot code test?
-    *
-    * As a refresher, the possible commands are:
-    *
-    * PLACE X,Y,DIR (where X and Y are Ints and DIR is one of NORTH, SOUTH, EAST and WEST)
-    * MOVE
-    * LEFT
-    * RIGHT
-    * REPORT
-    */
-
 }
