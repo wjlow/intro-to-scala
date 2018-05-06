@@ -25,7 +25,7 @@ object TypesExercises {
     * <console>:18: error: reassignment to val
     * person.age = 25
     *
-    * Notice as well how there is no need for using the `new` clause
+    * Notice as well how there is no need for using the `new` operator
     */
   val person = Person(name = "John Kane", age = 35)
 
