@@ -106,8 +106,7 @@ object Exceptions2EitherExercises {
     * scala> createValidPeople
     * = List(Person(Tokyo, 30), Person(Berlin, 43))
     *
-    * Hint: Use `map` and `flatten`
-    * Hint: Use `toSeq` to convert Either into something that can be flattened with List.
+    * Hint: Use `map` and `collect`
     *
     */
   def createValidPeople: List[Person] = ???
@@ -122,8 +121,7 @@ object Exceptions2EitherExercises {
     * InvalidAgeRange(provided age should be between 1-120: 0),
     * EmptyName(provided name is empty))
     *
-    * Hint: Use `map` and `flatten`
-    * Hint: Use `swap` to convert an Either[L, R] into an Either[R, L]
+    * Hint: Use `map` and `collect`
     */
   def collectErrors: List[AppError] = ???
 }
