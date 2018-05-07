@@ -94,16 +94,19 @@ object ExceptionExercises {
   def createPerson(name: String, age: String): Person = ???
 
   /**
-    * Implement the function createValidPeople that only uses the collect function on List
-    * to create a List of Person instances from personStringPairs. It should not throw any Exceptions.
+    * Implement the function createValidPeople to create a List of Person instances
+    * from personStringPairs. It should not throw any Exceptions.
+    * It should only catch Exceptions thrown by createPerson.
     *
     * scala> createValidPeople
     * = List(Person("Tokyo", 30), Person("Berlin", 43))
     *
+    * Hint: Use `map` and `flatten`
+    *
     * What issues do you run into (if any)?
     */
   def createValidPeople: List[Person] = {
-    personStringPairs.collect {
+    personStringPairs.map {
       case (name, age) =>
         try {
           ???
@@ -116,7 +119,8 @@ object ExceptionExercises {
 
   /**
     * Implement the function collectErrors that collects all the Exceptions
-    * that occur while processing personStringPairs.
+    * that occur while processing personStringPairs. It should not throw any Exceptions.
+    * It should only catch Exceptions thrown by createPerson.
     *
     * scala> collectErrors
     * = List(InvalidAgeValueException: provided age is invalid: 5o,
@@ -124,10 +128,12 @@ object ExceptionExercises {
     *        InvalidAgeRangeException: provided age should be between 1-120: 0,
     *        EmptyNameException: provided name is empty)
     *
+    * Hint: Use `map` and `flatten`
+    *
     * What issues do you run into (if any)?
     */
   def collectErrors: List[Exception] = {
-    personStringPairs.collect {
+    personStringPairs.map {
       case (name, age) => ???
     }
   }
