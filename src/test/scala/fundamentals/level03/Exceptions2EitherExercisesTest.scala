@@ -61,6 +61,26 @@ class Exceptions2EitherExercisesTest extends FunSpec with TypeCheckedTripleEqual
     }
   }
 
+  describe("createPersonAndShow") {
+
+    it("should show a valid Person") {
+      assert(createPersonAndShow("Fred", "32") === "Fred is 32")
+    }
+
+    it("should show an invalid name") {
+      assert(createPersonAndShow("", "32") === "Empty name supplied")
+    }
+
+    it("should show an invalid age value") {
+      assert(createPersonAndShow("Fred", "ThirtyTwo") === "Invalid age value supplied")
+    }
+
+    it("should show an invalid age range") {
+      assert(createPersonAndShow("Fred", "150") === "Invalid age range supplied")
+    }
+
+  }
+
   describe("createValidPeople") {
 
     it("should return a List Person instances") {
