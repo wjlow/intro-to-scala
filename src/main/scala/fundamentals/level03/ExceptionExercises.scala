@@ -101,7 +101,7 @@ object ExceptionExercises {
     * scala> createValidPeople
     * = List(Person("Tokyo", 30), Person("Berlin", 43))
     *
-    * Hint: Use `map` and `flatten`
+    * Hint: Use `map` and `collect`
     *
     * What issues do you run into (if any)?
     */
@@ -128,7 +128,7 @@ object ExceptionExercises {
     *        InvalidAgeRangeException: provided age should be between 1-120: 0,
     *        EmptyNameException: provided name is empty)
     *
-    * Hint: Use `map` and `flatten`
+    * Hint: Use `map` and `collect`
     *
     * What issues do you run into (if any)?
     */

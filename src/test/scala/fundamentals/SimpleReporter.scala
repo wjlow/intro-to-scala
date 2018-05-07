@@ -79,12 +79,14 @@ final class SimpleReporter extends Reporter {
               println(s"${green}${k}:${reset} ${green}${passed}${reset}|${red}${failed}${reset}|${passed + failed}")
 
               values.foreach { v =>
+
                   val status = v.status match {
-                    case Passed => s"${green}PASSED${reset}"
-                    case Failed => s"${red}FAILED${reset}"
+                    case Passed => s"  - ${green}${v.testName}${reset} [${green}PASSED${reset}]"
+                    case Failed => s"  - ${cyan}${v.testName}${reset} [${red}FAILED${reset}]"
                   }
 
-                  println(s"  - ${cyan}${v.testName}${reset} [${status}]")
+                  println(status)
+
                   (v.status, v.throwable) match {
                     case (Failed, Some(error)) =>
                       println(s"${messagePadding}${error.getMessage}")
