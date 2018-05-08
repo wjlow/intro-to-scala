@@ -61,6 +61,25 @@ class Exceptions2EitherExercisesTest extends FunSpec with TypeCheckedTripleEqual
     }
   }
 
+  describe("createPerson2") {
+
+    it("should return Person if supplied a valid name and age") {
+      assert(createPerson2("Fred", "32") === Right(Person("Fred", 32)))
+    }
+
+    it("should return an EmptyName if the name supplied is empty") {
+      assert(createPerson2("", "32") === Left(EmptyName("provided name is empty")))
+    }
+
+    it("should return an InvalidAgeValue if the age supplied is not an Int") {
+      assert(createPerson2("Fred", "ThirtyTwo") === Left(InvalidAgeValue("provided age is invalid: ThirtyTwo")))
+    }
+
+    it("should return an InvalidAgeRange if the age supplied is not between 1 and 120") {
+      assert(createPerson2("Fred", "150") === Left(InvalidAgeRange("provided age should be between 1-120: 150")))
+    }
+  }
+
   describe("createPersonAndShow") {
 
     it("should show a valid Person") {
@@ -79,6 +98,25 @@ class Exceptions2EitherExercisesTest extends FunSpec with TypeCheckedTripleEqual
       assert(createPersonAndShow("Fred", "150") === "Invalid age range supplied")
     }
 
+  }
+
+  describe("makeNameUpperCase") {
+
+    it("should show a valid Person") {
+      assert(makeNameUpperCase("Fred", "32") === Right(Person("FRED", 32)))
+    }
+
+    it("should show an invalid name") {
+      assert(makeNameUpperCase("", "32") === Left(EmptyName("provided name is empty")))
+    }
+
+    it("should show an invalid age value") {
+      assert(makeNameUpperCase("Fred", "ThirtyTwo") === Left(InvalidAgeValue("provided age is invalid: ThirtyTwo")))
+    }
+
+    it("should show an invalid age range") {
+      assert(makeNameUpperCase("Fred", "150") === Left(InvalidAgeRange("provided age should be between 1-120: 150")))
+    }
   }
 
   describe("createValidPeople") {

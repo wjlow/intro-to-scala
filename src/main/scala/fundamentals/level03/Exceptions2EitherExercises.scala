@@ -101,6 +101,12 @@ object Exceptions2EitherExercises {
 
 
   /**
+    * Reimplement createPerson using only `flatMap` and `map`
+    */
+ def createPerson2(name: String, age: String): Either[AppError, Person] = ???
+
+
+  /**
     * scala> createPersonAndShow("Fred", "32")
     * = "Fred is 32"
     *
@@ -126,6 +132,24 @@ object Exceptions2EitherExercises {
     */
   def createPersonAndShow(name: String, age: String): String = ???
 
+
+  /**
+    * scala> makeNameUpperCase("Fred", "32")
+    * = Right(Person(FRED,32))
+    *
+    * scala> makeNameUpperCase("", "32")
+    * = Left(EmptyName(provided name is empty))
+    *
+    * scala> makeNameUpperCase("Fred", "ThirtyTwo")
+    * = Left(InvalidAgeValue(provided age is invalid: ThirtyTwo))
+    *
+    * scala> makeNameUpperCase("Fred", "150")
+    * = Left(InvalidAgeRange(provided age should be between 1-120: 150))
+    *
+    * Hint: Use `createPerson` then use `map` and `copy`.
+    *
+    */
+  def makeNameUpperCase(name: String, age: String): Either[AppError, Person] = ???
   /**
     * Implement the function createValidPeople that uses the personStringPairs List
     * to create a List of Person instances.
