@@ -99,6 +99,29 @@ object Exceptions2EitherExercises {
     */
   def createPerson(name: String, age: String): Either[AppError, Person] = ???
 
+  /**
+    * scala> makeNameUpperCase("Fred", "32")
+    * = Right(Person(FRED,32))
+    *
+    * scala> makeNameUpperCase("", "32")
+    * = Left(EmptyName(provided name is empty))
+    *
+    * scala> makeNameUpperCase("Fred", "ThirtyTwo")
+    * = Left(InvalidAgeValue(provided age is invalid: ThirtyTwo))
+    *
+    * scala> makeNameUpperCase("Fred", "150")
+    * = Left(InvalidAgeRange(provided age should be between 1-120: 150))
+    *
+    * Hint: Use `createPerson` then use `map` and `copy`.
+    *
+    */
+  def makeNameUpperCase(name: String, age: String): Either[AppError, Person] = ???
+
+  /**
+    * Reimplement createPerson using only `flatMap` and `map`
+    */
+ def createPerson2(name: String, age: String): Either[AppError, Person] = ???
+
 
   /**
     * scala> createPersonAndShow("Fred", "32")
