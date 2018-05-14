@@ -56,6 +56,8 @@ $ cd intro-to-scala/
 
 #### 2. Install Java 8 (do not install Java 9 or Java 10)
 
+Test if you have Java 8 already with `java -version`.
+
 ##### macOS (using [Homebrew](https://brew.sh))
 
 ```
@@ -63,11 +65,12 @@ $ brew tap caskroom/versions
 $ brew cask install java8
 ```
 
-#### 3. Install sbt 1.x (recommended but optional, we have included a portable version)
+#### 3. Install sbt (recommended but optional, we have included a portable version)
 
 We recommend that you install `sbt` on your machine even though a portable runner is included.
 
-> The actual version of `sbt` used is in your `project/build.properties` file and the global `sbt` is merely used for bootstrapping your project. You should not get conflicting `sbt` installations even if you have multiple Scala projects using different versions of `sbt`.
+> The actual version of `sbt` used is specified per-project in your [`project/build.properties`](./project/build.properties)
+file and the global `sbt` is merely used for bootstrapping your project. You should not get conflicting `sbt` installations even if you have multiple Scala projects using different versions of `sbt`.
 
 ##### macOS (using [Homebrew](https://brew.sh))
 
