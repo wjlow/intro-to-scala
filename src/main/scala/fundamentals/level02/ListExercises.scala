@@ -17,10 +17,10 @@ object ListExercises {
     *
     * You can create a List using the `::` constructor as such:
     *
-    * scala> ::(1, ::(2, ::(3, Nil)))
+    * scala> `::`(1, `::`(2, `::`(3, Nil))) // backticks to use :: in prefix position
     * = List(1, 2, 3)
     *
-    * scala> (1 :: (2 :: (3 :: Nil)))
+    * scala> (1 :: (2 :: (3 :: Nil))) // no need for backticks to use :: in infix position
     * = List(1, 2, 3)
     *
     * scala> 1 :: 2 :: 3 :: Nil
