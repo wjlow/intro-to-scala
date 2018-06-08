@@ -145,7 +145,11 @@ object ListExercises {
     *
     * Hint: Use pattern matching and .foldLeft
     **/
-  def min(nums: List[Int]): Int = ???
+  def min(nums: List[Int]): Int = 
+    nums match {
+      case Nil => ???
+      case head :: tail => ???
+    }
 
   /**
     * Return the person in the List that is the youngest. If there are more than one person with the youngest age,
