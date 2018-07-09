@@ -95,7 +95,9 @@ The values of a product type typically contain several values, called fields. Fo
 Values of algebraic types are analysed with pattern matching, which identifies a value by its constructor or field names and extracts the data it contains.
 
 ### Sealed trait
-When defining an algebraic data type using sealed traits, it allows the compiler to exhaustively check the possible cases in match expressions. The compiler will emit a warning if the match expression isn’t exhaustive. The compiler knows all of the subtypes of the trait that can possibly exist as they can only be extended in the file. 
+When defining an algebraic data type using sealed traits, it allows the compiler to exhaustively check the possible cases in match expressions.
+The compiler will emit a warning (or an error is the option "-Xfatal-warnings" option is enabled) if you have missed a specific case. 
+The compiler knows all of the subtypes of the trait that can possibly exist as they can only be extended in the file. 
 
 ```
 sealed trait MyBooleanType
