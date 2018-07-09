@@ -31,27 +31,6 @@ val list2 = 1 :: 2 :: 3 :: Nil
 val list3 = ::(1, ::(2, ::(3, Nil)))
 ```
 
-### fold
-The fold method for a List takes two arguments; the start value and a function. This function also takes two arguments; the accumulated value and the current item in the list. 
-
-```
-def fold[A1 >: A](z: A1)(op: (A1, A1) ⇒ A1): A1
-```
-
-Example:
-```
-val numbers = List(5, 4, 8, 6, 2)
-numbers.fold(0) { (z, i) =>
-  a + i
-}
-// result = 25
-```
-
-At the start of execution, the start value that you passed as the first argument is given to your function as its first argument. As the function's second argument, it is given the first item on the list (in the case of fold this may or may not be the actual first item on your list).
-1. The function is then applied to its two arguments, in this case an addition, and returns the result.
-2. Fold then gives the function the previous return value as its first argument and the next item in the list as its second argument, and applies it, returning the result.
-3. This process repeats for each item of the list and returns the return value of the function once all items in the list have been iterated over.
-
 ### foldLeft
 
 The first argument of foldLeft is a seed value `B` to be used for the first element, and the second argument is the function to apply.
@@ -84,8 +63,8 @@ List(1, 2, 3).foldRight(100)(_ + _)
 // result = 106
 ```
 
-### Comparison of fold, foldLeft and foldRight order:
-`foldLeft` starts on the left side (the first item) and iterates to the right; `foldRight` starts on the right side (the last item) and iterates to the left; `fold` has no particular order.
+### Comparison of foldLeft and foldRight order:
+`foldLeft` starts on the left side (the first item) and iterates to the right; `foldRight` starts on the right side (the last item) and iterates to the left.
 
 ```
 val list: List[Int] = List(1, 3, 5, 7, 9)
@@ -106,13 +85,6 @@ list.foldRight(0)(_ + _)
                          21 + 3 = 24
                                   24 + 1 = 25 // done
 
-list.fold(0)(_ + _) // 25
-// One of the many valid orders
-0 + 1 = 1    0 + 3 = 3             0 + 5 = 5
-        1            3 + 7 = 10            5 + 9 = 14    
-        1                    10          +         14 = 24
-        1                        +                      24 = 25 // done
-
 ```
 
 ### Algebraic Data Type (ADT)
@@ -126,11 +98,11 @@ Values of algebraic types are analysed with pattern matching, which identifies a
 When defining an algebraic data type using sealed traits, it allows the compiler to exhaustively check the possible cases in match expressions. The compiler will emit a warning if the match expression isn’t exhaustive. The compiler knows all of the subtypes of the trait that can possibly exist as they can only be extended in the file. 
 
 ```
-sealed trait Boolean
+sealed trait MyBooleanType
 
-case object True extends Boolean
+case object True extends MyBooleanType
 
-case object False extends Boolean
+case object False extends MyBooleanType
 ```
 
 ### Pattern matching
@@ -147,7 +119,7 @@ def numToString(num: Int): String =
 ```
 
 ### map
-Map works by applying a function to each element in the list.
+The .map function on a List applies a function to each element in the List. It works on other data types as well (e.g. Option, Either, etc).
 
 ```
 def map[A,B](fa: F[A])(f: A => B): F[B]
@@ -160,7 +132,8 @@ def map[A,B](ta: Try[A])(f: A => B): Try[B]
 ```
 
 ###flatMap
-flatMap works by applying a function that returns a sequence for each element in the list, and flattening the results into the original list.
+flatMap works by applying a function that returns a container type (e.g. a List, Option, Either, etc.) for each element within the container, 
+and flattening the results into a value of the same container type.
 
 ```
 flatMap[A,B](fa: F[A])(f: A => F[B]): F[B]
@@ -178,7 +151,6 @@ A for-comprehension is syntactic sugar for map, flatMap and filter operations on
 The general form is `for {s} yield e`
 `s` is a sequence of generators and filters
 `p <- e` is a generator
-`if f` is a filter
 
 For example:
 ```
@@ -234,17 +206,15 @@ def mean(xs: IndexedSeq[Double]): Either[String, Double] =
 ```
 
 ### Try Data type
-The Try function is a general-purpose function we can use to convert from an exception-based API to an Option or Either data type. 
-This uses a non-strict or lazy argument, as indicated by the => A as the type of a.
+The Try type represents a computation that may either result in an exception, or return a successfully computed value
 
 ```
-def Try[A](a: => A): Option[A] =
-  try Some(a)
-  catch { case e: Exception => None }
+  def handleAttempt[A](call: Try[A]) = {
+    call match {
+      case Success(i) => println("Got: " + i)
+      case Failure(ex) => println("Failed: " + ex.getMessage)
+    }
+  }
 ```
 
-```
-def Try[A](a: => A): Either[Exception, A] =
-  try Right(a)
-  catch { case e: Exception => Left(e) }
-```
+}
