@@ -79,12 +79,12 @@ list.foldLeft(0)(_ + _)
 
 list.foldRight(0)(_ + _)
 // This is the only valid order
-0 + 9 = 9
-        9 + 7 = 16
-                16 + 5 = 21
-                         21 + 3 = 24
-                                  24 + 1 = 25 // done
-
+1 + (3 + (5 + (7 + (9 + 0))))
+1 + (3 + (5 + (7 + 9)))
+1 + (3 + (5 + 16))
+1 + (3 + 21)
+1 + 24
+25 // done
 ```
 
 ### Algebraic Data Type (ADT)
