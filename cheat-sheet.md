@@ -218,5 +218,3 @@ The Try type represents a computation that may either result in an exception, or
     }
   }
 ```
-
-}
