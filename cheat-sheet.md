@@ -1,7 +1,7 @@
 ### Currying
 Converting a function with multiple arguments into a function with a single argument that returns another function.
 
-```
+```scala
 def f(a: Int, b: Int): Int // uncurried version (type is (Int, Int) => Int)
 
 def f(a: Int)(b: Int): Int // curried version (type is Int => Int => Int)
@@ -14,7 +14,7 @@ A higher order function is a function that can:
 
 ### Lists
 The Scala List is an immutable recursive data structure. It is a linked list which is built from “cons” cells `::` and ends in a `Nil` element.
-```
+```scala
 sealed trait List[+A]
 
 case class ::[A](head: A, tail: List[A]) extends List[A]
@@ -23,7 +23,7 @@ case object Nil extends List[Nothing]
 ```
 
 You can create a list in different ways:
-```
+```scala
 val list1 = List(1,2,3)
 
 val list2 = 1 :: 2 :: 3 :: Nil
@@ -35,12 +35,12 @@ val list3 = ::(1, ::(2, ::(3, Nil)))
 
 The first argument of foldLeft is a seed value `B` to be used for the first element, and the second argument is the function to apply.
 
-```
+```scala
 def foldLeft[B](z: B)(op: (B, A) ⇒ B): B
 ```
 
 Example:
-```
+```scala
 List(1, 2, 3).foldLeft(20)(_ + _)
 // result = 6
 
@@ -50,12 +50,12 @@ List(1, 2, 3).foldLeft(100)(_ + _)
 
 ### foldRight
 The first argument of foldRight is a seed value `B` to be used for the first element, and the second argument is the function to apply.
-```
+```scala
 def foldRight[B](z: B)(op: (A, B) ⇒ B): B
 ```
 
 Example:
-```
+```scala
 List(1, 2, 3).foldRight(0)(_ + _)
 // result = 6
 
@@ -66,7 +66,7 @@ List(1, 2, 3).foldRight(100)(_ + _)
 ### Comparison of foldLeft and foldRight order:
 `foldLeft` starts on the left side (the first item) and iterates to the right; `foldRight` starts on the right side (the last item) and iterates to the left.
 
-```
+```scala
 val list: List[Int] = List(1, 3, 5, 7, 9)
 
 list.foldLeft(0)(_ + _)
@@ -99,7 +99,7 @@ When defining an algebraic data type using sealed traits, it allows the compiler
 The compiler will emit a warning (or an error is the option "-Xfatal-warnings" option is enabled) if you have missed a specific case. 
 The compiler knows all of the subtypes of the trait that can possibly exist as they can only be extended in the file. 
 
-```
+```scala
 sealed trait MyBooleanType
 
 case object True extends MyBooleanType
@@ -110,7 +110,7 @@ case object False extends MyBooleanType
 ### Pattern matching
 Pattern matching is a mechanism for checking a value against a pattern. Pattern matching is similar to a series of if/else statements or a switch statement in other languages.
 
-```
+```scala
 def numToString(num: Int): String =
   num match {
     case 0 => "zero"
@@ -123,7 +123,7 @@ def numToString(num: Int): String =
 ### map
 The .map function on a List applies a function to each element in the List. It works on other data types as well (e.g. Option, Either, etc).
 
-```
+```scala
 def map[A,B](fa: F[A])(f: A => B): F[B]
 
 def map[A,B](oa: Option[A])(f: A => B): Option[B]
@@ -133,11 +133,11 @@ def map[A,B](ea: Either[A])(f: A => B): Either[B]
 def map[A,B](ta: Try[A])(f: A => B): Try[B]
 ```
 
-###flatMap
+### flatMap
 flatMap works by applying a function that returns a container type (e.g. a List, Option, Either, etc.) for each element within the container, 
 and flattening the results into a value of the same container type.
 
-```
+```scala
 flatMap[A,B](fa: F[A])(f: A => F[B]): F[B]
 
 flatMap[A,B](oa: Option[A])(f: A => Option[B]): Option[B]
@@ -155,7 +155,7 @@ The general form is `for {s} yield e`
 `p <- e` is a generator
 
 For example:
-```
+```scala
 for {
     x <- Some(3);
     y <- Some(4)
@@ -165,7 +165,7 @@ for {
 ```
 
 is equivalent to:
-```
+```scala
 Some(3).flatMap(x => Some(4).map(y => x + y))
 ```
 
@@ -173,7 +173,7 @@ Some(3).flatMap(x => Some(4).map(y => x + y))
 ### Option Data Type
 The Option data type has two cases: it can be defined (Some), or it can be undefined (None).
 
-```
+```scala
 sealed trait Option[+A]
 
 case class Some[+A](get: A) extends Option[A]
@@ -182,7 +182,7 @@ case object None extends Option[Nothing]
 ```
 
 Example:
-```
+```scala
 def mean(xs: Seq[Double]): Option[Double] =
     if (xs.isEmpty) None
     else Some(xs.sum / xs.length)
@@ -192,7 +192,7 @@ def mean(xs: Seq[Double]): Option[Double] =
 The Either data type has only two cases which both carry a value. Either represents values that can be one of two things. 
 When we use it to indicate success or failure, by convention the `Right` constructor is reserved for the success case and `Left` is used for failure.
 
-```
+```scala
 sealed trait Either[+E, +A]
 
 case class Left[+E](value: E) extends Either[E, Nothing]
@@ -201,7 +201,7 @@ case class Right[+A](value: A) extends Either[Nothing, A]
 ```
 
 Example:
-```
+```scala
 def mean(xs: IndexedSeq[Double]): Either[String, Double] =
     if (xs.isEmpty) Left("mean of empty list!")
     else Right(xs.sum / xs.length)
@@ -210,7 +210,7 @@ def mean(xs: IndexedSeq[Double]): Either[String, Double] =
 ### Try Data type
 The Try type represents a computation that may either result in an exception, or return a successfully computed value
 
-```
+```scala
   def handleAttempt[A](call: Try[A]) = {
     call match {
       case Success(i) => println("Got: " + i)
