@@ -36,16 +36,16 @@ class LogParserTest extends FunSpec with TypeCheckedTripleEquals {
 
   }
 
-  describe("getUnknowns") {
+  describe("getErrors") {
 
-    it("should return the unknowns only") {
-      val known = KnownLog(Info, 147, "mice in the air")
+    it("should return the errors only") {
+      val errorLog = KnownLog(Error(2), 123, "some error msg")
       val unknown1 = UnknownLog("X blblbaaaaa")
       val unknown2 = UnknownLog("W foo")
 
-      val unknownsOnly = getUnknowns(List(known, unknown1, unknown2))
+      val errorsOnly = getErrors(List(errorLog, unknown1, unknown2))
 
-      assert(unknownsOnly === List(unknown1, unknown2))
+      assert(errorsOnly === List(errorLog))
     }
 
   }
