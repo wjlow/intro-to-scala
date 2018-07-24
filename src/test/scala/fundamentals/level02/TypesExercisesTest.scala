@@ -1,7 +1,6 @@
 package fundamentals.level02
 
 import fundamentals.level02.TypesExercises._
-import fundamentals.level02.TypesExercises.TrafficLight._
 import org.scalactic.TypeCheckedTripleEquals
 import org.scalatest.FunSpec
 
