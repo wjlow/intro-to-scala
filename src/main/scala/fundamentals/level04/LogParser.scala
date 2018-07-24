@@ -77,7 +77,7 @@ object LogParser {
   /**
     * Define a function that returns only logs that are errors
     *
-    * scala> getUnknowns(List(KnownLog(Error(2), 123, some error msg"), UnknownLog("blblbaaaaa")))
+    * scala> getErrors(List(KnownLog(Error(2), 123, some error msg"), UnknownLog("blblbaaaaa")))
     * = List(KnownLog(Error(2), 123, some error msg"))
     **/
   def getErrors(logs: List[LogMessage]): List[LogMessage] = ???
