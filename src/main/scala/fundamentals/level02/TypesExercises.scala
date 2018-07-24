@@ -127,15 +127,11 @@ object TypesExercises {
     */
   sealed trait TrafficLight
 
-  object TrafficLight {
+  case object Red extends TrafficLight
 
-    case object Red extends TrafficLight
+  case object Yellow extends TrafficLight
 
-    case object Yellow extends TrafficLight
-
-    case object Green extends TrafficLight
-
-  }
+  case object Green extends TrafficLight
 
   /**
     * scala> showTrafficLight(Red)
@@ -151,8 +147,6 @@ object TypesExercises {
     *
     * Hint: Use pattern matching
     **/
-
-  import TrafficLight._
 
   def showTrafficLight(trafficLight: TrafficLight): String = ???
 
