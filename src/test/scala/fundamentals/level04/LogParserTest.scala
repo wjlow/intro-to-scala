@@ -36,16 +36,17 @@ class LogParserTest extends FunSpec with TypeCheckedTripleEquals {
 
   }
 
-  describe("getErrors") {
+  describe("getErrorsOverSeverity") {
 
-    it("should return the errors only") {
-      val errorLog = KnownLog(Error(2), 123, "some error msg")
+    it("should return the errors over severity level only") {
+      val errorLogUnderSeverity = KnownLog(Error(2), 123, "some error msg")
+      val errorLogOverSeverity = KnownLog(Error(3), 123, "some error msg")
       val unknown1 = UnknownLog("X blblbaaaaa")
       val unknown2 = UnknownLog("W foo")
 
-      val errorsOnly = getErrors(List(errorLog, unknown1, unknown2))
+      val errorsOnly = getErrorsOverSeverity(List(errorLogUnderSeverity, errorLogOverSeverity, unknown1, unknown2), 2)
 
-      assert(errorsOnly === List(errorLog))
+      assert(errorsOnly === List(errorLogOverSeverity))
     }
 
   }
