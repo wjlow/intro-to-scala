@@ -75,12 +75,16 @@ object LogParser {
   def parseLogFile(fileContent: String): List[LogMessage] = ???
 
   /**
-    * Define a function that returns only logs that are unknown
+    * Define a function that returns only logs that are errors over the given severity level.
+    * It should not return any log that is not an error.
     *
-    * scala> getUnknowns(List(KnownLog(Info, 147, "mice in the air"), UnknownLog("blblbaaaaa")))
-    * = List(UnknownLog("blblbaaaaa"))
+    * scala> getErrorsOverSeverity(List(KnownLog(Error(2), 123, some error msg"), UnknownLog("blblbaaaaa")), 1)
+    * = List(KnownLog(Error(2), 123, some error msg"))
+    *
+    * scala> getErrorsOverSeverity(List(KnownLog(Error(2), 123, some error msg")), 2)
+    * = List()
     **/
-  def getUnknowns(logs: List[LogMessage]): List[LogMessage] = ???
+  def getErrorsOverSeverity(logs: List[LogMessage], severity: Int): List[LogMessage] = ???
  
   /**
     * Write a function to convert a `LogMessage` to a readable `String`.
@@ -104,7 +108,7 @@ object LogParser {
     * scala> showErrorsOverSeverity(logFile, 2)
     * = List("Error 5 (158) some strange error")
     *
-    * Hint: Use `parseLogFile` and `showLogMessage`
+    * Hint: Use `parseLogFile`, `getErrorsOverSeverity` and `showLogMessage`
     **/
   def showErrorsOverSeverity(fileContent: String, severity: Int): List[String] = ???
 
