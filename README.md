@@ -54,7 +54,7 @@ $ git clone https://github.com/wjlow/intro-to-scala.git
 $ cd intro-to-scala/
 ```
 
-#### 2. Install Java 8 (do not install Java 9 or Java 10)
+#### 2. Install Java 8
 
 Test if you have Java 8 already with `java -version`.
 
@@ -64,6 +64,122 @@ Test if you have Java 8 already with `java -version`.
 $ brew tap caskroom/versions
 $ brew cask install java8
 ```
+
+<details><summary>If you already have Java 9 or Java 10 installed</summary>
+
+<p>
+
+Install [jenv](http://www.jenv.be/) with:
+
+```
+brew install jenv
+```
+
+Create the `.jenv` versions directory:
+
+```
+mkdir -p ~/.jenv/versions
+```
+
+Add jenv to your shell:
+
+Bash:
+
+```
+$ echo 'export PATH="$HOME/.jenv/bin:$PATH"' >> ~/.bash_profile
+$ echo 'eval "$(jenv init -)"' >> ~/.bash_profile
+```
+
+ZSH:
+
+```
+$ echo 'export PATH="$HOME/.jenv/bin:$PATH"' >> ~/.zshrc
+$ echo 'eval "$(jenv init -)"' >> ~/.zshrc
+```
+
+Add a jenv plugin to automatically export your **JAVA_HOME** environment variable based on your current java environment:
+
+```
+jenv enable-plugin export
+```
+
+Restart your terminal
+
+Add your java versions to jenv:
+
+```
+jenv add PATH_TO_JDK_VERSION
+```
+
+Java is usually installed under the `/Library/Java/JavaVirtualMachines/` directories on macosx.
+
+For example to add Java8 and Java 10 to jenv:
+
+```
+jenv add /Library/Java/JavaVirtualMachines/jdk1.8.0_181.jdk/Contents/Home/
+jenv add /Library/Java/JavaVirtualMachines/jdk-10.0.2.jdkContents/Home/
+```
+
+After installing the required java versions run `rehash` to create shims for each version:
+
+```
+jenv rehash
+```
+
+To list managed versions use:
+
+```
+jenv versions
+```
+
+Which should list out all your installed java versions:
+
+```
+  system
+* 1.8 (set by /Users/sanjiv.sahayam/.jenv/version)
+  1.8.0.181
+  10.0
+  10.0.2
+  oracle64-1.8.0.181
+  oracle64-10.0.2
+```
+
+To change to a specific version only for the course, browse to the course directory and use `local`:
+
+```
+cd COURSE_CHECKOUT_DIR
+jenv local JAVA_VERSION
+```
+
+For example to switch to java `1.8.0.181` in the current directory use:
+
+```
+jenv local 1.8.0.181
+```
+
+Run `java -version` to verify that the version you required is active.
+
+```
+java version "1.8.0_181"
+Java(TM) SE Runtime Environment (build 1.8.0_181-b13)
+Java HotSpot(TM) 64-Bit Server VM (build 25.181-b13, mixed mode)
+```
+
+To switch to a specific java version globally use:
+
+```
+jenv global JAVA_VERSION
+```
+
+For example to use Java 10 globally use:
+
+```
+jenv global 10.0
+```
+
+This version will be used by default unless overriden locally.
+
+</p></details>
 
 #### 3. Install sbt (recommended but optional, we have included a portable version)
 
