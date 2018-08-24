@@ -1,0 +1,16 @@
+#!/bin/bash -e
+
+cd $(dirname $0)/..
+
+# Clean up at the end
+trap "docker-compose down --volumes --remove-orphans" 0
+
+# Create volume
+docker volume create --name ivy-cache > /dev/null
+docker volume create --name docker-scala-sbt-cache > /dev/null
+
+# rebuild if necessary
+docker-compose build dev
+
+# Run dev script or use what is passed in as arguments
+docker-compose run --rm --service-ports dev "$@"

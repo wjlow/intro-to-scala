@@ -95,6 +95,12 @@ To run the `sbt` shell from the portable installation use:
 $ ./sbt
 ```
 
+To run the `sbt` shell using Docker:
+
+```
+$ ./auto/sbt
+```
+
 #### [4. Compile program to resolve dependencies before the course](#compilation)
 
 #### [5. IDE setup](#ide-setup)

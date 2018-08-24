@@ -1,0 +1,17 @@
+version: "2"
+
+services:
+  dev:
+    build: support
+    working_dir: /work
+    command: ./sbt
+    volumes:
+      - .:/work
+      - ivy-cache:/root/.ivy2
+      - docker-scala-sbt-cache:/root/.sbt
+
+volumes:
+  ivy-cache:
+    external: true
+  docker-scala-sbt-cache:
+    external: true
