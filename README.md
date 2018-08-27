@@ -54,7 +54,7 @@ $ git clone https://github.com/wjlow/intro-to-scala.git
 $ cd intro-to-scala/
 ```
 
-#### 2. Install Java 8 (do not install Java 9 or Java 10)
+#### 2. Install Java 8 (even if you already have Java 9 or 10 pre-installed)
 
 Test if you have Java 8 already with `java -version`.
 
@@ -65,7 +65,7 @@ $ brew tap caskroom/versions
 $ brew cask install java8
 ```
 
-#### 3. Install sbt (recommended but optional, we have included a portable version)
+#### 3. Install sbt (recommended but optional, you can use portable sbt or Docker, explained below)
 
 We recommend that you install `sbt` on your machine even though a portable runner is included.
 
@@ -98,7 +98,7 @@ $ ./sbt
 To run the `sbt` shell using Docker:
 
 ```
-$ ./auto/sbt
+$ ./auto/dev-environment sbt
 ```
 
 #### [4. Compile program to resolve dependencies before the course](#compilation)
