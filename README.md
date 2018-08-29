@@ -58,6 +58,16 @@ $ cd intro-to-scala/
 
 Test if you have Java 8 already with `java -version`.
 
+You want to see something like:
+
+```
+java version "1.8.0_172"
+Java(TM) SE Runtime Environment (build 1.8.0_172-b11)
+Java HotSpot(TM) 64-Bit Server VM (build 25.172-b11, mixed mode)
+```
+
+Otherwise, install Java 8 as described below:
+
 ##### macOS (using [Homebrew](https://brew.sh))
 
 ```
@@ -65,41 +75,11 @@ $ brew tap caskroom/versions
 $ brew cask install java8
 ```
 
-#### 3. Install sbt (recommended but optional, you can use portable sbt or Docker, explained below)
+#### 3. Install Docker
 
-We recommend that you install `sbt` on your machine even though a portable runner is included.
+##### macOS
 
-> The actual version of `sbt` used is specified per-project in your [`project/build.properties`](./project/build.properties)
-file and the global `sbt` is merely used for bootstrapping your project. You should not get conflicting `sbt` installations even if you have multiple Scala projects using different versions of `sbt`.
-
-##### macOS (using [Homebrew](https://brew.sh))
-
-```
-$ brew install sbt@1
-```
-
-##### Linux
-**[Installing sbt on Linux](https://www.scala-sbt.org/1.0/docs/Installing-sbt-on-Linux.html)**
-
-__Tip__: Launching SBT might take some time, so we recommend using SBT's interactive shell to run commands, instead of lauching SBT for each command.
-
-To run the `sbt` shell from the global installation use:
-
-```
-$ sbt
-```
-
-To run the `sbt` shell from the portable installation use:
-
-```
-$ ./sbt
-```
-
-To run the `sbt` shell using Docker:
-
-```
-$ ./auto/dev-environment sbt
-```
+[Docker for Mac](https://docs.docker.com/docker-for-mac/install/)
 
 #### [4. Compile program to resolve dependencies before the course](#compilation)
 
@@ -107,7 +87,11 @@ $ ./auto/dev-environment sbt
 
 ## Compilation
 
-Launch the SBT shell.
+Ensure Docker is running, then launch the SBT shell using Docker
+
+```
+$ ./auto/dev-environment sbt
+```
 
 To only compile production code use:
 
