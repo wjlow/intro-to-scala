@@ -65,41 +65,15 @@ $ brew tap caskroom/versions
 $ brew cask install java8
 ```
 
-#### 3. Install sbt (recommended but optional, you can use portable sbt or Docker, explained below)
-
-We recommend that you install `sbt` on your machine even though a portable runner is included.
-
-> The actual version of `sbt` used is specified per-project in your [`project/build.properties`](./project/build.properties)
-file and the global `sbt` is merely used for bootstrapping your project. You should not get conflicting `sbt` installations even if you have multiple Scala projects using different versions of `sbt`.
-
-##### macOS (using [Homebrew](https://brew.sh))
-
-```
-$ brew install sbt@1
-```
-
-##### Linux
-**[Installing sbt on Linux](https://www.scala-sbt.org/1.0/docs/Installing-sbt-on-Linux.html)**
-
-__Tip__: Launching SBT might take some time, so we recommend using SBT's interactive shell to run commands, instead of lauching SBT for each command.
-
-To run the `sbt` shell from the global installation use:
-
-```
-$ sbt
-```
-
-To run the `sbt` shell from the portable installation use:
-
-```
-$ ./sbt
-```
+##### 3. Run SBT through Docker
 
 To run the `sbt` shell using Docker:
 
 ```
 $ ./auto/dev-environment sbt
 ```
+
+__Tip__: Launching SBT might take some time, so we recommend using SBT's interactive shell to run commands, instead of lauching SBT for each command.
 
 #### [4. Compile program to resolve dependencies before the course](#compilation)
 
