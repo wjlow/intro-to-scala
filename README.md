@@ -70,7 +70,7 @@ $ brew cask install java8
 To run the `sbt` shell using Docker:
 
 ```
-$ ./auto/dev-environment sbt
+$ ./auto/sbt
 ```
 
 __Tip__: Launching SBT might take some time, so we recommend using SBT's interactive shell to run commands, instead of lauching SBT for each command.
