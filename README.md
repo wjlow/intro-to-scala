@@ -65,7 +65,13 @@ $ brew tap caskroom/versions
 $ brew cask install java8
 ```
 
-##### 3. Run SBT through Docker
+#### 3. Install [Docker](https://www.docker.com/)
+
+##### macOS
+
+Use [Docker for Mac](https://docs.docker.com/docker-for-mac/install/)
+
+#### 4. Run SBT through Docker
 
 To run the `sbt` shell using Docker:
 
@@ -75,9 +81,9 @@ $ ./auto/sbt
 
 __Tip__: Launching SBT might take some time, so we recommend using SBT's interactive shell to run commands, instead of lauching SBT for each command.
 
-#### [4. Compile program to resolve dependencies before the course](#compilation)
+#### [5. Compile program to resolve dependencies before the course](#compilation)
 
-#### [5. IDE setup](#ide-setup)
+#### [6. IDE setup](#ide-setup)
 
 ## Compilation
 
