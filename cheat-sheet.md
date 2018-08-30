@@ -147,7 +147,7 @@ flatMap[A,B](ea: Either[A])(f: A => Either[B]): Either[B]
 flatMap[A,B](ta: Try[A])(f: A => Try[B]): Try[B]
 ```
 
-###For-Comprehensions
+### For-Comprehensions
 A for-comprehension is syntactic sugar for map, flatMap and filter operations on collections.
 
 The general form is `for {s} yield e`
