@@ -21,6 +21,23 @@ object IntroExercises {
     **/
   def add(x: Int, y: Int): Int = ???
 
+
+  /**
+    * Let's write the curried version of the `add` function defined previously
+    * scala> addCurried(1)(2)
+    * = 3
+    **/
+  def addCurried(x: Int)(y: Int): Int = ???
+
+
+  /**
+    * Reuse the `addCurried` function and partially apply it for adding 5 to anything.
+    * scala> add5(4)
+    * = 9
+    *
+    **/
+  def add5(x: Int): Int = ???
+
   /**
     * Parametric types
     *
