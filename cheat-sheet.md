@@ -1,3 +1,21 @@
+### Scala's Types
+
+![Scala's Class Hierarchy](https://sanj.ink/images/scala_class_hierarchy.png)
+
+|Data Type|Definition|
+|---------|----------|
+|Boolean|    true or false
+|Byte|8-bit signed two's complement integer<br/>(-2^7 to 2^7-1, inclusive) -128 to 127|
+|Short|16-bit signed two's complement integer<br/>(-2^15 to 2^15-1, inclusive) 32,768 to 32,767|
+|Int|32-bit two's complement integer<br/>(-2^31 to 2^31-1, inclusive) 2,147,483,648 to 2,147,483,647|
+|Long|64-bit two's complement integer<br/>(-2^63 to 2^63-1, inclusive) -9,223,372,036,854,775,808 to +9,223,372,036,854,775,807|
+|Float|32-bit IEEE 754 single-precision float<br/>1.40129846432481707e-45 to 3.40282346638528860e+38 (positive or negative)|
+|Double|64-bit IEEE 754 double-precision float<br/>4.94065645841246544e-324d to 1.79769313486231570e+308d (positive or negative)|
+|Char|16-bit unsigned Unicode character<br/>(0 to 2^16-1, inclusive) 0 to 65,535|
+|String|a sequence of Chars|
+
+Referenced from [alvinalexander.com](https://alvinalexander.com/scala/scala-data-types-bits-ranges-int-short-long-float-double)
+
 ### Currying
 Converting a function with multiple arguments into a function with a single argument that returns another function.
 
@@ -88,16 +106,16 @@ list.foldRight(0)(_ + _)
 ```
 
 ### Algebraic Data Type (ADT)
-ADTs define a fixed set of all possible values of a given type. Two common classes of algebraic types are product types `AND` and sum types `OR`. 
-For sum types, the number of all its possible values is the sum or disjoint union of the number of all values of the two underlying types. 
+ADTs define a fixed set of all possible values of a given type. Two common classes of algebraic types are product types `AND` and sum types `OR`.
+For sum types, the number of all its possible values is the sum or disjoint union of the number of all values of the two underlying types.
 The values of a product type typically contain several values, called fields. For products types, the number of its possible values is the product of the fields.
 
 Values of algebraic types are analysed with pattern matching, which identifies a value by its constructor or field names and extracts the data it contains.
 
 ### Sealed trait
 When defining an algebraic data type using sealed traits, it allows the compiler to exhaustively check the possible cases in match expressions.
-The compiler will emit a warning (or an error is the option "-Xfatal-warnings" option is enabled) if you have missed a specific case. 
-The compiler knows all of the subtypes of the trait that can possibly exist as they can only be extended in the file. 
+The compiler will emit a warning (or an error is the option "-Xfatal-warnings" option is enabled) if you have missed a specific case.
+The compiler knows all of the subtypes of the trait that can possibly exist as they can only be extended in the file.
 
 ```scala
 sealed trait MyBooleanType
@@ -134,7 +152,7 @@ def map[A,B](ta: Try[A])(f: A => B): Try[B]
 ```
 
 ### flatMap
-flatMap works by applying a function that returns a container type (e.g. a List, Option, Either, etc.) for each element within the container, 
+flatMap works by applying a function that returns a container type (e.g. a List, Option, Either, etc.) for each element within the container,
 and flattening the results into a value of the same container type.
 
 ```scala
@@ -189,7 +207,7 @@ def mean(xs: Seq[Double]): Option[Double] =
 ```
 
 ### Either Data Type
-The Either data type has only two cases which both carry a value. Either represents values that can be one of two things. 
+The Either data type has only two cases which both carry a value. Either represents values that can be one of two things.
 When we use it to indicate success or failure, by convention the `Right` constructor is reserved for the success case and `Left` is used for failure.
 
 ```scala
