@@ -16,16 +16,16 @@ class IntroExercisesTest extends FunSpec with TypeCheckedTripleEquals {
 
   describe("foo") {
 
-    it("foo can only return the parameter unmodified (aka the 'identity' function)") {
+    it("can only return the parameter unmodified (aka the 'identity' function)") {
       assert(foo(1) === 1)
     }
 
-  }  
-  
+  }
+
   describe("bar") {
 
-    it("bar can be any Int") {
-      assert(foo(1).isInstanceOf[Int])
+    it("can be any Int") {
+      assert(bar(1).isInstanceOf[Int])
     }
 
   }
