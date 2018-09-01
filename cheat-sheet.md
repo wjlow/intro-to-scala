@@ -1,3 +1,33 @@
+### Functional Programming
+
+#### What are Pure Functions?
+
+A pure function is one where the same inputs always produce the same output. By definition pure functions do not have side effects.
+
+#### What is a Side Effect?
+
+A function has a side effect if it does something other than simply return a result. For example:
+
+* Modifying a global variable
+* Mutating a field or parameter
+* Throwing an exception or halting with an error
+* Printing to the console or reading user input
+* Reading from or writing to a file
+* Drawing on the screen
+
+
+In all the above scenarios, actions within the side-effecting function are visible and affect code that is external to the function.
+
+#### What is Referential Transparency?
+
+An expression is referentially transparent if all instances of it can be replaced with the result of a single invocation without changing the behaviour of the overall program. Referencial transparency holds when only pure functions are used.
+
+#### What are Partial and Total Functions?
+
+A partial function is a function for which every input does not have a output. For example converting a String to a Number. Not all Strings are Numbers. This "gap" leads to the use of constructs like Exception and null. Inherently partial functions are harder to reason about than total functions.
+
+A total function is a function for which every input has an output. For example converting from a Number to a String. Every Number can be converted to a String.
+
 ### Currying
 Converting a function with multiple arguments into a function with a single argument that returns another function.
 
@@ -88,16 +118,16 @@ list.foldRight(0)(_ + _)
 ```
 
 ### Algebraic Data Type (ADT)
-ADTs define a fixed set of all possible values of a given type. Two common classes of algebraic types are product types `AND` and sum types `OR`. 
-For sum types, the number of all its possible values is the sum or disjoint union of the number of all values of the two underlying types. 
+ADTs define a fixed set of all possible values of a given type. Two common classes of algebraic types are product types `AND` and sum types `OR`.
+For sum types, the number of all its possible values is the sum or disjoint union of the number of all values of the two underlying types.
 The values of a product type typically contain several values, called fields. For products types, the number of its possible values is the product of the fields.
 
 Values of algebraic types are analysed with pattern matching, which identifies a value by its constructor or field names and extracts the data it contains.
 
 ### Sealed trait
 When defining an algebraic data type using sealed traits, it allows the compiler to exhaustively check the possible cases in match expressions.
-The compiler will emit a warning (or an error is the option "-Xfatal-warnings" option is enabled) if you have missed a specific case. 
-The compiler knows all of the subtypes of the trait that can possibly exist as they can only be extended in the file. 
+The compiler will emit a warning (or an error is the option "-Xfatal-warnings" option is enabled) if you have missed a specific case.
+The compiler knows all of the subtypes of the trait that can possibly exist as they can only be extended in the file.
 
 ```scala
 sealed trait MyBooleanType
@@ -134,7 +164,7 @@ def map[A,B](ta: Try[A])(f: A => B): Try[B]
 ```
 
 ### flatMap
-flatMap works by applying a function that returns a container type (e.g. a List, Option, Either, etc.) for each element within the container, 
+flatMap works by applying a function that returns a container type (e.g. a List, Option, Either, etc.) for each element within the container,
 and flattening the results into a value of the same container type.
 
 ```scala
@@ -189,7 +219,7 @@ def mean(xs: Seq[Double]): Option[Double] =
 ```
 
 ### Either Data Type
-The Either data type has only two cases which both carry a value. Either represents values that can be one of two things. 
+The Either data type has only two cases which both carry a value. Either represents values that can be one of two things.
 When we use it to indicate success or failure, by convention the `Right` constructor is reserved for the success case and `Left` is used for failure.
 
 ```scala
