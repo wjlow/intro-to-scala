@@ -14,14 +14,28 @@ class IntroExercisesTest extends FunSpec with TypeCheckedTripleEquals {
 
   }
 
+  describe("addCurried") {
+
+    it("1 + 2 is 3") {
+      assert(addCurried(1)(2) === 3)
+    }
+  }
+
+  describe("add5") {
+
+    it("5 + 4 is 9") {
+      assert(add5(4) === 9)
+    }
+  }
+
   describe("foo") {
 
     it("foo can only return the parameter unmodified (aka the 'identity' function)") {
       assert(foo(1) === 1)
     }
 
-  }  
-  
+  }
+
   describe("bar") {
 
     it("bar can be any Int") {
