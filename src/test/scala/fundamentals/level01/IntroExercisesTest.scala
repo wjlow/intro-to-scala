@@ -12,6 +12,10 @@ class IntroExercisesTest extends FunSpec with TypeCheckedTripleEquals {
       assert(add(1, 2) === 3)
     }
 
+    it("5 + 7 is 12") {
+      assert(add(5, 7) === 12)
+    }
+
   }
 
   describe("addCurried") {
@@ -19,12 +23,20 @@ class IntroExercisesTest extends FunSpec with TypeCheckedTripleEquals {
     it("1 + 2 is 3") {
       assert(addCurried(1)(2) === 3)
     }
+
+    it("5 + 7 is 12") {
+      assert(addCurried(5)(7) === 12)
+    }
+
   }
 
   describe("add5") {
 
     it("5 + 4 is 9") {
       assert(add5(4) === 9)
+    }
+    it("10 + 5 is 15") {
+      assert(add5(10) === 15)
     }
   }
 
