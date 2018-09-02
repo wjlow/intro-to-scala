@@ -187,7 +187,7 @@ The general form is `for {s} yield e`
 For example:
 ```scala
 for {
-    x <- Some(3);
+    x <- Some(3)
     y <- Some(4)
 } yield (x + y)
 
