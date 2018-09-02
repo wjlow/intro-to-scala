@@ -5,6 +5,7 @@ package fundamentals.level03
   *
   * After these exercises, we will learn the alternative to using `null`s.
   */
+@SuppressWarnings(Array("org.wartremover.warts.Null"))
 object NullExercises {
 
   /**

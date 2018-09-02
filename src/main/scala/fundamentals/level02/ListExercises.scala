@@ -145,7 +145,7 @@ object ListExercises {
     *
     * Hint: Use pattern matching and .foldLeft
     **/
-  def min(nums: List[Int]): Int = 
+  def min(nums: List[Int]): Int =
     nums match {
       case Nil => ???
       case head :: tail => ???

@@ -5,6 +5,7 @@ package fundamentals.level03
   *
   * We will work through a better alternative to Exceptions after this.
   */
+@SuppressWarnings(Array("org.wartremover.warts.Throw"))
 object ExceptionExercises {
 
   //Exceptions that will be thrown
