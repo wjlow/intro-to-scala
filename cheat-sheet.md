@@ -266,3 +266,20 @@ The Try type represents a computation that may either result in an exception, or
 |String|a sequence of Chars|
 
 Referenced from [alvinalexander.com](https://alvinalexander.com/scala/scala-data-types-bits-ranges-int-short-long-float-double)
+
+**class** - A basic construction unit that contains fields, methods and other top-level types like objects, classes and traits.
+
+**object** - An object is a class that has exactly one instance.
+
+**case class** - Is a class that provides the following features:
+- instantiated without the *new* operator
+- is immutable
+- provides access to all constructor fields
+- provides a *toString* implementation
+- overrides *equals* and *hashCode* based on the constructor fields
+- supports pattern matching
+- provides a *copy* function create new instances with the fields changed
+
+**case object** - An object that can be pattern matched on.
+
+**trait** - Is similar to an interface but also supports function implementations.
