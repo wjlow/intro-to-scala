@@ -1,21 +1,3 @@
-### Scala's Types
-
-![Scala's Class Hierarchy](https://sanj.ink/images/scala_class_hierarchy.png)
-
-|Data Type|Definition|
-|---------|----------|
-|Boolean|    true or false
-|Byte|8-bit signed two's complement integer<br/>(-2^7 to 2^7-1, inclusive) -128 to 127|
-|Short|16-bit signed two's complement integer<br/>(-2^15 to 2^15-1, inclusive) 32,768 to 32,767|
-|Int|32-bit two's complement integer<br/>(-2^31 to 2^31-1, inclusive) 2,147,483,648 to 2,147,483,647|
-|Long|64-bit two's complement integer<br/>(-2^63 to 2^63-1, inclusive) -9,223,372,036,854,775,808 to +9,223,372,036,854,775,807|
-|Float|32-bit IEEE 754 single-precision float<br/>1.40129846432481707e-45 to 3.40282346638528860e+38 (positive or negative)|
-|Double|64-bit IEEE 754 double-precision float<br/>4.94065645841246544e-324d to 1.79769313486231570e+308d (positive or negative)|
-|Char|16-bit unsigned Unicode character<br/>(0 to 2^16-1, inclusive) 0 to 65,535|
-|String|a sequence of Chars|
-
-Referenced from [alvinalexander.com](https://alvinalexander.com/scala/scala-data-types-bits-ranges-int-short-long-float-double)
-
 ### Currying
 Converting a function with multiple arguments into a function with a single argument that returns another function.
 
@@ -236,3 +218,21 @@ The Try type represents a computation that may either result in an exception, or
     }
   }
 ```
+
+### Scala's Types
+
+![Scala's Class Hierarchy](https://sanj.ink/images/scala_class_hierarchy.png)
+
+|Data Type|Definition|
+|---------|----------|
+|Boolean|    true or false
+|Byte|8-bit signed two's complement integer<br/>(-2^7 to 2^7-1, inclusive) -128 to 127|
+|Short|16-bit signed two's complement integer<br/>(-2^15 to 2^15-1, inclusive) 32,768 to 32,767|
+|Int|32-bit two's complement integer<br/>(-2^31 to 2^31-1, inclusive) 2,147,483,648 to 2,147,483,647|
+|Long|64-bit two's complement integer<br/>(-2^63 to 2^63-1, inclusive) -9,223,372,036,854,775,808 to +9,223,372,036,854,775,807|
+|Float|32-bit IEEE 754 single-precision float<br/>1.40129846432481707e-45 to 3.40282346638528860e+38 (positive or negative)|
+|Double|64-bit IEEE 754 double-precision float<br/>4.94065645841246544e-324d to 1.79769313486231570e+308d (positive or negative)|
+|Char|16-bit unsigned Unicode character<br/>(0 to 2^16-1, inclusive) 0 to 65,535|
+|String|a sequence of Chars|
+
+Referenced from [alvinalexander.com](https://alvinalexander.com/scala/scala-data-types-bits-ranges-int-short-long-float-double)
