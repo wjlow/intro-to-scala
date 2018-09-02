@@ -109,21 +109,4 @@ class ListExercisesTest extends FunSpec with TypeCheckedTripleEquals {
 
   }
 
-  describe("showEveryNthPerson") {
-
-    it("should return elements at index 1, 3 and 5") {
-      val p1 = Person("Person1", 21)
-      val p2 = Person("Person2", 21)
-      val p3 = Person("Person3", 21)
-      val p4 = Person("Person4", 21)
-      val p5 = Person("Person5", 21)
-      val p6 = Person("Person6", 21)
-      val p7 = Person("Person7", 21)
-      val persons = List(p1, p2, p3, p4, p5, p6, p7)
-
-      assert(showEveryNthPerson(2, persons) === List("Person2 is 21 years old", "Person4 is 21 years old", "Person6 is 21 years old"))
-    }
-
-  }
-
 }
