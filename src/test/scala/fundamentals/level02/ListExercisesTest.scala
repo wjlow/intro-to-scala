@@ -1,7 +1,7 @@
 package fundamentals.level02
 
 import fundamentals.level02.ListExercises._
-import fundamentals.level02.TypesExercises.Person
+import fundamentals.level02.TypesExercises.{Person, showPerson1}
 import org.scalactic.TypeCheckedTripleEquals
 import org.scalatest.FunSpec
 
@@ -107,6 +107,29 @@ class ListExercisesTest extends FunSpec with TypeCheckedTripleEquals {
       assert(youngestPerson(persons) === sally)
     }
 
+  }
+
+  describe("showEveryNthPerson") {
+
+    it("should return elements at index 1, 3 and 5") {
+      val p1 = Person("Person1", 21)
+      val p2 = Person("Person2", 21)
+      val p3 = Person("Person3", 21)
+      val p4 = Person("Person4", 21)
+      val p5 = Person("Person5", 21)
+      val p6 = Person("Person6", 21)
+      val p7 = Person("Person7", 21)
+      val persons = List(p1, p2, p3, p4, p5, p6, p7)
+      val all = persons.map(showPerson1)
+
+      assert(showEveryNthPerson(-5, persons) === all)
+      assert(showEveryNthPerson(0, persons)  === all)
+      assert(showEveryNthPerson(1, persons)  === all)
+      assert(showEveryNthPerson(2, persons)  === List("Person2 is 21 years old", "Person4 is 21 years old", "Person6 is 21 years old"))
+      assert(showEveryNthPerson(3, persons)  === List("Person3 is 21 years old", "Person6 is 21 years old"))
+      assert(showEveryNthPerson(4, persons)  === List("Person4 is 21 years old"))
+      assert(showEveryNthPerson(8, persons)  === Nil)
+    }
   }
 
 }
