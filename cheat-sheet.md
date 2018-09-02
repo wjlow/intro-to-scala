@@ -88,16 +88,16 @@ list.foldRight(0)(_ + _)
 ```
 
 ### Algebraic Data Type (ADT)
-ADTs define a fixed set of all possible values of a given type. Two common classes of algebraic types are product types `AND` and sum types `OR`. 
-For sum types, the number of all its possible values is the sum or disjoint union of the number of all values of the two underlying types. 
+ADTs define a fixed set of all possible values of a given type. Two common classes of algebraic types are product types `AND` and sum types `OR`.
+For sum types, the number of all its possible values is the sum or disjoint union of the number of all values of the two underlying types.
 The values of a product type typically contain several values, called fields. For products types, the number of its possible values is the product of the fields.
 
 Values of algebraic types are analysed with pattern matching, which identifies a value by its constructor or field names and extracts the data it contains.
 
 ### Sealed trait
 When defining an algebraic data type using sealed traits, it allows the compiler to exhaustively check the possible cases in match expressions.
-The compiler will emit a warning (or an error is the option "-Xfatal-warnings" option is enabled) if you have missed a specific case. 
-The compiler knows all of the subtypes of the trait that can possibly exist as they can only be extended in the file. 
+The compiler will emit a warning (or an error is the option "-Xfatal-warnings" option is enabled) if you have missed a specific case.
+The compiler knows all of the subtypes of the trait that can possibly exist as they can only be extended in the file.
 
 ```scala
 sealed trait MyBooleanType
@@ -134,7 +134,7 @@ def map[A,B](ta: Try[A])(f: A => B): Try[B]
 ```
 
 ### flatMap
-flatMap works by applying a function that returns a container type (e.g. a List, Option, Either, etc.) for each element within the container, 
+flatMap works by applying a function that returns a container type (e.g. a List, Option, Either, etc.) for each element within the container,
 and flattening the results into a value of the same container type.
 
 ```scala
@@ -157,7 +157,7 @@ The general form is `for {s} yield e`
 For example:
 ```scala
 for {
-    x <- Some(3);
+    x <- Some(3)
     y <- Some(4)
 } yield (x + y)
 
@@ -189,7 +189,7 @@ def mean(xs: Seq[Double]): Option[Double] =
 ```
 
 ### Either Data Type
-The Either data type has only two cases which both carry a value. Either represents values that can be one of two things. 
+The Either data type has only two cases which both carry a value. Either represents values that can be one of two things.
 When we use it to indicate success or failure, by convention the `Right` constructor is reserved for the success case and `Left` is used for failure.
 
 ```scala
