@@ -71,7 +71,7 @@ def foldLeft[B](z: B)(op: (B, A) ⇒ B): B
 
 Example:
 ```scala
-List(1, 2, 3).foldLeft(20)(_ + _)
+List(1, 2, 3).foldLeft(26)(_ + _)
 // result = 6
 
 List(1, 2, 3).foldLeft(100)(_ + _)
