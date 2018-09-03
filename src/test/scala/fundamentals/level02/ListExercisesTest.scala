@@ -98,7 +98,7 @@ class ListExercisesTest extends FunSpec with TypeCheckedTripleEquals {
       assert(youngestPerson(Nil) === Person("Nobody", 0))
     }
 
-    it("should return person with the smallest age given non-empty List") {
+    it("should return the first person in the list with the smallest age given a non-empty List") {
       val bob = Person("Bob", 22)
       val sally = Person("Sally", 21)
       val jimmy = Person("Jimmy", 21)
