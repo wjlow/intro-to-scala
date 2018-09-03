@@ -41,7 +41,7 @@ object ListExercises {
     *
     * Hint: Refer the construction of list
     */
-  def prependToList[A](x: A, xs: List[A]): List[A] = ???
+  def prependToList[A](x: A, xs: List[A]): List[A] = x :: xs
 
   /**
     * scala> appendToList(1, List(2, 3, 4))
@@ -49,7 +49,7 @@ object ListExercises {
     *
     * Hint: Use the :+ operator
     */
-  def appendToList[A](x: A, xs: List[A]): List[A] = ???
+  def appendToList[A](x: A, xs: List[A]): List[A] = xs :+ x
 
   /**
     * `List` has an `.isEmpty` method that you can call to know whether an instance is empty or not.
@@ -71,7 +71,11 @@ object ListExercises {
     * }
     * ```
     */
-  def isEmptyList[A](xs: List[A]): Boolean = ???
+  def isEmptyList[A](xs: List[A]): Boolean =
+    xs match {
+      case Nil => true
+      case _   => false
+    }
 
   /**
     * scala> showListSize(List(1, 2, 3))
@@ -85,7 +89,11 @@ object ListExercises {
     *
     * Hint: Use pattern matching, string interpolation and length
     */
-  def showListSize[A](xs: List[A]): String = ???
+  def showListSize[A](xs: List[A]): String =
+    xs match {
+      case Nil => "This is an empty list"
+      case _   => s"This is a list of size ${xs.length}"
+    }
 
   /**
     * Mapping a function over a List
@@ -98,7 +106,8 @@ object ListExercises {
     *
     * Hint: Use .map
     **/
-  def addNumToEach(num: Int, nums: List[Int]): List[Int] = ???
+  def addNumToEach(num: Int, nums: List[Int]): List[Int] =
+    nums.map(i => i + num)
 
   /**
     * Filter a List
@@ -110,7 +119,8 @@ object ListExercises {
     *
     * Hint: Use .filter and '%' for mod operator
     */
-  def filterEven(nums: List[Int]): List[Int] = ???
+  def filterEven(nums: List[Int]): List[Int] =
+    nums.filter(i => i % 2 == 0)
 
   /**
     * Folds
@@ -134,7 +144,7 @@ object ListExercises {
     *
     * Hint: Use .foldLeft
     */
-  def product(nums: List[Int]): Int = ???
+  def product(nums: List[Int]): Int = nums.foldLeft(1)((x,y) => x * y)
 
   /**
     * scala> min(List(4, 6, 1))
@@ -147,8 +157,8 @@ object ListExercises {
     **/
   def min(nums: List[Int]): Int =
     nums match {
-      case Nil => ???
-      case head :: tail => ???
+      case Nil => Int.MinValue
+      case head :: tail => tail.foldLeft(head)((a,b) => if (a < b) a else b)
     }
 
   /**
@@ -164,6 +174,10 @@ object ListExercises {
     *
     * Hint: Use pattern matching and .foldLeft
     */
-  def youngestPerson(persons: List[Person]): Person = ???
-
+  def youngestPerson(persons: List[Person]): Person = {
+    persons match {
+      case Nil => Person("Nobody", 0)
+      case head::tail => tail.foldLeft(head)((p1, p2) => if (p2.age < p1.age) p2 else p1)
+    }
+  }
 }
