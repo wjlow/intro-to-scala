@@ -33,4 +33,14 @@ object OptionExercises3 {
 //      job <- ???   // Find a function of type JobId => Option[Job]
 //    } yield job
 
+  /**
+    * scala> findJobDescriptionByHumanIdUsingFor(2)
+    * = Some("Teacher")
+    *
+    * scala> findJobDescriptionByHumanIdUsingFor(1)
+    * = None
+    *
+    * Hint: Use `findJobByHumanIdUsingFor` and for comprehension
+    */
+  def findJobNameByHumanIdUsingFor(humanId: HumanId): Option[String] = ???
 }

@@ -38,7 +38,24 @@ class OptionExercises3Test extends FunSpec with TypeCheckedTripleEquals {
     }
 
     it("should return jobId if humanId is found and Human has a job that is in jobsDatabase") {
-      assert(findJobByHumanIdUsingFor(2) === Some(Job("Teacher", "Expert in their field"))) // Timmy
+      assert(findJobByHumanIdUsingFor(2) === Some(Job("Teacher", "Expert in their field"))) // Jenny
+    }
+
+  }
+
+
+  describe("findJobNameByHumanIdUsingFor") {
+
+    it("should return None because Sally does not have a job") {
+      assert(findJobNameByHumanIdUsingFor(1) === None)
+    }
+
+    it("should return Teacher because Jenny is a teacher") {
+      assert(findJobNameByHumanIdUsingFor(2) === Some("Teacher"))
+    }
+
+    it("should return None because Timmy's job does not exist") {
+      assert(findJobNameByHumanIdUsingFor(3) === None)
     }
 
   }
