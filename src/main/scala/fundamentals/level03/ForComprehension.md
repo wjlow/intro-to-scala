@@ -2,7 +2,7 @@
 
 For Comprehension is a powerful technique for working with values in "containers", e.g. `Option`, `Either`, `Try`, `List`, etc.
 
-Here are some examples of for comprehension usages. Run them in a REPL and see what they output. You can start up a REPL with `sbt console`.
+Here are some examples of for comprehension usages. Run them in a REPL and see what they output. You can start up a REPL with `./auto/sbt console`.
 
 ## Option
 
