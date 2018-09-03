@@ -283,3 +283,41 @@ Referenced from [alvinalexander.com](https://alvinalexander.com/scala/scala-data
 **case object** - An object that can be pattern matched on.
 
 **trait** - Is similar to an interface but also supports function implementations.
+
+### Companion Object
+
+A companion object is an object with the same name as a class or trait and is defined in the same source file.
+
+```scala
+
+class MyNumber(n: Int) {
+  // body
+}
+
+object MyNumber {
+  //body
+}
+
+```
+
+Companion objects are commonly used for "factory" or "smart constructors", via Scala's apply function e.g.:
+
+```scala
+object MyNumber {
+  def apply(strNumber: String): Option[MyNumber] = ???
+}
+```
+Then use the smart constructor:
+
+```scala
+val maybeNumber = MyNumber.apply("123")
+```
+
+Or in its shorthand mode (the apply function is the default function on any object):
+
+```scala
+val maybeNumber = MyNumber("123") //
+
+```
+
+Side note: When we execute a function, we're actually invoking its `apply` method.
