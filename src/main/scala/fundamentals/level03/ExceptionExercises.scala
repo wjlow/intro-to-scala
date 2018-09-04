@@ -57,8 +57,8 @@ object ExceptionExercises {
     * scala> getAge("20")
     * = 20
     *
-    * scala> getAge("-1")
-    * = InvalidAgeRangeException: provided age should be between 1-120: -1
+    * scala> getAge("0")
+    * = InvalidAgeRangeException: provided age should be between 1-120: 0
     *
     * Hint: use the toInt method to convert a String to an Int.
     */
