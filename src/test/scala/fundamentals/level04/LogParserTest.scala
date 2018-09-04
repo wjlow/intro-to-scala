@@ -9,9 +9,19 @@ class LogParserTest extends FunSpec with TypeCheckedTripleEquals {
 
   describe("parseLog") {
 
-    it("should return a KnownLog") {
+    it("should return a KnownLog for an Info") {
       val knownLog = parseLog("I,147,mice in the air")
       assert(knownLog === KnownLog(Info, 147, "mice in the air"))
+    }
+
+    it("should return a KnownLog for a Warning") {
+      val knownLog = parseLog("W,188,hamsters underground")
+      assert(knownLog === KnownLog(Warning, 188, "hamsters underground"))
+    }
+
+    it("should return a KnownLog for an Error") {
+      val knownLog = parseLog("E,5,193,ferrets out at sea")
+      assert(knownLog === KnownLog(Error(5), 193, "ferrets out at sea"))
     }
 
     it("should return an UnknownLog") {
