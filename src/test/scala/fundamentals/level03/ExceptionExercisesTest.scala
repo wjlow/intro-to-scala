@@ -36,12 +36,12 @@ class ExceptionExercisesTest extends FunSpec with TypeCheckedTripleEquals {
       assert(caught.getMessage === "provided age is invalid: Fred")
     }
 
-    it("should throw an InvalidAgeRangeException if the age supplied is not between 1 and 120") {
+    it("should throw an InvalidAgeRangeException if the age supplied is lower than range 1-120") {
       val caught = intercept[InvalidAgeRangeException] {
-        getAge("-1")
+        getAge("0")
       }
 
-      assert(caught.getMessage === "provided age should be between 1-120: -1")
+      assert(caught.getMessage === "provided age should be between 1-120: 0")
     }
 
     it("should accept an age of one") {
@@ -50,6 +50,14 @@ class ExceptionExercisesTest extends FunSpec with TypeCheckedTripleEquals {
 
     it("should accept an age of a hundred and twenty") {
       assert(getAge("120")   == 120)
+    }
+
+    it("should throw an InvalidAgeRangeException if the age supplied is higher than range 1-120") {
+      val caught = intercept[InvalidAgeRangeException] {
+        getAge("121")
+      }
+
+      assert(caught.getMessage === "provided age should be between 1-120: 121")
     }
   }
 
