@@ -140,6 +140,8 @@ case object False extends MyBooleanType
 ### Pattern matching
 Pattern matching is a mechanism for checking a value against a pattern. Pattern matching is similar to a series of if/else statements or a switch statement in other languages.
 
+Pattern matching on an Int:
+
 ```scala
 def numToString(num: Int): String =
   num match {
@@ -148,6 +150,22 @@ def numToString(num: Int): String =
     case 2 => "two"
     case _ => "many"
   }
+```
+
+Pattern matching on an Array:
+
+```scala
+def onlyThree(values: String): String =
+  values.split(",") match {
+    case Array(one, two, three) => s"Got 3: $one, $two, $three"
+    case _ => s"I need three things"
+  }
+
+onlyThree("one,two,three")
+> Got one, two, three
+
+onlyThree("one")
+> I need three things
 ```
 
 ### map
