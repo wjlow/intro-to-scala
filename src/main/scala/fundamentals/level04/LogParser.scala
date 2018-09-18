@@ -61,6 +61,8 @@ object LogParser {
     *
     * scala> parseLog("X blblbaaaaa")
     * = UnknownLog("X blblbaaaaa")
+    *
+    * Hint: use the `split` method on `String` and pattern match on `Array`
     **/
   def parseLog(str: String): LogMessage = ???
 
@@ -85,7 +87,7 @@ object LogParser {
     * = List()
     **/
   def getErrorsOverSeverity(logs: List[LogMessage], severity: Int): List[LogMessage] = ???
- 
+
   /**
     * Write a function to convert a `LogMessage` to a readable `String`.
     *
