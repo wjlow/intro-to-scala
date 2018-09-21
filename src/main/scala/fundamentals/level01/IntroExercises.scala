@@ -69,4 +69,47 @@ object IntroExercises {
     */
   def showNumber(x: Int): String = ???
 
+  /**
+    * Unfortunately, there is a distinction between a function and a method in Scala.
+    * We often use both terms interchangeably.
+    *
+    * `def`s are technically methods and `val`s are technically functions.
+    *
+    * Write two versions of `toUpperCase`, one using `def` and one using `val`.
+    * They should behave exactly the same way.
+    *
+    * scala> toUpperCase1("abc")
+    * = "ABC"
+    *
+    * scala> toUpperCase2("abc")
+    * = "ABC"
+    */
+
+  def toUpperCase1(str: String): String = ???
+
+  val toUpperCase2: String => String = ???
+
+  /**
+    * Given three functions, compose them all in order.
+    * If this compiles, it should work!
+    */
+  def composeFunctions[A, B, C, D](f: A => B, g: B => C, h: C => D): A => D = ???
+
+  /**
+    * Create three lambda functions `step1`, `step2` and `step3`.
+    *
+    * Compose them all and form `allSteps`
+    *
+    * Now apply `allSteps` to the argument `n`!
+    */
+  def doThreeThings(n: Int): String = {
+    val step1: Int => Boolean = ???
+    val step2: Boolean => String = ???
+    val step3: String => String = ???
+
+    val allSteps = ???
+
+    ???
+  }
+
 }
