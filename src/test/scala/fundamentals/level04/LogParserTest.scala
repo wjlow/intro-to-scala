@@ -7,6 +7,18 @@ import Types._
 
 class LogParserTest extends FunSpec with TypeCheckedTripleEquals {
 
+  describe("parseIntOption") {
+    it("should return the parsed integer for a valid integer") {
+      val parsed = parseIntOption("123")
+      assert(parsed === Some(123))
+    }
+
+    it("should return a None for an invalid integer") {
+      val parsed = parseIntOption("12a")
+      assert(parsed === None)
+    }
+  }
+
   describe("parseLog") {
 
     it("should return a KnownLog for an Info") {
