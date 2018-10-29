@@ -75,13 +75,13 @@ object LogParser {
     **/
   def parseLog(str: String): LogMessage = {
     val fields = str.split(",").toList
-    val logOpt: Option[LogMessage] = fields match {
+    val optLog: Option[LogMessage] = fields match {
       case List("I", timestampStr, message) =>
         parseIntOption(timestampStr).map(timestamp => ???)
       case _ => ??? // Add more cases
     }
 
-    // What should we do if logOpt is None?
+    // What should we do if optLog is None?
     ???
   }
 
