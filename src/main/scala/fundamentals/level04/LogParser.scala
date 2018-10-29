@@ -51,6 +51,15 @@ object LogParser {
    */
 
   /**
+    * We want to parse log messages. In order to do so, we need a safe way to parse integers in those messages.
+    *
+    * One possibility is to define a function that converts a `String` to an `Option[Int]`
+    *
+    * Hint: You may copy `parseIntSafe` and `tryToOption` from TryExercises
+    */
+  def parseIntOption(str: String): Option[Int] = ???
+
+  /**
     * Define a function to parse an individual log message.
     *
     * scala> parseLog("I,147,mice in the air")
@@ -62,9 +71,19 @@ object LogParser {
     * scala> parseLog("X blblbaaaaa")
     * = UnknownLog("X blblbaaaaa")
     *
-    * Hint: use the `split` method on `String` and pattern match on `Array`
+    * Here is the beginning of one possible approach.
     **/
-  def parseLog(str: String): LogMessage = ???
+  def parseLog(str: String): LogMessage = {
+    val fields = str.split(",").toList
+    val optLog: Option[LogMessage] = fields match {
+      case List("I", timestampStr, message) =>
+        parseIntOption(timestampStr).map(timestamp => ???)
+      case _ => ??? // Add more cases
+    }
+
+    // What should we do if optLog is None?
+    ???
+  }
 
   /**
     * scala> parseLogFile("I,147,mice in the air\nX blblbaaaaa")

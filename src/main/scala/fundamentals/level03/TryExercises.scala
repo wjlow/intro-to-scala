@@ -87,6 +87,20 @@ object TryExercises {
     }
 
   /**
+    * Write a function that converts a `Try[A]` to `Option[A]`.
+    *
+    * scala> tryToOption(parseIntSafe("1"))
+    * = Some(1)
+    * scala> tryToOption(parseIntSafe("abc"))
+    * = None
+    */
+  def tryToOption[A](tryA: Try[A]): Option[A] =
+    tryA match {
+      case Success(a) => ???
+      case Failure(throwable) => ???
+    }
+
+  /**
     * Create an Employee data type with three parameters:
     * 1. name: String
     * 2. age: Int
