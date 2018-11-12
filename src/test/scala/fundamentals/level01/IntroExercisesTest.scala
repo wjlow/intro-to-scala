@@ -73,7 +73,39 @@ class IntroExercisesTest extends FunSpec with TypeCheckedTripleEquals {
     it("should string interpolate") {
       assert(showNumber(1) === "The number is 1")
     }
+  }
 
+  describe("pair") {
+
+    it("Jimmy and 25") {
+      assert(pair("Jimmy", 25) === ("Jimmy", 25))
+    }
+
+    it("Sammy and 30") {
+      assert(pair("Sammy", 30) === ("Sammy", 30))
+    }
+  }
+
+  describe("fst") {
+
+    it("Jimmy and 25") {
+      assert(fst("Jimmy", 25) === "Jimmy")
+    }
+
+    it("Sammy and 30") {
+      assert(fst("Sammy", 30) === "Sammy")
+    }
+  }
+
+  describe("snd") {
+
+    it("Jimmy and 25") {
+      assert(snd("Jimmy", 25) === 25)
+    }
+
+    it("Sammy and 30") {
+      assert(snd("Sammy", 30) === 30)
+    }
   }
 
 }

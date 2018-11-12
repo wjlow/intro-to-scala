@@ -69,4 +69,21 @@ object IntroExercises {
     */
   def showNumber(x: Int): String = ???
 
+  /**
+    * Tuples
+    *
+    * How can we group together `name` and `age` in a pair?
+    */
+  def pair(name: String, age: Int): (String, Int) = ???
+
+  /**
+    * How can we extract the first element of a pair?
+    */
+  def fst(pair: (String, Int)): String = ???
+
+  /**
+    * How can we extract the second element of a pair?
+    */
+  def snd(pair: (String, Int)): Int = ???
+
 }
