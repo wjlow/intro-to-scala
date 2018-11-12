@@ -275,3 +275,5 @@ Tips:
 
 - [Scala API](https://www.scala-lang.org/api/current/)
 - [SBT 1.x](https://www.scala-sbt.org/1.x/docs/index.html)
+- [ScalaTest 3.x](http://doc.scalatest.org/3.0.0/index.html#org.scalatest.fixture.FunSpec)
+- [Scalactic 3.x](http://doc.scalactic.org/3.0.0/index.html#org.scalactic.TypeCheckedTripleEquals)
