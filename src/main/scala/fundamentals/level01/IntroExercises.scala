@@ -50,6 +50,12 @@ object IntroExercises {
     * How about this one?
     */
   def bar(a: Int): Int = ???
+  
+  /**
+    * What does the return type of this function tell us about
+    * what it can do once implemented?
+    */
+  def pandora(x: Int): Unit = ???
 
   /**
     * scala> timesTwoIfEven(4)
