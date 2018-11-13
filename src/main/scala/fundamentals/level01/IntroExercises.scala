@@ -69,4 +69,10 @@ object IntroExercises {
     */
   def showNumber(x: Int): String = ???
 
+  /**
+    * What does the return type of this function tell us about
+    * what it can do once implemented?
+    */
+  def pandora(x: Int): Unit = ???
+
 }
