@@ -50,6 +50,12 @@ object IntroExercises {
     * How about this one?
     */
   def bar(a: Int): Int = ???
+  
+  /**
+    * What does the return type of this function tell us about
+    * what it can do once implemented?
+    */
+  def pandora(x: Int): Unit = ???
 
   /**
     * scala> timesTwoIfEven(4)
@@ -70,9 +76,20 @@ object IntroExercises {
   def showNumber(x: Int): String = ???
 
   /**
-    * What does the return type of this function tell us about
-    * what it can do once implemented?
+    * Tuples
+    *
+    * How can we group together `name` and `age` in a pair?
     */
-  def pandora(x: Int): Unit = ???
+  def pair(name: String, age: Int): (String, Int) = ???
+
+  /**
+    * How can we extract the first element of a pair?
+    */
+  def fst(pair: (String, Int)): String = ???
+
+  /**
+    * How can we extract the second element of a pair?
+    */
+  def snd(pair: (String, Int)): Int = ???
 
 }
