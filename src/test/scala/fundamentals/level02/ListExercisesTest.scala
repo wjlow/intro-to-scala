@@ -109,26 +109,34 @@ class ListExercisesTest extends FunSpec with TypeCheckedTripleEquals {
 
   }
 
+  describe("personWithIndex") {
+
+    it("should return each person with their 1-based index") {
+      assert(personWithIndex(peopleList) === (
+        List((Person("Matt Murdock",            30), 1),
+             (Person("Karen Page",              27), 2),
+             (Person("Franklin 'Foggy' Nelson", 31), 3),
+             (Person("Claire Temple",           32), 4),
+             (Person("Wilson Fisk",             42), 5),
+             (Person("Elektra Natchios",        29), 6)))
+      )
+    }
+  }
+
   describe("showEveryNthPerson") {
 
-    it("should return elements at index 1, 3 and 5") {
-      val p1 = Person("Person1", 21)
-      val p2 = Person("Person2", 21)
-      val p3 = Person("Person3", 21)
-      val p4 = Person("Person4", 21)
-      val p5 = Person("Person5", 21)
-      val p6 = Person("Person6", 21)
-      val p7 = Person("Person7", 21)
-      val persons = List(p1, p2, p3, p4, p5, p6, p7)
-      val all = persons.map(showPerson1)
+    it("should show every Nth person") {
+      val people = ListExercises.peopleList
+      val all = people.map(showPerson1)
 
-      assert(showEveryNthPerson(-5, persons) === all)
-      assert(showEveryNthPerson(0, persons)  === all)
-      assert(showEveryNthPerson(1, persons)  === all)
-      assert(showEveryNthPerson(2, persons)  === List("Person2 is 21 years old", "Person4 is 21 years old", "Person6 is 21 years old"))
-      assert(showEveryNthPerson(3, persons)  === List("Person3 is 21 years old", "Person6 is 21 years old"))
-      assert(showEveryNthPerson(4, persons)  === List("Person4 is 21 years old"))
-      assert(showEveryNthPerson(8, persons)  === Nil)
+      assert(showEveryNthPerson(-5, people) === all)
+      assert(showEveryNthPerson(0, people)  === all)
+      assert(showEveryNthPerson(1, people)  === all)
+      assert(showEveryNthPerson(2, people)  === List("Karen Page is 27 years old", "Claire Temple is 32 years old", "Elektra Natchios is 29 years old"))
+      assert(showEveryNthPerson(3, people)  === List("Franklin 'Foggy' Nelson is 31 years old", "Elektra Natchios is 29 years old"))
+      assert(showEveryNthPerson(5, people)  === List("Wilson Fisk is 42 years old"))
+      assert(showEveryNthPerson(6, people)  === List("Elektra Natchios is 29 years old"))
+      assert(showEveryNthPerson(8, people)  === Nil)
     }
   }
 

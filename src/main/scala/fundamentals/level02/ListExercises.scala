@@ -166,22 +166,37 @@ object ListExercises {
     */
   def youngestPerson(persons: List[Person]): Person = ???
 
+  private[level02] val peopleList =
+    List(Person("Matt Murdock", 30),
+         Person("Karen Page", 27),
+         Person("Franklin 'Foggy' Nelson", 31),
+         Person("Claire Temple", 32),
+         Person("Wilson Fisk", 42),
+         Person("Elektra Natchios", 29)
+     )
+
   /**
-    * Typically in a data processing job, you would only want to log every
-    * 100th or 1000th iteration so you do not clog up the logs.
+    * Return a list of pairs of a Person and their position in the `peopleList`.
+    * The position should be a 1-based index.
     *
-    * scala> val persons = List(Person("Person1", 21), Person("Person2", 21), Person("Person3", 21), Person("Person4", 21))
-    * scala> showEveryNthPerson(2, persons)
-    * = List("Person2 is 21 years old", "Person4 is 21 years old")
+    * Hint: Use `zipWithIndex`
+    */
+  def personWithIndex(people: List[Person]): List[(Person, Int)] = ???
+
+  /**
+    * Log every nth person from the `peopleList` given an index `n`.
+    *
+    * scala> showEveryNthPerson(2, peopleList)
+    * = List("Karen Page is 27 years old", "Claire Temple is 32 years old")
     *
     * Validation rules:
     *
     * If `n` is zero or less then return the full List
     * If `n` is greater than the length of the list then return an empty List
     *
-    * Hint: Use `zipWithIndex`, `filter` and `showPerson1`.
-    * `zipWithIndex` will give you a `List` of tuples.
-    * You can deconstruct them by pattern matching inside filter, e.g.
+    * Hint: Use `personWithIndex`, `filter` and `showPerson1`.
+    *
+    * You can pattern match on pairs inside filter, e.g.
     *
     * ```
     * List(("abc", 1), ("def", 2)).filter {
@@ -189,7 +204,7 @@ object ListExercises {
     * }
     * ```
     *
-    * Otherwise, you'll need to use `._1` and `._2` methods to access the fields in the tuple, e.g.
+    * Otherwise, you'll need to use `._1` and `._2` methods to access the fields in the pair, e.g.
     *
     * ```
     * List(("abc", 1), ("def", 2)).filter(pair => // do something with `pair._1` and `pair._2`)
@@ -197,5 +212,4 @@ object ListExercises {
     *
     */
   def showEveryNthPerson(n: Int, persons: List[Person]): List[String] = ???
-
 }
