@@ -172,6 +172,8 @@ testOnly *TestName -- -C delight.Nature
 
 ![Nature scalatest reporter](scalatest-nature-reporter.png)
 
+For more information see [Delight](https://github.com/ssanj/delight)
+
 </p></p>
 </details>
 
