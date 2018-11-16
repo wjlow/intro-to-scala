@@ -187,7 +187,7 @@ object ListExercises {
     * Log every nth person from the `peopleList` given an index `n`.
     *
     * scala> showEveryNthPerson(2, peopleList)
-    * = List("Karen Page is 27 years old", "Claire Temple is 32 years old")
+    * = List("Karen Page is 27 years old", "Claire Temple is 32 years old", "Elektra Natchios is 29 years old")
     *
     * Validation rules:
     *
