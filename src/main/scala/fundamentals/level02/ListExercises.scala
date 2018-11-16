@@ -151,13 +151,21 @@ object ListExercises {
       case head :: tail => ???
     }
 
+  private[level02] val peopleList =
+    List(Person("Matt Murdock", 30),
+         Person("Karen Page", 27),
+         Person("Franklin 'Foggy' Nelson", 31),
+         Person("Claire Temple", 32),
+         Person("Wilson Fisk", 42),
+         Person("Elektra Natchios", 27)
+     )
+
   /**
     * Return the person in the List that is the youngest. If there are more than one person with the youngest age,
     * return the first one.
     *
-    * scala> val persons = List(Person("Bob", 22), Person("Sally", 21), Person("Jimmy", 21))
-    * scala> youngestPerson(persons)
-    * = Person("Sally", 21)
+    * scala> youngestPerson(peopleList)
+    * = Person("Karen Page", 27)
     *
     * scala> youngestPerson(Nil)
     * = Person("Nobody", 0)
@@ -165,15 +173,6 @@ object ListExercises {
     * Hint: Use pattern matching and .foldLeft
     */
   def youngestPerson(persons: List[Person]): Person = ???
-
-  private[level02] val peopleList =
-    List(Person("Matt Murdock", 30),
-         Person("Karen Page", 27),
-         Person("Franklin 'Foggy' Nelson", 31),
-         Person("Claire Temple", 32),
-         Person("Wilson Fisk", 42),
-         Person("Elektra Natchios", 29)
-     )
 
   /**
     * Return a list of pairs of a Person and their position in the `peopleList`.
@@ -187,7 +186,7 @@ object ListExercises {
     * Log every nth person from the `peopleList` given an index `n`.
     *
     * scala> showEveryNthPerson(2, peopleList)
-    * = List("Karen Page is 27 years old", "Claire Temple is 32 years old", "Elektra Natchios is 29 years old")
+    * = List("Karen Page is 27 years old", "Claire Temple is 32 years old", "Elektra Natchios is 27 years old")
     *
     * Validation rules:
     *

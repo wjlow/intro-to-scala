@@ -99,12 +99,9 @@ class ListExercisesTest extends FunSpec with TypeCheckedTripleEquals {
     }
 
     it("should return the first person in the list with the smallest age given a non-empty List") {
-      val bob = Person("Bob", 22)
-      val sally = Person("Sally", 21)
-      val jimmy = Person("Jimmy", 21)
-      val persons = List(bob, sally, jimmy)
+      val youngest = Person("Karen Page", 27)
 
-      assert(youngestPerson(persons) === sally)
+      assert(youngestPerson(peopleList) === youngest)
     }
 
   }
@@ -118,7 +115,7 @@ class ListExercisesTest extends FunSpec with TypeCheckedTripleEquals {
              (Person("Franklin 'Foggy' Nelson", 31), 3),
              (Person("Claire Temple",           32), 4),
              (Person("Wilson Fisk",             42), 5),
-             (Person("Elektra Natchios",        29), 6)))
+             (Person("Elektra Natchios",        27), 6)))
       )
     }
   }
@@ -132,10 +129,10 @@ class ListExercisesTest extends FunSpec with TypeCheckedTripleEquals {
       assert(showEveryNthPerson(-5, people) === all)
       assert(showEveryNthPerson(0, people)  === all)
       assert(showEveryNthPerson(1, people)  === all)
-      assert(showEveryNthPerson(2, people)  === List("Karen Page is 27 years old", "Claire Temple is 32 years old", "Elektra Natchios is 29 years old"))
-      assert(showEveryNthPerson(3, people)  === List("Franklin 'Foggy' Nelson is 31 years old", "Elektra Natchios is 29 years old"))
+      assert(showEveryNthPerson(2, people)  === List("Karen Page is 27 years old", "Claire Temple is 32 years old", "Elektra Natchios is 27 years old"))
+      assert(showEveryNthPerson(3, people)  === List("Franklin 'Foggy' Nelson is 31 years old", "Elektra Natchios is 27 years old"))
       assert(showEveryNthPerson(5, people)  === List("Wilson Fisk is 42 years old"))
-      assert(showEveryNthPerson(6, people)  === List("Elektra Natchios is 29 years old"))
+      assert(showEveryNthPerson(6, people)  === List("Elektra Natchios is 27 years old"))
       assert(showEveryNthPerson(8, people)  === Nil)
     }
   }
