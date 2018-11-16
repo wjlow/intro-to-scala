@@ -151,13 +151,21 @@ object ListExercises {
       case head :: tail => ???
     }
 
+  private[level02] val peopleList =
+    List(Person("Matt Murdock", 30),
+         Person("Karen Page", 27),
+         Person("Franklin 'Foggy' Nelson", 31),
+         Person("Claire Temple", 32),
+         Person("Wilson Fisk", 42),
+         Person("Elektra Natchios", 27)
+     )
+
   /**
     * Return the person in the List that is the youngest. If there are more than one person with the youngest age,
     * return the first one.
     *
-    * scala> val persons = List(Person("Bob", 22), Person("Sally", 21), Person("Jimmy", 21))
-    * scala> youngestPerson(persons)
-    * = Person("Sally", 21)
+    * scala> youngestPerson(peopleList)
+    * = Person("Karen Page", 27)
     *
     * scala> youngestPerson(Nil)
     * = Person("Nobody", 0)
@@ -166,4 +174,41 @@ object ListExercises {
     */
   def youngestPerson(persons: List[Person]): Person = ???
 
+  /**
+    * Return a list of pairs of a Person and their position in the `peopleList`.
+    * The position should be a 1-based index.
+    *
+    * Hint: Use `zipWithIndex`
+    */
+  def personWithIndex(people: List[Person]): List[(Person, Int)] = ???
+
+  /**
+    * Log every nth person from the `peopleList` given an index `n`.
+    *
+    * scala> showEveryNthPerson(2, peopleList)
+    * = List("Karen Page is 27 years old", "Claire Temple is 32 years old", "Elektra Natchios is 27 years old")
+    *
+    * Validation rules:
+    *
+    * If `n` is zero or less then return the full List
+    * If `n` is greater than the length of the list then return an empty List
+    *
+    * Hint: Use `personWithIndex`, `filter` and `showPerson1`.
+    *
+    * You can pattern match on pairs inside filter, e.g.
+    *
+    * ```
+    * List(("abc", 1), ("def", 2)).filter {
+    *   case (str, num) => // do something with `str` and `num`
+    * }
+    * ```
+    *
+    * Otherwise, you'll need to use `._1` and `._2` methods to access the fields in the pair, e.g.
+    *
+    * ```
+    * List(("abc", 1), ("def", 2)).filter(pair => // do something with `pair._1` and `pair._2`)
+    * ```
+    *
+    */
+  def showEveryNthPerson(n: Int, persons: List[Person]): List[String] = ???
 }

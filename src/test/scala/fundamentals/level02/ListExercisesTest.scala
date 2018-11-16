@@ -1,7 +1,7 @@
 package fundamentals.level02
 
 import fundamentals.level02.ListExercises._
-import fundamentals.level02.TypesExercises.Person
+import fundamentals.level02.TypesExercises.{Person, showPerson1}
 import org.scalactic.TypeCheckedTripleEquals
 import org.scalatest.FunSpec
 
@@ -99,14 +99,42 @@ class ListExercisesTest extends FunSpec with TypeCheckedTripleEquals {
     }
 
     it("should return the first person in the list with the smallest age given a non-empty List") {
-      val bob = Person("Bob", 22)
-      val sally = Person("Sally", 21)
-      val jimmy = Person("Jimmy", 21)
-      val persons = List(bob, sally, jimmy)
+      val youngest = Person("Karen Page", 27)
 
-      assert(youngestPerson(persons) === sally)
+      assert(youngestPerson(peopleList) === youngest)
     }
 
+  }
+
+  describe("personWithIndex") {
+
+    it("should return each person with their 1-based index") {
+      assert(personWithIndex(peopleList) === (
+        List((Person("Matt Murdock",            30), 1),
+             (Person("Karen Page",              27), 2),
+             (Person("Franklin 'Foggy' Nelson", 31), 3),
+             (Person("Claire Temple",           32), 4),
+             (Person("Wilson Fisk",             42), 5),
+             (Person("Elektra Natchios",        27), 6)))
+      )
+    }
+  }
+
+  describe("showEveryNthPerson") {
+
+    it("should show every Nth person") {
+      val people = ListExercises.peopleList
+      val all = people.map(showPerson1)
+
+      assert(showEveryNthPerson(-5, people) === all)
+      assert(showEveryNthPerson(0, people)  === all)
+      assert(showEveryNthPerson(1, people)  === all)
+      assert(showEveryNthPerson(2, people)  === List("Karen Page is 27 years old", "Claire Temple is 32 years old", "Elektra Natchios is 27 years old"))
+      assert(showEveryNthPerson(3, people)  === List("Franklin 'Foggy' Nelson is 31 years old", "Elektra Natchios is 27 years old"))
+      assert(showEveryNthPerson(5, people)  === List("Wilson Fisk is 42 years old"))
+      assert(showEveryNthPerson(6, people)  === List("Elektra Natchios is 27 years old"))
+      assert(showEveryNthPerson(8, people)  === Nil)
+    }
   }
 
 }
