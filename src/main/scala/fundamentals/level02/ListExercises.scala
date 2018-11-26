@@ -178,6 +178,20 @@ object ListExercises {
     * Return a list of pairs of a Person and their position in the `peopleList`.
     * The position should be a 1-based index.
     *
+    * You can pattern match on pairs inside filter, e.g.
+    *
+    * ```
+    * List(("abc", 1), ("def", 2)).filter {
+    *   case (str, num) => // do something with `str` and `num`
+    * }
+    * ```
+    *
+    * Otherwise, you'll need to use `._1` and `._2` methods to access the fields in the pair, e.g.
+    *
+    * ```
+    * List(("abc", 1), ("def", 2)).filter(pair => // do something with `pair._1` and `pair._2`)
+    * ```
+    *
     * Hint: Use `zipWithIndex`
     */
   def personWithIndex(people: List[Person]): List[(Person, Int)] = ???
@@ -194,20 +208,6 @@ object ListExercises {
     * If `n` is greater than the length of the list then return an empty List
     *
     * Hint: Use `personWithIndex`, `filter` and `showPerson1`.
-    *
-    * You can pattern match on pairs inside filter, e.g.
-    *
-    * ```
-    * List(("abc", 1), ("def", 2)).filter {
-    *   case (str, num) => // do something with `str` and `num`
-    * }
-    * ```
-    *
-    * Otherwise, you'll need to use `._1` and `._2` methods to access the fields in the pair, e.g.
-    *
-    * ```
-    * List(("abc", 1), ("def", 2)).filter(pair => // do something with `pair._1` and `pair._2`)
-    * ```
     *
     */
   def showEveryNthPerson(n: Int, persons: List[Person]): List[String] = ???
