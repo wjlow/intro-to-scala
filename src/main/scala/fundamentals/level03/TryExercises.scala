@@ -43,7 +43,7 @@ object TryExercises {
     * scala> parseIntSafe("abc")
     * = Failure(java.lang.NumberFormatException: For input string: "abc")
     *
-    * Hint: Use `Try` and `parseInt`
+    * Hint: Use `Try` and `toInt`
     */
   def parseIntSafe(str: String): Try[Int] = ???
 
