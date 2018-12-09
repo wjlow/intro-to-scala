@@ -82,8 +82,8 @@ object TryExercises {
 
   def tryToEither[A](tryA: Try[A]): Either[TryError, A] =
     tryA match {
-      case Success(a) => Right(a)
-      case Failure(throwable) => Left(TryError(throwable.getMessage))
+      case Success(a) => ???
+      case Failure(throwable) => ???
     }
 
   /**
@@ -96,8 +96,8 @@ object TryExercises {
     */
   def tryToOption[A](tryA: Try[A]): Option[A] =
     tryA match {
-      case Success(a) => Some(a)
-      case Failure(throwable) => None
+      case Success(a) => ???
+      case Failure(throwable) => ???
     }
 
   /**
