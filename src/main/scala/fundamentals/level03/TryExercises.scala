@@ -125,12 +125,15 @@ object TryExercises {
     * scala> mkEmployee("Bob,22,abc")
     * = Left(TryError(For input string: "abc"))
     *
+    * scala> mkEmployee("Bob,22")
+    * = Left(TryError(CSV has wrong number of fields. Expected 3.))
+    *
     * Hint: Use `parseIntSafe`, `parseBooleanSafe`, for-comprehension, `tryToEither`
     */
   def mkEmployee(csv: String): Either[TryError, Employee] =
     csv.split(",") match {
       case Array(nameStr, ageStr, hasDirectReportsStr) => ???
-      case _ => Left(TryError("CSV has wrong number of fields. Expected 3."))
+      case _ => ???
     }
 
   /**
