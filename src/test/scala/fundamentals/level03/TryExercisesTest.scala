@@ -48,6 +48,10 @@ class TryExercisesTest extends FunSpec with TypeCheckedTripleEquals {
     }
   }
 
+  private case class CustomException(msg: String) extends Throwable {
+    override def getMessage: String = msg
+  }
+
   describe("tryToEither") {
 
     it("should return Right given Success") {
@@ -56,13 +60,19 @@ class TryExercisesTest extends FunSpec with TypeCheckedTripleEquals {
 
     it("should return Left given Failure") {
 
-      case class CustomException(msg: String) extends Throwable {
-        override def getMessage: String = msg
-      }
-
       assert(tryToEither(Failure(CustomException("msg"))) === Left(TryError("msg")))
     }
+  }
 
+  describe("tryToOption") {
+
+    it("should return Some given Success") {
+      assert(tryToOption(Success("abc")) === Some("abc"))
+    }
+
+    it("should return None given Failure") {
+      assert(tryToOption(Failure(CustomException("msg"))) === None)
+    }
   }
 
   describe("mkEmployee") {
