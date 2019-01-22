@@ -13,38 +13,39 @@ We welcome pull requests and feedback!
 ## Schedule
 
 ### Day 1
+### Day 1
 
 | Time | Topic/Exercise |
 | :---: | :---: |
-| 09.00 | Start |
-| 09.15 | Intro to FP/Scala (__presentation__) |
-| 10.00 | [IntroExercises](src/main/scala/fundamentals/level01/IntroExercises.scala) |
-| 10.30 | Intro to ADTs (__presentation__) |
-| 10.50 | 10 min break |
+| 09.00 | Start | 
+| 09.15 | Intro to FP/Scala (__presentation__) | 
+| 10.00 | [IntroExercises](src/main/scala/fundamentals/level01/IntroExercises.scala) | 
+| 10.30 | Intro to ADTs (__presentation__) | 
+| 10.50 | Morning tea |
 | 11.00 | [TypesExercises](src/main/scala/fundamentals/level02/TypesExercises.scala) |
-| 12.00 | Lunch (not provided) |
-| 13.15 | [NullExercises](src/main/scala/fundamentals/level03/NullExercises.scala) |
-| 13.45 | [OptionExercises pt. 1 (Safe constructors)](src/main/scala/fundamentals/level03/OptionExercises1.scala) |
-| 14.45 | 30 min break | | |
-| 15.15 | [ListExercises](src/main/scala/fundamentals/level02/ListExercises.scala) |
-| 17.00 | End |
+| 12.00 | Lunch (not provided) | 
+| 13.15 | [ListExercises](src/main/scala/fundamentals/level02/ListExercises.scala) | 
+| 15.00 | Afternoon tea | 
+| 15.30 | [NullExercises](src/main/scala/fundamentals/level03/NullExercises.scala) | 
+| 16.00 | [OptionExercises pt. 1 (Safe constructors)](src/main/scala/fundamentals/level03/OptionExercises1.scala)
+| 17.00 | End | 
 
 ### Day 2
 
 | Time | Topic/Exercise |
-| :---: | :---: |
-| 09.15 | Intro to Error Handling (__presentation__) |
-| 10.00 | [OptionExercises pt. 2](src/main/scala/fundamentals/level03/OptionExercises2.scala) |
-| 10.50 | 10 min break |
-| 11.00 | [OptionExercises pt. 3](src/main/scala/fundamentals/level03/OptionExercises3.scala) |
-| 11.45 | [ExceptionExercises](src/main/scala/fundamentals/level03/ExceptionExercises.scala) |
-| 12.15 | Lunch (not provided) |
-| 13.15 | [Exceptions2EitherExercises](src/main/scala/fundamentals/level03/Exceptions2EitherExercises.scala) |
-| 14.30 | 30 min break |
-| 15.00 | [TryExercises](src/main/scala/fundamentals/level03/TryExercises.scala) |
-| 15.30 | [LogParser](src/main/scala/fundamentals/level04/LogParser.scala) |
-| 16.45 | Wrap up |
-| 17.00 | End |
+| :---: | :---: | 
+| 09.15 | Intro to Error Handling (__presentation__) | 
+| 10.00 | [OptionExercises pt. 2](src/main/scala/fundamentals/level03/OptionExercises2.scala) | 
+| 10.50 | Morning tea |
+| 11.00 | [OptionExercises pt. 3](src/main/scala/fundamentals/level03/OptionExercises3.scala) | 
+| 11.45 | [ExceptionExercises](src/main/scala/fundamentals/level03/ExceptionExercises.scala) | 
+| 12.15 | Lunch (not provided) | 
+| 13.15 | [Exceptions2EitherExercises](src/main/scala/fundamentals/level03/Exceptions2EitherExercises.scala) | 
+| 14.30 | Afternoon tea | 
+| 15.00 | [TryExercises](src/main/scala/fundamentals/level03/TryExercises.scala) | 
+| 15.30 | [LogParser](src/main/scala/fundamentals/level04/LogParser.scala) | 
+| 16.45 | Wrap up | 
+| 17.00 | End | 
 
 ## Pre-requisites
 
