@@ -13,7 +13,6 @@ We welcome pull requests and feedback!
 ## Schedule
 
 ### Day 1
-### Day 1
 
 | Time | Topic/Exercise |
 | :---: | :---: |
@@ -48,6 +47,13 @@ We welcome pull requests and feedback!
 | 17.00 | End | 
 
 ## Pre-requisites
+
+At a minimum, you need:
+
+- This repository
+- Java 8 installed (even if you have a newer version)
+- Docker
+- Text editor (IntelliJ is recommended)
 
 #### 1. Fork or clone this repository
 
