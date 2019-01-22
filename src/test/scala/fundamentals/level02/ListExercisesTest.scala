@@ -137,4 +137,34 @@ class ListExercisesTest extends FunSpec with TypeCheckedTripleEquals {
     }
   }
 
+  describe("getNames") {
+
+    it("should return the names of all persons") {
+      val powerRangers = List(Person("Red Ranger", 22), Person("Yellow Ranger", 20), Person("Pink Ranger", 21))
+      val names = getNames(powerRangers)
+      assert(names === List("Red Ranger", "Yellow Ranger", "Pink Ranger"))
+    }
+
+  }
+
+  describe("getAdults") {
+
+    it("should return persons aged >= 18") {
+      val powerRangers = List(Person("Red Ranger", 17), Person("Yellow Ranger", 18), Person("Pink Ranger", 19))
+      val adults = getAdults(powerRangers)
+      assert(adults === List(Person("Yellow Ranger", 18), Person("Pink Ranger", 19)))
+    }
+
+  }
+
+  describe("reverseList") {
+
+    it("should return the input list reversed") {
+      val inputList = List(1, 2, 3)
+      val result = reverseList(inputList)
+      assert(result === List(3, 2, 1))
+    }
+
+  }
+
 }
