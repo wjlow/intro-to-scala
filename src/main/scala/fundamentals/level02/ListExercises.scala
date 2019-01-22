@@ -66,8 +66,8 @@ object ListExercises {
     *
     * ```
     * list match {
-    *   case head :: tail => // do something for non-empty list
-    *   case Nil => // do something for empty list
+    * case head :: tail => // do something for non-empty list
+    * case Nil => // do something for empty list
     * }
     * ```
     */
@@ -153,12 +153,12 @@ object ListExercises {
 
   private[level02] val peopleList =
     List(Person("Matt Murdock", 30),
-         Person("Karen Page", 27),
-         Person("Franklin 'Foggy' Nelson", 31),
-         Person("Claire Temple", 32),
-         Person("Wilson Fisk", 42),
-         Person("Elektra Natchios", 27)
-     )
+      Person("Karen Page", 27),
+      Person("Franklin 'Foggy' Nelson", 31),
+      Person("Claire Temple", 32),
+      Person("Wilson Fisk", 42),
+      Person("Elektra Natchios", 27)
+    )
 
   /**
     * Return the person in the List that is the youngest. If there are more than one person with the youngest age,
@@ -182,7 +182,7 @@ object ListExercises {
     *
     * ```
     * List(("abc", 1), ("def", 2)).filter {
-    *   case (str, num) => // do something with `str` and `num`
+    * case (str, num) => // do something with `str` and `num`
     * }
     * ```
     *
@@ -211,4 +211,51 @@ object ListExercises {
     *
     */
   def showEveryNthPerson(n: Int, persons: List[Person]): List[String] = ???
+
+  /**
+    * Bonus exercises!
+    */
+
+  /**
+    * Rewrite this function that uses a mutable variable and for-loop in an immutable fashion
+    */
+  @SuppressWarnings(Array("org.wartremover.warts.Var"))
+  def getNames(persons: List[Person]): List[String] = {
+    var names: List[String] = Nil
+    for (person <- persons) {
+      names = names :+ person.name
+    }
+    names
+  }
+
+  /**
+    * Rewrite this function that uses a mutable variable and for-loop in an immutable fashion
+    *
+    * Return people aged >= 18
+    */
+  @SuppressWarnings(Array("org.wartremover.warts.Var"))
+  def getAdults(persons: List[Person]): List[Person] = {
+    var adults: List[Person] = Nil
+    for (person <- persons) {
+      if (person.age >= 18)
+        adults = adults :+ person
+    }
+    adults
+  }
+
+
+  /**
+    * Rewrite this function that uses mutable variables and for-loop in an immutable fashion
+    *
+    * Don't use `.reverse` because that's cheating ;)
+    */
+  @SuppressWarnings(Array("org.wartremover.warts.Var"))
+  def reverseList[A](xs: List[A]): List[A] = {
+    var result: List[A] = Nil
+    for (x <- xs) {
+      result = x :: result
+    }
+    result
+  }
+
 }
