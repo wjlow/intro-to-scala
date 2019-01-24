@@ -34,10 +34,10 @@ object OptionExercises3 {
 //    } yield job
 
   /**
-    * scala> findJobDescriptionByHumanIdUsingFor(2)
+    * scala> findJobNameByHumanIdUsingFor(2)
     * = Some("Teacher")
     *
-    * scala> findJobDescriptionByHumanIdUsingFor(1)
+    * scala> findJobNameByHumanIdUsingFor(1)
     * = None
     *
     * Hint: Use `findJobByHumanIdUsingFor` and for comprehension
