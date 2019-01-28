@@ -1,3 +1,9 @@
+### Anatomy of a Function
+
+```
+def functionName(pName1: pType1, pName2: pType2): ReturnType = implementation
+```
+
 ### Functional Programming
 
 #### What are Pure Functions?
