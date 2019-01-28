@@ -167,4 +167,14 @@ class ListExercisesTest extends FunSpec with TypeCheckedTripleEquals {
 
   }
 
+  describe("sublists") {
+
+    it("should pack consecutive duplicates of list elements into sublists") {
+      val inputList = List("a", "a", "a", "a", "b", "c", "c", "a", "a", "d", "e", "e", "e", "e")
+      val result = sublists(inputList)
+      assert(result === List(List("a", "a", "a", "a"), List("b"), List("c", "c"), List("a", "a"), List("d"), List("e", "e", "e", "e")))
+    }
+
+  }
+
 }
