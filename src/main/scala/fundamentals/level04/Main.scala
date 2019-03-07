@@ -38,6 +38,7 @@ object Main {
     *
     * Hint: Use println to write to stdout
     */
+  @SuppressWarnings(Array("org.wartremover.warts.Any"))
   private def printErrorsOverSeverity(logFile: String, severity: Int): Unit = ???
 
 }
