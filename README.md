@@ -69,8 +69,7 @@ Test if you have Java 8 already with `java -version`.
 ##### macOS (using [Homebrew](https://brew.sh))
 
 ```
-$ brew tap caskroom/versions
-$ brew cask install java8
+$ brew cask install caskroom/versions/adoptopenjdk8
 ```
 
 #### 3. Install [Docker](https://www.docker.com/)
