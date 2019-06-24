@@ -84,6 +84,8 @@ object TypesExercises {
     * scala> val wallet = Wallet(100)
     * scala> purchase(80, wallet)
     * = Wallet(20)
+    * 
+    * Hint: You need to calculate the new amount first.
     **/
   def purchase(cost: Double, wallet: Wallet): Wallet = ???
 
