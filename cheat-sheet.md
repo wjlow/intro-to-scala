@@ -345,3 +345,46 @@ val maybeNumber = MyNumber("123") //
 ```
 
 Side note: When we execute a function, we're actually invoking its `apply` method.
+
+
+## What are Functor, Applicative and Monad?
+
+They are typeclasses that define certain behaviour. Data types (`List`, `Option`, etc.) that have these typeclass instances are able to perform these behaviours.
+
+### 1. Functor
+
+The behaviour that Functor provides is the ability to `map`. This means if you have a function `A => B`, you can get a function `F[A] => F[B]` provided that `F` has the Functor typeclass instance.
+
+More concretely, if there is a function `getListingDesc: Listing => ListingDescription`, we get all these functions below for free (by using `.map(getListingDesc)`):
+
+- `List[Listing] => List[ListingDescription]`
+- `Vector[Listing] => Vector[ListingDescription]`
+- `Either[AppError, Listing] => Either[AppError, ListingDescription]`
+- `IO[Listing] => IO[ListingDescription]`
+- etc.
+
+Because `List`, `Vector`, `Either[AppError, ?]` and `IO` have Functor instances.
+
+### 2. Applicative
+
+In addition to whatever Functor provides, Applicative provides us the ability to `map` over multiple things. If you have a function `(A, B, C, ...) => Z`, you get a function `(F[A], F[B], F[C], ...) => F[Z]` provided that `F` has an Applicative typeclass instance.
+
+More concretely, given a function `createPerson: (FirstName, LastName, Age) => Person`, we get the following functions for free (by using `.mapN(createPerson)`):
+
+- `(IO[FirstName], IO[LastName], IO[Age])` => `IO[Person]` (Provided `FirstName`, `LastName` and `Age` in an `IO`, construct a `Person` if all 3 `IO` operations succeed, otherwise return the first error)
+- `(Option[FirstName], Option[LastName], Option[Age]) => Option[Person]` (Provided `FirstName`, `LastName` and `Age` that may or may not exist, construct a `Person` if they all exist, otherwise `None`)
+- etc.
+
+Secondly, Applicative also provides us a way to put a value into the data type, i.e. a function `pure: A => F[A]`, where `F` has an Applicative instance.
+
+This allows us to put a `String` into a `List` to get a `List[String]` or an `Int` into an IO` to get an `IO[Int]`. 
+
+### 3. Monad
+
+In addition to everything Applicative provides, Monad provides the ability to flatten nested structures, i.e. a function `flatten: F[F[A]] => F[A]`. For instance, we can flatten `Option[Option[Person]]` into `Option[Person]` and `IO[IO[String]]` to `IO[String]`.
+
+Why is this useful?
+
+Because sometimes when we use `.map`, we end up with nested structures, which can be redundant and very difficult to work with. `flatten` keeps our type signatures clean.
+
+Consequently, we also have a function `flatMap` that does `map` and then `flatten` for this purpose.
