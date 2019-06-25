@@ -178,11 +178,11 @@ object ListExercises {
     * Return a list of pairs of a Person and their position in the `peopleList`.
     * The position should be a 1-based index.
     *
-    * You can pattern match on pairs inside filter, e.g.
+    * You can pattern match on pairs inside a lambda function, e.g.
     *
     * ```
-    * List(("abc", 1), ("def", 2)).filter {
-    * case (str, num) => // do something with `str` and `num`
+    * List(("abc", 1), ("def", 2)).map {
+    *   case (str, num) => // do something with `str` and `num`
     * }
     * ```
     *
