@@ -35,6 +35,12 @@ object TypesExercises {
     * = "Bob is 50 years old"
     *
     * This uses a technique called pattern matching. You will see more of this later.
+    *
+    * You can read the following code as: 
+    * "If `person` matches the `Person` constructor, return the expression to the right hand side of the `=>`."
+    * 
+    * The expression on the right hand side has access to the `name` and `age`
+    * "extracted" out of `person`.
     **/
   def showPerson1(person: Person): String =
     person match {
@@ -42,7 +48,7 @@ object TypesExercises {
     }
 
   /**
-    * Same as `showPerson1`, but using string interpolation only.
+    * Same as `showPerson1`, but using string interpolation and accessors/getters only.
     *
     * Hint: Navigate the Person class' fields using the "." operator
     */
