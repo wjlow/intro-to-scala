@@ -32,6 +32,10 @@ class Exceptions2EitherExercisesTest extends FunSpec with TypeCheckedTripleEqual
       assert(getAge("-1") === Left(InvalidAgeRange("provided age should be between 1-120: -1")))
     }
 
+    it("should return an InvalidAgeRange if the age supplied is 0") {
+      assert(getAge("0") === Left(InvalidAgeRange("provided age should be between 1-120: 0")))
+    }
+
     it("should accept age of one") {
       assert(getAge("1") == Right(1))
     }
