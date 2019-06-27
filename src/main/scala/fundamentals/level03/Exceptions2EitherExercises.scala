@@ -100,6 +100,11 @@ object Exceptions2EitherExercises {
   def createPerson(name: String, age: String): Either[AppError, Person] = ???
 
   /**
+    * Reimplement createPerson using only `flatMap` and `map`
+    */
+ def createPerson2(name: String, age: String): Either[AppError, Person] = ???
+
+  /**
     * scala> makeNameUpperCase("Fred", "32")
     * = Right(Person(FRED,32))
     *
@@ -116,12 +121,6 @@ object Exceptions2EitherExercises {
     *
     */
   def makeNameUpperCase(name: String, age: String): Either[AppError, Person] = ???
-
-  /**
-    * Reimplement createPerson using only `flatMap` and `map`
-    */
- def createPerson2(name: String, age: String): Either[AppError, Person] = ???
-
 
   /**
     * scala> createPersonAndShow("Fred", "32")
