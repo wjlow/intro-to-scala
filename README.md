@@ -14,8 +14,6 @@ We welcome pull requests and feedback!
 
 ### Day 1
 
-### Day 1
-
 | Time | Topic/Exercise | 
 | :---: | :---: | 
 | 09.00 | Start | 
