@@ -7,6 +7,11 @@ package fundamentals.level02
 object TypesExercises {
 
   /**
+    * *********************************
+    * * Section 1 - People ************
+    * *********************************
+    */
+  /**
     * A simple data type
     *
     * Here is an example of a `Person` type, which is a wrapper on `String` and `Int`.
@@ -73,6 +78,12 @@ object TypesExercises {
     * `Wallet` is a tiny type on `Double` to represent the amount of money someone has.
     */
 
+  /**
+    * *********************************
+    * * Section 2 - Wallet ************
+    * *********************************
+    */
+
   case class Wallet(amount: Double)
 
   /**
@@ -96,6 +107,12 @@ object TypesExercises {
   def purchase(cost: Double, wallet: Wallet): Wallet = ???
 
   /**
+    * *********************************************
+    * * Section 3 - Test Driven Development *******
+    * *********************************************
+    */
+
+  /**
     * scala> showTrafficLightStr("red")
     * = "The traffic light is red"
     *
@@ -109,20 +126,47 @@ object TypesExercises {
     *
     * Go to `TypesExercisesTest.scala` and implement the test for this scenario: "should return a default on other inputs"
     *
+    * return "The traffic light is invalid" for other inputs
     **/
-  def showTrafficLightStr(trafficLight: String): String = ???
 
   /**
-    * We have a new traffic light called Flashing.
+    * **********************************************
+    * * Section 4 - Traffic Light as String ********
+    * **********************************************
+    */
+
+  /**
+    * Implement the following showTrafficLightStr function to pass all your tests!
+    */
+  def showTrafficLightStr(trafficLight: String): String = ???
+
+
+  /**
+    * ***************************************************************************
+    * * Section 4.1 - Adding a new Traffic Light (using TDD) *****
+    * ***************************************************************************
+    */
+
+  /**
+    * We need to have a new traffic light called Flashing:
     *
-    * Extend `showTrafficLightStr` that you have just implemented above to support this new functionality.
+    * 1. Implement the test for this scenario: "should show flashing"
+    *    it should return "the traffic light is flashing"
     *
-    * Use a test driven approach to implement this new functionality: "showTrafficLightStr should show Flashing"
+    * 2. Extend `showTrafficLightStr` that you have just implemented above to support this new flashing functionality.
+    *
+    *
     *
     * scala> showTrafficLightStr("flashing")
     * = "The traffic light is flashing"
     *
     **/
+
+  /**
+    * *********************************************
+    * * Section 5 - Traffic Light as ADTs *********
+    * *********************************************
+    */
 
   /**
     * A "sum type" represents more than one possible value.
@@ -159,11 +203,21 @@ object TypesExercises {
   def showTrafficLight(trafficLight: TrafficLight): String = ???
 
   /**
-    * Now introduce a new type of `TrafficLight` called `Flashing`.
-    *
-    * What happens when you try to compile now?
-    *
-    * Don't forget to fill in the unit test for this new scenario: "showTrafficLight should show Flashing"
+    * *********************************************************
+    * * Section 5.1 - Add a new Traffic Light *******
+    * *********************************************************
     */
 
+  /**
+    * Now introduce a new type of `TrafficLight` called `Flashing`.
+    *
+    * 1. Add a new value Flashing to the `TrafficLight` Type
+    *
+    * 2. Try compile. What happens? How is this different than the previous String implementation?
+    *
+    * 3. Extend `showTrafficLight` to fix the compilation error.
+    *
+    * 4. Fill in the unit test for this new scenario: "showTrafficLight should show Flashing"
+    *
+    */
 }
