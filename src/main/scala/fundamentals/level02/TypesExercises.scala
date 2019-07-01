@@ -143,7 +143,7 @@ object TypesExercises {
 
   /**
     * ***************************************************************************
-    * * Section 4.1 - Test Driven Development Again And Extend the function *****
+    * * Section 4.1 - Adding a new Traffic Light (using TDD) *****
     * ***************************************************************************
     */
 
@@ -204,23 +204,20 @@ object TypesExercises {
 
   /**
     * *********************************************************
-    * * Section 5.1 - TDD again and extend the function *******
+    * * Section 5.1 - Add a new Traffic Light *******
     * *********************************************************
     */
 
   /**
     * Now introduce a new type of `TrafficLight` called `Flashing`.
     *
-    * 1. Fill in the unit test for this new scenario: "showTrafficLight should show Flashing"
-    *    It might say "cannot resolve symbol" but it is okay!
+    * 1. Add a new value `Flashing` to the `TrafficLight` Type
     *
-    * 2. Add a new value `Flashing` to the `TrafficLight` Type
+    * 2. Fill in the unit test for this new scenario: "showTrafficLight should show Flashing"
     *
     * 3. Try compile. What happens? Do you see the difference from the string one?
-    *    How to compile: command + F9 or Go to `Build` tab and click `Build Project`
     *
     * 4. Extend `showTrafficLight` you just implemented above to pass the test!
     *
     */
-
 }
