@@ -211,13 +211,13 @@ object TypesExercises {
   /**
     * Now introduce a new type of `TrafficLight` called `Flashing`.
     *
-    * 1. Add a new value `Flashing` to the `TrafficLight` Type
+    * 1. Add a new value Flashing to the `TrafficLight` Type
     *
-    * 2. Fill in the unit test for this new scenario: "showTrafficLight should show Flashing"
+    * 2. Try compile. What happens? How is this different than the previous String implementation?
     *
-    * 3. Try compile. What happens? Do you see the difference from the string one?
+    * 3. Extend `showTrafficLight` to fix the compilation error.
     *
-    * 4. Extend `showTrafficLight` you just implemented above to pass the test!
+    * 4. Fill in the unit test for this new scenario: "showTrafficLight should show Flashing"
     *
     */
 }
