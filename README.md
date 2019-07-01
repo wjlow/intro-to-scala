@@ -32,8 +32,8 @@ We welcome pull requests and feedback!
 
 ### Day 2
 
-| Time | Topic/Exercise | Presenter | Helpers |
-| :---: | :---: | :---: | :---: |
+| Time | Topic/Exercise |
+| :---: | :---: | 
 | 09.15 | Intro to Error Handling |
 | 10.00 | OptionExercises pt. 2 (second half) | 
 | 10.30 | Morning break | 
