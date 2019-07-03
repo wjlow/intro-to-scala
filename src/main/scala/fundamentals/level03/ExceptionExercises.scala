@@ -122,7 +122,7 @@ object ExceptionExercises {
     * What issues do you run into (if any)?
     */
   def createValidPeople: List[Person] = {
-    val a: List[Any] = personStringPairs.map {
+    personStringPairs.map {
       case (name, age) =>
         try {
           val validName = getName(name)
@@ -133,9 +133,7 @@ object ExceptionExercises {
           case e: InvalidAgeValueException => e
           case e: InvalidAgeRangeException => e
         }
-    }
-
-    a.collect {
+    }.collect {
       case p: Person => p
     }
   }
@@ -156,7 +154,7 @@ object ExceptionExercises {
     * What issues do you run into (if any)?
     */
   def collectErrors: List[Exception] = {
-    val a: List[Any] = personStringPairs.map {
+    personStringPairs.map {
       case (name, age) =>
         try {
           val validName = getName(name)
@@ -167,9 +165,7 @@ object ExceptionExercises {
           case e: InvalidAgeValueException => e
           case e: InvalidAgeRangeException => e
         }
-    }
-
-    a.collect {
+    }.collect {
       case e: Exception => e
     }
   }
