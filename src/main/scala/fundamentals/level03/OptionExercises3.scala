@@ -1,6 +1,7 @@
 package fundamentals.level03
 
-import fundamentals.level03.OptionExercises2.{HumanId, Job, JobId, findHumanById, findJobById}
+import fundamentals.level03.OptionExercises2.{HumanId, Job, JobId, findHumanById, findJobByHumanId, findJobById, findJobIdByHumanId}
+import fundamentals.level03.OptionExercises3.findJobByHumanId
 
 /**
   * These exercises mirror the ones from `OptionExercises2.scala`,
@@ -14,12 +15,17 @@ object OptionExercises3 {
     *
     * scala> findJobIdByHumanIdUsingFor(2)
     * = Some(1)
-    */
-  def findJobIdByHumanIdUsingFor(humanId: HumanId): Option[JobId] = ???
-//    for {
-//      human <- ??? // Find a function of type HumanId => Option[Human]
-//      jobId <- ??? // Find a function of type Human => Option[JobId]
-//    } yield jobId
+    **/
+  def findJobIdByHumanIdUsingFor(humanId: HumanId): Option[JobId] =
+    for {
+      human <- findHumanById(humanId)
+      jobId <- human.optJobId
+    } yield jobId
+
+  // Same as above
+  def findJobIdByHumanId(humanId: HumanId): Option[JobId] = {
+    findHumanById(humanId).flatMap(human => human.optJobId.map(jobId => jobId))
+  }
 
   /**
     * scala> findJobByHumanIdUsingFor(2)
@@ -27,11 +33,18 @@ object OptionExercises3 {
     *
     * Hint: Use findJobIdByHumanIdUsingFor
     */
-  def findJobByHumanIdUsingFor(humanId: HumanId): Option[Job] = ???
-//    for {
-//      jobId <- ??? // Find a function of type HumanId => Option[JobId]
-//      job <- ???   // Find a function of type JobId => Option[Job]
-//    } yield job
+  def findJobByHumanIdUsingFor(humanId: HumanId): Option[Job] =
+    for {
+      jobId <- findJobIdByHumanId(humanId)
+      job <- findJobById(jobId)
+    } yield job
+
+  // Same as above
+  def findJobByHumanId(humanId: HumanId): Option[Job] = {
+    findJobIdByHumanId(humanId)
+      .flatMap(jobId => findJobById(jobId)
+        .map(job => job))
+  }
 
   /**
     * scala> findJobNameByHumanIdUsingFor(2)
@@ -42,5 +55,16 @@ object OptionExercises3 {
     *
     * Hint: Use `findJobByHumanIdUsingFor` and for comprehension
     */
-  def findJobNameByHumanIdUsingFor(humanId: HumanId): Option[String] = ???
+  def findJobNameByHumanIdUsingFor(humanId: HumanId): Option[String] =
+    for {
+      human <- findHumanById(humanId)
+      jobId <- human.optJobId
+      job <- findJobById(jobId)
+    } yield job.name
+
+  // Same as above
+  def findJobNameByHumanId(humanId: HumanId): Option[String] = {
+    findJobByHumanId(humanId).map(job => job.name)
+  }
+
 }
