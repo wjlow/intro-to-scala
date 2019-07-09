@@ -86,7 +86,7 @@ object Exceptions2EitherExercises {
       else
         Left(InvalidAgeRange(s"provided age should be between 1-120: $age"))
     } catch {
-      case _: NumberFormatException => Left(InvalidAgeValue(s"provided age is invalid $providedAge"))
+      case _: NumberFormatException => Left(InvalidAgeValue(s"provided age is invalid: $providedAge"))
     }
 
   /**

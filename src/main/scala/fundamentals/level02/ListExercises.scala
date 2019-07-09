@@ -235,13 +235,7 @@ object ListExercises {
     * Rewrite this function that uses a mutable variable and for-loop in an immutable fashion
     */
   @SuppressWarnings(Array("org.wartremover.warts.Var"))
-  def getNames(persons: List[Person]): List[String] = {
-    var names: List[String] = Nil
-    for (person <- persons) {
-      names = names :+ person.name
-    }
-    names
-  }
+  def getNames(persons: List[Person]): List[String] = persons.map(_.name)
 
   /**
     * Rewrite this function that uses a mutable variable and for-loop in an immutable fashion
@@ -249,14 +243,7 @@ object ListExercises {
     * Return people aged >= 18
     */
   @SuppressWarnings(Array("org.wartremover.warts.Var"))
-  def getAdults(persons: List[Person]): List[Person] = {
-    var adults: List[Person] = Nil
-    for (person <- persons) {
-      if (person.age >= 18)
-        adults = adults :+ person
-    }
-    adults
-  }
+  def getAdults(persons: List[Person]): List[Person] = persons.filter(_.age >= 18)
 
 
   /**
@@ -265,13 +252,12 @@ object ListExercises {
     * Don't use `.reverse` because that's cheating ;)
     */
   @SuppressWarnings(Array("org.wartremover.warts.Var"))
-  def reverseList[A](xs: List[A]): List[A] = {
-    var result: List[A] = Nil
-    for (x <- xs) {
-      result = x :: result
-    }
-    result
-  }
+  def reverseList[A](xs: List[A]): List[A] =
+    // Unfortunately using `Nil` instead of `List.empty[A]` does not work because of
+    // Scala's imperfect type inference
+    // The compiler thinks `Nil` is of type `Nil`, instead of type `List[A]`!
+    // Grrr subtyping...
+    xs.foldLeft(List.empty[A])((acc, x) => x :: acc)
 
   /**
     * Pack consecutive duplicates of list elements into sublists.
@@ -280,5 +266,16 @@ object ListExercises {
     * Given: val l1 = List("a", "a", "a", "a", "b", "c", "c", "a", "a", "d", "e", "e", "e", "e")
     * sublists(l1) == List(List("a", "a", "a", "a"), List("b"), List("c", "c"), List("a", "a"), List("d"), List("e", "e", "e", "e"))
     */
-  def sublists[A](xs: List[A]): List[List[A]] = ???
+  def sublists[A](xs: List[A]): List[List[A]] =
+    xs.foldLeft(List.empty[List[A]]){(acc, v) =>
+      if (acc.isEmpty)  acc :+ List(v)
+      else {
+        val last: List[A] = acc.lastOption.toList.flatten
+        val init: List[List[A]] = safeInit[List[A]](acc)
+        if (last.contains(v)) init :+ (last :+ v)
+        else acc :+ List(v)
+      }
+    }
+
+  private def safeInit[A](xs: List[A]): List[A] = if (xs.isEmpty) List.empty[A] else xs.init
 }
