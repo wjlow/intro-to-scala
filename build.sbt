@@ -2,10 +2,10 @@ name := "intro-to-scala"
 
 version := "0.1"
 
-libraryDependencies += "org.scalatest" %% "scalatest" % "3.0.5" % Test
+libraryDependencies += "org.scalatest" %% "scalatest" % "3.0.8" % Test
 
-scalaVersion := "2.12.6"
+scalaVersion := "2.13.0"
 
 scalacOptions ++= Seq(
-  "-Xfatal-warnings"
+  "-Werror"
 )
