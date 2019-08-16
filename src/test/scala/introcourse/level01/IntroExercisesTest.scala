@@ -58,8 +58,8 @@ class IntroExercisesTest extends FunSpec with TypeCheckedTripleEquals {
 
   describe("timesTwoIfEven") {
 
-    it("given 2 returns 4") {
-      assert(timesTwoIfEven(2) === 4)
+    it("given 4 returns 8") {
+      assert(timesTwoIfEven(4) === 8)
     }
 
     it("given 3 returns 3") {
