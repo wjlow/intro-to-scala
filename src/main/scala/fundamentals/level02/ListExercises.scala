@@ -266,16 +266,17 @@ object ListExercises {
     * Given: val l1 = List("a", "a", "a", "a", "b", "c", "c", "a", "a", "d", "e", "e", "e", "e")
     * sublists(l1) == List(List("a", "a", "a", "a"), List("b"), List("c", "c"), List("a", "a"), List("d"), List("e", "e", "e", "e"))
     */
-  def sublists[A](xs: List[A]): List[List[A]] =
-    xs.foldLeft(List.empty[List[A]]){(acc, v) =>
-      if (acc.isEmpty)  acc :+ List(v)
-      else {
-        val last: List[A] = acc.lastOption.toList.flatten
-        val init: List[List[A]] = safeInit[List[A]](acc)
-        if (last.contains(v)) init :+ (last :+ v)
-        else acc :+ List(v)
+  def sublists[A](xs: List[A]): List[List[A]] = {
+    xs.foldLeft(List.empty[List[A]]) { (acc, a) =>
+      acc match {
+        case head :: tail =>
+          head match {
+            case h2 :: _ if h2 == a => (a :: head) :: tail
+            case _ => List(a) :: acc
+          }
+        case Nil => List(List(a))
       }
-    }
+    }.reverse
+  }
 
-  private def safeInit[A](xs: List[A]): List[A] = if (xs.isEmpty) List.empty[A] else xs.init
 }
