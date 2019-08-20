@@ -24,7 +24,7 @@ object Main {
         // Implement `printErrorsOverSeverity` and then call it from here
         ???
 
-      case _ => println("""sbt "runMain fundamentals.level04.Main src/main/resources/logfile.csv"""")
+      case _ => println("""sbt "runMain introcourse.level07.Main src/main/resources/logfile.csv"""")
     }
 
   }
