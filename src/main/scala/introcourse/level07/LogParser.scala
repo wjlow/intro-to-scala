@@ -105,7 +105,7 @@ object LogParser {
     * scala> getErrorsOverSeverity(List(KnownLog(Error(2), 123, some error msg")), 2)
     * = List()
     **/
-  def getErrorsOverSeverity(logs: List[LogMessage], severity: Int): List[LogMessage] = ???
+  def getErrorsOverSeverity(logs: List[LogMessage], minimumSeverity: Int): List[LogMessage] = ???
 
   /**
     * Write a function to convert a `LogMessage` to a readable `String`.
