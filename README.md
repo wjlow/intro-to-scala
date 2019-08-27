@@ -132,10 +132,10 @@ To run a single test, use:
 sbt> ~testOnly package.path.of.test.TestName
 ```
 
-For example, to run only the _fundamentals.level01.IntroExercisesTest_ test case, use:
+For example, to run only the _introcourse.level01.IntroExercisesTest_ test case, use:
 
 ```
-sbt> ~testOnly fundamentals.level01.IntroExercisesTest
+sbt> ~testOnly introcourse.level01.IntroExercisesTest
 ```
 
 To run by test case name only, use:
@@ -144,7 +144,7 @@ To run by test case name only, use:
 sbt> ~testOnly *TestName
 ```
 
-For example, to run the _fundamentals.level01.IntroExercisesTest_ test case, use:
+For example, to run the _introcourse.level01.IntroExercisesTest_ test case, use:
 
 ```
 sbt> ~testOnly *IntroExercisesTest
@@ -199,10 +199,10 @@ Once in the console, you can import your production code as such:
 import package.objectname._
 ```
 
-For example, to use functions defined in _fundamentals.level01.IntroExercises_:
+For example, to use functions defined in _introcourse.level01.IntroExercises_:
 
 ```
-scala> import fundamentals.level01.IntroExercises._
+scala> import introcourse.level01.IntroExercises._
 scala> add(1, 2)
 res0: Int = 3
 ```
