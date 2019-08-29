@@ -86,6 +86,11 @@ object IntroExercises {
 
   /**
     * How can we extract the first element of a pair?
+    *
+    * Hint 1: Check the getters on `pair`.
+    * Hint 2: Read up on pattern matching on tuples.
+    *
+    * https://docs.scala-lang.org/tour/tuples.html
     */
   def fst(pair: (String, Int)): String = ???
 
