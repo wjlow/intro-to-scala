@@ -89,22 +89,22 @@ class IntroExercisesTest extends FunSpec with TypeCheckedTripleEquals {
   describe("fst") {
 
     it("Jimmy and 25") {
-      assert(fst("Jimmy", 25) === "Jimmy")
+      assert(first("Jimmy", 25) === "Jimmy")
     }
 
     it("Sammy and 30") {
-      assert(fst("Sammy", 30) === "Sammy")
+      assert(first("Sammy", 30) === "Sammy")
     }
   }
 
   describe("snd") {
 
     it("Jimmy and 25") {
-      assert(snd("Jimmy", 25) === 25)
+      assert(second("Jimmy", 25) === 25)
     }
 
     it("Sammy and 30") {
-      assert(snd("Sammy", 30) === 30)
+      assert(second("Sammy", 30) === 30)
     }
   }
 
