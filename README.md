@@ -63,7 +63,7 @@ $ git clone https://github.com/wjlow/intro-to-scala.git
 $ cd intro-to-scala/
 ```
 
-#### 2. Install Java 8 (even if you already have Java 9 or 10 pre-installed)
+#### 2. Install Java 8 (even if you already have a later version pre-installed)
 
 Test if you have Java 8 already with `java -version`.
 
@@ -235,7 +235,7 @@ sbt> exit
 
 2. Install and open IntelliJ
 
-3. If running IntelliJ for the very first time, it might ask you what plugin you want to install. Select _Scala_, otherwise install manually: _Configure -> Plugins -> Browse Repositories -> Scala_
+3. If running IntelliJ for the very first time, it might ask you what "featured" plugin you want to install. Select _Install_ for Scala, otherwise install manually: _Configure -> Plugins -> Browse Repositories -> Scala_
 
 4. Restart IntelliJ to activate the plugin
 
@@ -243,11 +243,11 @@ sbt> exit
 
 6. IntelliJ will detect this as an SBT project. Select `Import SBT Project` when prompted
 
-7. In the pop-up, choose _SDK -> JDK -> Java 1.8_ (this step might be confusing, feel free to reach out)
+7. In the pop-up, choose _SDK -> JDK -> Java 1.8_. If Java 1.8 is not available, add it by selecting _New..._ to the right of _Project JDK_, then _+JDK_, then _Library_, _Java_, _JavaVirtualMachine_, _adoptopenjdk-8.jdk_ and finally _Open_
 
 8. Wait for IntelliJ to refresh the project and download dependencies (this might take a while)
 
-9. Compile project with <kbd>Cmd</kbd> + <kbd>F9</kbd>. If you get no errors, IntelliJ setup is all done!
+9. Build the project with <kbd>Cmd</kbd> + <kbd>F9</kbd>. If you get no errors, IntelliJ setup is all done!
 
 Tips:
 
