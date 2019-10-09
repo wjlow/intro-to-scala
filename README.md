@@ -74,6 +74,19 @@ $ brew tap caskroom/versions
 $ brew cask install caskroom/versions/adoptopenjdk8
 ```
 
+**NOTE**: If the first command returns the following error:
+
+```
+Error: caskroom/versions was moved. Tap homebrew/cask-versions instead.
+```
+
+Run the following two commands instead:
+
+```
+$ brew tap homebrew/cask-versions
+$ brew cask install homebrew/cask-versions/adoptopenjdk8
+```
+
 #### 3. Install [Docker](https://www.docker.com/)
 
 ##### macOS
