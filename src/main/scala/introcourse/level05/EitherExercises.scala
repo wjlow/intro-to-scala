@@ -11,11 +11,11 @@ object EitherExercises {
   //ADT for representing errors as values
   sealed trait AppError
 
-  case class EmptyName(message: String) extends AppError
+  case object EmptyName extends AppError
 
-  case class InvalidAgeValue(message: String) extends AppError
+  case class InvalidAgeValue(value: String) extends AppError
 
-  case class InvalidAgeRange(message: String) extends AppError
+  case class InvalidAgeRange(age: Int) extends AppError
 
   /**
     * In the ExceptionExercises exercise we used Exceptions to handle validation and
@@ -43,7 +43,6 @@ object EitherExercises {
     * case class Right[A](value: A) extends Either[Nothing, A]
     * case class Left[E](error: E) extends Either[E, Nothing]
     */
-
   /**
     * Implement the function getName, so that it returns a Left with an EmptyName if the name supplied
     * is empty or a Right if the supplied name is not empty.
@@ -52,7 +51,7 @@ object EitherExercises {
     * = Right(Fred)
     *
     * scala> getName("")
-    * = Left(EmptyName(provided name is empty))
+    * = Left(EmptyName)
     **/
   def getName(providedName: String): Either[AppError, String] = ???
 
@@ -65,10 +64,10 @@ object EitherExercises {
     * = Right(20)
     *
     * scala> getAge("Fred")
-    * = Left(InvalidAgeValue(provided age is invalid: Fred))
+    * = Left(InvalidAgeValue(Fred))
     *
     * scala> getAge("-1")
-    * = Left(InvalidAgeRange(provided age should be between 1-120: -1))
+    * = Left(InvalidAgeRange(-1))
     *
     * Hint: use the toInt method to convert a String to an Int.
     */
@@ -87,13 +86,13 @@ object EitherExercises {
     * = Right(Person(Fred,32))
     *
     * scala> createPerson("", "32")
-    * = Left(EmptyName(provided name is empty))
+    * = Left(EmptyName)
     *
     * scala> createPerson("Fred", "ThirtyTwo")
-    * = Left(InvalidAgeValue(provided age is invalid: ThirtyTwo))
+    * = Left(InvalidAgeValue(ThirtyTwo))
     *
     * scala> createPerson("Fred", "150")
-    * = Left(InvalidAgeRange(provided age should be between 1-120: 150))
+    * = Left(InvalidAgeRange(150))
     *
     * Hint: Use a for-comprehension to sequence the Eithers from getName and getAge
     */
@@ -109,13 +108,13 @@ object EitherExercises {
     * = Right(Person(FRED,32))
     *
     * scala> makeNameUpperCase("", "32")
-    * = Left(EmptyName(provided name is empty))
+    * = Left(EmptyName)
     *
     * scala> makeNameUpperCase("Fred", "ThirtyTwo")
-    * = Left(InvalidAgeValue(provided age is invalid: ThirtyTwo))
+    * = Left(InvalidAgeValue(ThirtyTwo))
     *
     * scala> makeNameUpperCase("Fred", "150")
-    * = Left(InvalidAgeRange(provided age should be between 1-120: 150))
+    * = Left(InvalidAgeRange(150))
     *
     * Hint: Use `createPerson` then use `map` and `copy`.
     *
@@ -123,6 +122,10 @@ object EitherExercises {
   def makeNameUpperCase(name: String, age: String): Either[AppError, Person] = ???
 
   /**
+    * When handling errors, you usually only want to handle them at a single point in your application. That error
+    * handler will interpret the AppError ADT into something that's more human readable. You could think of this
+    * function as the end of the world for our application, where we are providing feedback to the user on their input.
+    *
     * scala> createPersonAndShow("Fred", "32")
     * = "Fred is 32"
     *
@@ -130,10 +133,10 @@ object EitherExercises {
     * = "Empty name supplied"
     *
     * scala> createPersonAndShow("Fred", "ThirtyTwo")
-    * = "Invalid age value supplied"
+    * = "Invalid age value supplied: ThirtyTwo"
     *
     * scala> createPersonAndShow("Fred", "150")
-    * = "Invalid age range supplied"
+    * = "Provided age must be between 1-120: 150"
     *
     * Hint: Use `createPerson` then pattern match.
     *
