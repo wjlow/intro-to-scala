@@ -45,7 +45,7 @@ class OptionExercises1Test extends FunSpec with TypeCheckedTripleEquals {
     }
 
     it("should show invalid traffic light") {
-      assert(mkTrafficLightThenShow("bob") === "Traffic light `bob` is invalid")
+      assert(mkTrafficLightThenShow("bob") === "Traffic light bob is invalid")
     }
 
   }
