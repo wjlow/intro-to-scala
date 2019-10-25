@@ -66,7 +66,7 @@ object TryExercises {
     * scala> increment("NaN")
     * = Failure(java.lang.NumberFormatException: For input string: "NaN")
     *
-    * Hint: Solve it without using pattern matching
+    * Hint: Use `parseIntSafe` and solve it without using pattern matching
     */
 
   def increment(str: String): Try[Int] = ???
