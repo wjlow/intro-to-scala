@@ -1,6 +1,5 @@
 package introcourse.level06
 
-import introcourse.level06.TryTestTypes._
 import introcourse.level06.TryExercises._
 
 import org.scalactic.TypeCheckedTripleEquals
