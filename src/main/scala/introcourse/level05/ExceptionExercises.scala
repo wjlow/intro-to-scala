@@ -132,9 +132,9 @@ object ExceptionExercises {
 
           person
         } catch {
-          case _: EmptyNameException       => null
-          case e: InvalidAgeRangeException => null
-          case e: InvalidAgeValueException => null
+          case _: EmptyNameException       => ???
+          case e: InvalidAgeRangeException => ???
+          case e: InvalidAgeValueException => ???
           //handle in any other exception here
         }
     }

@@ -254,11 +254,11 @@ object ListExercises {
     */
   def showEveryNthPerson(n: Int, persons: List[Person]): List[String] = {
     if (n <= 0) {
-      return persons.map(showPerson)
+      persons.map(showPerson)
     }
 
     if (n > persons.length) {
-      return Nil
+      Nil
     }
 
     val filteredPersons: List[(Person, Int)] = personWithIndex(persons).filter{case(person, index) => {

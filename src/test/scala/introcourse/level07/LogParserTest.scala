@@ -1,7 +1,7 @@
 package introcourse.level07
 
 import introcourse.level07.LogParser._
-import introcourse.level07.Types._
+//import introcourse.level07.Types._
 import org.scalactic.TypeCheckedTripleEquals
 import org.scalatest.funspec.AnyFunSpec
 
