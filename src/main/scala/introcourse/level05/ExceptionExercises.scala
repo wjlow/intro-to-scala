@@ -43,7 +43,14 @@ object ExceptionExercises {
     *
     * Hint: use the isEmpty method on String
     */
-  def getName(providedName: String) : String = ???
+  // How to throw an exception
+  // throw new EmptyNameException("blah")
+  def getName(providedName: String) : String = {
+    if (providedName.isEmpty)
+      throw new EmptyNameException("provided name is empty")
+    else
+      providedName
+  }
 
   /**
     * Implement the function getAge, so that it either accepts the supplied age
@@ -64,9 +71,15 @@ object ExceptionExercises {
     */
   def getAge(providedAge: String) : Int =
       try {
-        ???
+        val age: Int = providedAge.toInt
+
+        if (age >= 1 && age <= 120)
+          age
+        else
+          throw new InvalidAgeRangeException(s"provided age should be between 1-120: $age")
       } catch {
-        case _: NumberFormatException => ???
+        case _: NumberFormatException =>
+          throw new InvalidAgeValueException(s"provided age is invalid: $providedAge")
       }
 
 
@@ -92,7 +105,12 @@ object ExceptionExercises {
     *
     * Hint: Use `getName` and `getAge` from above.
     */
-  def createPerson(name: String, age: String): Person = ???
+  def createPerson(name: String, age: String): Person = {
+    val validName = getName(name)
+    val validAge = getAge(age)
+
+    Person(validName, validAge)
+  }
 
   /**
     * Implement the function createValidPeople to create a List of Person instances
@@ -107,15 +125,21 @@ object ExceptionExercises {
     * What issues do you run into (if any)?
     */
   def createValidPeople: List[Person] = {
-    personStringPairs.map {
+    val list = personStringPairs.map {
       case (name, age) =>
         try {
-          ???
+          val person: Person = createPerson(name, age)
+
+          person
         } catch {
-          case _: EmptyNameException       => ???
+          case _: EmptyNameException       => null
+          case e: InvalidAgeRangeException => null
+          case e: InvalidAgeValueException => null
           //handle in any other exception here
         }
     }
+
+    list.collect { case p: Person => p}
   }
 
   /**
@@ -134,8 +158,17 @@ object ExceptionExercises {
     * What issues do you run into (if any)?
     */
   def collectErrors: List[Exception] = {
-    personStringPairs.map {
-      case (name, age) => ???
+    val list: List[Object] = personStringPairs.map {
+      case (name, age) =>
+      try {
+        createPerson(name, age)
+      } catch {
+        case e: EmptyNameException       => e
+        case e: InvalidAgeRangeException => e
+        case e: InvalidAgeValueException => e
+      }
     }
+
+    list.collect { case e: Exception => e }
   }
 }
