@@ -2,9 +2,9 @@ package introcourse.level05
 
 import introcourse.level05.ExceptionExercises._
 import org.scalactic.TypeCheckedTripleEquals
-import org.scalatest.FunSpec
+import org.scalatest.funspec.AnyFunSpec
 
-class ExceptionExercisesTest extends FunSpec with TypeCheckedTripleEquals {
+class ExceptionExercisesTest extends AnyFunSpec with TypeCheckedTripleEquals {
 
   describe("getName") {
 

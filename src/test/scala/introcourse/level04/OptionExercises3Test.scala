@@ -3,9 +3,9 @@ package introcourse.level04
 import introcourse.level04.OptionExercises2.Job
 import introcourse.level04.OptionExercises3._
 import org.scalactic.TypeCheckedTripleEquals
-import org.scalatest.FunSpec
+import org.scalatest.funspec.AnyFunSpec
 
-class OptionExercises3Test extends FunSpec with TypeCheckedTripleEquals {
+class OptionExercises3Test extends AnyFunSpec with TypeCheckedTripleEquals {
 
   describe("findJobIdByHumanIdUsingFor") {
 

@@ -3,9 +3,9 @@ package introcourse.level07
 import introcourse.level07.LogParser._
 import introcourse.level07.Types._
 import org.scalactic.TypeCheckedTripleEquals
-import org.scalatest.FunSpec
+import org.scalatest.funspec.AnyFunSpec
 
-class LogParserTest extends FunSpec with TypeCheckedTripleEquals {
+class LogParserTest extends AnyFunSpec with TypeCheckedTripleEquals {
 
   describe("parseIntOption") {
     it("should return the parsed integer for a valid integer") {

@@ -2,9 +2,9 @@ package introcourse.level01
 
 import introcourse.level01.IntroExercises._
 import org.scalactic.TypeCheckedTripleEquals
-import org.scalatest.FunSpec
+import org.scalatest.funspec.AnyFunSpec
 
-class IntroExercisesTest extends FunSpec with TypeCheckedTripleEquals {
+class IntroExercisesTest extends AnyFunSpec with TypeCheckedTripleEquals {
 
   describe("add") {
 
