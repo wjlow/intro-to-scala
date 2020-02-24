@@ -245,7 +245,7 @@ sbt> exit
 
 6. IntelliJ will detect this as an SBT project. Select `Import SBT Project` when prompted
 
-7. In the pop-up, choose _SDK -> JDK -> Java 1.8_. If Java 1.8 is not available, add it by selecting _New..._ to the right of _Project JDK_, then _+JDK_, then _Library_, _Java_, _JavaVirtualMachine_, _adoptopenjdk-8.jdk_ and finally _Open_
+7. In the pop-up, choose _SDK -> JDK -> Java 11_. If Java 11 is not available, add it by selecting _New..._ to the right of _Project JDK_, then _+JDK_, then `/Library/Java/JavaVirtualMachines/adoptopenjdk-11.jdk` and finally _Open_
 
 8. Wait for IntelliJ to refresh the project and download dependencies (this might take a while)
 
