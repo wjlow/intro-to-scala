@@ -7,13 +7,10 @@ services:
     command: sbt
     volumes:
       - .:/work
-      - ivy-cache:/root/.ivy2
       - coursier-cache:/root/.cache/coursier
       - docker-scala-sbt-cache:/root/.sbt
 
 volumes:
-  ivy-cache:
-    external: true
   coursier-cache:
     external: true
   docker-scala-sbt-cache:
