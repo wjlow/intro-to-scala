@@ -2,9 +2,9 @@ package introcourse.level04
 
 import introcourse.level04.NullExercises._
 import org.scalactic.TypeCheckedTripleEquals
-import org.scalatest.FunSpec
+import org.scalatest.funspec.AnyFunSpec
 
-class NullExercisesTest extends FunSpec with TypeCheckedTripleEquals {
+class NullExercisesTest extends AnyFunSpec with TypeCheckedTripleEquals {
 
   describe("mkTrafficLightOrNull") {
 

@@ -4,11 +4,11 @@ import introcourse.level06.TryTestTypes._
 import introcourse.level06.TryExercises._
 
 import org.scalactic.TypeCheckedTripleEquals
-import org.scalatest.FunSpec
+import org.scalatest.funspec.AnyFunSpec
 
 import scala.util.{Failure, Success}
 
-class TryExercisesTest extends FunSpec with TypeCheckedTripleEquals {
+class TryExercisesTest extends AnyFunSpec with TypeCheckedTripleEquals {
 
   describe("parseIntSafe") {
 

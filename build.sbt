@@ -2,9 +2,9 @@ name := "intro-to-scala"
 
 version := "0.1"
 
-libraryDependencies += "org.scalatest" %% "scalatest" % "3.0.8" % Test
+libraryDependencies += "org.scalatest" %% "scalatest" % "3.1.0" % Test
 
-scalaVersion := "2.13.0"
+scalaVersion := "2.13.1"
 
 scalacOptions ++= Seq(
   "-Werror"

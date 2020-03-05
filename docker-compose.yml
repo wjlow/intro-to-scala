@@ -2,16 +2,16 @@ version: "2"
 
 services:
   dev:
-    image: hseeberger/scala-sbt:8u212_1.2.8_2.13.0
+    image: hseeberger/scala-sbt:11.0.6_1.3.8_2.13.1
     working_dir: /work
     command: sbt
     volumes:
       - .:/work
-      - ivy-cache:/root/.ivy2
+      - coursier-cache:/root/.cache/coursier
       - docker-scala-sbt-cache:/root/.sbt
 
 volumes:
-  ivy-cache:
+  coursier-cache:
     external: true
   docker-scala-sbt-cache:
     external: true

@@ -52,7 +52,7 @@ We welcome pull requests and feedback!
 At a minimum, you need:
 
 - This repository
-- Java 8 installed (even if you have a newer version)
+- Java 11 installed (even if you have a newer version)
 - Docker
 - Text editor (IntelliJ is recommended)
 
@@ -63,28 +63,17 @@ $ git clone https://github.com/wjlow/intro-to-scala.git
 $ cd intro-to-scala/
 ```
 
-#### 2. Install Java 8 (even if you already have a later version pre-installed)
+#### 2. Install Java 11 (even if you already have a later version pre-installed)
 
-Test if you have Java 8 already with `java -version`.
+Test if you have Java 11 already with `java -version`.
 
 ##### macOS (using [Homebrew](https://brew.sh))
 
-```
-$ brew tap caskroom/versions
-$ brew cask install caskroom/versions/adoptopenjdk8
-```
-
-**NOTE**: If the first command returns the following error:
+Run the following two commands:
 
 ```
-Error: caskroom/versions was moved. Tap homebrew/cask-versions instead.
-```
-
-Run the following two commands instead:
-
-```
-$ brew tap homebrew/cask-versions
-$ brew cask install homebrew/cask-versions/adoptopenjdk8
+$ brew tap AdoptOpenJDK/openjdk
+$ brew cask install adoptopenjdk11
 ```
 
 #### 3. Install [Docker](https://www.docker.com/)
@@ -256,7 +245,7 @@ sbt> exit
 
 6. IntelliJ will detect this as an SBT project. Select `Import SBT Project` when prompted
 
-7. In the pop-up, choose _SDK -> JDK -> Java 1.8_. If Java 1.8 is not available, add it by selecting _New..._ to the right of _Project JDK_, then _+JDK_, then _Library_, _Java_, _JavaVirtualMachine_, _adoptopenjdk-8.jdk_ and finally _Open_
+7. In the pop-up, choose _SDK -> JDK -> Java 11_. If Java 11 is not available, add it by selecting _New..._ to the right of _Project JDK_, then _+JDK_, then `/Library/Java/JavaVirtualMachines/adoptopenjdk-11.jdk` and finally _Open_
 
 8. Wait for IntelliJ to refresh the project and download dependencies (this might take a while)
 

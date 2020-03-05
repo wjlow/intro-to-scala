@@ -6,7 +6,7 @@ cd $(dirname $0)/..
 trap "docker-compose down --volumes --remove-orphans" 0
 
 # Create volume
-docker volume create --name ivy-cache > /dev/null
+docker volume create --name coursier-cache > /dev/null
 docker volume create --name docker-scala-sbt-cache > /dev/null
 
 # rebuild if necessary

@@ -2,9 +2,9 @@ package introcourse.level04
 
 import introcourse.level04.OptionExercises1._
 import org.scalactic.TypeCheckedTripleEquals
-import org.scalatest.FunSpec
+import org.scalatest.funspec.AnyFunSpec
 
-class OptionExercises1Test extends FunSpec with TypeCheckedTripleEquals {
+class OptionExercises1Test extends AnyFunSpec with TypeCheckedTripleEquals {
 
   describe("safeMean") {
 
