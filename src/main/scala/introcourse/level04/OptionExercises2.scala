@@ -124,10 +124,10 @@ object OptionExercises2 {
   /**
     * Find the name of the `Job` that this `humanId` has
     *
-    * scala> findJobDescriptionByHumanId(2)
+    * scala> findJobNameByHumanId(2)
     * = Some("Teacher")
     *
-    * scala> findJobDescriptionByHumanIdUsingFor(1)
+    * scala> findJobNameByHumanId(1)
     * = None
     *
     * Hint: Use `findJobByHumanId`
