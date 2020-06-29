@@ -79,13 +79,11 @@ object TypesExercises {
     *
     * `Wallet` is a tiny type on `Double` to represent the amount of money someone has.
     */
-
   /**
     * *********************************
     * * Section 2 - Wallet ************
     * *********************************
     */
-
   case class Wallet(amount: Double)
 
   /**
@@ -96,8 +94,8 @@ object TypesExercises {
     * You can solve this like how you solved `showPerson1` or `showPerson2`.
     */
   def showWallet(wallet: Wallet): String = wallet match {
-      case Wallet(amount) => s"The wallet amount is $amount"
-    }
+    case Wallet(amount) => s"The wallet amount is $amount"
+  }
 
   /**
     * Here is another example of working with immutable values.
@@ -127,7 +125,6 @@ object TypesExercises {
     * * Section 3 - Test Driven Development *******
     * *********************************************
     */
-
   /**
     * scala> showTrafficLightStr("red")
     * = "The traffic light is red"
@@ -144,31 +141,27 @@ object TypesExercises {
     *
     * return "The traffic light is invalid" for other inputs
     **/
-
   /**
     * **********************************************
     * * Section 4 - Traffic Light as String ********
     * **********************************************
     */
-
   /**
     * Implement the following showTrafficLightStr function to pass all your tests!
     */
-   def showTrafficLightStr(trafficLight: String): String = trafficLight match {
-     case "red" => "The traffic light is red"
-     case "yellow" => "The traffic light is yellow"
-     case "green" => "The traffic light is green"
-     case "flashing" => "The traffic light is flashing"
-     case _ => "The traffic light is invalid"
-   }
-
+  def showTrafficLightStr(trafficLight: String): String = trafficLight match {
+    case "red"      => "The traffic light is red"
+    case "yellow"   => "The traffic light is yellow"
+    case "green"    => "The traffic light is green"
+    case "flashing" => "The traffic light is flashing"
+    case _          => "The traffic light is invalid"
+  }
 
   /**
     * ***************************************************************************
     * * Section 4.1 - Adding a new Traffic Light (using TDD) *****
     * ***************************************************************************
     */
-
   /**
     * We need to have a new traffic light called Flashing:
     *
@@ -183,13 +176,11 @@ object TypesExercises {
     * = "The traffic light is flashing"
     *
     **/
-
   /**
     * *********************************************
     * * Section 5 - Traffic Light as ADTs *********
     * *********************************************
     */
-
   /**
     * A "sum type" represents more than one possible value.
     *
@@ -223,13 +214,13 @@ object TypesExercises {
     *
     * Hint: Use pattern matching
     **/
-
-   def showTrafficLight(trafficLight: TrafficLight): String = trafficLight match {
-     case Red => "The traffic light is red"
-     case Yellow => "The traffic light is yellow"
-     case Green => "The traffic light is green"
-     case Flashing(_) => "The traffic light is flashing"
-   }
+  def showTrafficLight(trafficLight: TrafficLight): String =
+    trafficLight match {
+      case Red         => "The traffic light is red"
+      case Yellow      => "The traffic light is yellow"
+      case Green       => "The traffic light is green"
+      case Flashing(_) => "The traffic light is flashing"
+    }
 
   /**
     * *********************************************************
@@ -238,15 +229,15 @@ object TypesExercises {
     */
 
   /**
-    * Now introduce a new type of `TrafficLight` called `Flashing`.
-    *
-    * 1. Add a new value Flashing to the `TrafficLight` Type
-    *
-    * 2. Try compile. What happens? How is this different than the previous String implementation?
-    *
-    * 3. Extend `showTrafficLight` to fix the compilation error.
-    *
-    * 4. Fill in the unit test for this new scenario: "showTrafficLight should show Flashing"
-    *
-    */
+  * Now introduce a new type of `TrafficLight` called `Flashing`.
+  *
+  * 1. Add a new value Flashing to the `TrafficLight` Type
+  *
+  * 2. Try compile. What happens? How is this different than the previous String implementation?
+  *
+  * 3. Extend `showTrafficLight` to fix the compilation error.
+  *
+  * 4. Fill in the unit test for this new scenario: "showTrafficLight should show Flashing"
+  *
+  */
 }

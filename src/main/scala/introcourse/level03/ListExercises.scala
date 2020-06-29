@@ -32,7 +32,6 @@ object ListExercises {
     *
     * scala> List(1, 2, 3)
     */
-
   /**
     * scala> prependToList(1, List(2, 3, 4))
     * = List(1,2,3,4)
@@ -71,7 +70,7 @@ object ListExercises {
     */
   def isEmptyList[A](xs: List[A]): Boolean = xs match {
     case head :: tail => false
-    case Nil => true
+    case Nil          => true
   }
 
   /**
@@ -88,7 +87,7 @@ object ListExercises {
     */
   def showListSize[A](xs: List[A]): String = xs match {
     case head :: tail => s"This is a list of size ${xs.length}"
-    case Nil => "This is an empty list"
+    case Nil          => "This is an empty list"
   }
 
   /**
@@ -127,7 +126,6 @@ object ListExercises {
     *
     * Hint: Use .foldLeft
     */
-
   /**
     * scala> product(List(2, 5, 3))
     * = 30
@@ -152,11 +150,13 @@ object ListExercises {
   def min(nums: List[Int]): Int =
     nums match {
       case Nil => Int.MinValue
-      case head :: tail => tail.foldLeft(head)((acc, i) => if (i < acc) i else i)
+      case head :: tail =>
+        tail.foldLeft(head)((acc, i) => if (i < acc) i else i)
     }
 
   private[level03] val peopleList =
-    List(Person("Matt Murdock", 30),
+    List(
+      Person("Matt Murdock", 30),
       Person("Karen Page", 27),
       Person("Franklin 'Foggy' Nelson", 31),
       Person("Claire Temple", 32),
@@ -178,7 +178,8 @@ object ListExercises {
     */
   def youngestPerson(persons: List[Person]): Person = persons match {
     case Nil => Person("Nobody", 0)
-    case head :: tail => tail.foldLeft(head)((acc, i) => if (i.age < acc.age) i else acc)
+    case head :: tail =>
+      tail.foldLeft(head)((acc, i) => if (i.age < acc.age) i else acc)
   }
 
   /**
@@ -222,19 +223,22 @@ object ListExercises {
     * Hint: Use `personWithIndex`, `filter` and `showPerson`.
     *
     */
-  def showEveryNthPerson(n: Int, persons: List[Person]): List[String] = n match {
-    case n if n <= 0 => persons.map(x => showPerson(x))
-    case n if n > persons.length => Nil
-    case _ => {
-      // val filteredList = personWithIndex(persons).filter(pair => if (pair._2 % n == 0) true else false)
-      // filteredList.map(pair => showPerson(pair._1))
-      personWithIndex(persons).filter {
-        case (person, index) => index % n == 0
-      }.map {
-        case (person, index) => showPerson(person)
+  def showEveryNthPerson(n: Int, persons: List[Person]): List[String] =
+    n match {
+      case n if n <= 0             => persons.map(x => showPerson(x))
+      case n if n > persons.length => Nil
+      case _ => {
+        // val filteredList = personWithIndex(persons).filter(pair => if (pair._2 % n == 0) true else false)
+        // filteredList.map(pair => showPerson(pair._1))
+        personWithIndex(persons)
+          .filter {
+            case (person, index) => index % n == 0
+          }
+          .map {
+            case (person, index) => showPerson(person)
+          }
       }
     }
-  }
 
   private[level03] def showPerson(person: Person): String =
     person match {
@@ -244,7 +248,6 @@ object ListExercises {
   /**
     * Bonus exercises!
     */
-
   /**
     * Rewrite this function that uses a mutable variable and for-loop in an immutable fashion
     */
@@ -261,14 +264,15 @@ object ListExercises {
     persons.filter(p => p.age >= 18)
   }
 
-
   /**
     * Rewrite this function that uses mutable variables and for-loop in an immutable fashion
     *
     * Don't use `.reverse` because that's cheating ;)
     */
   def reverseList[A](xs: List[A]): List[A] = {
-    xs.foldLeft(List[A]()) { (acc, i) => i :: acc }
+    xs.foldLeft(List[A]()) { (acc, i) =>
+      i :: acc
+    }
   }
 
   /**

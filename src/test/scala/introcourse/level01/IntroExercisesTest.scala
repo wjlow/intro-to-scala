@@ -31,7 +31,6 @@ class IntroExercisesTest extends AnyFunSpec with TypeCheckedTripleEquals {
   }
 
   describe("add5") {
-
     it("5 + 4 is 9") {
       assert(add5(4) === 9)
     }

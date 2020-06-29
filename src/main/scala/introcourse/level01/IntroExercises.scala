@@ -20,14 +20,12 @@ object IntroExercises {
     **/
   def add(x: Int, y: Int): Int = x + y
 
-
   /**
     * Let's write the curried version of the `add` function defined previously
     * scala> addCurried(1)(2)
     * = 3
     **/
   def addCurried(x: Int)(y: Int): Int = x + y
-
 
   /**
     * Reuse the `addCurried` function and partially apply it for adding 5 to anything.
