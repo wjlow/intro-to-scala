@@ -39,7 +39,9 @@ object OptionExercises2 {
     *
     * Hint: Use `get` method on `humansDatabase` Map
     **/
-  def findHumanById(humanId: HumanId): Option[Human] = ???
+  def findHumanById(humanId: HumanId): Option[Human] = {
+    humansDatabase.get(humanId)
+  }
 
   /**
     * scala> findJobById(1)
@@ -50,7 +52,7 @@ object OptionExercises2 {
     *
     * Hint: Use `get` method on `jobsDatabase` Map
     **/
-  def findJobById(jobId: JobId): Option[Job] = ???
+  def findJobById(jobId: JobId): Option[Job] = jobsDatabase.get(jobId)
 
   /**
     * scala> findJobDescriptionGivenJobId1(1)
@@ -61,7 +63,13 @@ object OptionExercises2 {
     *
     * Hint: Use `findJobById` and then pattern match
     */
-  def findJobDescriptionGivenJobId1(jobId: JobId): Option[String] = ???
+  def findJobDescriptionGivenJobId1(jobId: JobId): Option[String] = {
+    val maybeJob: Option[Job] = findJobById(jobId)
+    maybeJob match {
+      case None => None
+      case Some(job) => Some(job.description)
+    }
+  }
 
   /**
     * Same as above, but use .map instead
