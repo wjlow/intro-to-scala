@@ -45,7 +45,6 @@ class IntroExercisesTest extends AnyFunSpec with TypeCheckedTripleEquals {
     it("can only return the parameter unmodified (aka the 'identity' function)") {
       assert(foo(1) === 1)
     }
-
   }
 
   describe("bar") {
@@ -53,7 +52,6 @@ class IntroExercisesTest extends AnyFunSpec with TypeCheckedTripleEquals {
     it("can be any Int") {
       assert(bar(1).isInstanceOf[Int])
     }
-
   }
 
   describe("timesTwoIfEven") {
