@@ -2,7 +2,7 @@ version: "2"
 
 services:
   dev:
-    image: hseeberger/scala-sbt:11.0.6_1.3.8_2.13.1
+    image: hseeberger/scala-sbt:11.0.7_1.3.13_2.13.3
     working_dir: /work
     command: sbt
     volumes:
