@@ -48,10 +48,10 @@ object EitherExercises {
     * is empty or a Right if the supplied name is not empty.
     *
     * scala> getName("Fred")
-    * = Right(Fred)
+    * > Right(Fred)
     *
     * scala> getName("")
-    * = Left(EmptyName)
+    * > Left(EmptyName)
     **/
   def getName(providedName: String): Either[AppError, String] = ???
 
@@ -61,13 +61,13 @@ object EitherExercises {
     * and returns a Right with an Int age if the age is valid.
     *
     * scala> getAge("20")
-    * = Right(20)
+    * > Right(20)
     *
     * scala> getAge("Fred")
-    * = Left(InvalidAgeValue(Fred))
+    * > Left(InvalidAgeValue(Fred))
     *
     * scala> getAge("-1")
-    * = Left(InvalidAgeRange(-1))
+    * > Left(InvalidAgeRange(-1))
     *
     * Hint: use the toInt method to convert a String to an Int.
     */
@@ -83,16 +83,16 @@ object EitherExercises {
     * if the name and age are valid or returns a Left of AppError if either the name or age is invalid.
     *
     * scala> createPerson("Fred", "32")
-    * = Right(Person(Fred,32))
+    * > Right(Person(Fred,32))
     *
     * scala> createPerson("", "32")
-    * = Left(EmptyName)
+    * > Left(EmptyName)
     *
     * scala> createPerson("Fred", "ThirtyTwo")
-    * = Left(InvalidAgeValue(ThirtyTwo))
+    * > Left(InvalidAgeValue(ThirtyTwo))
     *
     * scala> createPerson("Fred", "150")
-    * = Left(InvalidAgeRange(150))
+    * > Left(InvalidAgeRange(150))
     *
     * Hint: Use a for-comprehension to sequence the Eithers from getName and getAge
     */
@@ -105,16 +105,16 @@ object EitherExercises {
 
   /**
     * scala> makeNameUpperCase("Fred", "32")
-    * = Right(Person(FRED,32))
+    * > Right(Person(FRED,32))
     *
     * scala> makeNameUpperCase("", "32")
-    * = Left(EmptyName)
+    * > Left(EmptyName)
     *
     * scala> makeNameUpperCase("Fred", "ThirtyTwo")
-    * = Left(InvalidAgeValue(ThirtyTwo))
+    * > Left(InvalidAgeValue(ThirtyTwo))
     *
     * scala> makeNameUpperCase("Fred", "150")
-    * = Left(InvalidAgeRange(150))
+    * > Left(InvalidAgeRange(150))
     *
     * Hint: Use `createPerson` then use `map` and `copy`.
     *
@@ -127,16 +127,16 @@ object EitherExercises {
     * function as the end of the world for our application, where we are providing feedback to the user on their input.
     *
     * scala> createPersonAndShow("Fred", "32")
-    * = "Fred is 32"
+    * > "Fred is 32"
     *
     * scala> createPersonAndShow("", "32")
-    * = "Empty name supplied"
+    * > "Empty name supplied"
     *
     * scala> createPersonAndShow("Fred", "ThirtyTwo")
-    * = "Invalid age value supplied: ThirtyTwo"
+    * > "Invalid age value supplied: ThirtyTwo"
     *
     * scala> createPersonAndShow("Fred", "150")
-    * = "Provided age must be between 1-120: 150"
+    * > "Provided age must be between 1-120: 150"
     *
     * Hint: Use `createPerson` then pattern match.
     *
@@ -156,7 +156,7 @@ object EitherExercises {
     * to create a List of Person instances.
     *
     * scala> createValidPeople
-    * = List(Person(Tokyo, 30), Person(Berlin, 43))
+    * > List(Person(Tokyo, 30), Person(Berlin, 43))
     *
     * Hint: Use `map` and `collect`
     *
@@ -168,7 +168,7 @@ object EitherExercises {
     * that occur while processing personStringPairs.
     *
     * scala> collectErrors
-    * = List(InvalidAgeValue(provided age is invalid: 5o),
+    * > List(InvalidAgeValue(provided age is invalid: 5o),
     * InvalidAgeRange(provided age should be between 1-120: 200),
     * InvalidAgeRange(provided age should be between 1-120: 0),
     * EmptyName(provided name is empty))

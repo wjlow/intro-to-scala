@@ -17,23 +17,23 @@ object OptionExercises1 {
 
   /**
     * scala> safeMean(List(1, 2, 10))
-    * = Some(4.333333333333333)
+    * > Some(4.333333333333333)
     *
     * scala> safeMean(Nil)
-    * = None
+    * > None
     *
     * Hint: Use `sum`, `length` and convert the numerator or denominator to a `Double` using `toDouble`
     *
     * If you do division on two `Int`s, you will get an `Int` back, which is often not what you want!
     *
     * scala> 5 / 2
-    * = 2
+    * > 2
     *
     * scala> 5.toDouble / 2
-    * = 2.5
+    * > 2.5
     *
     * scala> 5 / 2.toDouble
-    * = 2.5
+    * > 2.5
     **/
   def safeMean(nums: List[Int]): Option[Double] = ???
 
@@ -45,16 +45,16 @@ object OptionExercises1 {
 
   /**
     * scala> mkTrafficLight("red")
-    * = Some(Red)
+    * > Some(Red)
     *
     * scala> mkTrafficLight("green")
-    * = Some(Green)
+    * > Some(Green)
     *
     * scala> mkTrafficLight("yellow")
-    * = Some(Yellow)
+    * > Some(Yellow)
     *
     * scala> mkTrafficLight("bob")
-    * = None
+    * > None
     *
     * Hint: Use pattern matching
     **/
@@ -62,16 +62,16 @@ object OptionExercises1 {
 
   /**
     * scala> mkTrafficLightThenShow("red")
-    * = "Traffic light is red"
+    * > "Traffic light is red"
     *
     * scala> mkTrafficLightThenShow("green")
-    * = "Traffic light is green"
+    * > "Traffic light is green"
     *
     * scala> mkTrafficLightThenShow("yellow")
-    * = "Traffic light is yellow"
+    * > "Traffic light is yellow"
     *
     * scala> mkTrafficLightThenShow("bob")
-    * = "Traffic light `bob` is invalid"
+    * > "Traffic light `bob` is invalid"
     *
     * Hint: Use `mkTrafficLight` then pattern match.
     *
@@ -88,17 +88,17 @@ object OptionExercises1 {
 
   /**
     * scala> mkPerson("Bob", 20)
-    * = Some(Person("Bob", 20))
+    * > Some(Person("Bob", 20))
     *
     * If `name` is blank:
     *
     * scala> mkPerson("", 20)
-    * = None
+    * > None
     *
     * If `age` < 0:
     *
     * scala> mkPerson("Bob", -1)
-    * = None
+    * > None
     *
     * Hint: Don't forget every if needs an else!
     **/
@@ -106,13 +106,13 @@ object OptionExercises1 {
 
   /**
     * scala> mkPersonThenChangeName("Bob", 20, "John")
-    * = Some(Person("John", 20))
+    * > Some(Person("John", 20))
     *
     * scala> mkPersonThenChangeName("Bob", -1, "John")
-    * = None
+    * > None
     *
     * scala> mkPersonThenChangeName("Bob", 20, "")
-    * = None
+    * > None
     *
     * Hint: Use `mkPerson` and pattern matching
     **/

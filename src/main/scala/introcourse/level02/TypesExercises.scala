@@ -37,7 +37,7 @@ object TypesExercises {
   /**
     * scala> val person = Person("Bob", 50)
     * scala> showPerson1(person)
-    * = "Bob is 50 years old"
+    * > "Bob is 50 years old"
     *
     * This uses a technique called pattern matching. You will see more of this later.
     *
@@ -63,7 +63,7 @@ object TypesExercises {
   /**
     * scala> val person = Person("Bob", 50)
     * scala> changeName("Bobby", person)
-    * = Person("Bobby", 50)
+    * > Person("Bobby", 50)
     *
     * `person` is immutable! This function returns a new instance of `Person` with the `name` changed.
     * Check out the corresponding test in `TypesExercisesTest` to understand why.
@@ -89,7 +89,7 @@ object TypesExercises {
   /**
     * scala> val wallet = Wallet(20.5)
     * scala> showWallet(wallet)
-    * = "The wallet amount is 20.5"
+    * > "The wallet amount is 20.5"
     *
     * You can solve this like how you solved `showPerson1` or `showPerson2`.
     */
@@ -100,7 +100,7 @@ object TypesExercises {
     *
     * scala> val wallet = Wallet(100)
     * scala> purchase(80, wallet)
-    * = Wallet(20)
+    * > Wallet(20)
     *
     * Hint: You need to calculate the new amount first.
     **/
@@ -114,13 +114,13 @@ object TypesExercises {
 
   /**
     * scala> showTrafficLightStr("red")
-    * = "The traffic light is red"
+    * > "The traffic light is red"
     *
     * scala> showTrafficLightStr("yellow")
-    * = "The traffic light is yellow"
+    * > "The traffic light is yellow"
     *
     * scala> showTrafficLightStr("green")
-    * = "The traffic light is green"
+    * > "The traffic light is green"
     *
     * What if `trafficLight` is not "red", "yellow" or "green"?
     *
@@ -158,7 +158,7 @@ object TypesExercises {
     *
     *
     * scala> showTrafficLightStr("flashing")
-    * = "The traffic light is flashing"
+    * > "The traffic light is flashing"
     *
     **/
 
@@ -187,13 +187,13 @@ object TypesExercises {
 
   /**
     * scala> showTrafficLight(Red)
-    * = "The traffic light is red"
+    * > "The traffic light is red"
     *
     * scala> showTrafficLight(Yellow)
-    * = "The traffic light is yellow"
+    * > "The traffic light is yellow"
     *
     * scala> showTrafficLight(Green)
-    * = "The traffic light is green"
+    * > "The traffic light is green"
     *
     * It is impossible to get an invalid TrafficLight as input
     *

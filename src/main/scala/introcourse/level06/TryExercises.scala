@@ -38,10 +38,10 @@ object TryExercises {
     * ```
     *
     * scala> parseIntSafe("1")
-    * = Success(1)
+    * > Success(1)
     *
     * scala> parseIntSafe("abc")
-    * = Failure(java.lang.NumberFormatException: For input string: "abc")
+    * > Failure(java.lang.NumberFormatException: For input string: "abc")
     *
     * Hint: Use `Try` and `parseInt`
     */
@@ -49,10 +49,10 @@ object TryExercises {
 
   /**
     * scala> parseBooleanSafe("true")
-    * = Success(true)
+    * > Success(true)
     *
     * scala> parseBooleanSafe("abc")
-    * = Failure(java.lang.IllegalArgumentException: For input string: "abc")
+    * > Failure(java.lang.IllegalArgumentException: For input string: "abc")
     *
     * Hint: Use .toBoolean to convert a String to a Boolean
     **/
@@ -61,10 +61,10 @@ object TryExercises {
 
   /**
     * scala> increment("10")
-    * = Success(11)
+    * > Success(11)
     *
     * scala> increment("NaN")
-    * = Failure(java.lang.NumberFormatException: For input string: "NaN")
+    * > Failure(java.lang.NumberFormatException: For input string: "NaN")
     *
     * Hint: Use `parseIntSafe` and solve it without using pattern matching
     */
@@ -90,9 +90,9 @@ object TryExercises {
     * Write a function that converts a `Try[A]` to `Option[A]`.
     *
     * scala> tryToOption(parseIntSafe("1"))
-    * = Some(1)
+    * > Some(1)
     * scala> tryToOption(parseIntSafe("abc"))
-    * = None
+    * > None
     */
   def tryToOption[A](tryA: Try[A]): Option[A] =
     tryA match {
@@ -117,16 +117,16 @@ object TryExercises {
     * Create a CSV parser to safely create an Employee
     *
     * scala> mkEmployee("Bob,22,true")
-    * = Right(Employee("Bob", 22, true))
+    * > Right(Employee("Bob", 22, true))
     *
     * scala> mkEmployee("Bob,abc,true")
-    * = Left(TryError(For input string: "abc"))
+    * > Left(TryError(For input string: "abc"))
     *
     * scala> mkEmployee("Bob,22,abc")
-    * = Left(TryError(For input string: "abc"))
+    * > Left(TryError(For input string: "abc"))
     *
     * scala> mkEmployee("Bob,22")
-    * = Left(TryError(CSV has wrong number of fields. Expected 3.))
+    * > Left(TryError(CSV has wrong number of fields. Expected 3.))
     *
     * Hint: Use `parseIntSafe`, `parseBooleanSafe`, for-comprehension, `tryToEither`
     */

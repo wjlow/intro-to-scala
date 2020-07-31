@@ -12,10 +12,10 @@ object OptionExercises3 {
     * Rewrite this function using for-comprehension syntax.
     *
     * scala> findJobIdByHumanIdUsingFor(1)
-    * = None
+    * > None
     *
     * scala> findJobIdByHumanIdUsingFor(2)
-    * = Some(1)
+    * > Some(1)
     */
   def findJobIdByHumanIdUsingFor(humanId: HumanId): Option[JobId] =
     findHumanById(humanId).flatMap(human => human.optJobId)
@@ -24,7 +24,7 @@ object OptionExercises3 {
     * Rewrite this function using for-comprehension syntax.
     *
     * scala> findJobByHumanIdUsingFor(2)
-    * = Some(Job("Teacher", "Expert in their field"))
+    * > Some(Job("Teacher", "Expert in their field"))
     */
   def findJobByHumanIdUsingFor(humanId: HumanId): Option[Job] =
     findJobIdByHumanId(humanId).flatMap(jobId => findJobById(jobId))
@@ -33,10 +33,10 @@ object OptionExercises3 {
     * Rewrite this function using for-comprehension syntax.
     *
     * scala> findJobNameByHumanIdUsingFor(2)
-    * = Some("Teacher")
+    * > Some("Teacher")
     *
     * scala> findJobNameByHumanIdUsingFor(1)
-    * = None
+    * > None
     */
   def findJobNameByHumanIdUsingFor(humanId: HumanId): Option[String] =
     findJobByHumanId(humanId).map(job => job.name)

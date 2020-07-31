@@ -16,13 +16,13 @@ object ListExercises {
     * You can create a List using the `::` constructor as such:
     *
     * scala> `::`(1, `::`(2, `::`(3, Nil))) // backticks to use :: in prefix position
-    * = List(1, 2, 3)
+    * > List(1, 2, 3)
     *
     * scala> (1 :: (2 :: (3 :: Nil))) // no need for backticks to use :: in infix position
-    * = List(1, 2, 3)
+    * > List(1, 2, 3)
     *
     * scala> 1 :: 2 :: 3 :: Nil
-    * = List(1, 2, 3)
+    * > List(1, 2, 3)
     *
     * Often times, the `List.apply` static method is more convenient:
     *
@@ -35,7 +35,7 @@ object ListExercises {
 
   /**
     * scala> prependToList(1, List(2, 3, 4))
-    * = List(1,2,3,4)
+    * > List(1,2,3,4)
     *
     * Hint: Refer the construction of list
     */
@@ -43,7 +43,7 @@ object ListExercises {
 
   /**
     * scala> appendToList(1, List(2, 3, 4))
-    * = List(2,3,4,1)
+    * > List(2,3,4,1)
     *
     * Hint: Use the :+ operator
     */
@@ -55,10 +55,10 @@ object ListExercises {
     * For this exercise, let's build a version of `isEmpty` called `isEmptyList` without using `.isEmpty` (that would be cheating!).
     *
     * scala> isEmptyList(Nil)
-    * = true
+    * > true
     *
     * scala> isEmptyList(List(1, 2, 3))
-    * = false
+    * > false
     *
     * Hint: Use pattern matching. You can pattern match on `List` using its two constructors `::` and `Nil` as such:
     *
@@ -73,13 +73,13 @@ object ListExercises {
 
   /**
     * scala> showListSize(List(1, 2, 3))
-    * = "This is a list of size 3"
+    * > "This is a list of size 3"
     *
     * scala> showListSize(List("ABC"))
-    * = "This is a list of size 1"
+    * > "This is a list of size 1"
     *
     * scala> showListSize(Nil)
-    * = "This is an empty list"
+    * > "This is an empty list"
     *
     * Hint: Use pattern matching, string interpolation and length
     */
@@ -92,7 +92,7 @@ object ListExercises {
     * are of the same size.
     *
     * scala> addNumToEach(10, List(1, 2, 3))
-    * = List(11, 12, 13)
+    * > List(11, 12, 13)
     *
     * Hint: Use .map
     **/
@@ -104,7 +104,7 @@ object ListExercises {
     * This is typically what you want if the size of the resulting List is <= that of the initial.
     *
     * scala> filterEven(List(1, 2, 3, 4))
-    * = List(2, 4)
+    * > List(2, 4)
     *
     * Hint: Use .filter and '%' for mod operator
     */
@@ -124,11 +124,11 @@ object ListExercises {
 
   /**
     * scala> product(List(2, 5, 3))
-    * = 30
+    * > 30
     *
     * https://en.wikipedia.org/wiki/Empty_product
     * scala> product(Nil)
-    * = 1
+    * > 1
     *
     * Hint: Use .foldLeft
     */
@@ -136,10 +136,10 @@ object ListExercises {
 
   /**
     * scala> min(List(4, 6, 1))
-    * = 1
+    * > 1
     *
     * scala> min(Nil)
-    * = Int.MinValue
+    * > Int.MinValue
     *
     * Hint: Use pattern matching and .foldLeft
     **/
@@ -163,10 +163,10 @@ object ListExercises {
     * return the first one.
     *
     * scala> youngestPerson(peopleList)
-    * = Person("Karen Page", 27)
+    * > Person("Karen Page", 27)
     *
     * scala> youngestPerson(Nil)
-    * = Person("Nobody", 0)
+    * > Person("Nobody", 0)
     *
     * Hint: Use pattern matching and .foldLeft
     */
@@ -198,7 +198,7 @@ object ListExercises {
     * Log every nth person from the `peopleList` given an index `n`.
     *
     * scala> showEveryNthPerson(2, peopleList)
-    * = List("Karen Page is 27 years old", "Claire Temple is 32 years old", "Elektra Natchios is 27 years old")
+    * > List("Karen Page is 27 years old", "Claire Temple is 32 years old", "Elektra Natchios is 27 years old")
     *
     * Validation rules:
     *

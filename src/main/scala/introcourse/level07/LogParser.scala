@@ -63,13 +63,13 @@ object LogParser {
     * Define a function to parse an individual log message.
     *
     * scala> parseLog("I,147,mice in the air")
-    * = KnownLog(Info, 147, "mice in the air")
+    * > KnownLog(Info, 147, "mice in the air")
     *
     * scala> parseLog("E,2,148,weird")
-    * = KnownLog(Error(2), 148, "weird")
+    * > KnownLog(Error(2), 148, "weird")
     *
     * scala> parseLog("X blblbaaaaa")
-    * = UnknownLog("X blblbaaaaa")
+    * > UnknownLog("X blblbaaaaa")
     *
     * Here is the beginning of one possible approach.
     **/
@@ -87,7 +87,7 @@ object LogParser {
 
   /**
     * scala> parseLogFile("I,147,mice in the air\nX blblbaaaaa")
-    * = List(KnownLog(Info, 147, "mice in the air"), UnknownLog("X blblbaaaaa"))
+    * > List(KnownLog(Info, 147, "mice in the air"), UnknownLog("X blblbaaaaa"))
     *
     * Hint: Use `parseLog`
     * Hint: Convert an Array to a List with .toList
@@ -100,10 +100,10 @@ object LogParser {
     * It should not return any log that is not an error.
     *
     * scala> getErrorsOverSeverity(List(KnownLog(Error(2), 123, some error msg"), UnknownLog("blblbaaaaa")), 1)
-    * = List(KnownLog(Error(2), 123, some error msg"))
+    * > List(KnownLog(Error(2), 123, some error msg"))
     *
     * scala> getErrorsOverSeverity(List(KnownLog(Error(2), 123, some error msg")), 2)
-    * = List()
+    * > List()
     **/
   def getErrorsOverSeverity(logs: List[LogMessage], minimumSeverity: Int): List[LogMessage] = ???
 
@@ -111,13 +111,13 @@ object LogParser {
     * Write a function to convert a `LogMessage` to a readable `String`.
     *
     * scala> showLogMessage(KnownLog(Info, 147, "mice in the air"))
-    * = "Info (147) mice in the air"
+    * > "Info (147) mice in the air"
     *
     * scala> showLogMessage(KnownLog(Error(2), 147, "weird"))
-    * = "Error 2 (147) weird"
+    * > "Error 2 (147) weird"
     *
     * scala> showLogMessage(UnknownLog("message"))
-    * = "Unknown log: message"
+    * > "Unknown log: message"
     *
     * Hint: Pattern match and use string interpolation
     **/
@@ -127,7 +127,7 @@ object LogParser {
     * Use `showLogMessage` on error logs with severity greater than the given `severity`.
     *
     * scala> showErrorsOverSeverity(logFile, 2)
-    * = List("Error 5 (158) some strange error")
+    * > List("Error 5 (158) some strange error")
     *
     * Hint: Use `parseLogFile`, `getErrorsOverSeverity` and `showLogMessage`
     **/

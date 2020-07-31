@@ -32,10 +32,10 @@ object OptionExercises2 {
 
   /**
     * scala> findHumanById(1)
-    * = Some(Human("Sally", None))
+    * > Some(Human("Sally", None))
     *
     * scala> findHumanById(100)
-    * = None
+    * > None
     *
     * Hint: Use `get` method on `humansDatabase` Map
     **/
@@ -43,10 +43,10 @@ object OptionExercises2 {
 
   /**
     * scala> findJobById(1)
-    * = Some(Job("Teacher", "Expert in their field"))
+    * > Some(Job("Teacher", "Expert in their field"))
     *
     * scala> findJobById(100)
-    * = None
+    * > None
     *
     * Hint: Use `get` method on `jobsDatabase` Map
     **/
@@ -54,10 +54,10 @@ object OptionExercises2 {
 
   /**
     * scala> findJobDescriptionGivenJobId1(1)
-    * = Some("Expert in their field")
+    * > Some("Expert in their field")
     *
     * scala> findJobDescriptionGivenJobId1(100)
-    * = None
+    * > None
     *
     * Hint: Use `findJobById` and then pattern match
     */
@@ -86,10 +86,10 @@ object OptionExercises2 {
 
   /**
     * scala> findJobDescriptionGivenJobIdOrElse1(1)
-    * = "Expert in their field"
+    * > "Expert in their field"
     *
     * scala> findJobDescriptionGivenJobIdOrElse1(100)
-    * = "Job with id 100 does not exist"
+    * > "Job with id 100 does not exist"
     *
     * Hint: Use `findJobDescriptionGivenJobId1` then pattern match
     */
@@ -102,10 +102,10 @@ object OptionExercises2 {
 
   /**
     * scala> findJobIdByHumanId(1)
-    * = None
+    * > None
     *
     * scala> findJobIdByHumanId(2)
-    * = Some(1)
+    * > Some(1)
     *
     * Hint: Use `findHumanById` and try `map`, `flatten`
     *
@@ -115,7 +115,7 @@ object OptionExercises2 {
 
   /**
     * scala> findJobByHumanId(2)
-    * = Some(Job("Teacher", "Expert in their field"))
+    * > Some(Job("Teacher", "Expert in their field"))
     *
     * Hint: Use `findJobIdByHumanId` and `findJobById`
     */
@@ -125,10 +125,10 @@ object OptionExercises2 {
     * Find the name of the `Job` that this `humanId` has
     *
     * scala> findJobNameByHumanId(2)
-    * = Some("Teacher")
+    * > Some("Teacher")
     *
     * scala> findJobNameByHumanId(1)
-    * = None
+    * > None
     *
     * Hint: Use `findJobByHumanId`
     */

@@ -19,16 +19,16 @@ object NullExercises {
     * If given an unrecognised value, return `null`.
     *
     * scala> mkTrafficLightOrNull("red")
-    * = Red
+    * > Red
     *
     * scala> mkTrafficLightOrNull("green")
-    * = Green
+    * > Green
     *
     * scala> mkTrafficLightOrNull("yellow")
-    * = Yellow
+    * > Yellow
     *
     * scala> mkTrafficLightOrNull("bob")
-    * = null
+    * > null
     **/
   def mkTrafficLightOrNull(str: String): TrafficLight =
     str match {
@@ -42,16 +42,16 @@ object NullExercises {
     * Write a function that calls `mkTrafficLightOrNull` and then turn each `TrafficLight` into a readable `String`.
     *
     * scala> mkTrafficLightOrNullThenShow("red")
-    * = "Traffic light is red"
+    * > "Traffic light is red"
     *
     * scala> mkTrafficLightOrNullThenShow("green")
-    * = "Traffic light is green"
+    * > "Traffic light is green"
     *
     * scala> mkTrafficLightOrNullThenShow("yellow")
-    * = "Traffic light is yellow"
+    * > "Traffic light is yellow"
     *
     * scala> mkTrafficLightOrNullThenShow("bob")
-    * = "Traffic light is invalid"
+    * > "Traffic light is invalid"
     *
     * Hint: Use `mkTrafficLightOrNull` and pattern matching
     */
@@ -62,29 +62,29 @@ object NullExercises {
     * If the `name` and `age` are invalid (as described below), return `null`.
     *
     * scala> mkPersonOrNull("Bob", 20)
-    * = Person("Bob", 20)
+    * > Person("Bob", 20)
     *
     * If `name` is blank:
     *
     * scala> mkPersonOrNull("", 20)
-    * = null
+    * > null
     *
     * If `age` < 0:
     *
     * scala> mkPersonOrNull("Bob", -1)
-    * = null
+    * > null
     **/
   def mkPersonOrNull(name: String, age: Int): Person = ???
 
   /**
     * scala> mkPersonOrNullThenChangeName("Bob", 20, "John")
-    * = Person("John", 20)
+    * > Person("John", 20)
     *
     * scala> mkPersonOrNullThenChangeName("Bob", -1, "John")
-    * = null
+    * > null
     *
     * scala> mkPersonOrNullThenChangeName("Bob", 20, "")
-    * = null
+    * > null
     *
     * Hint: Use `mkPersonOrNull` and `changeName` (already implemented below)
     **/

@@ -36,10 +36,10 @@ object ExceptionExercises {
     * is empty.
     *
     * scala> getName("Fred")
-    * = "Fred"
+    * > "Fred"
     *
     * scala> getName("")
-    * = EmptyNameException: provided name is empty
+    * > EmptyNameException: provided name is empty
     *
     * Hint: use the isEmpty method on String
     */
@@ -52,13 +52,13 @@ object ExceptionExercises {
     * If the provided age is not between 1 and 120 throw an InvalidAgeRangeException.
     *
     * scala> getAge("Fred")
-    * = InvalidAgeValueException: provided age is invalid: Fred
+    * > InvalidAgeValueException: provided age is invalid: Fred
     *
     * scala> getAge("20")
-    * = 20
+    * > 20
     *
     * scala> getAge("0")
-    * = InvalidAgeRangeException: provided age should be between 1-120: 0
+    * > InvalidAgeRangeException: provided age should be between 1-120: 0
     *
     * Hint: use the toInt method to convert a String to an Int.
     */
@@ -79,16 +79,16 @@ object ExceptionExercises {
     * What does this imply?
     *
     * scala> createPerson("Fred", "32")
-    * = "Person(Fred, 32)"
+    * > "Person(Fred, 32)"
     *
     * scala> createPerson("", "32")
-    * = EmptyNameException: provided name is empty
+    * > EmptyNameException: provided name is empty
     *
     * scala> createPerson("Fred", "ThirtyTwo")
-    * = InvalidAgeValueException: provided age is invalid: ThirtyTwo
+    * > InvalidAgeValueException: provided age is invalid: ThirtyTwo
     *
     * scala> createPerson("Fred", "150")
-    * = InvalidAgeRangeException: provided age should be between 1-120: 150
+    * > InvalidAgeRangeException: provided age should be between 1-120: 150
     *
     * Hint: Use `getName` and `getAge` from above.
     */
@@ -100,7 +100,7 @@ object ExceptionExercises {
     * It should only catch Exceptions thrown by createPerson.
     *
     * scala> createValidPeople
-    * = List(Person("Tokyo", 30), Person("Berlin", 43))
+    * > List(Person("Tokyo", 30), Person("Berlin", 43))
     *
     * Hint: Use `map` and `collect`
     *
@@ -124,7 +124,7 @@ object ExceptionExercises {
     * It should only catch Exceptions thrown by createPerson.
     *
     * scala> collectErrors
-    * = List(InvalidAgeValueException: provided age is invalid: 5o,
+    * > List(InvalidAgeValueException: provided age is invalid: 5o,
     *        InvalidAgeRangeException: provided age should be between 1-120: 200,
     *        InvalidAgeRangeException: provided age should be between 1-120: 0,
     *        EmptyNameException: provided name is empty)
