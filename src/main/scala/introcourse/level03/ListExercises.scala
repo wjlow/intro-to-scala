@@ -74,7 +74,7 @@ object ListExercises {
   def isEmptyList[A](xs: List[A]): Boolean = {
     xs match {
       case Nil => true
-      case _ => false
+      case _ :: _ => false
     }
   }
 
@@ -93,7 +93,7 @@ object ListExercises {
   def showListSize[A](xs: List[A]): String = {
     xs match {
       case Nil => "This is an empty list"
-      case (head :: tail) => s"This is a list of size ${xs.length}"
+      case _ :: _ => s"This is a list of size ${xs.length}"
     }
   }
 
@@ -109,9 +109,9 @@ object ListExercises {
     * Hint: Use .map
     **/
   def addNumToEach(num: Int, nums: List[Int]): List[Int] = {
-    nums.map({
+    nums.map(
       number => number + num
-    })
+    )
   }
 
   /**
@@ -151,7 +151,7 @@ object ListExercises {
     *
     * Hint: Use .foldLeft
     */
-  def product(nums: List[Int]): Int = nums.foldLeft(1){(acc, cur) => acc * cur}
+  def product(nums: List[Int]): Int = nums.foldLeft(1)((acc, cur) => acc * cur)
 
   /**
     * scala> min(List(4, 6, 1))
@@ -165,11 +165,11 @@ object ListExercises {
   def min(nums: List[Int]): Int =
     nums match {
       case Nil => Integer.MIN_VALUE
-      case head :: tail => tail.foldLeft(head){(acc, cur) => {
-        if(acc > cur) {
+      case head :: tail => tail.foldLeft(head)((acc, cur) =>
+        if (acc > cur) {
           cur
         } else acc
-      }}
+      )
     }
 
   private[level03] val peopleList =
@@ -196,15 +196,14 @@ object ListExercises {
   def youngestPerson(persons: List[Person]): Person = {
     persons match {
       case Nil => Person("Nobody", 0)
-      case (head :: tail) => tail.foldLeft(head){(accumulatorPerson, currentPerson) => {
+      case head :: tail => tail.foldLeft(head)((accumulatorPerson, currentPerson) => {
         if (accumulatorPerson.age <= currentPerson.age) {
           accumulatorPerson
         } else {
           currentPerson
         }
-      }}
+      })
     }
-
 
 
   }
@@ -217,7 +216,7 @@ object ListExercises {
     *
     * ```
     * List(("abc", 1), ("def", 2)).map {
-    *   case (str, num) => // do something with `str` and `num`
+    * case (str, num) => // do something with `str` and `num`
     * }
     * ```
     *
@@ -230,12 +229,9 @@ object ListExercises {
     * Hint: Use `zipWithIndex`
     */
   def personWithIndex(people: List[Person]): List[(Person, Int)] = {
-    val peopleWithIndex: List[(Person, Int)] = people.zipWithIndex
-
-    val (person2: Person, index2: Int) = peopleWithIndex.head
-    peopleWithIndex.map{case (person, index) => {
-      (person, index + 1)
-    }}
+    people.zipWithIndex.map {
+      case (person, index) => (person, index + 1)
+    }
   }
 
   /**
@@ -255,18 +251,15 @@ object ListExercises {
   def showEveryNthPerson(n: Int, persons: List[Person]): List[String] = {
     if (n <= 0) {
       persons.map(showPerson)
-    }
-
-    if (n > persons.length) {
+    } else if (n > persons.length) {
       Nil
+    } else {
+      val filteredPersons: List[(Person, Int)] =
+        personWithIndex(persons).filter {
+          case (_, index) => index % n == 0
+        }
+      filteredPersons.map { case (person, index) => showPerson(person) }
     }
-
-    val filteredPersons: List[(Person, Int)] = personWithIndex(persons).filter{case(person, index) => {
-      index % n == 0
-    }}
-
-    filteredPersons.map{case(person, index) => showPerson(person)}
-
   }
 
   private[level03] def showPerson(person: Person): String =

@@ -132,14 +132,14 @@ object ExceptionExercises {
 
           person
         } catch {
-          case _: EmptyNameException       => ???
-          case e: InvalidAgeRangeException => ???
-          case e: InvalidAgeValueException => ???
+          case _: EmptyNameException       => Person("", -1)
+          case e: InvalidAgeRangeException => Person("", -1)
+          case e: InvalidAgeValueException => Person("", -1)
           //handle in any other exception here
         }
     }
 
-    list.collect { case p: Person => p}
+    list.collect { case p: Person if p.age != -1 => p }
   }
 
   /**

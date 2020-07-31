@@ -166,7 +166,6 @@ object OptionExercises2 {
     val maybeJob = findJobByHumanId(humanId)
 
     maybeJob.map(job => job.name)
-    maybeJob.map(_.name)
   }
 
 }
