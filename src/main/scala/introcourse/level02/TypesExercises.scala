@@ -32,7 +32,7 @@ object TypesExercises {
     *
     * Notice as well how there is no need for using the `new` operator
     */
-  val person = Person(name = "John Kane", age = 35)
+  val person: Person = Person(name = "John Kane", age = 35)
 
   /**
     * scala> val person = Person("Bob", 50)
@@ -49,7 +49,7 @@ object TypesExercises {
     **/
   def showPerson1(person: Person): String =
     person match {
-      case Person(name, age) => s"${???} is ${???} years old"
+      case Person(name, age) => s"$name is $age years old"
     }
 
   /**
@@ -58,7 +58,7 @@ object TypesExercises {
     * Hint: Navigate the Person class' fields using the "." operator
     */
   def showPerson2(person: Person): String =
-    s"${???} is ${???} years old"
+    s"${person.name} is ${person.age} years old"
 
   /**
     * scala> val person = Person("Bob", 50)
@@ -70,7 +70,7 @@ object TypesExercises {
     *
     * Hint: Use the .copy method
     */
-  def changeName(newName: String, person: Person): Person = ???
+  def changeName(newName: String, person: Person): Person = person.copy(name = newName)
 
   /**
     * Let's look at another data type.
@@ -93,7 +93,7 @@ object TypesExercises {
     *
     * You can solve this like how you solved `showPerson1` or `showPerson2`.
     */
-  def showWallet(wallet: Wallet): String = ???
+  def showWallet(wallet: Wallet): String = s"The wallet amount is ${wallet.amount}"
 
   /**
     * Here is another example of working with immutable values.
@@ -104,7 +104,10 @@ object TypesExercises {
     *
     * Hint: You need to calculate the new amount first.
     **/
-  def purchase(cost: Double, wallet: Wallet): Wallet = ???
+  def purchase(cost: Double, wallet: Wallet): Wallet = {
+    val newAmount = wallet.amount - cost
+    wallet.copy(amount = newAmount)
+  }
 
   /**
     * *********************************************
@@ -138,7 +141,14 @@ object TypesExercises {
   /**
     * Implement the following showTrafficLightStr function to pass all your tests!
     */
-  def showTrafficLightStr(trafficLight: String): String = ???
+  def showTrafficLightStr(trafficLight: String): String = {
+    val VALID_TRAFFIC_LIGHTS = List("red", "yellow", "green", "flashing")
+    if (VALID_TRAFFIC_LIGHTS.contains(trafficLight)) {
+      s"The traffic light is $trafficLight"
+    } else {
+      "The traffic light is invalid"
+    }
+  }
 
 
   /**
@@ -151,7 +161,7 @@ object TypesExercises {
     * We need to have a new traffic light called Flashing:
     *
     * 1. Implement the test for this scenario: "should show flashing"
-    *    it should return "the traffic light is flashing"
+    * it should return "the traffic light is flashing"
     *
     * 2. Extend `showTrafficLightStr` that you have just implemented above to support this new flashing functionality.
     *
@@ -175,7 +185,7 @@ object TypesExercises {
     *
     * A sealed trait can only be extended in the same file that it is defined.
     *
-    * This technique helps you make invalid states/values irrepresentable in your programs
+    * This technique helps you make invalid states/values unrepresentable in your programs
     */
   sealed trait TrafficLight
 
@@ -184,6 +194,8 @@ object TypesExercises {
   case object Yellow extends TrafficLight
 
   case object Green extends TrafficLight
+
+  case object Flashing extends TrafficLight
 
   /**
     * scala> showTrafficLight(Red)
@@ -200,7 +212,15 @@ object TypesExercises {
     * Hint: Use pattern matching
     **/
 
-  def showTrafficLight(trafficLight: TrafficLight): String = ???
+
+  def showTrafficLight(trafficLight: TrafficLight): String = {
+    trafficLight match {
+      case Red => showTrafficLightStr("red")
+      case Yellow => showTrafficLightStr("yellow")
+      case Green => showTrafficLightStr("green")
+      case Flashing => showTrafficLightStr("flashing")
+    }
+  }
 
   /**
     * *********************************************************
@@ -215,6 +235,9 @@ object TypesExercises {
     *
     * 2. Try compile. What happens? How is this different than the previous String implementation?
     *
+    * Unable to compile
+    * Question: If I add Flashing extend TrafficLight, how come IntelliJ linting does not pick up on non-exhaustive case match, only picked up during sbt compile ?
+    * Question: When to extend sealed trait vs. When to use enum?
     * 3. Extend `showTrafficLight` to fix the compilation error.
     *
     * 4. Fill in the unit test for this new scenario: "showTrafficLight should show Flashing"
