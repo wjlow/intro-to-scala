@@ -16,36 +16,43 @@ We welcome pull requests and feedback!
 
 | Time | Topic/Exercise | 
 | :---: | :---: | 
-| 09.00 | Start | 
-| 09.15 | Intro to FP/Scala |
-| 10.00 | IntroExercises | 
-| 10.45 | Morning break | 
-| 11.00 | Intro to ADTs |
-| 11.15 | TypesExercises | 
-| 12.15 | Lunch | 
-| 13.30 | ListExercises |
-| 15.15 | Afternoon break |
-| 15.30 | NullExercises |
-| 16.00 | OptionExercises pt. 1 (Safe constructors) |
-| 16.30 | OptionExercises pt. 2 (first half) | 
-| 17.00 | End | | |
+| 11:00 | Start |
+| 11:15 | Intro to FP/Scala |
+| 12:00 | IntroExercises  |
+| 13:00 | Intro to ADTs |
+| 13:30 | Lunch |
+| 14:30 | TypesExercises |
+| 16:00 | ListExercises |
+| 18:00 | End |
 
 ### Day 2
 
-| Time | Topic/Exercise |
+| Time | Topic/Exercise | 
 | :---: | :---: | 
-| 09.15 | Intro to Error Handling |
-| 10.00 | OptionExercises pt. 2 (second half) | 
-| 10.30 | Morning break | 
-| 10.45 | OptionExercises pt. 3 | 
-| 11.30 | ExceptionExercises | 
-| 12.15 | Lunch | 
-| 13.15 | Exceptions2EitherExercises | 
-| 14.30 | TryExercises | 
-| 15.00 | Afternoon break | 
-| 15.30 | LogParser | 
-| 16.45 | Wrap up | 
-| 17.00 | End | 
+| 11:00 | Start |
+| 11:15 | ListExercises |
+| 12:00 | NullExercises |
+| 12:45 | OptionExercises pt. 1 (Safe constructors) |
+| 13:30 | Lunch |
+| 14:30 | OptionExercises pt. 2 (first half)  |
+| 15:15 | Intro to Error Handling |
+| 16:00 | OptionExercises pt. 2 (second half)  |
+| 16:45 | OptionExercises pt. 3  |
+| 18:00 | End |
+
+### Day 1
+
+| Time | Topic/Exercise | 
+| :---: | :---: | 
+| 11:00 | Start |
+| 11:15 | ExceptionExercises  |
+| 12:15 | Exceptions2EitherExercises |
+| 13:30 | Lunch |
+| 14:30 | Exceptions2EitherExercises (cont.)|
+| 15:00 | TryExercises  |
+| 15:45 | LogParser  |
+| 17:30 | Wrap up  |
+| 18:00 | End |
 
 ## Pre-requisites
 
