@@ -91,10 +91,5 @@ object NullExercises {
   def mkPersonOrNullThenChangeName(oldName: String, age: Int, newName: String): Person = ???
 
   def changeName(newName: String, person: Person): Person = person.copy(name = newName)
-
-  /**
-    * Thought exercise: Does the following function return a `null`?
-    */
-  def mean(nums: List[Int]): Double = ???
-
+ 
 }
