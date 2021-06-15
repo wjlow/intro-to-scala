@@ -156,37 +156,6 @@ The `~` watches for changes to your files and runs the command automatically. It
 
 To stop watching changes through `~`, press <kbd>Enter</kbd> to return to the SBT shell prompt.
 
-<details><summary>Reducing StackTraces Shown by Failed Tests</summary>
-
-<p>
-<p>
-The first time you run a test case you will be greeted by a long list of StackTraces:
-
-![default scalatest reporter](scalatest-reporter.png)
-
-If you want to see all tests that pass and only the first test that fails use the *LittleRed* reporter with:
-
-```
-testOnly *TestName -- -C delight.LittleRed
-```
-
-![LittleRed scalatest reporter](scalatest-littlered-reporter.png)
-
-
-If you want to see all passing and failing tests with minimal stacktraces use the *Nature* reporter with:
-
-
-```
-testOnly *TestName -- -C delight.Nature
-```
-
-![Nature scalatest reporter](scalatest-nature-reporter.png)
-
-For more information see [Delight](https://github.com/ssanj/delight)
-
-</p></p>
-</details>
-
 ## Jumping into a Scala REPL
 
 To launch into a Scala REPL with all production code use:
