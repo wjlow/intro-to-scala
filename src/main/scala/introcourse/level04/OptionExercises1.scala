@@ -78,7 +78,7 @@ object OptionExercises1 {
     * You can pattern match on `Option` using its two constructors `Some` and `None`:
     *
     * ```
-    * optSomething match {
+    * maybeSomething match {
     *   case Some(a) => // do something with `a`
     *   case None => // do something else
     * }

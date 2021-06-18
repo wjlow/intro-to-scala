@@ -18,7 +18,7 @@ object OptionExercises3 {
     * > Some(1)
     */
   def findJobIdByHumanIdUsingFor(humanId: HumanId): Option[JobId] =
-    findHumanById(humanId).flatMap(human => human.optJobId)
+    findHumanById(humanId).flatMap(human => human.maybeJobId)
 
   /**
     * Rewrite this function using for-comprehension syntax.
