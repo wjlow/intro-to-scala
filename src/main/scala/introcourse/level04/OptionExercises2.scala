@@ -17,7 +17,7 @@ object OptionExercises2 {
 
   case class Job(name: String, description: String)
 
-  case class Human(name: String, optJobId: Option[JobId])
+  case class Human(name: String, maybeJobId: Option[JobId])
 
   val jobsDatabase: Map[JobId, Job] = Map(
     1 -> Job("Teacher", "Expert in their field"),
@@ -70,7 +70,7 @@ object OptionExercises2 {
     * you can always refactor it:
     *
     * ```
-    * optSomething match {
+    * maybeSomething match {
     *   case Some(a) => Some(s"Got some $a")
     *   case None => None
     * }
@@ -79,7 +79,7 @@ object OptionExercises2 {
     * becomes
     *
     * ```
-    * optSomething.map(a => s"Got some $a")
+    * maybeSomething.map(a => s"Got some $a")
     * ```
     */
   def findJobDescriptionGivenJobId2(jobId: JobId): Option[String] = ???
