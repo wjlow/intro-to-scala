@@ -61,16 +61,18 @@ object TypesExercises {
     s"${???} is ${???} years old"
 
   /**
-    * scala> val person = Person("Bob", 50)
-    * scala> changeName("Bobby", person)
-    * > Person("Bobby", 50)
+    * Write a function that changes the age of a person.
     *
-    * `person` is immutable! This function returns a new instance of `Person` with the `name` changed.
+    * scala> val person = Person("Bob", 50)
+    * scala> changeAge(51, person)
+    * > Person("Bobby", 51)
+    *
+    * `person` is immutable! This function returns a new instance of `Person` with the `age` changed.
     * Check out the corresponding test in `TypesExercisesTest` to understand why.
     *
     * Hint: Use the .copy method
     */
-  def changeName(newName: String, person: Person): Person = ???
+  def changeAge(newAge: Int, person: Person): Person = ???
 
   /**
     * Let's look at another data type.

@@ -116,6 +116,11 @@ object OptionExercises1 {
     *
     * Hint: Use `mkPerson` and pattern matching
     **/
-  def mkPersonThenChangeName(oldName: String, age: Int, newName: String): Option[Person] = ???
+  def mkPersonThenChangeName(oldName: String, age: Int, newName: String): Option[Person] = {
+    val maybePerson = mkPerson(oldName, age)
+    ???
+  }
+
+  private def changeName(newName: String, person: Person): Person = person.copy(name = newName)
 
 }
