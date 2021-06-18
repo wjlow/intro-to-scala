@@ -30,14 +30,14 @@ class TypesExercisesTest extends AnyFunSpec with TypeCheckedTripleEquals {
 
   }
 
-  describe("changeName") {
+  describe("changeAge") {
 
-    it("should update the Person's name") {
+    it("should update the Person's age") {
       val person = Person("Bob", 50)
 
-      val updatedPerson = changeName("Sarah", person)
+      val updatedPerson = changeAge(60, person)
 
-      assert(updatedPerson === Person("Sarah", 50))
+      assert(updatedPerson === Person("Bob", 60))
       assert(person === Person("Bob", 50)) // assertion is unnecessary, but shows immutability
     }
 

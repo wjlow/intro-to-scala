@@ -88,8 +88,11 @@ object NullExercises {
     *
     * Hint: Use `mkPersonOrNull` and `changeName` (already implemented below)
     **/
-  def mkPersonOrNullThenChangeName(oldName: String, age: Int, newName: String): Person = ???
+  def mkPersonOrNullThenChangeName(oldName: String, age: Int, newName: String): Person = {
+    val personOrNull = mkPersonOrNull(oldName, age)
+    ???
+  }
 
-  def changeName(newName: String, person: Person): Person = person.copy(name = newName)
+  private def changeName(newName: String, person: Person): Person = person.copy(name = newName)
  
 }
