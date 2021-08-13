@@ -1,5 +1,7 @@
 package introcourse.level07
 
+import scala.util.Try
+
 /**
   * The exercises here are adapted from: http://www.cis.upenn.edu/~cis194/spring13/hw/02-ADTs.pdf
   *
@@ -33,7 +35,7 @@ object LogParser {
     * - Warning
     * - Error with (severity: Int)
     */
-  trait LogLevel
+  sealed trait LogLevel
 
   /**
     * Now create an ADT for `LogMessage`, where `LogMessage` can be one of two possibilities:
@@ -42,22 +44,19 @@ object LogParser {
     */
   type Timestamp = Int
 
-  trait LogMessage
+  sealed trait LogMessage
 
  /**
-   * - Once you have defined your data types:
-   * 1. Remove `import Types._` from [LogParserTest.scala](src/test/scala/introcourse/level07/LogParserTest.scala)
-   * 2. Comment out the contents of src/test/scala/introcourse/level07/Types.scala
+   * Once you have defined your data types, remove `import Types._` from
+   * [LogParserTest.scala](src/test/scala/introcourse/level07/LogParserTest.scala)
    */
 
   /**
     * We want to parse log messages. In order to do so, we need a safe way to parse integers in those messages.
     *
-    * One possibility is to define a function that converts a `String` to an `Option[Int]`
-    *
-    * Hint: You may copy `parseIntSafe` and `tryToOption` from TryExercises
+    * This is a convenience function that converts a `String` to an `Option[Int]`
     */
-  def parseIntOption(str: String): Option[Int] = ???
+  def parseIntOption(str: String): Option[Int] = Try(str.toInt).toOption
 
   /**
     * Define a function to parse an individual log message.
