@@ -1,4 +1,4 @@
-```
+```scala
 //case class
 case class Person(name: String, age: Int)
 
