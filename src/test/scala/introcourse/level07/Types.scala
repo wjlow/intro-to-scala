@@ -1,21 +1,17 @@
 package introcourse.level07
 
-import introcourse.level07.LogParser._
-
 /**
   * This file exists just to get the type-safe tests in `LogParserTests.scala` to compile.
   * Once the ADTs are defined in `LogParser.scala`, remove `import Types._` from `LogParserTests.scala`.
   */
 object Types {
+  private def undefinedInLogParser: Nothing =
+    throw new RuntimeException("Please remove `import Types._` from `LogParserTests.scala`")
 
-  case object Info extends LogLevel
+  def Info: Nothing = undefinedInLogParser
+  def Warning: Nothing = undefinedInLogParser
+  def Error(args: Any*): Nothing = undefinedInLogParser
 
-  case object Warning extends LogLevel
-
-  case class Error(severity: Int) extends LogLevel
-
-  case class KnownLog(logLevel: LogLevel, timestamp: Timestamp, message: String) extends LogMessage
-
-  case class UnknownLog(message: String) extends LogMessage
-
+  def KnownLog(args: Any*): Nothing = undefinedInLogParser
+  def UnknownLog(args: Any*): Nothing = undefinedInLogParser
 }
