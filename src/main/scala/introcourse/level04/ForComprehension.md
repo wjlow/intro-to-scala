@@ -6,7 +6,7 @@ Here are some examples of for comprehension usages. Run them in a REPL and see w
 
 ## Option
 
-```
+```scala
 case class Person(name: String, age: Int)
 
 val result1: Option[Person] = 
@@ -28,7 +28,7 @@ println(result2)
 
 ## Either
 
-```
+```scala
 case class Person(name: String, age: Int)
 
 case class MyError(msg: String)
@@ -52,7 +52,7 @@ println(result2)
 
 ## Try
 
-```
+```scala
 import scala.util.Try
 
 val result1 = 
