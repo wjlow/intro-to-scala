@@ -6,7 +6,8 @@ package introcourse.level06
   * from `TryExercisesTest.scala`.
   */
 object TryTestTypes {
+  private def undefinedInTry: Nothing =
+    throw new RuntimeException("Please remove `import TryTestTypes._` from `TryExercisesTest.scala`")
 
-  case class Employee(name: String, age: Int, hasDirectReports: Boolean)
-
+  def Employee(args: Any*): Nothing = undefinedInTry
 }
