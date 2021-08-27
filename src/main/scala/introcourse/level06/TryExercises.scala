@@ -69,7 +69,10 @@ object TryExercises {
     * Hint: Use `parseIntSafe` and solve it without using pattern matching
     */
 
-  def increment(str: String): Try[Int] = ???
+  def increment(str: String): Try[Int] = {
+    val errorOrInt: Try[Int] = parseIntSafe(str)
+    ???
+  }
 
   /**
     * Remember that `Try[A]` ~ `Either[Throwable, A]`
@@ -107,7 +110,7 @@ object TryExercises {
     * 3. hasDirectReports: Boolean
     */
 
-  trait Employee
+  case class Employee()
 
   /**
     * Now remove `import TryTestTypes._` from `TryExercisesTest.scala`
