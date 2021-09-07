@@ -96,7 +96,7 @@ object OptionExercises2 {
   def findJobDescriptionGivenJobIdOrElse1(jobId: JobId): String = ???
 
   /**
-    * Same as above, but use `findJobDescriptionGivenJobId1` then `getOrElse`
+    * Same as above, but use `findJobDescriptionGivenJobId1` then the `.getOrElse` method on `Option`
     */
   def findJobDescriptionGivenJobIdOrElse2(jobId: JobId): String = ???
 
