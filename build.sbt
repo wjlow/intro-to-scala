@@ -1,11 +1,19 @@
-name := "intro-to-scala"
+lazy val root = (project in file("."))
+  .settings(projectSettings: _*)
+  .settings(libraryDependencies ++= dependencies)
+  .settings(scalacOptions ++= options)
+  .settings(testFrameworks += TestFrameworks.ScalaTest)
 
-version := "0.1"
+lazy val projectSettings = Seq(
+  name := "intro-to-scala",
+  version := "0.1",
+  scalaVersion := "3.1.3"
+)
 
-libraryDependencies += "org.scalatest" %% "scalatest" % "3.2.12" % Test
+lazy val dependencies = Seq(
+  "org.scalatest" %% "scalatest" % "3.2.12" % Test
+)
 
-scalaVersion := "3.1.3"
-
-scalacOptions ++= Seq(
+lazy val options = Seq(
   "-Werror"
 )
