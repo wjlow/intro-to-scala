@@ -101,7 +101,7 @@ object EitherExercises {
   /**
     * Reimplement createPerson using only `flatMap` and `map`
     */
- def createPerson2(name: String, age: String): Either[AppError, Person] = ???
+  def createPerson2(name: String, age: String): Either[AppError, Person] = ???
 
   /**
     * scala> makeNameUpperCase("Fred", "32")
