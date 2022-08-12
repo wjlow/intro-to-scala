@@ -73,7 +73,7 @@ Run the following two commands:
 
 ```
 $ brew tap AdoptOpenJDK/openjdk
-$ brew cask install adoptopenjdk11
+$ brew install --cask adoptopenjdk11
 ```
 
 #### 3. Install [Docker](https://www.docker.com/)
