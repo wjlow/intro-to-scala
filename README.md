@@ -52,7 +52,7 @@ We welcome pull requests and feedback!
 At a minimum, you need:
 
 - This repository
-- Java 11 installed (even if you have a newer version)
+- Java 17 installed (even if you have a newer version)
 - Docker
 - Text editor (IntelliJ is recommended)
 
@@ -63,17 +63,16 @@ $ git clone https://github.com/wjlow/intro-to-scala.git
 $ cd intro-to-scala/
 ```
 
-#### 2. Install Java 11 (even if you already have a later version pre-installed)
+#### 2. Install Java 17 (even if you already have a later version pre-installed)
 
-Test if you have Java 11 already with `java -version`.
+Test if you have Java 17 already with `java -version`.
 
 ##### macOS (using [Homebrew](https://brew.sh))
 
 Run the following two commands:
 
 ```
-$ brew tap AdoptOpenJDK/openjdk
-$ brew install --cask adoptopenjdk11
+brew install openjdk@17
 ```
 
 #### 3. Install [Docker](https://www.docker.com/)
@@ -214,7 +213,7 @@ sbt> exit
 
 6. IntelliJ will detect this as an SBT project. Select `Import SBT Project` when prompted
 
-7. In the pop-up, choose _SDK -> JDK -> Java 11_. If Java 11 is not available, add it by selecting _New..._ to the right of _Project JDK_, then _+JDK_, then `/Library/Java/JavaVirtualMachines/adoptopenjdk-11.jdk` and finally _Open_
+7. In the pop-up, choose _SDK -> JDK -> Java 17_. If Java 17 is not available, add it by selecting _New..._ to the right of _Project JDK_, then _+JDK_, then `/Library/Java/JavaVirtualMachines/adoptopenjdk-17.jdk` and finally _Open_
 
 8. Wait for IntelliJ to refresh the project and download dependencies (this might take a while)
 
