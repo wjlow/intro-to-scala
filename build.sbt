@@ -7,7 +7,7 @@ lazy val root = (project in file("."))
 lazy val projectSettings = Seq(
   name := "intro-to-scala",
   version := "0.1",
-  scalaVersion := "3.1.3"
+  scalaVersion := "3.3.0"
 )
 
 lazy val dependencies = Seq(
