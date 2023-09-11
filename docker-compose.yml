@@ -2,7 +2,7 @@ version: "2"
 
 services:
   dev:
-    image: hseeberger/scala-sbt:11.0.13_1.6.1_2.13.8
+    image: sbtscala/scala-sbt:eclipse-temurin-focal-17.0.5_8_1.9.4_3.3.0
     working_dir: /work
     command: sbt
     volumes:
