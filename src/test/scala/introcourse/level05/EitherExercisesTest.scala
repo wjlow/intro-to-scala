@@ -1,6 +1,7 @@
 package introcourse.level05
 
-import introcourse.level05.EitherExercises._
+import introcourse.level05.EitherExercises.*
+import introcourse.level05.EitherExercises.AppError.*
 import org.scalactic.TypeCheckedTripleEquals
 import org.scalatest.funspec.AnyFunSpec
 

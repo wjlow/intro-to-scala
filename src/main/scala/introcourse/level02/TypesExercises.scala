@@ -175,10 +175,16 @@ object TypesExercises {
     *
     * You can read the following as a `TrafficLight` is either `Red` or `Yellow` or `Green`.
     *
-    * A sealed trait can only be extended in the same file that it is defined.
+    * A sealed trait / enum can only be extended in the same file that it is defined.
     *
     * This technique helps you make invalid states/values irrepresentable in your programs
     */
+  enum TrafficLight {
+    case Red, Yellow, Green
+  }
+
+  // Scala 2.12 equivalent syntax
+  /*
   sealed trait TrafficLight
 
   case object Red extends TrafficLight
@@ -186,6 +192,7 @@ object TypesExercises {
   case object Yellow extends TrafficLight
 
   case object Green extends TrafficLight
+   */
 
   /**
     * scala> showTrafficLight(Red)
