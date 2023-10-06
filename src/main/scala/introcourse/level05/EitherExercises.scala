@@ -9,13 +9,11 @@ import ExceptionExercises.personStringPairs
 object EitherExercises {
 
   //ADT for representing errors as values
-  sealed trait AppError
-
-  case object EmptyName extends AppError
-
-  case class InvalidAgeValue(value: String) extends AppError
-
-  case class InvalidAgeRange(age: Int) extends AppError
+  enum AppError {
+    case EmptyName
+    case InvalidAgeValue(value: String)
+    case InvalidAgeRange(age: Int)
+  }
 
   /**
     * In the ExceptionExercises exercise we used Exceptions to handle validation and

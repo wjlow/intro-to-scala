@@ -1,7 +1,7 @@
 package introcourse.level04
 
 import introcourse.level04.OptionExercises2.Job
-import introcourse.level04.OptionExercises3._
+import introcourse.level04.OptionExercises3.*
 import org.scalactic.TypeCheckedTripleEquals
 import org.scalatest.funspec.AnyFunSpec
 

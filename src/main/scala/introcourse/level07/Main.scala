@@ -1,7 +1,7 @@
 package introcourse.level07
 
 import scala.io.Source
-import LogParser._
+import LogParser.*
 
 /**
   * The `main` method does the following:

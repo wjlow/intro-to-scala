@@ -2,11 +2,11 @@ package introcourse.level07
 
 /**
   * This file exists just to get the type-safe tests in `LogParserTests.scala` to compile.
-  * Once the ADTs are defined in `LogParser.scala`, remove `import Types._` from `LogParserTests.scala`.
+  * Once the ADTs are defined in `LogParser.scala`, remove `import Types.*` from `LogParserTests.scala`.
   */
 object Types {
   private def undefinedInLogParser: Nothing =
-    throw new RuntimeException("Please remove `import Types._` from `LogParserTests.scala`")
+    throw new RuntimeException("Please remove `import Types.*` from `LogParserTests.scala`")
 
   def Info: Nothing = undefinedInLogParser
   def Warning: Nothing = undefinedInLogParser

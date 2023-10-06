@@ -1,6 +1,7 @@
 package introcourse.level04
 
-import introcourse.level04.OptionExercises1._
+import introcourse.level04.OptionExercises1.*
+import introcourse.level04.TrafficLight.*
 import org.scalactic.TypeCheckedTripleEquals
 import org.scalatest.funspec.AnyFunSpec
 

@@ -35,7 +35,9 @@ object LogParser {
     * - Warning
     * - Error with (severity: Int)
     */
-  sealed trait LogLevel
+  enum LogLevel {
+    case TODO // enums must have as least one case, replace this when you are ready
+  }
 
   /**
     * Now create an ADT for `LogMessage`, where `LogMessage` can be one of two possibilities:
@@ -44,10 +46,12 @@ object LogParser {
     */
   type Timestamp = Int
 
-  sealed trait LogMessage
+  enum LogMessage {
+    case TODO // enums must have as least one case, replace this when you are ready
+  }
 
  /**
-   * Once you have defined your data types, remove `import Types._` from
+   * Once you have defined your data types, remove `import Types.*` from
    * [LogParserTest.scala](src/test/scala/introcourse/level07/LogParserTest.scala)
    */
 
