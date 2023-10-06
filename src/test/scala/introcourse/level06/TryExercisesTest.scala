@@ -1,7 +1,6 @@
 package introcourse.level06
 
-import introcourse.level06.TryExercises._
-
+import introcourse.level06.TryExercises.*
 import org.scalactic.TypeCheckedTripleEquals
 import org.scalatest.funspec.AnyFunSpec
 
@@ -9,7 +8,7 @@ import scala.util.{Failure, Success}
 
 class TryExercisesTest extends AnyFunSpec with TypeCheckedTripleEquals {
   // TODO: Remove this import once you've defined Employee data type in TryExercuses
-  import TryTestTypes._
+  import TryTestTypes.*
 
   describe("parseIntSafe") {
 

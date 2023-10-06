@@ -6,7 +6,7 @@ def evenE(n: Int): Either[String, Int] = if (n % 2 == 0) Right(n) else Left (s"$
 ```
 
 ```scala
-import scala.util._
+import scala.util.*
 
 def evenT(n: Int): Try[Int] = if (n % 2 == 0) Success(n) else Failure (new RuntimeException(s"$n is not even"))
 ```

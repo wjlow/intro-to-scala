@@ -113,7 +113,7 @@ object TryExercises {
   case class Employee()
 
   /**
-    * Now remove `import TryTestTypes._` from `TryExercisesTest.scala`
+    * Now remove `import TryTestTypes.*` from `TryExercisesTest.scala`
     */
 
   /**

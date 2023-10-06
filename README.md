@@ -166,13 +166,13 @@ sbt> console
 Once in the console, you can import your production code as such:
 
 ```
-import package.objectname._
+import package.objectname.*
 ```
 
 For example, to use functions defined in _introcourse.level01.IntroExercises_:
 
 ```
-scala> import introcourse.level01.IntroExercises._
+scala> import introcourse.level01.IntroExercises.*
 scala> add(1, 2)
 res0: Int = 3
 ```

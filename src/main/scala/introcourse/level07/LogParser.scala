@@ -51,7 +51,7 @@ object LogParser {
   }
 
  /**
-   * Once you have defined your data types, remove `import Types._` from
+   * Once you have defined your data types, remove `import Types.*` from
    * [LogParserTest.scala](src/test/scala/introcourse/level07/LogParserTest.scala)
    */
 
