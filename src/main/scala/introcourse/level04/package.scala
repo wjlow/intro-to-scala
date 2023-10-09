@@ -1,11 +1,7 @@
-package introcourse
+package introcourse.level04
 
-package object level04 {
+case class Person(name: String, age: Int)
 
-  case class Person(name: String, age: Int)
-
-  enum TrafficLight {
-    case Red, Yellow, Green
-  }
-
+enum TrafficLight {
+  case Red, Yellow, Green
 }

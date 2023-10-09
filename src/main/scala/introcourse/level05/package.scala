@@ -1,7 +1,3 @@
-package introcourse
+package introcourse.level05
 
-package object level05 {
-
-  case class Person(name: String, age: Int)
-
-}
+case class Person(name: String, age: Int)
